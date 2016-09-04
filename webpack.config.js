@@ -1,5 +1,7 @@
-module.exports = {
-  entry: './app/main.js',
+var path = require('path')
+
+var config = {
+  entry: './src/index.js',
   output: {
     path: './dist/',
     filename: 'bundle.js'
@@ -12,9 +14,21 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        include: path.resolve(process.cwd(), 'src'),
         loader: 'babel'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+        include: path.resolve(process.cwd(), 'src')
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus-loader',
+        include: path.resolve(process.cwd(), 'src')
       }
     ]
   }
 }
+
+module.exports = config
