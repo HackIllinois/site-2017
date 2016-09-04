@@ -4,13 +4,13 @@
   "description": "hackillinois website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --inline --progress --hot"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HackIllinois/site-2017.git"
   },
-  "author": "Vishrut Dixit",
+  "author": "HackIllinois Staff",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HackIllinois/site-2017/issues"
@@ -25,6 +25,7 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.24.0",
     "path": "^0.12.7",

@@ -21541,7 +21541,7 @@
 				_react2.default.createElement(
 					'div',
 					{ className: _landing2.default.title },
-					' Dig Deeper '
+					' dig '
 				),
 				_react2.default.createElement(
 					'div',

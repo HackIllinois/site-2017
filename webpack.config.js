@@ -4,7 +4,8 @@ var config = {
   entry: './src/index.js',
   output: {
     path: './dist/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/dist/'
   },
   devServer: {
     inline: true,
