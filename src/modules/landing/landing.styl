@@ -1,48 +1,26 @@
-body 
-	margin: 0
-	font-family: 'Roboto', sans-serif
-
-.landing 
-	width: 100%
-	height: 700px
-	background-color: #3C3C3C
-	color: #A4A4A4
-	text-align: center
-
-.logo
-	padding-top: 100px
-	margin-bottom: 50px
-	font-size: 18pt
+body
+  background-color: #212d5d
 
 .cave
-	font-size: 16pt
-	margin: 0 auto
-	height:200px
-	width: 200px
-	background-color: #fafafa
-	margin-bottom: 50px
+  height: 100vh
+  width: auto
+  position: relative
 
-.caveText 
-	position: relative
-	top: 100px
+.cave img
+  width: 100%
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
 
-.title 
-	font-size: 30pt
-	padding-bottom: 10px
+.cave .logo
+  position: relative
+  width: 100vw
+  height: 100%
+  top: 50%
+  transform: translateY(-50%)
 
-.date 
-	font-size: 16pt
-
-.formText 
-	color: #808080
-	margin: 20px 0
-
-#registrationInput
-	padding: 0 5px
-	width: 300px
-	border: none
-	border-radius: 5px
-	height:30px
-
-#registrationInput:focus 
-	outline: none
+.cave .logo img
+  width: 200px;
+  left: 60%;
+  top: 65%;
+  position: relative;
