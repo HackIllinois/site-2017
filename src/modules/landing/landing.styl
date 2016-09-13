@@ -15,7 +15,10 @@ body
   top: 50%
   transform: translateY(-50%)
 
-.caveMobileOnly
+.caveMobileOnly,
+.logoMobileOnly,
+.signMobileOnly,
+.eyesMobileOnly
   display: none
   position: absolute
   top: 50%
@@ -25,6 +28,27 @@ body
   width: 100%
   background-repeat: no-repeat
   background-position: 50%
+
+.logoMobileOnly
+  background-image: url('../../assets/landing/landing-logo.svg')
+  position: relative
+  height: 6vh
+  top: 51%
+
+.signMobileOnly
+  background-image: url('../../assets/landing/landing-sign.svg')
+  width: 8vh
+  height: 10vh
+  right: 25%
+  top: 57%
+
+.eyesMobileOnly
+  background-image: url('../../assets/landing/landing-eyes.svg')
+  animation: blink-animation 3s steps(10, start) infinite
+  -webkit-animation: blink-animation 3s steps(10, start) infinite
+  height: 2vh
+  top: 55%
+  left: -7%
 
 .cave .eyes
   width: 100vw
@@ -117,8 +141,21 @@ body
   .cave
     display: none;
   
-  .caveMobileOnly
+  .caveMobileOnly,
+  .logoMobileOnly,
+  .signMobileOnly,
+  .eyesMobileOnly
     display: block
+
+@media (max-width: 500px)
+  .signMobileOnly
+    top: 56%
+
+@media (max-width: 450px)
+  .signMobileOnly
+    top: 55%
+  .eyesMobileOnly
+    top: 54.5%
 
 .blink {
   animation: blink-animation 5s steps(1, start) infinite;
