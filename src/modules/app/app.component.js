@@ -1,8 +1,8 @@
 import React from 'react' 
-import Landing from '../landing'
+import Teaser from '../teaser'
 
 const App = () => (
-	<Landing />
+	<Teaser />
 )
 
 export default App
