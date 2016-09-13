@@ -26,6 +26,16 @@ body
   background-repeat: no-repeat
   background-position: 50%
 
+.cave .logo
+  width: 100vw
+  height: 200px
+  position: absolute
+  top: 46%
+  transform: translateY(-50px)
+
+.cave .logo img
+  height: 120px
+
 .cave .sign
   position: relative
   width: 100vw
@@ -36,8 +46,47 @@ body
 .cave .sign img
   width: 200px
   left: 60%
-  top: 65%
+  top: 72%
   position: relative
+
+@media (max-width: 1400px)
+  .cave .sign img
+    top: 68%
+    width: 180px
+
+@media (max-width: 1250px)
+  .cave .sign img
+    top: 66%
+    width: 160px
+
+@media (max-width: 1100px)
+  .cave .sign img
+    top: 64%
+    width: 160px
+  
+  .cave .logo img
+    height: 100px
+
+@media (max-width: 1000px)
+  .cave .sign img
+    top: 62%
+    width: 120px
+
+@media (max-width: 800px)
+  .cave .sign img
+    top: 60%
+    width: 100px
+
+  .cave .logo img
+    height: 80px
+
+@media (max-width: 720px)
+  .cave .sign img
+    top: 58%
+    width: 80px
+  
+  .cave .logo img
+    height: 60px
 
 @media (max-width: 600px)
   .cave

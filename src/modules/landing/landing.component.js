@@ -10,6 +10,11 @@ const Landing = () => (
   <div className={styles.landing}> 
     <div className={styles.cave}>
       <img src={Cave}/>
+
+      <div className={styles.logo}>
+        <img src={Logo}/>
+      </div>
+
       <div className={styles.sign}>
         <img src={Sign}/>
       </div>
