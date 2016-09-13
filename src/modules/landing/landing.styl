@@ -26,6 +26,19 @@ body
   background-repeat: no-repeat
   background-position: 50%
 
+.cave .eyes
+  width: 100vw
+  height: 20px
+  position: absolute
+  top: 60%
+  transform: translateY(-50%)
+  left: -6%
+
+.cave .eyes img
+  height: 35px
+  animation: blink-animation 3s steps(10, start) infinite
+  -webkit-animation: blink-animation 3s steps(10, start) infinite
+
 .cave .logo
   width: 100vw
   height: 200px
@@ -53,6 +66,9 @@ body
   .cave .sign img
     top: 68%
     width: 180px
+  
+  .cave .eyes img
+    height: 30px
 
 @media (max-width: 1250px)
   .cave .sign img
@@ -63,6 +79,12 @@ body
   .cave .sign img
     top: 64%
     width: 160px
+
+  .cave .eyes
+    top: 58%
+
+  .cave .eyes img
+    height: 20px
   
   .cave .logo img
     height: 100px
@@ -76,6 +98,9 @@ body
   .cave .sign img
     top: 60%
     width: 100px
+
+  .cave .eyes
+    top: 56%
 
   .cave .logo img
     height: 80px
@@ -94,3 +119,19 @@ body
   
   .caveMobileOnly
     display: block
+
+.blink {
+  animation: blink-animation 5s steps(1, start) infinite;
+  -webkit-animation: blink-animation 5s steps(1, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}

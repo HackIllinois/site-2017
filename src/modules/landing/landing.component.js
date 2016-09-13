@@ -11,6 +11,10 @@ const Landing = () => (
     <div className={styles.cave}>
       <img src={Cave}/>
 
+      <div className={styles.eyes}>
+        <img src={Eyes}/>
+      </div>
+
       <div className={styles.logo}>
         <img src={Logo}/>
       </div>
@@ -20,6 +24,10 @@ const Landing = () => (
       </div>
     </div>
     <div className={styles.caveMobileOnly}>
+      <div className={styles.eyesMobileOnly}></div>
+      <div className={styles.logoMobileOnly}></div>
+      <div className={styles.signMobileOnly}></div>
+
     </div>
   </div>
 )
