@@ -458,3 +458,28 @@ template {
 [hidden] {
   display: none;
 }
+
+/* @font-face
+   ==========================================================================
+  eot: IE6-IE8,
+  woff2: Super Modern Browsers
+  woff: Pretty Modern Browsers,
+  ttf: Safari, Android, iOS,
+  svg: Legacy iOS
+
+  woff2 omitted for now because we're not using that asset: url('../fonts/BrandonGrotesque/Brandon_reg.woff2') format('woff2')
+
+*/
+
+@font-face {
+  font-family: 'Brandon-Regular';
+  src: url('../fonts/BrandonGrotesque/Brandon_reg.eot');
+  src: url('../fonts/BrandonGrotesque/Brandon_reg.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/BrandonGrotesque/Brandon_reg.woff') format('woff'), 
+       url('../fonts/BrandonGrotesque/Brandon_reg.ttf')  format('truetype'),
+       url('../fonts/BrandonGrotesque/Brandon_reg.svg#svgFontName') format('svg');
+}
+
+body {
+    font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;
+}

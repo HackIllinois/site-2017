@@ -1,174 +1,18 @@
 body
-  background-color: #212d5d
+  background-color: #122342
 
-.cave
-  height: 98vh
-  width: auto
-  position: relative
-  left: 50%
-  transform: translateX(-50%)
-  overflow: hidden
-
-.cave img
-  width: 100%
-  position: absolute
-  top: 50%
-  transform: translateY(-50%)
-
-.caveMobileOnly,
-.logoMobileOnly,
-.signMobileOnly,
-.eyesMobileOnly
-  display: none
-  position: absolute
-  top: 50%
-  transform: translateY(-50%)
+.Landing
+  width: 100vw
   height: 100vh
-  background-image: url('../../assets/landing/landing-cave.svg')
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+.Landing .Hero
+  width: 480px
+  height: 100%;
+
+.Landing .Hero .Logo
   width: 100%
-  background-repeat: no-repeat
-  background-position: 50%
-
-.logoMobileOnly
-  background-image: url('../../assets/landing/landing-logo.svg')
-  position: relative
-  height: 6vh
-  top: 51%
-
-.signMobileOnly
-  background-image: url('../../assets/landing/landing-sign.svg')
-  width: 8vh
-  height: 10vh
-  right: 25%
-  top: 57%
-
-.eyesMobileOnly
-  background-image: url('../../assets/landing/landing-eyes.svg')
-  animation: blink-animation 3s steps(10, start) infinite
-  -webkit-animation: blink-animation 3s steps(10, start) infinite
-  height: 2vh
-  top: 55%
-  left: -7%
-
-.cave .eyes
-  width: 100vw
-  height: 20px
-  position: absolute
-  top: 60%
-  transform: translateY(-50%)
-  left: -6%
-
-.cave .eyes img
-  height: 35px
-  animation: blink-animation 3s steps(10, start) infinite
-  -webkit-animation: blink-animation 3s steps(10, start) infinite
-
-.cave .logo
-  width: 100vw
-  height: 200px
-  position: absolute
-  top: 46%
-  transform: translateY(-50px)
-
-.cave .logo img
-  height: 120px
-
-.cave .sign
-  position: relative
-  width: 100vw
-  height: 100%
-  top: 50%
-  transform: translateY(-50%)
-
-.cave .sign img
-  width: 200px
-  left: 60%
-  top: 72%
-  position: relative
-
-@media (max-width: 1400px)
-  .cave .sign img
-    top: 68%
-    width: 180px
-  
-  .cave .eyes img
-    height: 30px
-
-@media (max-width: 1250px)
-  .cave .sign img
-    top: 66%
-    width: 160px
-
-@media (max-width: 1100px)
-  .cave .sign img
-    top: 64%
-    width: 160px
-
-  .cave .eyes
-    top: 58%
-
-  .cave .eyes img
-    height: 20px
-  
-  .cave .logo img
-    height: 100px
-
-@media (max-width: 1000px)
-  .cave .sign img
-    top: 62%
-    width: 120px
-
-@media (max-width: 800px)
-  .cave .sign img
-    top: 60%
-    width: 100px
-
-  .cave .eyes
-    top: 56%
-
-  .cave .logo img
-    height: 80px
-
-@media (max-width: 720px)
-  .cave .sign img
-    top: 58%
-    width: 80px
-  
-  .cave .logo img
-    height: 60px
-
-@media (max-width: 600px)
-  .cave
-    display: none;
-  
-  .caveMobileOnly,
-  .logoMobileOnly,
-  .signMobileOnly,
-  .eyesMobileOnly
-    display: block
-
-@media (max-width: 500px)
-  .signMobileOnly
-    top: 56%
-
-@media (max-width: 450px)
-  .signMobileOnly
-    top: 55%
-  .eyesMobileOnly
-    top: 54.5%
-
-.blink {
-  animation: blink-animation 5s steps(1, start) infinite;
-  -webkit-animation: blink-animation 5s steps(1, start) infinite;
-}
-
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
-}
-@-webkit-keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
-}
+  height: auto

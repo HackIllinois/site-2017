@@ -3,9 +3,9 @@ var path = require('path')
 var config = {
   entry: './src/index.js',
   output: {
-    path: './dist/',
+    path: './dist/js',
     filename: 'bundle.js',
-    publicPath: '/dist/'
+    publicPath: '/dist/js'
   },
   devServer: {
     inline: true,
