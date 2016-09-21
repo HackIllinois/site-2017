@@ -4,13 +4,23 @@ body {
 }
 
 .landing {
+  width: 100%;
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-image: url('../i/landing-dirt-loff.png');
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url('i/landing-dirt-loff.png');
   background-size: cover;
   background-position: center center;
   overflow: hidden;
@@ -25,10 +35,19 @@ body {
 .landing .hero {
   width: 480px;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .landing .hero .logo {
@@ -82,7 +101,6 @@ body {
 .landing .hero .hat-container:hover .hat-on,
 .landing .hero .hat-container:hover .beam {
   -webkit-animation: flicker 6s linear infinite;
-  -moz-animation: flicker 6s linear infinite;
   animation: flicker 6s linear infinite;
 }
 
@@ -106,77 +124,6 @@ body {
     opacity: .4;
   }
   18% {
-    opacity: 0.6;
-  }
-  18.5% {
-    opacity: .9;
-  }
-  22% {
-    opacity: 1;
-  }
-  38.5% {
-    opacity: 1;
-  }
-  39% {
-    opacity: .8;
-  }
-  42% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  60% {
-    opacity: 1;
-  }
-  60.5% {
-    opacity: 0;
-  }
-  62% {
-    opacity: 0;
-  }
-  63% {
-    opacity: .2;
-  }
-  63.25% {
-    opacity: 0;
-  }
-  65% {
-    opacity: 1;
-  }
-  73% {
-    opacity: 0.4;
-  }
-  75% {
-    opacity: .8;
-  }
-  79% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-moz-keyframes flicker {
-  0% {
-    opacity: 0;
-  }
-  5% {
-    opacity: 0;
-  }
-  6% {
-    opacity: 1;
-  }
-  11% {
-    opacity: .4;
-  }
-  11.25% {
-    opacity: .6;
-  }
-  11.5% {
-    opacity: .4;
-  }
-  18% {
     opacity: 1;
   }
   18.5% {
@@ -225,6 +172,7 @@ body {
     opacity: 1;
   }
 }
+
 @keyframes flicker {
   0% {
     opacity: 0;
