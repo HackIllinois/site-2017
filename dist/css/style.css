@@ -20,7 +20,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url('../i/landing-dirt-loff.png');
+  background-image: url('../i/svg/landing-dirt-loff.svg');
   background-size: cover;
   background-position: center center;
   overflow: hidden;
@@ -85,16 +85,21 @@ body {
   width: 440px;
   position: absolute;
   left: 80%;
-  bottom: -15%;
+  bottom: -6%;
   z-index: 3;
   opacity: 0;
+}
+
+@media (min-width: 440px){
+  .hat-container .beam {
+    bottom: -13%;
+  }
 }
 
 @media (min-width: 480px){
   .hat-container .beam {
     width: 535px;
     left: 85%;
-    bottom: -22%;
   }
 }
 
