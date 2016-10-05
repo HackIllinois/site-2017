@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: #122342;
   color: #ffffff;
@@ -101,6 +109,61 @@ body {
     width: 535px;
     left: 85%;
   }
+}
+
+.input-component {
+  width: 90%;
+  position: relative;
+  z-index: 4;
+  font-size: 1.3em;
+}
+
+@media (min-width: 520px){
+  .input-component {
+    width: 100%;
+  }
+}
+
+.input-component input {
+  float: left;
+  width: calc(100% - 108px);
+  height: 42px;
+  padding: 0 1em;
+  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;
+  color: #808dc6;
+  line-height: 36px;
+  border: none;
+  border-top-left-radius: 21px;
+  border-bottom-left-radius: 21px;
+}
+
+.input-component input:focus {
+  outline: none;
+  box-shadow: inset 0px 0px 0px 2px rgba(128,141,198,1);
+}
+
+.input-component button {
+  float: left;
+  width: 108px;
+  height: 42px;
+  padding: 0;
+  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;
+  background-color: #E05926;
+  color: #ffffff;
+  border: none;
+  line-height: 36px;
+  border-top-right-radius: 21px;
+  border-bottom-right-radius: 21px;
+  cursor: pointer;
+}
+
+.input-component button:hover {
+  background-color: #E06926;
+}
+
+.input-component button:focus {
+  outline: none;
+  background-color: #E04A26;
 }
 
 .landing .hero .hat-container:hover .hat-on,
