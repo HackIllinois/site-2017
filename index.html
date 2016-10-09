@@ -28,6 +28,7 @@
   <meta name="google-site-verification" content="wXVqy2Y8pYMVgGR-jTMgFviV09zB66Qs5fBT-G2Z3lg"/>
 	<link rel="stylesheet" href="dist/css/common.css">
 	<link rel="stylesheet" href="dist/css/style.css">
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 </head>
 <body>
 	<div class="landing">
@@ -39,11 +40,16 @@
         <img class="beam" src="dist/i/svg/landing-beam.svg">
       </div>
       <!--<h1>Coming Soon</h1>-->
-      <div class="input-component">
-        <input type="email" id="post-email" placeholder="jane.doe@hackathon.com">
-        <button>Submit</button>
-      </div>
+      <form class="signup-form" id="2017-signup" role="form">
+        <div class="input-component">
+            <input name="email" type="email" id="post-email" placeholder="jane.doe@hackathon.com" required>
+            <button type="submit">Submit</button>
+        </div>
+        <h5 id="signup-success" class="signup-success hide">Sweet! We'll drop you a line when it's time to apply.</h5>
+        <h5 id="signup-error" class="signup-error hide">Uh-oh. There was an error saving your email.</h5>
+      </form>
     </div>
 	</div>
+  <script src="dist/js/script.js"></script>
 </body>
 </html>

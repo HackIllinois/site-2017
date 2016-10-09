@@ -111,11 +111,16 @@ body {
   }
 }
 
+.signup-form {
+  width: 100%;
+}
+
 .input-component {
   width: 90%;
   position: relative;
   z-index: 4;
   font-size: 1.3em;
+  margin: 0 auto;
 }
 
 @media (min-width: 520px){
@@ -148,7 +153,7 @@ body {
   height: 42px;
   padding: 0;
   font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;
-  background-color: #E05926;
+  background-color: #808dc6;
   color: #ffffff;
   border: none;
   line-height: 36px;
@@ -158,12 +163,19 @@ body {
 }
 
 .input-component button:hover {
-  background-color: #E06926;
+  background-color: #B7BEDC;
 }
 
 .input-component button:focus {
   outline: none;
-  background-color: #E04A26;
+  background-color: #4E6094;
+}
+
+.signup-success,
+.signup-error {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 18px;
 }
 
 .landing .hero .hat-container:hover .hat-on,
@@ -308,4 +320,17 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+/*
+  Utilities
+  =========
+*/
+
+.hide {
+  display: none;
+}
+
+.show {
+ display: block; 
 }
