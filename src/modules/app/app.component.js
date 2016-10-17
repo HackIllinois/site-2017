@@ -1,8 +1,13 @@
-import React from 'react' 
-import Landing from '../landing'
+import React, {Component} from 'react' 
 
-const App = () => (
-	<Landing />
-)
+class App extends Component {
+	render = () => (
+		<div>
+			{this.props.children}
+		</div>
+	)
+}
 
 export default App
+
+	

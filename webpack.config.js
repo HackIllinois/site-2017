@@ -9,6 +9,7 @@ var config = {
   },
   devServer: {
     inline: true,
+    historyApiFallback: true, 
     port: 8080
   },
   module: {
@@ -30,6 +31,15 @@ var config = {
       },
       {
         test: /\.svg$/, loader: 'file-loader',
+        include: path.join(process.cwd(), 'src')
+      },
+      {
+        test: /\.jpg$/, loader: 'file-loader',
+        include: path.join(process.cwd(), 'src')
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass", "resolve-url"],
         include: path.join(process.cwd(), 'src')
       }
     ]
