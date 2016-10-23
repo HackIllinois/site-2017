@@ -30,8 +30,8 @@ var config = {
         include: path.resolve(process.cwd(), 'src')
       },
       {
-        test: /\.svg$/, loader: 'file-loader',
-        include: path.join(process.cwd(), 'src')
+        test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file-loader',
+        include: path.resolve(process.cwd(), 'src')
       },
       {
         test: /\.jpg$/, loader: 'file-loader',
@@ -39,7 +39,7 @@ var config = {
       },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass", "resolve-url"],
+        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass!resolve-url',
         include: path.join(process.cwd(), 'src')
       }
     ]

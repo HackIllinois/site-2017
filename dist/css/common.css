@@ -473,11 +473,11 @@ template {
 
 @font-face {
   font-family: 'Brandon-Regular';
-  src: url('../fonts/BrandonGrotesque/Brandon_reg.eot');
-  src: url('../fonts/BrandonGrotesque/Brandon_reg.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/BrandonGrotesque/Brandon_reg.woff') format('woff'), 
-       url('../fonts/BrandonGrotesque/Brandon_reg.ttf')  format('truetype'),
-       url('../fonts/BrandonGrotesque/Brandon_reg.svg#svgFontName') format('svg');
+  src: url('../../src/assets/fonts/BrandonGrotesque/Brandon_reg.eot');
+  src: url('../../src/assets/fonts/BrandonGrotesque/Brandon_reg.eot?#iefix') format('embedded-opentype'),
+       url('../../src/assets/fonts/BrandonGrotesque/Brandon_reg.woff') format('woff'), 
+       url('../../src/assets/fonts/BrandonGrotesque/Brandon_reg.ttf')  format('truetype'),
+       url('../../src/assets/fonts/BrandonGrotesque/Brandon_reg.svg#svgFontName') format('svg');
 }
 
 body {

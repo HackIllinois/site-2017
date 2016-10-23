@@ -1,6 +1,7 @@
 import React from 'react'
 
 import styles from './landing.scss'
+console.log(styles.landing)
 
 const Landing = () => (
 	<div className={styles.landing}>
