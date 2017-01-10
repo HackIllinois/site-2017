@@ -1,8 +1,17 @@
-import React from 'react' 
-import Teaser from '../teaser'
+import React, {Component} from 'react' 
+import styles from './app.scss'
 
-const App = () => (
-	<Teaser />
+
+//mobx logging 
+//import DevTools, {setLogEnabled} from 'mobx-react-devtools'
+//setLogEnabled(true);
+
+const App = (props) => (
+		<div> 
+			{props.children}
+		</div>
 )
 
 export default App
+
+	

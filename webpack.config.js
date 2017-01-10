@@ -3,12 +3,13 @@ var path = require('path')
 var config = {
   entry: './src/index.js',
   output: {
-    path: './dist/',
+    path: './dist/js',
     filename: 'bundle.js',
-    publicPath: '/dist/'
+    publicPath: '/dist/js'
   },
   devServer: {
     inline: true,
+    historyApiFallback: true, 
     port: 8080
   },
   module: {
@@ -29,7 +30,16 @@ var config = {
         include: path.resolve(process.cwd(), 'src')
       },
       {
-        test: /\.svg$/, loader: 'file-loader',
+        test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file-loader',
+        include: path.resolve(process.cwd(), 'src')
+      },
+      {
+        test: /\.jpg$/, loader: 'file-loader',
+        include: path.join(process.cwd(), 'src')
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass!resolve-url',
         include: path.join(process.cwd(), 'src')
       }
     ]
