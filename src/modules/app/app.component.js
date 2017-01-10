@@ -1,14 +1,16 @@
 import React, {Component} from 'react' 
-
 import styles from './app.scss'
 
-class App extends Component {
-	render = () => (
-		<div>
-			{this.props.children}
+
+//mobx logging 
+//import DevTools, {setLogEnabled} from 'mobx-react-devtools'
+//setLogEnabled(true);
+
+const App = (props) => (
+		<div> 
+			{props.children}
 		</div>
-	)
-}
+)
 
 export default App
 
