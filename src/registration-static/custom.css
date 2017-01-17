@@ -1,0 +1,295 @@
+body {
+    background-color: #112240;
+}
+
+.registration-header {
+    padding-top: 60px;
+    padding-bottom: 60px; 
+}
+
+.registration-header .header-logo {
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+.projects-container .columns {
+  margin-bottom: 4%;
+}
+
+.project-pane {
+    background-color: #f1fbfd;
+    min-height: 220px;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.select-all-option {
+  position: absolute;
+  bottom: 0;
+  transform: translateX(calc(50% - 10px));
+  padding-bottom: 5px; 
+}
+
+.project-pane:hover {
+}
+
+.project-pane h1 {
+  background-color: #F7C85E;
+  color: white;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 3.6rem;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+}
+
+.project-pane.theme-js h1 {
+  background-color: #F7C85E;
+}
+
+.project-pane .checkbox-container {
+  width: 60%;
+  float: right;
+  padding-right: 2rem;
+}
+
+/*
+ * Checkboxes and radios
+ */
+
+.control {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  color: #555;
+  cursor: pointer;
+}
+.control input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+}
+.control-indicator {
+  position: absolute;
+  top: .20rem;
+  left: -10px;
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1rem;
+  font-size: 65%;
+  color: transparent;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid #555;
+  background-size: 50% 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/* Hover state */
+/* Uncomment if you need it, but be aware of the sticky iOS states.
+.control:hover .control-indicator {
+  color: #fff;
+  background-color: #ccc;
+}
+*/
+
+/* Focus */
+/*.control input:focus ~ .control-indicator {
+  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+}*/
+
+/* Checked state */
+.control input:checked ~ .control-indicator {
+  color: #555;
+  background-color: #555;
+}
+
+.control input:checked ~ .control-text {
+  color: #555;
+}
+
+/* Active */
+.control input:active ~ .control-indicator {
+  color: #555;
+  background-color: #555;
+}
+
+.control input:active ~ .control-text {
+  color: #555;
+}
+
+/* Checkbox modifiers */
+.checkbox .control-indicator {
+  /*border-radius: .25rem;*/
+}
+
+/*.checkbox input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}*/
+
+/* Radio modifiers */
+.radio .control-indicator {
+  border-radius: 50%;
+}
+.radio input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+}
+
+/* Alternately, use another character */
+.control-x input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xLjQsMEwwLDEuNGwwLjcsMC43bDEuOCwxLjhMMC43LDUuN0wwLDYuNGwxLjQsMS40bDAuNy0wLjdsMS44LTEuOGwxLjgsMS44bDAuNywwLjdsMS40LTEuNEw3LjEsNS43DQoJTDUuMywzLjlsMS44LTEuOGwwLjctMC43TDYuNCwwTDUuNywwLjdMMy45LDIuNUwyLjEsMC43QzIuMSwwLjcsMS40LDAsMS40LDB6Ii8+DQo8L3N2Zz4NCg==);
+}
+.control-dash input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDN2Mmg4VjNIMHoiLz4NCjwvc3ZnPg0K)
+}
+
+/*
+ * Control layouts
+ */
+
+.controls-stacked {
+  margin: 1rem 0;
+}
+.controls-stacked .control,
+.controls-stacked .progress {
+  display: block;
+}
+.controls-stacked .control + .control,
+.controls-stacked .progress + .progress {
+  margin-top: .5rem;
+}
+
+.controls-inline {
+  margin: 1rem 0;
+}
+.controls-inline .control {
+  display: inline-block;
+  height: 1rem;
+  width: 40%;
+}
+/*.controls-inline .control + .control {
+  margin-right: 1rem;
+}*/
+
+
+/*
+  Project pane color modifiers
+  ===========================
+*/
+
+/*
+  JavaScript
+*/
+.project-pane.theme-js h1 {
+  background-color: #F7C85E;
+}
+
+.project-pane.theme-js .checkbox-container .control-indicator {
+  border: 2px solid #F7C85E;
+}
+
+/* Checked state */
+.project-pane.theme-js .checkbox-container .control input:checked ~ .control-indicator {
+  color: #F7C85E;
+  background-color: #F7C85E;
+}
+
+.project-pane.theme-js .checkbox-container .control input:checked ~ .control-text {
+  color: #F7C85E;
+}
+
+/* Active */
+.project-pane.theme-js .checkbox-container .control input:active ~ .control-indicator {
+  color: #F7C85E;
+  background-color: #F7C85E;
+}
+
+.project-pane.theme-js .checkbox-container .control input:active ~ .control-text {
+  color: #F7C85E;
+}
+
+/*
+  Python
+*/
+.project-pane.theme-python h1 {
+  background-color: #3B9AAC;
+}
+
+.project-pane.theme-python .checkbox-container .control-indicator {
+  border: 2px solid #3B9AAC;
+}
+
+/* Checked state */
+.project-pane.theme-python .checkbox-container .control input:checked ~ .control-indicator {
+  color: #3B9AAC;
+  background-color: #3B9AAC;
+}
+
+.project-pane.theme-python .checkbox-container .control input:checked ~ .control-text {
+  color: #3B9AAC;
+}
+
+/* Active */
+.project-pane.theme-python .checkbox-container .control input:active ~ .control-indicator {
+  color: #3B9AAC;
+  background-color: #3B9AAC;
+}
+
+.project-pane.theme-python .checkbox-container .control input:active ~ .control-text {
+  color: #3B9AAC;
+}
+
+
+/*
+  Input Elements
+  ==============
+*/
+
+.reg-input input {
+  height: 40px;
+  width: 280px;
+  background-color: white;
+  border: 2px solid red;
+  border-radius: 3px;
+  position: relative;
+  outline: none;
+  padding-left: 15px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.reg-input span {
+  position: absolute;
+  left: 60px;
+  top: 40px;
+  background-color: white;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-family: 'Montserrat', sans-serif;
+  color: red;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v7/zhcz-_WihjSQC0oHJ9TCYAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
