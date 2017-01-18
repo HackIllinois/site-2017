@@ -33856,42 +33856,90 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _axios = __webpack_require__(249);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
 	var _landing = __webpack_require__(282);
 
 	var _landing2 = _interopRequireDefault(_landing);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	console.log(_landing2.default.landing);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var Landing = function Landing() {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: _landing2.default.landing },
-	    _react2.default.createElement(
-	      'div',
-	      { className: _landing2.default.hero },
-	      _react2.default.createElement('img', { className: _landing2.default.logo, src: 'src/assets/img/landing-logo.png' }),
-	      _react2.default.createElement(
-	        'div',
-	        { className: _landing2.default['hat-container'] },
-	        _react2.default.createElement('img', { className: _landing2.default['hat-off'], src: 'src/assets/img/svg/landing-hat-loff.svg' }),
-	        _react2.default.createElement('img', { className: _landing2.default['hat-on'], src: 'src/assets/img/svg/landing-hat-lon.svg' }),
-	        _react2.default.createElement('img', { className: _landing2.default.beam, src: 'src/assets/img/svg/landing-beam.svg' })
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: _landing2.default['input-component'] },
-	        _react2.default.createElement('input', { type: 'email', id: _landing2.default['post-email'], placeholder: 'jane.doe@hackathon.com' }),
-	        _react2.default.createElement(
-	          'button',
-	          null,
-	          'Submit'
-	        )
-	      )
-	    )
-	  );
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	//regex email validation
+	var validateEmail = function validateEmail(email) {
+	  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	  return re.test(email);
 	};
+
+	var Landing = function (_Component) {
+	  _inherits(Landing, _Component);
+
+	  function Landing() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, Landing);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Landing.__proto__ || Object.getPrototypeOf(Landing)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      email: ""
+	    }, _this.onChange = function (e) {
+	      _this.setState({ email: e.target.value });
+	    }, _this.onSubmit = function () {
+	      if (!validateEmail(_this.state.email)) {
+	        _this.setState({ email: "" });
+	        return;
+	      }
+	      _axios2.default.post('https://hackillinois-2017.firebaseio.com/users/emails.json', {
+	        email: _this.state.email
+	      }).then(function (response) {
+	        this.setState({ email: "" });
+	      }).catch(function (error) {
+	        this.setState({ email: "" });
+	      });
+	    }, _this.render = function () {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: _landing2.default.landing },
+	        _react2.default.createElement(
+	          'div',
+	          { className: _landing2.default.hero },
+	          _react2.default.createElement('img', { className: _landing2.default.logo, src: 'src/assets/img/landing-logo.png' }),
+	          _react2.default.createElement(
+	            'div',
+	            { className: _landing2.default['hat-container'] },
+	            _react2.default.createElement('img', { className: _landing2.default['hat-off'], src: 'src/assets/img/svg/landing-hat-loff.svg' }),
+	            _react2.default.createElement('img', { className: _landing2.default['hat-on'], src: 'src/assets/img/svg/landing-hat-lon.svg' }),
+	            _react2.default.createElement('img', { className: _landing2.default.beam, src: 'src/assets/img/svg/landing-beam.svg' })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: _landing2.default['input-component'] },
+	            _react2.default.createElement('input', { onChange: _this.onChange, value: _this.state.email, type: 'email', id: _landing2.default['post-email'], placeholder: 'jane.doe@hackathon.com' }),
+	            _react2.default.createElement(
+	              'button',
+	              { onClick: _this.onSubmit },
+	              'Submit'
+	            )
+	          )
+	        )
+	      );
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  return Landing;
+	}(_react.Component);
 
 	exports.default = Landing;
 
