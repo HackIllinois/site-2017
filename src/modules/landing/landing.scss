@@ -61,13 +61,17 @@ body {
 .landing .hero .logo {
   width: 120px;
   height: auto;
-  margin-bottom: 80px;
 }
 
 .landing .hero .hat-container {
   position: relative;
   width: 70%;
   height: 280px;
+}
+
+.dateLabel {
+    font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;
+    margin: 20px 0 80px 0;
 }
 
 @media (min-width: 480px){
