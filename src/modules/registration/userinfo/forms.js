@@ -1,88 +1,74 @@
 const left_forms = [
 		{
-			id: 'github_username',
-			dropdown: false,
+			id: 'github_username'
 		},
 		{
 			id: 'create_password',
-			dropdown: false,
-			password: true
+			password: true,
 		},
 		{
 			id: 'name',
-			dropdown: false
 		},
 		{
 			id: 'school',
-			dropdown: false
 		},
 		{
 			id: 'grad_year',
-			dropdown: false
 		},
 		{
 			id: 'shirt_size',
-			dropdown: false
+			options: ['S','M','L','XL']
 		},
 		{
 			id: 'gender',
-			dropdown: false
+			options: ['Male', 'Female', 'Non-Binary', 'Other']
 		},
 		{
 			id: 'are_you_a_novice?',
-			dropdown: true
+			options: ['Yes', 'No']
 		},
 		{
-			id: 'resume',		
-			dropdown: false
+			id: 'resume',
 		},
 		{
-			id: 'foss_contributors',		
-			dropdown: false
+			id: 'placeholder',	
 		},
 	];
 
 	const right_forms = [
 		{
 			id: 'email',
-			dropdown: false
 		},
 		{
 			id: 'confirm_password',
-			dropdown: false,
 			password: true
 		},
 		{
 			id: 'phone_number',
-			dropdown: false
 		},
 		{
 			id: 'major',
-			dropdown: false
 		},
 		{
 			id: 'transportation',
-			dropdown: true
+			options: ['Not Needed','Bus Requested','In State','International']
 		},
 		{
 			id: 'dietary_restrictions',
-			dropdown: true
+			options: ['None','Vegetarian', 'Vegan', 'Gluten-Free']
 		},
 		{
 			id: 'age',
-			dropdown: false
 		},
 		{
 			id: 'linkedin_username',		
-			dropdown: false
 		},
 		{
 			id: 'professional_interests',		
-			dropdown: true
+			options: ['None','Internship','Fulltime','Both']
 		},
 		{
 			id: 'interests',		
-			dropdown: true
 		}
 	];
 

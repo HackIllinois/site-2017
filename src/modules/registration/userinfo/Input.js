@@ -7,16 +7,16 @@ import styles from './input.scss'
 class Input extends Component {
 	onChange = (e) => {
 		this.props.store.userData[this.props.id] = e.target.value
+		console.log(this.props.store.userData)
 	}
 
 	render = () => (
 		<div className={styles['reg-input']}>
-		{ this.props.dropdown ? 
-			<select>
-				<option value="1"> one </option>
-				<option value="2"> two </option>
-				<option value="3"> three </option>
-				<option value="4"> four </option>
+		{ this.props.options.length != 0 ? 
+			<select value={this.props.store.userData[this.props.id]} onChange={this.onChange}>
+				{this.props.options.map((option, index) => (
+				<option key={index} value={option}> {option} </option>
+				))}
 			</select>
 			:
 			<input type={this.props.password ? 'password' : ''} onChange={this.onChange} value={this.props.store.userData[this.props.id]} />
@@ -27,10 +27,8 @@ class Input extends Component {
 }
 
 Input.proptypes	= {
-	editable: React.PropTypes.bool,
 	id: React.PropTypes.string.isRequired,
-	dropdown: React.PropTypes.bool.isRequired,
-	options: React.PropTypes.array,
+	options: React.PropTypes.array.isRequired,
 	password: React.PropTypes.bool
 }
 

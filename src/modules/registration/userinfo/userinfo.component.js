@@ -18,10 +18,10 @@ class UserInfo extends Component {
 			<div className={styles['info-text']}> INFO </div>
 			<div className={styles.container}>
 				<div className={styles['column-left']}>
-					{left_forms.map((form) =>(<Input password={form.password} dropdown={form.dropdown} key={form.id} id={form.id} />))}
+					{left_forms.map((form) =>(<Input password={form.password} options={form.options || []} key={form.id} id={form.id} />))}
 				</div>
 				<div className={styles['column-right']}>
-					{right_forms.map((form) =>(<Input password={form.password} dropdown={form.dropdown} key={form.id} id={form.id} />))}
+					{right_forms.map((form) =>(<Input password={form.password} options={form.options || []} key={form.id} id={form.id} />))}
 				</div>
 			</div>
 			</div> 

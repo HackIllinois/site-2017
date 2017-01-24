@@ -13,16 +13,25 @@ class RegistrationStore {
 	@observable auth_token = ''
 	@observable isAuthenticated = false
 	@observable userData = {
-		github_username: '',
-		email: '',
-		name: '',
-		major: '',
-		school: '',
-		age: '',
-		shirt_size: '',
-		dietary: '',
-		gender: '',
-		interests: ''
+		firstName: '',
+    lastName: '',
+    shirtSize: '',
+    diet: '',
+    age: '',
+    graduationYear: '',
+    transportation: '',
+    school: '',
+    major: '',
+    gender: '',
+    professionalInterest: '',
+    github: '',
+    linkedin: '',
+    interests: '',
+    isNovice: true,
+    isPrivate: false,
+    hasLightningInterest: false,
+    phoneNumber: '',
+    email: ''
 	}
 
 	constructor(code) {
@@ -50,9 +59,9 @@ class RegistrationStore {
     				() => {
     					if(userInfo.state == 'rejected') window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197'
   						this.isAuthenticated = true
-    					this.userData.github_username = userInfo.value.data.login
+    					this.userData.github = userInfo.value.data.login
     					this.userData.email = userInfo.value.data.email
-    					this.userData.name = userInfo.value.data.name
+    					//this.userData.name = userInfo.value.data.name
     				}
     			)
     		}
