@@ -48,6 +48,13 @@ ReactDom.render(
 				<Route path='exhibitor' component={Exhibitor}/>
 				<Route path='hotels' component={Hotels}/>
 			</Route>
+			<Route path='registration' component={Registration}>
+					<Route path='1' component={Announcement}/>
+					<Route path='2' component={UserInfo}/>
+					<Route path='3' component={Projects}/>
+					<Route path='4' component={Team}/>
+					<Route path='5' component={Success}/>
+				</Route>
 		</Router>
 	</Provider>
 		, root)

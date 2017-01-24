@@ -32,7 +32,7 @@ class RegistrationStore {
 		//redirect
 		if(code == '') window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197'
 
-		console.log('not redirecting')
+		//console.log('not redirecting')
 		const token = fromPromise(axios.get('https://hackillinois-auth-helper.herokuapp.com/authenticate/'+code), 'initial')
 			
 		when(
@@ -48,6 +48,7 @@ class RegistrationStore {
     			when(
     				() => userInfo.state !== 'pending',
     				() => {
+    					if(userInfo.state == 'rejected') window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197'
   						this.isAuthenticated = true
     					this.userData.github_username = userInfo.value.data.login
     					this.userData.email = userInfo.value.data.email

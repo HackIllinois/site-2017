@@ -2,19 +2,6 @@ body {
     background-color: #112240;
 }
 
-.registration-header {
-    padding-top: 60px;
-    padding-bottom: 60px; 
-}
-
-.registration-header .header-logo {
-    width: 120px;
-    height: auto;
-    margin: 0 auto;
-    left: 50%;
-    position: relative;
-    transform: translateX(-50%);
-}
 
 .projects-container .columns {
   margin-bottom: 4%;

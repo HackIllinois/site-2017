@@ -66,31 +66,31 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _landing = __webpack_require__(280);
+	var _landing = __webpack_require__(288);
 
 	var _landing2 = _interopRequireDefault(_landing);
 
-	var _registration = __webpack_require__(285);
+	var _registration = __webpack_require__(293);
 
 	var _registration2 = _interopRequireDefault(_registration);
 
-	var _announcement = __webpack_require__(287);
+	var _announcement = __webpack_require__(297);
 
 	var _announcement2 = _interopRequireDefault(_announcement);
 
-	var _userinfo = __webpack_require__(289);
+	var _userinfo = __webpack_require__(301);
 
 	var _userinfo2 = _interopRequireDefault(_userinfo);
 
-	var _projects = __webpack_require__(291);
+	var _projects = __webpack_require__(309);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _team = __webpack_require__(293);
+	var _team = __webpack_require__(311);
 
 	var _team2 = _interopRequireDefault(_team);
 
-	var _success = __webpack_require__(295);
+	var _success = __webpack_require__(313);
 
 	var _success2 = _interopRequireDefault(_success);
 
@@ -31090,7 +31090,7 @@
 		//redirect
 		if (code == '') window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197';
 
-		console.log('not redirecting');
+		//console.log('not redirecting')
 		var token = (0, _mobxUtils.fromPromise)(_axios2.default.get('https://hackillinois-auth-helper.herokuapp.com/authenticate/' + code), 'initial');
 
 		(0, _mobx.when)(function () {
@@ -31106,6 +31106,7 @@
 					(0, _mobx.when)(function () {
 						return userInfo.state !== 'pending';
 					}, function () {
+						if (userInfo.state == 'rejected') window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197';
 						_this.isAuthenticated = true;
 						_this.userData.github_username = userInfo.value.data.login;
 						_this.userData.email = userInfo.value.data.email;
@@ -33462,10 +33463,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//mobx logging 
-	//import DevTools, {setLogEnabled} from 'mobx-react-devtools'
-	//setLogEnabled(true);
-
 	var App = function App(props) {
 		return _react2.default.createElement(
 			'div',
@@ -33486,7 +33483,7 @@
 	var content = __webpack_require__(277);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(279)(content, {});
+	var update = __webpack_require__(287)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -33511,7 +33508,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Gotham';\n  src: url(" + __webpack_require__(279) + ");\n  src: url(" + __webpack_require__(279) + "#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(280) + ") format(\"woff\"), url(" + __webpack_require__(281) + ") format(\"truetype\"), url(" + __webpack_require__(282) + "#svgFontName) format(\"svg\"); }\n\n@font-face {\n  font-family: 'Brandon-Regular';\n  src: url(" + __webpack_require__(283) + ");\n  src: url(" + __webpack_require__(283) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(284) + ") format(\"woff\"), url(" + __webpack_require__(285) + ") format(\"truetype\"), url(" + __webpack_require__(286) + "#svgFontName) format(\"svg\"); }\n", ""]);
 
 	// exports
 
@@ -33574,6 +33571,54 @@
 
 /***/ },
 /* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "563df78492a50eaebcece1665a0163dd.eot";
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "3b6c279bed8b68222a74504ff3a1f8d6.woff";
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "ac383a9d85b59f65647e58c553a7879c.ttf";
+
+/***/ },
+/* 282 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "b8f69e9a7d4ef76ca1560ac441734cd6.svg";
+
+/***/ },
+/* 283 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "481b24beec2396e5344c67e8ec0423bf.eot";
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "0b7cf904d761faad2e991471724c5db7.woff";
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "0422901caf6e60ba6ddb0869e1e06531.ttf";
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "1f55925e52b9e71fd57108874184060d.svg";
+
+/***/ },
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -33825,7 +33870,7 @@
 
 
 /***/ },
-/* 280 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33834,7 +33879,7 @@
 	  value: true
 	});
 
-	var _landingComponent = __webpack_require__(281);
+	var _landingComponent = __webpack_require__(289);
 
 	var _landingComponent2 = _interopRequireDefault(_landingComponent);
 
@@ -33843,7 +33888,7 @@
 	exports.default = _landingComponent2.default;
 
 /***/ },
-/* 281 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33860,7 +33905,7 @@
 
 	var _axios2 = _interopRequireDefault(_axios);
 
-	var _landing = __webpack_require__(282);
+	var _landing = __webpack_require__(290);
 
 	var _landing2 = _interopRequireDefault(_landing);
 
@@ -33918,6 +33963,11 @@
 	          _react2.default.createElement('img', { className: _landing2.default.logo, src: 'src/assets/img/landing-logo.png' }),
 	          _react2.default.createElement(
 	            'div',
+	            { className: _landing2.default.dateLabel },
+	            'February 24th - 26th'
+	          ),
+	          _react2.default.createElement(
+	            'div',
 	            { className: _landing2.default['hat-container'] },
 	            _react2.default.createElement('img', { className: _landing2.default['hat-off'], src: 'src/assets/img/svg/landing-hat-loff.svg' }),
 	            _react2.default.createElement('img', { className: _landing2.default['hat-on'], src: 'src/assets/img/svg/landing-hat-lon.svg' }),
@@ -33944,16 +33994,16 @@
 	exports.default = Landing;
 
 /***/ },
-/* 282 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(283);
+	var content = __webpack_require__(291);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(279)(content, {});
+	var update = __webpack_require__(287)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -33970,7 +34020,7 @@
 	}
 
 /***/ },
-/* 283 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(278)();
@@ -33978,7 +34028,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  background-color: #122342;\n  color: #ffffff; }\n\n.landing__landing___d_c8w {\n  width: 100%;\n  width: 100vw;\n  height: 100vh;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  background-image: url(" + __webpack_require__(284) + ");\n  background-size: cover;\n  background-position: center center;\n  overflow: hidden; }\n\n@media (min-width: 920px) {\n  .landing__landing___d_c8w {\n    background-size: contain; } }\n\n.landing__landing___d_c8w .landing__hero___1oGpx {\n  width: 480px;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__logo___2o3pJ {\n  width: 120px;\n  height: auto;\n  margin-bottom: 80px; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc {\n  position: relative;\n  width: 70%;\n  height: 280px; }\n\n@media (min-width: 480px) {\n  .landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc {\n    height: 320px; } }\n\n.landing__hat-container___1NmUc .landing__hat-on___-NVNz,\n.landing__hat-container___1NmUc .landing__hat-off___21nl7 {\n  position: absolute;\n  width: 100%;\n  height: auto; }\n\n.landing__hat-container___1NmUc .landing__hat-on___-NVNz {\n  z-index: 2;\n  opacity: 0; }\n\n.landing__hat-container___1NmUc .landing__beam___1dMfU {\n  position: absolute;\n  width: 440px;\n  position: absolute;\n  left: 80%;\n  bottom: -6%;\n  z-index: 3;\n  opacity: 0; }\n\n@media (min-width: 440px) {\n  .landing__hat-container___1NmUc .landing__beam___1dMfU {\n    bottom: -13%; } }\n\n@media (min-width: 480px) {\n  .landing__hat-container___1NmUc .landing__beam___1dMfU {\n    width: 535px;\n    left: 85%; } }\n\n.landing__input-component___3IuSV {\n  width: 90%;\n  position: relative;\n  z-index: 4;\n  font-size: 1.3em; }\n\n@media (min-width: 520px) {\n  .landing__input-component___3IuSV {\n    width: 100%; } }\n\n.landing__input-component___3IuSV input {\n  float: left;\n  width: calc(100% - 108px);\n  height: 42px;\n  padding: 0 1em;\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  color: #808dc6;\n  line-height: 36px;\n  border: none;\n  border-top-left-radius: 21px;\n  border-bottom-left-radius: 21px; }\n\n.landing__input-component___3IuSV input:focus {\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #808dc6; }\n\n.landing__input-component___3IuSV button {\n  float: left;\n  width: 108px;\n  height: 42px;\n  padding: 0;\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  background-color: #E05926;\n  color: #ffffff;\n  border: none;\n  line-height: 36px;\n  border-top-right-radius: 21px;\n  border-bottom-right-radius: 21px;\n  cursor: pointer; }\n\n.landing__input-component___3IuSV button:hover {\n  background-color: #E06926; }\n\n.landing__input-component___3IuSV button:focus {\n  outline: none;\n  background-color: #E04A26; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc:hover .landing__hat-on___-NVNz,\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc:hover .landing__beam___1dMfU {\n  -webkit-animation: landing__flicker___PgSTC 6s linear infinite;\n  animation: landing__flicker___PgSTC 6s linear infinite; }\n\n@-webkit-keyframes landing__flicker___PgSTC {\n  0% {\n    opacity: 0; }\n  5% {\n    opacity: 0; }\n  6% {\n    opacity: 1; }\n  11% {\n    opacity: .4; }\n  11.25% {\n    opacity: .6; }\n  11.5% {\n    opacity: .4; }\n  18% {\n    opacity: 1; }\n  18.5% {\n    opacity: .9; }\n  22% {\n    opacity: 1; }\n  38.5% {\n    opacity: 1; }\n  39% {\n    opacity: .8; }\n  42% {\n    opacity: 1; }\n  60% {\n    opacity: 1; }\n  60.5% {\n    opacity: 0; }\n  62% {\n    opacity: 0; }\n  63% {\n    opacity: .2; }\n  63.25% {\n    opacity: 0; }\n  65% {\n    opacity: 1; }\n  73% {\n    opacity: 1; }\n  75% {\n    opacity: .8; }\n  79% {\n    opacity: 1; }\n  100% {\n    opacity: 1; } }\n\n@keyframes landing__flicker___PgSTC {\n  0% {\n    opacity: 0; }\n  5% {\n    opacity: 0; }\n  6% {\n    opacity: 1; }\n  11% {\n    opacity: .4; }\n  11.25% {\n    opacity: .6; }\n  11.5% {\n    opacity: .4; }\n  18% {\n    opacity: 1; }\n  18.5% {\n    opacity: .9; }\n  22% {\n    opacity: 1; }\n  38.5% {\n    opacity: 1; }\n  39% {\n    opacity: .8; }\n  42% {\n    opacity: 1; }\n  60% {\n    opacity: 1; }\n  60.5% {\n    opacity: 0; }\n  62% {\n    opacity: 0; }\n  63% {\n    opacity: .2; }\n  63.25% {\n    opacity: 0; }\n  65% {\n    opacity: 1; }\n  73% {\n    opacity: 1; }\n  75% {\n    opacity: .8; }\n  79% {\n    opacity: 1; }\n  100% {\n    opacity: 1; } }\n", ""]);
+	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  background-color: #122342;\n  color: #ffffff; }\n\n.landing__landing___d_c8w {\n  width: 100%;\n  width: 100vw;\n  height: 100vh;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  background-image: url(" + __webpack_require__(292) + ");\n  background-size: cover;\n  background-position: center center;\n  overflow: hidden; }\n\n@media (min-width: 920px) {\n  .landing__landing___d_c8w {\n    background-size: contain; } }\n\n.landing__landing___d_c8w .landing__hero___1oGpx {\n  width: 480px;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__logo___2o3pJ {\n  width: 120px;\n  height: auto; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc {\n  position: relative;\n  width: 70%;\n  height: 280px; }\n\n.landing__dateLabel___20QrU {\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  margin: 20px 0 80px 0; }\n\n@media (min-width: 480px) {\n  .landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc {\n    height: 320px; } }\n\n.landing__hat-container___1NmUc .landing__hat-on___-NVNz,\n.landing__hat-container___1NmUc .landing__hat-off___21nl7 {\n  position: absolute;\n  width: 100%;\n  height: auto; }\n\n.landing__hat-container___1NmUc .landing__hat-on___-NVNz {\n  z-index: 2;\n  opacity: 0; }\n\n.landing__hat-container___1NmUc .landing__beam___1dMfU {\n  position: absolute;\n  width: 440px;\n  position: absolute;\n  left: 80%;\n  bottom: -6%;\n  z-index: 3;\n  opacity: 0; }\n\n@media (min-width: 440px) {\n  .landing__hat-container___1NmUc .landing__beam___1dMfU {\n    bottom: -13%; } }\n\n@media (min-width: 480px) {\n  .landing__hat-container___1NmUc .landing__beam___1dMfU {\n    width: 535px;\n    left: 85%; } }\n\n.landing__input-component___3IuSV {\n  width: 90%;\n  position: relative;\n  z-index: 4;\n  font-size: 1.3em; }\n\n@media (min-width: 520px) {\n  .landing__input-component___3IuSV {\n    width: 100%; } }\n\n.landing__input-component___3IuSV input {\n  float: left;\n  width: calc(100% - 108px);\n  height: 42px;\n  padding: 0 1em;\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  color: #808dc6;\n  line-height: 36px;\n  border: none;\n  border-top-left-radius: 21px;\n  border-bottom-left-radius: 21px; }\n\n.landing__input-component___3IuSV input:focus {\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #808dc6; }\n\n.landing__input-component___3IuSV button {\n  float: left;\n  width: 108px;\n  height: 42px;\n  padding: 0;\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  background-color: #E05926;\n  color: #ffffff;\n  border: none;\n  line-height: 36px;\n  border-top-right-radius: 21px;\n  border-bottom-right-radius: 21px;\n  cursor: pointer; }\n\n.landing__input-component___3IuSV button:hover {\n  background-color: #E06926; }\n\n.landing__input-component___3IuSV button:focus {\n  outline: none;\n  background-color: #E04A26; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc:hover .landing__hat-on___-NVNz,\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc:hover .landing__beam___1dMfU {\n  -webkit-animation: landing__flicker___PgSTC 6s linear infinite;\n  animation: landing__flicker___PgSTC 6s linear infinite; }\n\n@-webkit-keyframes landing__flicker___PgSTC {\n  0% {\n    opacity: 0; }\n  5% {\n    opacity: 0; }\n  6% {\n    opacity: 1; }\n  11% {\n    opacity: .4; }\n  11.25% {\n    opacity: .6; }\n  11.5% {\n    opacity: .4; }\n  18% {\n    opacity: 1; }\n  18.5% {\n    opacity: .9; }\n  22% {\n    opacity: 1; }\n  38.5% {\n    opacity: 1; }\n  39% {\n    opacity: .8; }\n  42% {\n    opacity: 1; }\n  60% {\n    opacity: 1; }\n  60.5% {\n    opacity: 0; }\n  62% {\n    opacity: 0; }\n  63% {\n    opacity: .2; }\n  63.25% {\n    opacity: 0; }\n  65% {\n    opacity: 1; }\n  73% {\n    opacity: 1; }\n  75% {\n    opacity: .8; }\n  79% {\n    opacity: 1; }\n  100% {\n    opacity: 1; } }\n\n@keyframes landing__flicker___PgSTC {\n  0% {\n    opacity: 0; }\n  5% {\n    opacity: 0; }\n  6% {\n    opacity: 1; }\n  11% {\n    opacity: .4; }\n  11.25% {\n    opacity: .6; }\n  11.5% {\n    opacity: .4; }\n  18% {\n    opacity: 1; }\n  18.5% {\n    opacity: .9; }\n  22% {\n    opacity: 1; }\n  38.5% {\n    opacity: 1; }\n  39% {\n    opacity: .8; }\n  42% {\n    opacity: 1; }\n  60% {\n    opacity: 1; }\n  60.5% {\n    opacity: 0; }\n  62% {\n    opacity: 0; }\n  63% {\n    opacity: .2; }\n  63.25% {\n    opacity: 0; }\n  65% {\n    opacity: 1; }\n  73% {\n    opacity: 1; }\n  75% {\n    opacity: .8; }\n  79% {\n    opacity: 1; }\n  100% {\n    opacity: 1; } }\n", ""]);
 
 	// exports
 	exports.locals = {
@@ -33986,6 +34036,7 @@
 		"hero": "landing__hero___1oGpx",
 		"logo": "landing__logo___2o3pJ",
 		"hat-container": "landing__hat-container___1NmUc",
+		"dateLabel": "landing__dateLabel___20QrU",
 		"hat-on": "landing__hat-on___-NVNz",
 		"hat-off": "landing__hat-off___21nl7",
 		"beam": "landing__beam___1dMfU",
@@ -33994,13 +34045,13 @@
 	};
 
 /***/ },
-/* 284 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "0e9b15baad95f4ed15f244f2ab3d32fc.svg";
 
 /***/ },
-/* 285 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34009,7 +34060,7 @@
 	  value: true
 	});
 
-	var _registration = __webpack_require__(286);
+	var _registration = __webpack_require__(294);
 
 	var _registration2 = _interopRequireDefault(_registration);
 
@@ -34018,7 +34069,7 @@
 	exports.default = _registration2.default;
 
 /***/ },
-/* 286 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34034,6 +34085,10 @@
 	var _react2 = _interopRequireDefault(_react);
 
 	var _mobxReact = __webpack_require__(235);
+
+	var _registration = __webpack_require__(295);
+
+	var _registration2 = _interopRequireDefault(_registration);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34063,29 +34118,63 @@
 					null,
 					_react2.default.createElement(
 						'div',
-						null,
-						' ',
-						_this.props.store.progress,
-						' '
+						{ className: _registration2.default.registrationHeader },
+						_react2.default.createElement('img', { className: _registration2.default.headerLogo, src: 'http://hackillinois.org/src/assets/img/landing-logo.png' })
 					),
-					_this.props.children,
-					_react2.default.createElement(
-						'div',
-						null,
-						' next '
-					)
+					_this.props.children
 				);
 			}, _temp), _possibleConstructorReturn(_this, _ret);
 		}
-
-		//store = new RegistrationStore(code)
 
 		return Registration;
 	}(_react.Component)) || _class) || _class);
 	exports.default = Registration;
 
 /***/ },
-/* 287 */
+/* 295 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(296);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(287)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../node_modules/sass-loader/index.js!./../../../node_modules/resolve-url-loader/index.js!./registration.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../node_modules/sass-loader/index.js!./../../../node_modules/resolve-url-loader/index.js!./registration.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 296 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".registration__registrationHeader___1olQE {\n  padding-top: 60px;\n  padding-bottom: 30px; }\n\n.registration__registrationHeader___1olQE .registration__headerLogo___1Q3Mw {\n  height: 100px;\n  left: 50%;\n  position: relative;\n  transform: translateX(-50%); }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"registrationHeader": "registration__registrationHeader___1olQE",
+		"headerLogo": "registration__headerLogo___1Q3Mw"
+	};
+
+/***/ },
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34094,7 +34183,7 @@
 	  value: true
 	});
 
-	var _announcement = __webpack_require__(288);
+	var _announcement = __webpack_require__(298);
 
 	var _announcement2 = _interopRequireDefault(_announcement);
 
@@ -34103,13 +34192,13 @@
 	exports.default = _announcement2.default;
 
 /***/ },
-/* 288 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 
 	var _dec, _class;
@@ -34119,6 +34208,10 @@
 	var _react2 = _interopRequireDefault(_react);
 
 	var _mobxReact = __webpack_require__(235);
+
+	var _announcement = __webpack_require__(299);
+
+	var _announcement2 = _interopRequireDefault(_announcement);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34129,34 +34222,122 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Announcement = (_dec = (0, _mobxReact.inject)('store'), _dec(_class = (0, _mobxReact.observer)(_class = function (_Component) {
-		_inherits(Announcement, _Component);
+	  _inherits(Announcement, _Component);
 
-		function Announcement() {
-			var _ref;
+	  function Announcement() {
+	    var _ref;
 
-			var _temp, _this, _ret;
+	    var _temp, _this, _ret;
 
-			_classCallCheck(this, Announcement);
+	    _classCallCheck(this, Announcement);
 
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
 
-			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Announcement.__proto__ || Object.getPrototypeOf(Announcement)).call.apply(_ref, [this].concat(args))), _this), _this.render = function () {
-				return _react2.default.createElement(
-					'a',
-					{ href: '/registration/2' },
-					' Github Signin '
-				);
-			}, _temp), _possibleConstructorReturn(_this, _ret);
-		}
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Announcement.__proto__ || Object.getPrototypeOf(Announcement)).call.apply(_ref, [this].concat(args))), _this), _this.render = function () {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: _announcement2.default['welcome-text'] },
+	          ' Welcome to Hackillinois 2017'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: _announcement2.default['announcement-text'] },
+	          'This February, Hackillinois is focusing entirely on introducing developers to the Free and Open Source Community. Attendees will be able to choose between two tracks: ',
+	          _react2.default.createElement(
+	            'strong',
+	            null,
+	            ' Contribute '
+	          ),
+	          ' or ',
+	          _react2.default.createElement(
+	            'strong',
+	            null,
+	            ' Create '
+	          ),
+	          '. ',
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'In the ',
+	          _react2.default.createElement(
+	            'strong',
+	            null,
+	            ' Contribute '
+	          ),
+	          ' track, attendees will be mentored while working on popular Open Source projects, providing a welcoming environment to make their first additions to the community. In the ',
+	          _react2.default.createElement(
+	            'strong',
+	            null,
+	            ' Create '
+	          ),
+	          ' track, attendees will venture into the process of creating a brand new Open Source project and community, whether it is a fork, simply script, or new web framework. ',
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'In making this shift, we\'ve rebuilt our event format from the ground up to focus on collaboration and sustainability rather than competition. And as always, attendance is free, free as in gratis.'
+	        ),
+	        _react2.default.createElement(
+	          'a',
+	          { className: _announcement2.default['register-button'], href: '/registration/2' },
+	          ' REGISTER '
+	        )
+	      );
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
 
-		return Announcement;
+	  return Announcement;
 	}(_react.Component)) || _class) || _class);
 	exports.default = Announcement;
 
 /***/ },
-/* 289 */
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(300);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(287)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./announcement.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./announcement.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".announcement__welcome-text___1F-DQ {\n  font: 38px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 100px; }\n\n.announcement__announcement-text___2ZPkZ {\n  font: 15pt 'Avenir';\n  font-weight: lighter;\n  color: #f1f9fd;\n  width: 1200px;\n  margin: 0 auto;\n  display: block;\n  padding-bottom: 100px; }\n\n.announcement__register-button___2Tav5 {\n  height: 54px;\n  width: 228px;\n  border-radius: 3px;\n  background-color: #399BAD;\n  color: #f1f9fd;\n  font: 22px 'Gotham';\n  display: block;\n  margin: 0 auto;\n  text-decoration: none;\n  line-height: 54px;\n  text-align: center;\n  margin-bottom: 150px; }\n\n/*\n.announcement-container {\n\tfont: 38px 'Gotham';\n\t//font-weight: bold;\n\tmargin: 0 auto;\n\tdisplay: block;\n\twidth: 1200px;\n\tcolor: #f1f9fd;\n}\n\n.center  {\n\ttext-align: center;\n}\n\n.signin-text {\n\tfont-size: 18pt;\n\tfont-family: 'Gotham'\n}\n\n.information {\n\tfont-size: 20px;\n\tfont-weight: normal;\n}\n\n.join-text{\n\tfont-size: 8pt;\n\tfont-family: 'Gotham';\n\twidth: 100px;\n\toverflow: wrap;\n\tmargin: 0 auto;\n\tmargin-bottom: 50px;\n}\n\n.signup-link {\n\tcolor: #399BAD;\n\ttext-decoration: underline;\n\ttext-decoration-color: #399BAD;\n}\n\n#github-logo {\n\tposition:relative;\n\tright: 10px;\n\ttop: 10px;\n}\n\n.signin-button {\n\twidth:170px;\n\theight:50px;\n\tborder-radius: 25px;\n\tbackground-color: #399BAD;\t\n\tmargin: 10px auto;\n\n}\n\n.button-text {\n\ttext-decoration: none;\n\theight: 50px;\n\twidth: 170px;\n\tline-height: 50px;\n\tcolor: white;\n\tdisplay: block;\n\tfont-family: 'Avenir'\n}\n*/\n", ""]);
+
+	// exports
+	exports.locals = {
+		"welcome-text": "announcement__welcome-text___1F-DQ",
+		"announcement-text": "announcement__announcement-text___2ZPkZ",
+		"register-button": "announcement__register-button___2Tav5"
+	};
+
+/***/ },
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34165,7 +34346,7 @@
 	  value: true
 	});
 
-	var _userinfo = __webpack_require__(290);
+	var _userinfo = __webpack_require__(302);
 
 	var _userinfo2 = _interopRequireDefault(_userinfo);
 
@@ -34174,7 +34355,7 @@
 	exports.default = _userinfo2.default;
 
 /***/ },
-/* 290 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34190,6 +34371,16 @@
 	var _react2 = _interopRequireDefault(_react);
 
 	var _mobxReact = __webpack_require__(235);
+
+	var _Input = __webpack_require__(303);
+
+	var _Input2 = _interopRequireDefault(_Input);
+
+	var _userinfo = __webpack_require__(306);
+
+	var _userinfo2 = _interopRequireDefault(_userinfo);
+
+	var _forms = __webpack_require__(308);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34217,34 +34408,32 @@
 			}
 
 			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UserInfo.__proto__ || Object.getPrototypeOf(UserInfo)).call.apply(_ref, [this].concat(args))), _this), _this.render = function () {
-				return _this.props.store.isAuthenticated ? _react2.default.createElement(
+				return _react2.default.createElement(
 					'div',
 					null,
 					_react2.default.createElement(
 						'div',
-						null,
-						' ',
-						_this.props.store.userData.github_username,
-						' '
+						{ className: _userinfo2.default['info-text'] },
+						' INFO '
 					),
 					_react2.default.createElement(
 						'div',
-						null,
-						' ',
-						_this.props.store.userData.email,
-						' '
-					),
-					_react2.default.createElement(
-						'div',
-						null,
-						' ',
-						_this.props.store.userData.name,
-						' '
+						{ className: _userinfo2.default.container },
+						_react2.default.createElement(
+							'div',
+							{ className: _userinfo2.default['column-left'] },
+							_forms.left_forms.map(function (form) {
+								return _react2.default.createElement(_Input2.default, { password: form.password, dropdown: form.dropdown, key: form.id, id: form.id });
+							})
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: _userinfo2.default['column-right'] },
+							_forms.right_forms.map(function (form) {
+								return _react2.default.createElement(_Input2.default, { password: form.password, dropdown: form.dropdown, key: form.id, id: form.id });
+							})
+						)
 					)
-				) : _react2.default.createElement(
-					'div',
-					null,
-					' Loading... '
 				);
 			}, _temp), _possibleConstructorReturn(_this, _ret);
 		}
@@ -34253,10 +34442,278 @@
 	}(_react.Component)) || _class) || _class);
 	exports.default = UserInfo;
 
-	//window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197'
+	/*
+	<div className={styles.center} >
+					{forms.map((form) => (<Input dropdown={form.dropdown} disabled={form.disabled} key={form.id} id={form.id}/>))}
+					</div>
+					*/
 
 /***/ },
-/* 291 */
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _dec, _class;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _mobxReact = __webpack_require__(235);
+
+	var _input = __webpack_require__(304);
+
+	var _input2 = _interopRequireDefault(_input);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Input = (_dec = (0, _mobxReact.inject)('store'), _dec(_class = (0, _mobxReact.observer)(_class = function (_Component) {
+		_inherits(Input, _Component);
+
+		function Input() {
+			var _ref;
+
+			var _temp, _this, _ret;
+
+			_classCallCheck(this, Input);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Input.__proto__ || Object.getPrototypeOf(Input)).call.apply(_ref, [this].concat(args))), _this), _this.onChange = function (e) {
+				_this.props.store.userData[_this.props.id] = e.target.value;
+			}, _this.render = function () {
+				return _react2.default.createElement(
+					'div',
+					{ className: _input2.default['reg-input'] },
+					_this.props.dropdown ? _react2.default.createElement(
+						'select',
+						null,
+						_react2.default.createElement(
+							'option',
+							{ value: '1' },
+							' one '
+						),
+						_react2.default.createElement(
+							'option',
+							{ value: '2' },
+							' two '
+						),
+						_react2.default.createElement(
+							'option',
+							{ value: '3' },
+							' three '
+						),
+						_react2.default.createElement(
+							'option',
+							{ value: '4' },
+							' four '
+						)
+					) : _react2.default.createElement('input', { type: _this.props.password ? 'password' : '', onChange: _this.onChange, value: _this.props.store.userData[_this.props.id] }),
+					_react2.default.createElement(
+						'span',
+						null,
+						' ',
+						_this.props.id.replace('_', ' '),
+						' '
+					)
+				);
+			}, _temp), _possibleConstructorReturn(_this, _ret);
+		}
+
+		return Input;
+	}(_react.Component)) || _class) || _class);
+
+
+	Input.proptypes = {
+		editable: _react2.default.PropTypes.bool,
+		id: _react2.default.PropTypes.string.isRequired,
+		dropdown: _react2.default.PropTypes.bool.isRequired,
+		options: _react2.default.PropTypes.array,
+		password: _react2.default.PropTypes.bool
+	};
+
+	exports.default = Input;
+
+/***/ },
+/* 304 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(305);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(287)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./input.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./input.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 305 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".input__reg-input___23BlS {\n  position: relative;\n  margin-bottom: 30px; }\n\n.input__reg-input___23BlS input,\nselect {\n  height: 45px;\n  width: 485px;\n  color: #b7bcdf;\n  background-color: #122342;\n  border: 2.5px solid #57c7df;\n  border-radius: 3px;\n  position: relative;\n  outline: none;\n  padding-left: 15px;\n  font-size: 22px;\n  line-height: 22px;\n  font-family: 'Gotham', sans-serif; }\n\n.input__reg-input___23BlS span {\n  position: absolute;\n  left: 9px;\n  top: -7px;\n  background-color: #122342;\n  padding-left: 6px;\n  padding-right: 6px;\n  font-family: 'Gotham', sans-serif;\n  color: #b7bcdf;\n  text-transform: uppercase;\n  font-size: 16px;\n  font-weight: 500; }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"reg-input": "input__reg-input___23BlS"
+	};
+
+/***/ },
+/* 306 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(307);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(287)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./userinfo.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./userinfo.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".userinfo__container___bUUMu {\n  width: 1000px;\n  display: block;\n  margin: 0 auto; }\n\n.userinfo__info-text___1QPXD {\n  font: 38px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 100px; }\n\n.userinfo__column-left___3W-aJ {\n  width: 500px;\n  float: left; }\n\n.userinfo__column-right___1ND4q {\n  width: 500px;\n  float: right; }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"container": "userinfo__container___bUUMu",
+		"info-text": "userinfo__info-text___1QPXD",
+		"column-left": "userinfo__column-left___3W-aJ",
+		"column-right": "userinfo__column-right___1ND4q"
+	};
+
+/***/ },
+/* 308 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	var left_forms = [{
+		id: 'github_username',
+		dropdown: false
+	}, {
+		id: 'create_password',
+		dropdown: false,
+		password: true
+	}, {
+		id: 'name',
+		dropdown: false
+	}, {
+		id: 'school',
+		dropdown: false
+	}, {
+		id: 'grad_year',
+		dropdown: false
+	}, {
+		id: 'shirt_size',
+		dropdown: false
+	}, {
+		id: 'gender',
+		dropdown: false
+	}, {
+		id: 'are_you_a_novice?',
+		dropdown: true
+	}, {
+		id: 'resume',
+		dropdown: false
+	}, {
+		id: 'foss_contributors',
+		dropdown: false
+	}];
+
+	var right_forms = [{
+		id: 'email',
+		dropdown: false
+	}, {
+		id: 'confirm_password',
+		dropdown: false,
+		password: true
+	}, {
+		id: 'phone_number',
+		dropdown: false
+	}, {
+		id: 'major',
+		dropdown: false
+	}, {
+		id: 'transportation',
+		dropdown: true
+	}, {
+		id: 'dietary_restrictions',
+		dropdown: true
+	}, {
+		id: 'age',
+		dropdown: false
+	}, {
+		id: 'linkedin_username',
+		dropdown: false
+	}, {
+		id: 'professional_interests',
+		dropdown: true
+	}, {
+		id: 'interests',
+		dropdown: true
+	}];
+
+	exports.left_forms = left_forms;
+	exports.right_forms = right_forms;
+
+/***/ },
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34265,7 +34722,7 @@
 	  value: true
 	});
 
-	var _projects = __webpack_require__(292);
+	var _projects = __webpack_require__(310);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
@@ -34274,7 +34731,7 @@
 	exports.default = _projects2.default;
 
 /***/ },
-/* 292 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34300,7 +34757,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 293 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34309,7 +34766,7 @@
 	  value: true
 	});
 
-	var _team = __webpack_require__(294);
+	var _team = __webpack_require__(312);
 
 	var _team2 = _interopRequireDefault(_team);
 
@@ -34318,7 +34775,7 @@
 	exports.default = _team2.default;
 
 /***/ },
-/* 294 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34344,7 +34801,7 @@
 	exports.default = Team;
 
 /***/ },
-/* 295 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34353,7 +34810,7 @@
 	  value: true
 	});
 
-	var _success = __webpack_require__(296);
+	var _success = __webpack_require__(314);
 
 	var _success2 = _interopRequireDefault(_success);
 
@@ -34362,7 +34819,7 @@
 	exports.default = _success2.default;
 
 /***/ },
-/* 296 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
