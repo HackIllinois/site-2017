@@ -2,3 +2,4 @@
 node_modules
 npm-debug.log
 files/*.pdf
+dist/js/bundle.js
