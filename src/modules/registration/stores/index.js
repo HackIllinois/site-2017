@@ -49,7 +49,7 @@ class RegistrationStore {
     @observable selectedEcosystems = 0;
     @observable selectedFile = '';
     @observable fileSize = 0;
-    @observable collaborators = ['Suraj', 'Atyab', 'Kenneth', 'VIshrut'];
+    @observable collaborators = ['John', 'Arnav', 'Achal', 'Vishrut'];
 
 	constructor(code) {
 		/*
