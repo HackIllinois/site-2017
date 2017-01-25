@@ -52,21 +52,21 @@ const all_form_fields = [
 			options: ['YES', 'NO']
 	},
 	{
-			id: 'linkedin',		
+			id: 'linkedin',
 	},
 	{
 			id: 'resume',
 			type: 'file'
 	},
 	{
-			id: 'professionalInterest',		
+			id: 'professionalInterest',
 			options: ['NONE','INTERNSHIP','FULLTIME','BOTH']
 	},
 	{
-			id: 'phoneNumber',	
+			id: 'phoneNumber',
 	},
 	{
-			id: 'interests',		
+			id: 'interests',
 	}
 ]
 
@@ -105,7 +105,7 @@ const left_forms = [
 			type: 'file'
 		},
 		{
-			id: 'phoneNumber',	
+			id: 'phoneNumber',
 		},
 	];
 
@@ -135,14 +135,14 @@ const left_forms = [
 			id: 'age',
 		},
 		{
-			id: 'linkedin',		
+			id: 'linkedin',
 		},
 		{
-			id: 'professionalInterest',		
+			id: 'professionalInterest',
 			options: ['NONE','INTERNSHIP','FULLTIME','BOTH']
 		},
 		{
-			id: 'interests',		
+			id: 'interests',
 		}
 	];
 

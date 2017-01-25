@@ -18,7 +18,7 @@ const map = {
   github: 'github username',
   linkedin: 'linkedin username',
   interests: 'interests',
-  isNovice: 'are you a novice?',
+  isNovice: 'are you a beginner?',
   isPrivate: ' ',
   hasLightningInterest: ' ',
   phoneNumber: 'phone number',
@@ -53,7 +53,7 @@ class Input extends Component {
 
 	render = () => (
 		<div className={[styles['reg-input'], this.props.columns ? styles['user-info'] : ''].join(' ')}>
-		{ this.props.options.length != 0 ? 
+		{ this.props.options.length != 0 ?
 			<select value={this.props.store.userData[this.props.id]} onChange={this.onChange}>
 				{this.props.options.map((option, index) => (
 				<option key={index} value={option}> {formatOption(option)} </option>
@@ -63,7 +63,7 @@ class Input extends Component {
 			<input id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.userData[this.props.id] || this.props.value} />
 		}
 		{this.props.type == 'file' ? <label className={styles['file-label']} htmlFor='file'> {this.props.store.selectedFile || 'Choose a file...'} </label> : null }
-		<span> {map[this.props.id] || this.props.id} </span> 
+		<span> {map[this.props.id] || this.props.id} </span>
 		</div>
 	)
 }

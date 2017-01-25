@@ -19,7 +19,7 @@ import Team from './modules/registration/team'
 import Success from './modules/registration/success'
 
 //PDFs
-const OpenSource = () => { 
+const OpenSource = () => {
 	window.location = 'src/assets/pdf/opensource.pdf'
 	return null
 }
