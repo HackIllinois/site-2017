@@ -1,14 +1,39 @@
 .container {
-	width: 800px;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
 	display: block;
 	margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .container,
+  .small-container {
+    width: 800px;
+	padding-left: 0;
+	padding-right: 0;
+  }
+
+  .small-container {
+	  height: 50px;
+  }
+}
+
+.form-field-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: flex-start;
 }
 
 .info-text {
 	font: 38px 'Gotham';
 	color: #f1f9fd;
 	text-align: center;
-	padding-bottom: 100px;
+	padding-bottom: 60px;
 }
 
 .column-left {
@@ -24,7 +49,6 @@
 }
 
 .small-input {
-	width: 150px;
 	float: right;
 }
 
@@ -39,8 +63,7 @@
 }
 
 .small-container {
-	width: 800px;
-	height: 50px;
+	width: 100%;
 	display: inline-block;
 	margin: 0 auto;
 }

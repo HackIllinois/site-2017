@@ -1,11 +1,13 @@
 .reg-input {
   position: relative;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .reg-input input, select{
   height: 45px;
   width: 100%;
+  min-width: 114px;
   color: #b7bcdf;
   background-color: #122342;
   border: 2px solid #57c7df;
@@ -19,11 +21,34 @@
   margin-bottom: 0px;
 }
 
+@media (min-width: 500px) {
+  .reg-input {
+    min-width: 150px;
+    width: 48%;
+  }
+  .small-input {
+    width: 150px;
+    .reg-input {
+      width: auto;
+      margin-top: 0;
+    }
+  }
+}
+
 .reg-input select {
   -webkit-appearance: none; 
   background: url(../../../assets/img/dropdown.svg) no-repeat right #122342;
   background-size: 17px;
   background-position: calc(100% - 10px);
+}
+
+.small-input {
+  width: 100%;
+
+  .reg-input {
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 
 .reg-input span {
