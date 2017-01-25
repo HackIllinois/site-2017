@@ -47,6 +47,7 @@ class RegistrationStore {
         create:false
     }
     @observable selectedEcosystems = 0;
+    @observable selectedFile = '';
 
 	constructor(code) {
 		/*

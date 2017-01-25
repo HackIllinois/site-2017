@@ -35,8 +35,19 @@ const formatOption = (str) => (
 @inject('store') @observer
 class Input extends Component {
 	onChange = (e) => {
+		const that = this;
 		this.props.store.userData[this.props.id] = e.target.value
-		console.log(this.props.store.userData)
+		console.log(this.refs.fileUpload.files)
+		if(this.props.type == 'file'){
+			let reader = new FileReader();
+			reader.onload = function() {
+				//console.log(this.result)
+				that.props.store.userData.resume = this.result
+			}
+			console.log(this.refs.fileUpload.files[0])
+			this.props.store.selectedFile = this.refs.fileUpload.files[0].name
+  		reader.readAsBinaryString(this.refs.fileUpload.files[0]);
+		}
 	}
 
 	render = () => (
@@ -48,8 +59,9 @@ class Input extends Component {
 				))}
 			</select>
 			:
-			<input type={this.props.password ? 'password' : ''} onChange={this.onChange} value={this.props.store.userData[this.props.id]} />
+			<input id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.userData[this.props.id]} />
 		}
+		{this.props.type == 'file' ? <label className={styles['file-label']} htmlFor='file'> {this.props.store.selectedFile || 'Choose a file...'} </label> : null }
 		<span> {map[this.props.id] || this.props.id} </span> 
 		</div>
 	)
@@ -60,5 +72,7 @@ Input.proptypes	= {
 	options: React.PropTypes.array.isRequired,
 	password: React.PropTypes.bool
 }
+
+/* {this.props.type == 'file' ? <label htmlFor='file'> Choose a file... </label> : null } */
 
 export default Input

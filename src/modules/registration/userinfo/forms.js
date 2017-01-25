@@ -13,11 +13,11 @@ const all_form_fields = [
 	},
 	{
 			id: 'createPassword',
-			password: true,
+			type: 'password'
 	},
 	{
 			id: 'confirmPassword',
-			password: true
+			type: 'password'
 	},
 	{
 			id: 'school',
@@ -56,6 +56,7 @@ const all_form_fields = [
 	},
 	{
 			id: 'resume',
+			type: 'file'
 	},
 	{
 			id: 'professionalInterest',		
@@ -101,6 +102,7 @@ const left_forms = [
 		},
 		{
 			id: 'resume',
+			type: 'file'
 		},
 		{
 			id: 'phoneNumber',	
