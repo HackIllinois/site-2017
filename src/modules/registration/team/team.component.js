@@ -16,6 +16,12 @@ class Team extends Component {
 					<Input value={member} id='team member' options={[]} />
 				))}
 				<Input id='add team member' options={[]}/>
+				<ul className={styles['checkbox-list']}>
+				    <li>
+				        <input type='checkbox' />
+				        <label>I agree to <a href="/code">the code of conduct </a></label>
+				    </li>
+				</ul>
 			</div>
 			<div className={styles['navigation-container']}>
 			    <div className={styles['back-button']}>

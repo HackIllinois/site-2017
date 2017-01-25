@@ -21,6 +21,21 @@
 	padding-bottom: 25px;
 }
 
+.checkbox-list {
+	list-style: none;
+
+	input {
+		display: inline-block;
+	}
+
+	label {
+		font: 22px 'Brandon-Regular';
+		color: #b7bcdf;
+		display: inline-block;
+		margin-left: 10px;
+	}
+}
+
 .team-select-container {
 	width: 800px;
 	display: block;
