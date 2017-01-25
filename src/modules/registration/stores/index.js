@@ -42,7 +42,7 @@ class RegistrationStore {
         android:false,
         ruby:false,
         python:false,
-        embedded:false,    
+        embedded:false,
         linux:false,
         create:false
     }
@@ -50,6 +50,7 @@ class RegistrationStore {
     @observable selectedFile = '';
     @observable fileSize = 0;
     @observable collaborators = ['John', 'Arnav', 'Achal', 'Vishrut'];
+	@observable codeOfConductCheck = false;
 
 	constructor(code) {
 		/*
@@ -60,7 +61,7 @@ class RegistrationStore {
 
 		//console.log('not redirecting')
 		const token = fromPromise(axios.get('https://hackillinois-auth-helper.herokuapp.com/authenticate/'+code), 'initial')
-			
+
 		when(
 			() => token.state !== 'pending',
 			() => {

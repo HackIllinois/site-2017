@@ -17,7 +17,7 @@ const ecosystems = [
 
 @inject('store') @observer
 class Card extends Component {
-	
+
 	toggleSelect = () => {
 		if(this.props.store.selectedEcosystems >= 4 && !this.props.active) return;
 		if(this.props.store.selectedEcosystems < 4 && !this.props.active){
@@ -40,9 +40,9 @@ class Card extends Component {
 
 @inject('store') @observer
 class Ecosystems extends Component {
-	
+
 	render = () => (
-		<div> 
+		<div>
 			<div className={styles['title-text']}> ECOSYSTEMS </div>
 			<div className={styles['instruction-text']}> Pick ecosystems you think you can contribute to and/or propose a new project you'd like to build. You may pick up to 4. </div>
 			<div className={styles['project-card-container']}>
@@ -57,7 +57,7 @@ class Ecosystems extends Component {
 		    <div className={styles['continue-button']}>
 		    	<Button dest='/registration/4' arrow='right' label='CONTINUE'/>
 		    </div>
-		   </div> 
+		   </div>
 		</div>
 	)
 }
