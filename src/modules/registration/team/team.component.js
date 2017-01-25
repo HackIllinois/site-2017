@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './team.scss'
-import Input from '../userinfo/Input'
+import Input from '../components/input'
 
 const Team = () => (
 	<div className={styles.container}> 

@@ -78,19 +78,19 @@
 
 	var _announcement2 = _interopRequireDefault(_announcement);
 
-	var _userinfo = __webpack_require__(301);
+	var _userinfo = __webpack_require__(307);
 
 	var _userinfo2 = _interopRequireDefault(_userinfo);
 
-	var _projects = __webpack_require__(310);
+	var _ecosystems = __webpack_require__(316);
 
-	var _projects2 = _interopRequireDefault(_projects);
+	var _ecosystems2 = _interopRequireDefault(_ecosystems);
 
-	var _team = __webpack_require__(312);
+	var _team = __webpack_require__(320);
 
 	var _team2 = _interopRequireDefault(_team);
 
-	var _success = __webpack_require__(314);
+	var _success = __webpack_require__(324);
 
 	var _success2 = _interopRequireDefault(_success);
 
@@ -136,6 +136,15 @@
 				_react2.default.createElement(_reactRouter.Route, { path: 'sponsor', component: Sponsor }),
 				_react2.default.createElement(_reactRouter.Route, { path: 'exhibitor', component: Exhibitor }),
 				_react2.default.createElement(_reactRouter.Route, { path: 'hotels', component: Hotels })
+			),
+			_react2.default.createElement(
+				_reactRouter.Route,
+				{ path: 'registration', component: _registration2.default },
+				_react2.default.createElement(_reactRouter.Route, { path: '1', component: _announcement2.default }),
+				_react2.default.createElement(_reactRouter.Route, { path: '2', component: _userinfo2.default }),
+				_react2.default.createElement(_reactRouter.Route, { path: '3', component: _ecosystems2.default }),
+				_react2.default.createElement(_reactRouter.Route, { path: '4', component: _team2.default }),
+				_react2.default.createElement(_reactRouter.Route, { path: '5', component: _success2.default })
 			)
 		)
 	), root);
@@ -31010,7 +31019,7 @@
 	  value: true
 	});
 
-	var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+	var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
 
 	var _mobx = __webpack_require__(236);
 
@@ -31085,6 +31094,10 @@
 
 	  _initDefineProp(this, 'userData', _descriptor4, this);
 
+	  _initDefineProp(this, 'ecosystems', _descriptor5, this);
+
+	  _initDefineProp(this, 'selectedEcosystems', _descriptor6, this);
+
 	  if (!window.location.pathname.includes('/registration/2')) return;
 
 	  //redirect
@@ -31136,26 +31149,45 @@
 	    return {
 	      firstName: '',
 	      lastName: '',
-	      shirtSize: '',
+	      shirtSize: 'S',
 	      diet: '',
 	      age: '',
 	      graduationYear: '',
-	      transportation: '',
+	      transportation: 'NOT_NEEDED',
 	      school: '',
 	      major: '',
-	      gender: '',
-	      professionalInterest: '',
+	      gender: 'MALE',
+	      professionalInterest: 'NONE',
 	      github: '',
 	      linkedin: '',
 	      interests: '',
-	      isNovice: true,
-	      isPrivate: false,
-	      hasLightningInterest: false,
+	      isNovice: 'NO',
+	      isPrivate: 'NO',
+	      hasLightningInterest: 'NO',
 	      phoneNumber: '',
 	      email: '',
 	      createPassword: '',
 	      confirmPassword: ''
 	    };
+	  }
+	}), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, 'ecosystems', [_mobx.observable], {
+	  enumerable: true,
+	  initializer: function initializer() {
+	    return {
+	      javascript: false,
+	      ios: false,
+	      android: false,
+	      ruby: false,
+	      python: false,
+	      embedded: false,
+	      linux: false,
+	      create: false
+	    };
+	  }
+	}), _descriptor6 = _applyDecoratedDescriptor(_class.prototype, 'selectedEcosystems', [_mobx.observable], {
+	  enumerable: true,
+	  initializer: function initializer() {
+	    return 0;
 	  }
 	})), _class);
 	exports.default = new RegistrationStore(code);
@@ -34268,6 +34300,10 @@
 
 	var _announcement2 = _interopRequireDefault(_announcement);
 
+	var _button = __webpack_require__(301);
+
+	var _button2 = _interopRequireDefault(_button);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34334,11 +34370,7 @@
 	          _react2.default.createElement('br', null),
 	          'In making this shift, we\'ve rebuilt our event format from the ground up to focus on collaboration and sustainability rather than competition. And as always, attendance is free, free as in gratis.'
 	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { className: _announcement2.default['register-button'], href: '/registration/2' },
-	          ' REGISTER '
-	        )
+	        _react2.default.createElement(_button2.default, { label: 'REGISTER', dest: '/registration/2', arrow: 'none' })
 	      );
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
@@ -34382,13 +34414,12 @@
 
 
 	// module
-	exports.push([module.id, ".announcement__welcome-text___1F-DQ {\n  font: 38px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 50px; }\n\n.announcement__announcement-text___2ZPkZ {\n  font: 20px 'Brandon-Regular';\n  font-weight: lighter;\n  color: #f1f9fd;\n  width: 800px;\n  margin: 0 auto;\n  display: block;\n  padding-bottom: 50px; }\n\n.announcement__register-button___2Tav5 {\n  height: 54px;\n  width: 228px;\n  border-radius: 3px;\n  background-color: #399BAD;\n  color: #f1f9fd;\n  font: 22px 'Gotham';\n  display: block;\n  margin: 0 auto;\n  text-decoration: none;\n  line-height: 54px;\n  text-align: center;\n  margin-bottom: 100px; }\n\n/*\n.announcement-container {\n\tfont: 38px 'Gotham';\n\t//font-weight: bold;\n\tmargin: 0 auto;\n\tdisplay: block;\n\twidth: 1200px;\n\tcolor: #f1f9fd;\n}\n\n.center  {\n\ttext-align: center;\n}\n\n.signin-text {\n\tfont-size: 18pt;\n\tfont-family: 'Gotham'\n}\n\n.information {\n\tfont-size: 20px;\n\tfont-weight: normal;\n}\n\n.join-text{\n\tfont-size: 8pt;\n\tfont-family: 'Gotham';\n\twidth: 100px;\n\toverflow: wrap;\n\tmargin: 0 auto;\n\tmargin-bottom: 50px;\n}\n\n.signup-link {\n\tcolor: #399BAD;\n\ttext-decoration: underline;\n\ttext-decoration-color: #399BAD;\n}\n\n#github-logo {\n\tposition:relative;\n\tright: 10px;\n\ttop: 10px;\n}\n\n.signin-button {\n\twidth:170px;\n\theight:50px;\n\tborder-radius: 25px;\n\tbackground-color: #399BAD;\t\n\tmargin: 10px auto;\n\n}\n\n.button-text {\n\ttext-decoration: none;\n\theight: 50px;\n\twidth: 170px;\n\tline-height: 50px;\n\tcolor: white;\n\tdisplay: block;\n\tfont-family: 'Avenir'\n}\n*/\n", ""]);
+	exports.push([module.id, ".announcement__welcome-text___1F-DQ {\n  font: 30px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 50px; }\n\n.announcement__announcement-text___2ZPkZ {\n  font: 22px 'Brandon-Regular';\n  font-weight: lighter;\n  color: #f1f9fd;\n  width: 800px;\n  margin: 0 auto;\n  display: block;\n  padding-bottom: 50px; }\n\n/*\n.register-button {\n\theight: 54px;\n\twidth: 228px;\n\tborder-radius: 3px;\n\tbackground-color: #399BAD;\n\tcolor: #f1f9fd;\n\tfont: 22px 'Gotham';\n\tdisplay: block;\n\tmargin: 0 auto;\n\ttext-decoration: none;\n\tline-height: 54px;\n\ttext-align: center;\n\tmargin-bottom: 100px;\n}\n\n\n.register-button:hover {\n\tcolor: #f1f9fd\n}\n*/\n", ""]);
 
 	// exports
 	exports.locals = {
 		"welcome-text": "announcement__welcome-text___1F-DQ",
-		"announcement-text": "announcement__announcement-text___2ZPkZ",
-		"register-button": "announcement__register-button___2Tav5"
+		"announcement-text": "announcement__announcement-text___2ZPkZ"
 	};
 
 /***/ },
@@ -34401,7 +34432,113 @@
 	  value: true
 	});
 
-	var _userinfo = __webpack_require__(302);
+	var _button = __webpack_require__(302);
+
+	var _button2 = _interopRequireDefault(_button);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _button2.default;
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _button = __webpack_require__(303);
+
+	var _button2 = _interopRequireDefault(_button);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Button = function Button(props) {
+		return _react2.default.createElement(
+			'a',
+			{ className: [_button2.default['button'], _button2.default['arrow-right'].join(' ')], href: props.dest },
+			' ',
+			props.label,
+			' '
+		);
+	};
+
+	exports.default = Button;
+
+/***/ },
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(304);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(287)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../../node_modules/sass-loader/index.js!./../../../../../node_modules/resolve-url-loader/index.js!./button.scss", function() {
+				var newContent = require("!!./../../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../../node_modules/sass-loader/index.js!./../../../../../node_modules/resolve-url-loader/index.js!./button.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 304 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".button__button___3tCYc {\n  height: 54px;\n  width: 228px;\n  border-radius: 3px;\n  background-color: #399BAD;\n  color: #f1f9fd;\n  font: 22px 'Gotham';\n  display: block;\n  margin: 0 auto;\n  text-decoration: none;\n  line-height: 54px;\n  text-align: center;\n  margin-bottom: 100px; }\n\n.button__button___3tCYc:hover {\n  color: #f1f9fd; }\n\n.button__right-arrow___2xaZ- {\n  -webkit-appearance: none;\n  background: url(" + __webpack_require__(305) + ") no-repeat right #f1f9fd;\n  background-size: 17px;\n  background-position: calc(100% - 10px); }\n\n.button__left-arrow___1IkMD {\n  -webkit-appearance: none;\n  background: url(" + __webpack_require__(306) + ") no-repeat right #f1f9fd;\n  background-size: 17px;\n  background-position: calc(100% - 10px); }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"button": "button__button___3tCYc",
+		"right-arrow": "button__right-arrow___2xaZ-",
+		"left-arrow": "button__left-arrow___1IkMD"
+	};
+
+/***/ },
+/* 305 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "64a50e64ece31899bc96c6294d0310b3.svg";
+
+/***/ },
+/* 306 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "80cb025c78659f69716c86ea018fdf5d.svg";
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _userinfo = __webpack_require__(308);
 
 	var _userinfo2 = _interopRequireDefault(_userinfo);
 
@@ -34410,7 +34547,7 @@
 	exports.default = _userinfo2.default;
 
 /***/ },
-/* 302 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34427,15 +34564,15 @@
 
 	var _mobxReact = __webpack_require__(235);
 
-	var _Input = __webpack_require__(303);
+	var _Input = __webpack_require__(309);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _userinfo = __webpack_require__(307);
+	var _userinfo = __webpack_require__(313);
 
 	var _userinfo2 = _interopRequireDefault(_userinfo);
 
-	var _forms = __webpack_require__(309);
+	var _forms = __webpack_require__(315);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34462,7 +34599,9 @@
 				args[_key] = arguments[_key];
 			}
 
-			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UserInfo.__proto__ || Object.getPrototypeOf(UserInfo)).call.apply(_ref, [this].concat(args))), _this), _this.render = function () {
+			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UserInfo.__proto__ || Object.getPrototypeOf(UserInfo)).call.apply(_ref, [this].concat(args))), _this), _this.showStore = function () {
+				console.log(_this.props.store.userData);
+			}, _this.render = function () {
 				return _react2.default.createElement(
 					'div',
 					null,
@@ -34490,18 +34629,35 @@
 						),
 						_react2.default.createElement(
 							'div',
-							null,
+							{ className: _userinfo2.default['small-container'] },
 							_react2.default.createElement(
-								'span',
-								null,
+								'div',
+								{ className: _userinfo2.default['small-text'] },
 								' Are you interested in giving a short (<5 min) lightning talk on a topic of your choice? '
 							),
-							_react2.default.createElement(_Input2.default, { password: false, options: ['Yes', 'No'], id: 'hasLightningInterest' })
+							_react2.default.createElement(
+								'div',
+								{ className: _userinfo2.default['small-input'] },
+								' ',
+								_react2.default.createElement(_Input2.default, { password: false, options: ['YES', 'NO'], id: 'hasLightningInterest' }),
+								' '
+							)
 						),
 						_react2.default.createElement(
 							'div',
-							null,
-							' We\'d love to connect you to awesome opportunities at sponsoring companies. Is it okay if we share your information with our sponsors? '
+							{ className: _userinfo2.default['small-container'] },
+							_react2.default.createElement(
+								'div',
+								{ className: _userinfo2.default['small-text'] },
+								' We\'d love to connect you to awesome opportunities at sponsoring companies. Is it okay if we share your information with our sponsors? '
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: _userinfo2.default['small-input'] },
+								' ',
+								_react2.default.createElement(_Input2.default, { password: false, options: ['YES', 'NO'], id: 'isPrivate' }),
+								' '
+							)
 						)
 					)
 				);
@@ -34513,7 +34669,7 @@
 	exports.default = UserInfo;
 
 /***/ },
-/* 303 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34530,7 +34686,7 @@
 
 	var _mobxReact = __webpack_require__(235);
 
-	var _input = __webpack_require__(304);
+	var _input = __webpack_require__(310);
 
 	var _input2 = _interopRequireDefault(_input);
 
@@ -34543,8 +34699,8 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var map = {
-		firstName: 'first and last name',
-		lastName: 'first and last name',
+		firstName: 'first name',
+		lastName: 'last name',
 		shirtSize: 'shirt size',
 		diet: 'dietary restrictions',
 		age: 'age',
@@ -34558,12 +34714,19 @@
 		linkedin: 'linkedin username',
 		interests: 'interests',
 		isNovice: 'are you a novice?',
-		isPrivate: 'is your information private?',
-		hasLightningInterest: '',
+		isPrivate: ' ',
+		hasLightningInterest: ' ',
 		phoneNumber: 'phone number',
 		email: 'email',
 		createPassword: 'create password',
-		confirmPassword: 'confirm password'
+		confirmPassword: 'confirm password',
+		resume: 'resume'
+	};
+
+	var formatOption = function formatOption(str) {
+		return str.replace(/_/g, " ").replace(/\w\S*/g, function (txt) {
+			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+		});
 	};
 
 	var Input = (_dec = (0, _mobxReact.inject)('store'), _dec(_class = (0, _mobxReact.observer)(_class = function (_Component) {
@@ -34595,7 +34758,7 @@
 								'option',
 								{ key: index, value: option },
 								' ',
-								option,
+								formatOption(option),
 								' '
 							);
 						})
@@ -34604,7 +34767,7 @@
 						'span',
 						null,
 						' ',
-						map[_this.props.id],
+						map[_this.props.id] || _this.props.id,
 						' '
 					)
 				);
@@ -34624,13 +34787,13 @@
 	exports.default = Input;
 
 /***/ },
-/* 304 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(305);
+	var content = __webpack_require__(311);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(287)(content, {});
@@ -34650,7 +34813,7 @@
 	}
 
 /***/ },
-/* 305 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(278)();
@@ -34658,7 +34821,7 @@
 
 
 	// module
-	exports.push([module.id, ".input__reg-input___23BlS {\n  position: relative;\n  margin-bottom: 30px; }\n\n.input__reg-input___23BlS input,\nselect {\n  height: 45px;\n  width: 385px;\n  color: #b7bcdf;\n  background-color: #122342;\n  border: 2px solid #57c7df;\n  border-radius: 3px;\n  position: relative;\n  outline: none;\n  padding-left: 15px;\n  font-size: 18px;\n  line-height: 18px;\n  font-family: 'Gotham', sans-serif;\n  margin-bottom: 0px; }\n\n.input__reg-input___23BlS select {\n  -webkit-appearance: none;\n  background: url(" + __webpack_require__(306) + ") no-repeat right #122342;\n  background-size: 17px;\n  background-position: calc(100% - 10px); }\n\n.input__reg-input___23BlS span {\n  position: absolute;\n  left: 9px;\n  top: -10px;\n  background-color: #122342;\n  padding-left: 6px;\n  padding-right: 6px;\n  font-family: 'Gotham', sans-serif;\n  color: #b7bcdf;\n  text-transform: uppercase;\n  font-size: 14px;\n  font-weight: 500; }\n", ""]);
+	exports.push([module.id, ".input__reg-input___23BlS {\n  position: relative;\n  margin-bottom: 30px; }\n\n.input__reg-input___23BlS input,\nselect {\n  height: 45px;\n  width: 100%;\n  color: #b7bcdf;\n  background-color: #122342;\n  border: 2px solid #57c7df;\n  border-radius: 3px;\n  position: relative;\n  outline: none;\n  padding-left: 15px;\n  font-size: 18px;\n  line-height: 18px;\n  font-family: 'Gotham', sans-serif;\n  margin-bottom: 0px; }\n\n.input__reg-input___23BlS select {\n  -webkit-appearance: none;\n  background: url(" + __webpack_require__(312) + ") no-repeat right #122342;\n  background-size: 17px;\n  background-position: calc(100% - 10px); }\n\n.input__reg-input___23BlS span {\n  position: absolute;\n  left: 9px;\n  top: -10px;\n  background-color: #122342;\n  padding-left: 6px;\n  padding-right: 6px;\n  font-family: 'Gotham', sans-serif;\n  color: #b7bcdf;\n  text-transform: uppercase;\n  font-size: 14px;\n  font-weight: 500; }\n", ""]);
 
 	// exports
 	exports.locals = {
@@ -34666,19 +34829,19 @@
 	};
 
 /***/ },
-/* 306 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "3abf9853e88fb6d2724419257113e7a9.svg";
 
 /***/ },
-/* 307 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(308);
+	var content = __webpack_require__(314);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(287)(content, {});
@@ -34698,7 +34861,7 @@
 	}
 
 /***/ },
-/* 308 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(278)();
@@ -34706,18 +34869,21 @@
 
 
 	// module
-	exports.push([module.id, ".userinfo__container___bUUMu {\n  width: 800px;\n  display: block;\n  margin: 0 auto; }\n\n.userinfo__info-text___1QPXD {\n  font: 38px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 100px; }\n\n.userinfo__column-left___3W-aJ {\n  width: 400px;\n  float: left; }\n\n.userinfo__column-right___1ND4q {\n  width: 400px;\n  float: right; }\n", ""]);
+	exports.push([module.id, ".userinfo__container___bUUMu {\n  width: 800px;\n  display: block;\n  margin: 0 auto; }\n\n.userinfo__info-text___1QPXD {\n  font: 38px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 100px; }\n\n.userinfo__column-left___3W-aJ {\n  width: 385px;\n  float: left;\n  margin-right: 15px; }\n\n.userinfo__column-right___1ND4q {\n  width: 385px;\n  margin-left: 15px;\n  float: right; }\n\n.userinfo__small-input___hlnkS {\n  width: 150px;\n  float: right; }\n\n.userinfo__small-text___fq90R {\n  font: 12px 'Gotham';\n  color: #b7bcdf;\n  max-width: 650px;\n  overflow: hidden;\n  float: left;\n  display: inline-block;\n  vertical-align: center; }\n\n.userinfo__small-container___39A8B {\n  width: 800px;\n  height: 50px;\n  display: inline-block;\n  margin: 0 auto; }\n", ""]);
 
 	// exports
 	exports.locals = {
 		"container": "userinfo__container___bUUMu",
 		"info-text": "userinfo__info-text___1QPXD",
 		"column-left": "userinfo__column-left___3W-aJ",
-		"column-right": "userinfo__column-right___1ND4q"
+		"column-right": "userinfo__column-right___1ND4q",
+		"small-input": "userinfo__small-input___hlnkS",
+		"small-text": "userinfo__small-text___fq90R",
+		"small-container": "userinfo__small-container___39A8B"
 	};
 
 /***/ },
-/* 309 */
+/* 315 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -34741,14 +34907,14 @@
 		options: ['S', 'M', 'L', 'XL']
 	}, {
 		id: 'gender',
-		options: ['Male', 'Female', 'Non-Binary', 'Other']
+		options: ['MALE', 'FEMALE', 'NON_BINARY', 'OTHER']
 	}, {
 		id: 'isNovice',
-		options: ['Yes', 'No']
+		options: ['YES', 'NO']
 	}, {
 		id: 'resume'
 	}, {
-		id: 'isPrivate'
+		id: 'phoneNumber'
 	}];
 
 	var right_forms = [{
@@ -34757,22 +34923,22 @@
 		id: 'confirmPassword',
 		password: true
 	}, {
-		id: 'phoneNumber'
+		id: 'lastName'
 	}, {
 		id: 'major'
 	}, {
 		id: 'transportation',
-		options: ['Not Needed', 'Bus Requested', 'In State', 'International']
+		options: ['NOT_NEEDED', 'BUS_REQUESTED', 'IN_STATE', 'OUT_OF_STATE', 'INTERNATIONAL']
 	}, {
 		id: 'diet',
-		options: ['None', 'Vegetarian', 'Vegan', 'Gluten-Free']
+		options: ['NONE', 'VEGETARIAN', 'VEGAN', 'GLUTEN_FREE']
 	}, {
 		id: 'age'
 	}, {
 		id: 'linkedin'
 	}, {
 		id: 'professionalInterest',
-		options: ['None', 'Internship', 'Fulltime', 'Both']
+		options: ['NONE', 'INTERNSHIP', 'FULLTIME', 'BOTH']
 	}, {
 		id: 'interests'
 	}];
@@ -34781,7 +34947,7 @@
 	exports.right_forms = right_forms;
 
 /***/ },
-/* 310 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34790,16 +34956,16 @@
 	  value: true
 	});
 
-	var _projects = __webpack_require__(311);
+	var _ecosystems = __webpack_require__(317);
 
-	var _projects2 = _interopRequireDefault(_projects);
+	var _ecosystems2 = _interopRequireDefault(_ecosystems);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _projects2.default;
+	exports.default = _ecosystems2.default;
 
 /***/ },
-/* 311 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34808,24 +34974,168 @@
 		value: true
 	});
 
+	var _dec, _class, _dec2, _class3;
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _mobxReact = __webpack_require__(235);
+
+	var _ecosystems = __webpack_require__(318);
+
+	var _ecosystems2 = _interopRequireDefault(_ecosystems);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Projects = function Projects() {
-		return _react2.default.createElement(
-			'div',
-			null,
-			' projects '
-		);
-	};
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	exports.default = Projects;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ecosystems = ['javascript', 'ios', 'android', 'ruby', 'python', 'embedded', 'linux', 'create'];
+
+	var Card = (_dec = (0, _mobxReact.inject)('store'), _dec(_class = (0, _mobxReact.observer)(_class = function (_Component) {
+		_inherits(Card, _Component);
+
+		function Card() {
+			var _ref;
+
+			var _temp, _this, _ret;
+
+			_classCallCheck(this, Card);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Card.__proto__ || Object.getPrototypeOf(Card)).call.apply(_ref, [this].concat(args))), _this), _this.toggleSelect = function () {
+				if (_this.props.store.selectedEcosystems >= 4 && !_this.props.active) return;
+				if (_this.props.store.selectedEcosystems < 4 && !_this.props.active) {
+					_this.props.store.ecosystems[_this.props.label] = !_this.props.active;
+					_this.props.store.selectedEcosystems++;
+				} else {
+					_this.props.store.ecosystems[_this.props.label] = !_this.props.active;
+					_this.props.store.selectedEcosystems--;
+				}
+			}, _this.render = function () {
+				return _react2.default.createElement(
+					'div',
+					{ onClick: _this.toggleSelect, id: _ecosystems2.default[_this.props.label], className: [_ecosystems2.default['project-card'], _this.props.active ? _ecosystems2.default['card-active'] : '', _this.props.store.selectedEcosystems >= 4 && !_this.props.active ? _ecosystems2.default['max-selected'] : ''].join(' ') },
+					_react2.default.createElement('img', { draggable: 'false', src: "../../../src/assets/img/card-" + _this.props.index + '.svg' }),
+					_react2.default.createElement(
+						'span',
+						{ className: _ecosystems2.default.label },
+						_this.props.label.toUpperCase()
+					)
+				);
+			}, _temp), _possibleConstructorReturn(_this, _ret);
+		}
+
+		return Card;
+	}(_react.Component)) || _class) || _class);
+	var Ecosystems = (_dec2 = (0, _mobxReact.inject)('store'), _dec2(_class3 = (0, _mobxReact.observer)(_class3 = function (_Component2) {
+		_inherits(Ecosystems, _Component2);
+
+		function Ecosystems() {
+			var _ref2;
+
+			var _temp2, _this2, _ret2;
+
+			_classCallCheck(this, Ecosystems);
+
+			for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+				args[_key2] = arguments[_key2];
+			}
+
+			return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, (_ref2 = Ecosystems.__proto__ || Object.getPrototypeOf(Ecosystems)).call.apply(_ref2, [this].concat(args))), _this2), _this2.render = function () {
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'div',
+						{ className: _ecosystems2.default['title-text'] },
+						' ECOSYSTEMS '
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: _ecosystems2.default['instruction-text'] },
+						' Pick ecosystems you think you can contribute to and/or propose a new project you\'d like to build. You may pick up to 4. '
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: _ecosystems2.default['project-card-container'] },
+						ecosystems.map(function (ecosystem, index) {
+							return _react2.default.createElement(Card, { index: index, key: index, label: ecosystem, active: _this2.props.store.ecosystems[ecosystem] });
+						})
+					)
+				);
+			}, _temp2), _possibleConstructorReturn(_this2, _ret2);
+		}
+
+		return Ecosystems;
+	}(_react.Component)) || _class3) || _class3);
+	exports.default = Ecosystems;
 
 /***/ },
-/* 312 */
+/* 318 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(319);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(287)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./ecosystems.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./ecosystems.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 319 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".ecosystems__title-text___2b_Pd {\n  font: 30px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 25px; }\n\n.ecosystems__instruction-text___29c1t {\n  font: 22px 'Brandon-Regular';\n  text-align: center;\n  width: 700px;\n  color: #b7bcdf;\n  margin: 0 auto;\n  display: block;\n  padding-bottom: 25px; }\n\n/*-- Cards --*/\n.ecosystems__project-card-container___2qjzA {\n  width: 800px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  align-items: flex-start;\n  align-content: flex-start;\n  margin: 0 auto; }\n\n.ecosystems__project-card___2bf5o {\n  width: 185px;\n  height: 185px;\n  background-color: pink;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin-bottom: 20px; }\n\n.ecosystems__project-card___2bf5o.ecosystems__card-active___2U5St {\n  box-shadow: 0 0 0 5px #f1f9fd; }\n\n.ecosystems__project-card___2bf5o img {\n  width: 98px;\n  height: 98px;\n  margin-bottom: 16px; }\n\n.ecosystems__project-card___2bf5o .ecosystems__label___1tzYy {\n  font-size: 22px; }\n\n.ecosystems__max-selected___32UE1 {\n  opacity: 0.5; }\n\n/*-- Custom card colors --*/\n#ecosystems__javascript___2tEjh {\n  background-color: #f6c860; }\n\n#ecosystems__ios___q00_t {\n  background-color: #dd5926; }\n\n#ecosystems__android___1UUcD {\n  background-color: #296773; }\n\n#ecosystems__ruby___vSDkN {\n  background-color: #891738; }\n\n#ecosystems__python___W5ayR {\n  background-color: #3b9aac; }\n\n#ecosystems__create___2OXj4 {\n  background-color: #b7bcdf; }\n\n#ecosystems__embedded___2k-Zw {\n  background-color: #ed2f65; }\n\n#ecosystems__linux___3cACv {\n  background-color: #57c7df; }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"title-text": "ecosystems__title-text___2b_Pd",
+		"instruction-text": "ecosystems__instruction-text___29c1t",
+		"project-card-container": "ecosystems__project-card-container___2qjzA",
+		"project-card": "ecosystems__project-card___2bf5o",
+		"card-active": "ecosystems__card-active___2U5St",
+		"label": "ecosystems__label___1tzYy",
+		"max-selected": "ecosystems__max-selected___32UE1",
+		"javascript": "ecosystems__javascript___2tEjh",
+		"ios": "ecosystems__ios___q00_t",
+		"android": "ecosystems__android___1UUcD",
+		"ruby": "ecosystems__ruby___vSDkN",
+		"python": "ecosystems__python___W5ayR",
+		"create": "ecosystems__create___2OXj4",
+		"embedded": "ecosystems__embedded___2k-Zw",
+		"linux": "ecosystems__linux___3cACv"
+	};
+
+/***/ },
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34834,7 +35144,7 @@
 	  value: true
 	});
 
-	var _team = __webpack_require__(313);
+	var _team = __webpack_require__(321);
 
 	var _team2 = _interopRequireDefault(_team);
 
@@ -34843,7 +35153,7 @@
 	exports.default = _team2.default;
 
 /***/ },
-/* 313 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34856,20 +35166,82 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _team = __webpack_require__(322);
+
+	var _team2 = _interopRequireDefault(_team);
+
+	var _Input = __webpack_require__(309);
+
+	var _Input2 = _interopRequireDefault(_Input);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Team = function Team() {
 		return _react2.default.createElement(
 			'div',
-			null,
-			' team signup '
+			{ className: _team2.default.container },
+			_react2.default.createElement(
+				'div',
+				{ className: _team2.default['title-text'] },
+				' TEAM '
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: _team2.default['instruction-text'] },
+				' Interested in working with a team? Let us know who you prefer to wrok with via their GitHub username. We don\'t have team size limits however we may not be able to accommodate your whole team. '
+			),
+			_react2.default.createElement(_Input2.default, { id: 'Team member', options: [] })
 		);
 	};
 
 	exports.default = Team;
 
 /***/ },
-/* 314 */
+/* 322 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(323);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(287)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./team.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./team.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 323 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".team__container___2Tbwc {\n  width: 900px;\n  display: block;\n  margin: 0 auto; }\n\n.team__title-text___2cly_ {\n  font: 30px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 25px; }\n\n.team__instruction-text___2JdnT {\n  font: 22px 'Brandon-Regular';\n  text-align: center;\n  width: 900px;\n  color: #b7bcdf;\n  margin: 0 auto;\n  display: block;\n  padding-bottom: 25px; }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"container": "team__container___2Tbwc",
+		"title-text": "team__title-text___2cly_",
+		"instruction-text": "team__instruction-text___2JdnT"
+	};
+
+/***/ },
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34878,7 +35250,7 @@
 	  value: true
 	});
 
-	var _success = __webpack_require__(315);
+	var _success = __webpack_require__(325);
 
 	var _success2 = _interopRequireDefault(_success);
 
@@ -34887,7 +35259,7 @@
 	exports.default = _success2.default;
 
 /***/ },
-/* 315 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34900,17 +35272,75 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _success = __webpack_require__(326);
+
+	var _success2 = _interopRequireDefault(_success);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Success = function Success() {
 		return _react2.default.createElement(
 			'div',
 			null,
-			' Yay you\'re all signed up! '
+			_react2.default.createElement('img', { className: _success2.default.confirmation, draggable: 'false', src: '../../../src/assets/img/confirmation.svg' }),
+			_react2.default.createElement(
+				'div',
+				{ className: _success2.default.thanks },
+				'Thanks for registering! '
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: _success2.default['instruction-text'] },
+				' Keep an eye out for an email regarding more information as we get closer to the event. '
+			)
 		);
 	};
 
 	exports.default = Success;
+
+/***/ },
+/* 326 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(327);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(287)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./success.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/resolve-url-loader/index.js!./success.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 327 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".success__thanks___1FUHV {\n  text-align: center;\n  font: 34px 'Gotham';\n  color: #f1f9fd;\n  display: block;\n  margin: 0 auto; }\n\n.success__instruction-text___2WHAe {\n  font: 22px 'Brandon-Regular';\n  color: #f1f9fd;\n  text-align: center;\n  display: block;\n  margin: 0 auto;\n  width: 450px; }\n\n.success__confirmation___1e9zM {\n  width: 300px;\n  display: block;\n  margin: 0 auto;\n  padding-bottom: 50px; }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"thanks": "success__thanks___1FUHV",
+		"instruction-text": "success__instruction-text___2WHAe",
+		"confirmation": "success__confirmation___1e9zM"
+	};
 
 /***/ }
 /******/ ]);

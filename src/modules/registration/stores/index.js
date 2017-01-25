@@ -33,7 +33,8 @@ class RegistrationStore {
         phoneNumber: '',
         email: '',
         createPassword: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        resume: ''
 	}
     @observable ecosystems = {
         javascript: false,
@@ -48,7 +49,7 @@ class RegistrationStore {
     @observable selectedEcosystems = 0;
 
 	constructor(code) {
-		
+		/*
 		if(!window.location.pathname.includes('/registration/2')) return
 
 		//redirect
@@ -80,6 +81,7 @@ class RegistrationStore {
     		}
   		}
 		)
+        */
 	}
 }
 

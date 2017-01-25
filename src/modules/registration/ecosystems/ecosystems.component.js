@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
 
 import styles from './ecosystems.scss'
+import Button from '../components/button'
 
 const ecosystems = [
 	'javascript',
@@ -49,6 +50,14 @@ class Ecosystems extends Component {
         	<Card index={index} key={index} label={ecosystem} active={this.props.store.ecosystems[ecosystem]}/>
         ))}
 	    </div>
+	    <div className={styles['navigation-container']}>
+		    <div className={styles['back-button']}>
+		    	<Button dest='/registration/2' arrow='left' label='BACK'/>
+		    </div>
+		    <div className={styles['continue-button']}>
+		    	<Button dest='/registration/4' arrow='right' label='CONTINUE'/>
+		    </div>
+		   </div> 
 		</div>
 	)
 }
