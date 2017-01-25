@@ -35,6 +35,10 @@ const Hotels = () => {
 	window.location = 'src/assets/pdf/hotels.pdf'
 	return null
 }
+const Code = () => {
+	window.location = 'src/assets/pdf/code_of_conduct.pdf'
+	return null
+}
 
 const root = document.getElementById("app")
 
@@ -47,8 +51,10 @@ ReactDom.render(
 				<Route path='sponsor' component={Sponsor}/>
 				<Route path='exhibitor' component={Exhibitor}/>
 				<Route path='hotels' component={Hotels}/>
+				<Route path='code' component={Code}/>
 			</Route>
 			<Route path='registration' component={Registration}>
+					<IndexRoute component={Announcement}/>
 					<Route path='1' component={Announcement}/>
 					<Route path='2' component={UserInfo}/>
 					<Route path='3' component={Ecosystems}/>

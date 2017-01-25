@@ -23,15 +23,15 @@ class UserInfo extends Component {
 			<div className={styles['info-text']}> INFO </div>
 			<div className={styles.container}>
 			<div className={styles['form-field-container']}>
-				{all_form_fields.map((form) =>(<Input type={form.type || ''} options={form.options || []} key={form.id} id={form.id} />))}
+				{all_form_fields.map((form) =>(<Input columns={true} type={form.type || ''} options={form.options || []} key={form.id} id={form.id} />))}
 			</div>
 				<div className={styles['small-container']}> 
 					<div className={styles['small-text']}> Are you interested in giving a short (&lt;5 min) lightning talk on a topic of your choice? </div> 
-					<div className={styles['small-input']}> <Input password={false} options={['YES','NO']} id='hasLightningInterest'/> </div>
+					<div className={styles['small-input']}> <Input columns={true} password={false} options={['YES','NO']} id='hasLightningInterest'/> </div>
 				</div>
 				<div className={styles['small-container']}> 
 					<div className={styles['small-text']}> We'd love to connect you to awesome opportunities at sponsoring companies. Is it okay if we share your information with our sponsors? </div> 
-					<div className={styles['small-input']}> <Input password={false} options={['YES','NO']} id='isPrivate'/> </div>
+					<div className={styles['small-input']}> <Input columns={true} password={false} options={['YES','NO']} id='isPrivate'/> </div>
 				</div>
 				<div className={styles['continue-button']}>
 		    	<Button dest='/registration/3' arrow='right' label='CONTINUE'/>
