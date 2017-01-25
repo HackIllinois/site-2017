@@ -18,7 +18,7 @@ class Team extends Component {
 				<Input id='add team member' options={[]}/>
 				<ul className={styles['checkbox-list']}>
 				    <li>
-				        <input type='checkbox' />
+				        <input type='checkbox' value={this.props.store.codeOfConductCheck}/>
 				        <label>I agree to <a href="/code">the code of conduct </a></label>
 				    </li>
 				</ul>
