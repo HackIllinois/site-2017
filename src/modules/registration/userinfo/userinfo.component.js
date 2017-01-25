@@ -12,6 +12,10 @@ import {left_forms, right_forms} from './forms'
 @inject('store') @observer
 class UserInfo extends Component {
 
+	showStore = () => {
+		console.log(this.props.store.userData)
+	}
+
 	render = () => {
 		return(
 			<div>
@@ -23,7 +27,16 @@ class UserInfo extends Component {
 				<div className={styles['column-right']}>
 					{right_forms.map((form) =>(<Input password={form.password} options={form.options || []} key={form.id} id={form.id} />))}
 				</div>
+				<div className={styles['small-container']}> 
+					<div className={styles['small-text']}> Are you interested in giving a short (&lt;5 min) lightning talk on a topic of your choice? </div> 
+					<div className={styles['small-input']}> <Input password={false} options={['YES','NO']} id='hasLightningInterest'/> </div>
+				</div>
+				<div className={styles['small-container']}> 
+					<div className={styles['small-text']}> We'd love to connect you to awesome opportunities at sponsoring companies. Is it okay if we share your information with our sponsors? </div> 
+					<div className={styles['small-input']}> <Input password={false} options={['YES','NO']} id='isPrivate'/> </div>
+				</div>
 			</div>
+				
 			</div> 
 		)	
 	}
@@ -31,8 +44,3 @@ class UserInfo extends Component {
 
 export default UserInfo
 
-/*
-<div className={styles.center} >
-				{forms.map((form) => (<Input dropdown={form.dropdown} disabled={form.disabled} key={form.id} id={form.id}/>))}
-				</div>
-				*/

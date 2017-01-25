@@ -1,37 +1,37 @@
 const left_forms = [
 		{
-			id: 'github_username'
+			id: 'github'
 		},
 		{
-			id: 'create_password',
+			id: 'createPassword',
 			password: true,
 		},
 		{
-			id: 'name',
+			id: 'firstName',
 		},
 		{
 			id: 'school',
 		},
 		{
-			id: 'grad_year',
+			id: 'graduationYear',
 		},
 		{
-			id: 'shirt_size',
+			id: 'shirtSize',
 			options: ['S','M','L','XL']
 		},
 		{
 			id: 'gender',
-			options: ['Male', 'Female', 'Non-Binary', 'Other']
+			options: ['MALE', 'FEMALE', 'NON_BINARY', 'OTHER']
 		},
 		{
-			id: 'are_you_a_novice?',
-			options: ['Yes', 'No']
+			id: 'isNovice',
+			options: ['YES', 'NO']
 		},
 		{
 			id: 'resume',
 		},
 		{
-			id: 'placeholder',	
+			id: 'phoneNumber',	
 		},
 	];
 
@@ -40,32 +40,32 @@ const left_forms = [
 			id: 'email',
 		},
 		{
-			id: 'confirm_password',
+			id: 'confirmPassword',
 			password: true
 		},
 		{
-			id: 'phone_number',
+			id: 'lastName',
 		},
 		{
 			id: 'major',
 		},
 		{
 			id: 'transportation',
-			options: ['Not Needed','Bus Requested','In State','International']
+			options: ['NOT_NEEDED','BUS_REQUESTED','IN_STATE', 'OUT_OF_STATE', 'INTERNATIONAL']
 		},
 		{
-			id: 'dietary_restrictions',
-			options: ['None','Vegetarian', 'Vegan', 'Gluten-Free']
+			id: 'diet',
+			options: ['NONE','VEGETARIAN', 'VEGAN', 'GLUTEN_FREE']
 		},
 		{
 			id: 'age',
 		},
 		{
-			id: 'linkedin_username',		
+			id: 'linkedin',		
 		},
 		{
-			id: 'professional_interests',		
-			options: ['None','Internship','Fulltime','Both']
+			id: 'professionalInterest',		
+			options: ['NONE','INTERNSHIP','FULLTIME','BOTH']
 		},
 		{
 			id: 'interests',		

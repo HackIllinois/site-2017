@@ -43,7 +43,7 @@ class Landing extends Component {
         </div>
         <div className={styles['input-component']}>
             <input onChange={this.onChange} value={this.state.email} type="email" id={styles['post-email']} placeholder="jane.doe@hackathon.com"/>
-            <button onClick={this.onSubmit}>Submit</button>
+            <button id={styles['submit-button']} onClick={this.onSubmit}>Submit</button>
         </div>
       </div>
     </div>

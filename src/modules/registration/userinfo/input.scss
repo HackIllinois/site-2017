@@ -1,12 +1,11 @@
 .reg-input {
   position: relative;
   margin-bottom: 30px;
-
 }
 
 .reg-input input, select{
   height: 45px;
-  width: 385px;
+  width: 100%;
   color: #b7bcdf;
   background-color: #122342;
   border: 2px solid #57c7df;
@@ -15,14 +14,22 @@
   outline: none;
   padding-left: 15px;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 18px;
   font-family: 'Gotham', sans-serif;
+  margin-bottom: 0px;
+}
+
+.reg-input select {
+  -webkit-appearance: none; 
+  background: url(../../../assets/img/dropdown.svg) no-repeat right #122342;
+  background-size: 17px;
+  background-position: calc(100% - 10px);
 }
 
 .reg-input span {
   position: absolute;
   left: 9px;
-  top: -7px;
+  top: -10px;
   background-color: #122342;
   padding-left: 6px;
   padding-right: 6px;

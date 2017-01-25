@@ -82,15 +82,15 @@
 
 	var _userinfo2 = _interopRequireDefault(_userinfo);
 
-	var _projects = __webpack_require__(309);
+	var _projects = __webpack_require__(310);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _team = __webpack_require__(311);
+	var _team = __webpack_require__(312);
 
 	var _team2 = _interopRequireDefault(_team);
 
-	var _success = __webpack_require__(313);
+	var _success = __webpack_require__(314);
 
 	var _success2 = _interopRequireDefault(_success);
 
@@ -31007,7 +31007,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 
 	var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4;
@@ -31025,127 +31025,138 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _initDefineProp(target, property, descriptor, context) {
-		if (!descriptor) return;
-		Object.defineProperty(target, property, {
-			enumerable: descriptor.enumerable,
-			configurable: descriptor.configurable,
-			writable: descriptor.writable,
-			value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-		});
+	  if (!descriptor) return;
+	  Object.defineProperty(target, property, {
+	    enumerable: descriptor.enumerable,
+	    configurable: descriptor.configurable,
+	    writable: descriptor.writable,
+	    value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+	  });
 	}
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-		var desc = {};
-		Object['ke' + 'ys'](descriptor).forEach(function (key) {
-			desc[key] = descriptor[key];
-		});
-		desc.enumerable = !!desc.enumerable;
-		desc.configurable = !!desc.configurable;
+	  var desc = {};
+	  Object['ke' + 'ys'](descriptor).forEach(function (key) {
+	    desc[key] = descriptor[key];
+	  });
+	  desc.enumerable = !!desc.enumerable;
+	  desc.configurable = !!desc.configurable;
 
-		if ('value' in desc || desc.initializer) {
-			desc.writable = true;
-		}
+	  if ('value' in desc || desc.initializer) {
+	    desc.writable = true;
+	  }
 
-		desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-			return decorator(target, property, desc) || desc;
-		}, desc);
+	  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+	    return decorator(target, property, desc) || desc;
+	  }, desc);
 
-		if (context && desc.initializer !== void 0) {
-			desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-			desc.initializer = undefined;
-		}
+	  if (context && desc.initializer !== void 0) {
+	    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+	    desc.initializer = undefined;
+	  }
 
-		if (desc.initializer === void 0) {
-			Object['define' + 'Property'](target, property, desc);
-			desc = null;
-		}
+	  if (desc.initializer === void 0) {
+	    Object['define' + 'Property'](target, property, desc);
+	    desc = null;
+	  }
 
-		return desc;
+	  return desc;
 	}
 
 	function _initializerWarningHelper(descriptor, context) {
-		throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+	  throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 	}
 
 	var loggedIn = window.location.href.includes('code');
 	var code = loggedIn ? window.location.search.slice(6) : '';
 
 	var RegistrationStore = (_class = function RegistrationStore(code) {
-		var _this = this;
+	  var _this = this;
 
-		_classCallCheck(this, RegistrationStore);
+	  _classCallCheck(this, RegistrationStore);
 
-		_initDefineProp(this, 'progress', _descriptor, this);
+	  _initDefineProp(this, 'progress', _descriptor, this);
 
-		_initDefineProp(this, 'auth_token', _descriptor2, this);
+	  _initDefineProp(this, 'auth_token', _descriptor2, this);
 
-		_initDefineProp(this, 'isAuthenticated', _descriptor3, this);
+	  _initDefineProp(this, 'isAuthenticated', _descriptor3, this);
 
-		_initDefineProp(this, 'userData', _descriptor4, this);
+	  _initDefineProp(this, 'userData', _descriptor4, this);
 
-		if (!window.location.pathname.includes('/registration/2')) return;
+	  if (!window.location.pathname.includes('/registration/2')) return;
 
-		//redirect
-		if (code == '') window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197';
+	  //redirect
+	  if (code == '') window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197';
 
-		//console.log('not redirecting')
-		var token = (0, _mobxUtils.fromPromise)(_axios2.default.get('https://hackillinois-auth-helper.herokuapp.com/authenticate/' + code), 'initial');
+	  //console.log('not redirecting')
+	  var token = (0, _mobxUtils.fromPromise)(_axios2.default.get('https://hackillinois-auth-helper.herokuapp.com/authenticate/' + code), 'initial');
 
-		(0, _mobx.when)(function () {
-			return token.state !== 'pending';
-		}, function () {
-			if (token.state !== 'rejected') {
-				(function () {
-					_this.auth_token = token.value.data.token;
-					var userInfo = (0, _mobxUtils.fromPromise)(_axios2.default.get('https://api.github.com/user', {
-						headers: { 'Authorization': 'token ' + _this.auth_token }
-					}));
+	  (0, _mobx.when)(function () {
+	    return token.state !== 'pending';
+	  }, function () {
+	    if (token.state !== 'rejected') {
+	      (function () {
+	        _this.auth_token = token.value.data.token;
+	        var userInfo = (0, _mobxUtils.fromPromise)(_axios2.default.get('https://api.github.com/user', {
+	          headers: { 'Authorization': 'token ' + _this.auth_token }
+	        }));
 
-					(0, _mobx.when)(function () {
-						return userInfo.state !== 'pending';
-					}, function () {
-						if (userInfo.state == 'rejected') window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197';
-						_this.isAuthenticated = true;
-						_this.userData.github_username = userInfo.value.data.login;
-						_this.userData.email = userInfo.value.data.email;
-						_this.userData.name = userInfo.value.data.name;
-					});
-				})();
-			}
-		});
+	        (0, _mobx.when)(function () {
+	          return userInfo.state !== 'pending';
+	        }, function () {
+	          if (userInfo.state == 'rejected') window.location = 'https://github.com/login/oauth/authorize?client_id=9674b582b52db2bf4197';
+	          _this.isAuthenticated = true;
+	          _this.userData.github = userInfo.value.data.login;
+	          _this.userData.email = userInfo.value.data.email;
+	          //this.userData.name = userInfo.value.data.name
+	        });
+	      })();
+	    }
+	  });
 	}, (_descriptor = _applyDecoratedDescriptor(_class.prototype, 'progress', [_mobx.observable], {
-		enumerable: true,
-		initializer: function initializer() {
-			return 0;
-		}
+	  enumerable: true,
+	  initializer: function initializer() {
+	    return 0;
+	  }
 	}), _descriptor2 = _applyDecoratedDescriptor(_class.prototype, 'auth_token', [_mobx.observable], {
-		enumerable: true,
-		initializer: function initializer() {
-			return '';
-		}
+	  enumerable: true,
+	  initializer: function initializer() {
+	    return '';
+	  }
 	}), _descriptor3 = _applyDecoratedDescriptor(_class.prototype, 'isAuthenticated', [_mobx.observable], {
-		enumerable: true,
-		initializer: function initializer() {
-			return false;
-		}
+	  enumerable: true,
+	  initializer: function initializer() {
+	    return false;
+	  }
 	}), _descriptor4 = _applyDecoratedDescriptor(_class.prototype, 'userData', [_mobx.observable], {
-		enumerable: true,
-		initializer: function initializer() {
-			return {
-				github_username: '',
-				email: '',
-				name: '',
-				major: '',
-				school: '',
-				age: '',
-				shirt_size: '',
-				dietary: '',
-				gender: '',
-				interests: ''
-			};
-		}
+	  enumerable: true,
+	  initializer: function initializer() {
+	    return {
+	      firstName: '',
+	      lastName: '',
+	      shirtSize: '',
+	      diet: '',
+	      age: '',
+	      graduationYear: '',
+	      transportation: '',
+	      school: '',
+	      major: '',
+	      gender: '',
+	      professionalInterest: '',
+	      github: '',
+	      linkedin: '',
+	      interests: '',
+	      isNovice: true,
+	      isPrivate: false,
+	      hasLightningInterest: false,
+	      phoneNumber: '',
+	      email: '',
+	      createPassword: '',
+	      confirmPassword: ''
+	    };
+	  }
 	})), _class);
 	exports.default = new RegistrationStore(code);
 
@@ -33508,10 +33519,52 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Gotham';\n  src: url(" + __webpack_require__(279) + ");\n  src: url(" + __webpack_require__(279) + "#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(280) + ") format(\"woff\"), url(" + __webpack_require__(281) + ") format(\"truetype\"), url(" + __webpack_require__(282) + "#svgFontName) format(\"svg\"); }\n\n@font-face {\n  font-family: 'Brandon-Regular';\n  src: url(" + __webpack_require__(283) + ");\n  src: url(" + __webpack_require__(283) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(284) + ") format(\"woff\"), url(" + __webpack_require__(285) + ") format(\"truetype\"), url(" + __webpack_require__(286) + "#svgFontName) format(\"svg\"); }\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\n@font-face {\n  font-family: 'Gotham';\n  src: url(" + __webpack_require__(279) + ");\n  src: url(" + __webpack_require__(279) + "#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(280) + ") format(\"woff\"), url(" + __webpack_require__(281) + ") format(\"truetype\"), url(" + __webpack_require__(282) + "#svgFontName) format(\"svg\"); }\n\n@font-face {\n  font-family: 'Brandon-Regular';\n  src: url(" + __webpack_require__(283) + ");\n  src: url(" + __webpack_require__(283) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(284) + ") format(\"woff\"), url(" + __webpack_require__(285) + ") format(\"truetype\"), url(" + __webpack_require__(286) + "#svgFontName) format(\"svg\"); }\n\n/*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */\n/**\n * 1. Change the default font family in all browsers (opinionated).\n * 2. Correct the line height in all browsers.\n * 3. Prevent adjustments of font size after orientation changes in IE and iOS.\n */\n/* Document\n   ========================================================================== */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  line-height: 1.15;\n  /* 2 */\n  -ms-text-size-adjust: 100%;\n  /* 3 */\n  -webkit-text-size-adjust: 100%;\n  /* 3 */ }\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0; }\n\n/**\n * Add the correct display in IE 9-.\n */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in IE.\n */\nfigcaption,\nfigure,\nmain {\n  /* 1 */\n  display: block; }\n\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/**\n * Remove the outline on focused links when they are also active or hovered\n * in all browsers (opinionated).\n */\na:active,\na:hover {\n  outline-width: 0; }\n\n/**\n * 1. Remove the bottom border in Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none; }\n\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * Change the border, margin, and padding in all browsers (opinionated).\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n * 1. Add the correct display in IE 9-.\n * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n */\ndetails,\nmenu {\n  display: block; }\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item; }\n\n/* Scripting\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\ncanvas {\n  display: inline-block; }\n\n/**\n * Add the correct display in IE.\n */\ntemplate {\n  display: none; }\n\n/* Hidden\n   ========================================================================== */\n/**\n * Add the correct display in IE 10-.\n */\n[hidden] {\n  display: none; }\n\n/* @font-face\n   ==========================================================================\n  eot: IE6-IE8,\n  woff2: Super Modern Browsers\n  woff: Pretty Modern Browsers,\n  ttf: Safari, Android, iOS,\n  svg: Legacy iOS\n\n  woff2 omitted for now because we're not using that asset: url('../fonts/BrandonGrotesque/Brandon_reg.woff2') format('woff2')\n\n*/\n/*\n* Skeleton V2.0.4\n* Copyright 2014, Dave Gamache\n* www.getskeleton.com\n* Free to use under the MIT license.\n* http://www.opensource.org/licenses/mit-license.php\n* 12/29/2014\n*/\n/* Table of contents\n––––––––––––––––––––––––––––––––––––––––––––––––––\n- Grid\n- Base Styles\n- Typography\n- Links\n- Buttons\n- Forms\n- Lists\n- Code\n- Tables\n- Spacing\n- Utilities\n- Clearing\n- Media Queries\n*/\n/* Grid\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n.app__container___3y_Xr {\n  position: relative;\n  width: 100%;\n  max-width: 960px;\n  margin: 0 auto;\n  padding: 0 20px;\n  box-sizing: border-box; }\n\n.app__column___37kXX,\n.app__columns___1mIcd {\n  width: 100%;\n  float: left;\n  box-sizing: border-box; }\n\n/* For devices larger than 400px */\n@media (min-width: 400px) {\n  .app__container___3y_Xr {\n    width: 85%;\n    padding: 0; } }\n\n/* For devices larger than 550px */\n@media (min-width: 550px) {\n  .app__container___3y_Xr {\n    width: 80%; }\n  .app__column___37kXX,\n  .app__columns___1mIcd {\n    margin-left: 4%; }\n  .app__column___37kXX:first-child,\n  .app__columns___1mIcd:first-child {\n    margin-left: 0; }\n  .app__one___1rgIN.app__column___37kXX,\n  .app__one___1rgIN.app__columns___1mIcd {\n    width: 4.66666666667%; }\n  .app__two___3PGAQ.app__columns___1mIcd {\n    width: 13.3333333333%; }\n  .app__three___w0cdr.app__columns___1mIcd {\n    width: 22%; }\n  .app__four___20ov4.app__columns___1mIcd {\n    width: 30.6666666667%; }\n  .app__five___1ikb1.app__columns___1mIcd {\n    width: 39.3333333333%; }\n  .app__six___2h_u0.app__columns___1mIcd {\n    width: 48%; }\n  .app__seven___ISm6D.app__columns___1mIcd {\n    width: 56.6666666667%; }\n  .app__eight___2__3g.app__columns___1mIcd {\n    width: 65.3333333333%; }\n  .app__nine___33jj0.app__columns___1mIcd {\n    width: 74.0%; }\n  .app__ten___2DZ4U.app__columns___1mIcd {\n    width: 82.6666666667%; }\n  .app__eleven___pAXXk.app__columns___1mIcd {\n    width: 91.3333333333%; }\n  .app__twelve___26hnD.app__columns___1mIcd {\n    width: 100%;\n    margin-left: 0; }\n  .app__one-third___1kZz_.app__column___37kXX {\n    width: 30.6666666667%; }\n  .app__two-thirds___3MIE5.app__column___37kXX {\n    width: 65.3333333333%; }\n  .app__one-half___3Jl9Z.app__column___37kXX {\n    width: 48%; }\n  /* Offsets */\n  .app__offset-by-one___3C8ki.app__column___37kXX,\n  .app__offset-by-one___3C8ki.app__columns___1mIcd {\n    margin-left: 8.66666666667%; }\n  .app__offset-by-two___esL2g.app__column___37kXX,\n  .app__offset-by-two___esL2g.app__columns___1mIcd {\n    margin-left: 17.3333333333%; }\n  .app__offset-by-three___2-LNM.app__column___37kXX,\n  .app__offset-by-three___2-LNM.app__columns___1mIcd {\n    margin-left: 26%; }\n  .app__offset-by-four___2twRz.app__column___37kXX,\n  .app__offset-by-four___2twRz.app__columns___1mIcd {\n    margin-left: 34.6666666667%; }\n  .app__offset-by-five___1121z.app__column___37kXX,\n  .app__offset-by-five___1121z.app__columns___1mIcd {\n    margin-left: 43.3333333333%; }\n  .app__offset-by-six___2v_Xj.app__column___37kXX,\n  .app__offset-by-six___2v_Xj.app__columns___1mIcd {\n    margin-left: 52%; }\n  .app__offset-by-seven___3wJr1.app__column___37kXX,\n  .app__offset-by-seven___3wJr1.app__columns___1mIcd {\n    margin-left: 60.6666666667%; }\n  .app__offset-by-eight___p5bQ7.app__column___37kXX,\n  .app__offset-by-eight___p5bQ7.app__columns___1mIcd {\n    margin-left: 69.3333333333%; }\n  .app__offset-by-nine___1I60R.app__column___37kXX,\n  .app__offset-by-nine___1I60R.app__columns___1mIcd {\n    margin-left: 78.0%; }\n  .app__offset-by-ten___2j73H.app__column___37kXX,\n  .app__offset-by-ten___2j73H.app__columns___1mIcd {\n    margin-left: 86.6666666667%; }\n  .app__offset-by-eleven___1kr53.app__column___37kXX,\n  .app__offset-by-eleven___1kr53.app__columns___1mIcd {\n    margin-left: 95.3333333333%; }\n  .app__offset-by-one-third___pJ_Ri.app__column___37kXX,\n  .app__offset-by-one-third___pJ_Ri.app__columns___1mIcd {\n    margin-left: 34.6666666667%; }\n  .app__offset-by-two-thirds___2-EYM.app__column___37kXX,\n  .app__offset-by-two-thirds___2-EYM.app__columns___1mIcd {\n    margin-left: 69.3333333333%; }\n  .app__offset-by-one-half___2_vyP.app__column___37kXX,\n  .app__offset-by-one-half___2_vyP.app__columns___1mIcd {\n    margin-left: 52%; } }\n\n/* Base Styles\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n/* NOTE\nhtml is set to 62.5% so that all the REM measurements throughout Skeleton\nare based on 10px sizing. So basically 1.5rem = 15px :) */\nhtml {\n  font-size: 62.5%; }\n\nbody {\n  font-size: 1.5em;\n  /* currently ems cause chrome bug misinterpreting rems on body element */\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: \"Raleway\", \"HelveticaNeue\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  color: #222; }\n\n/* Typography\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300; }\n\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -.1rem; }\n\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -.1rem; }\n\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -.1rem; }\n\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -.08rem; }\n\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -.05rem; }\n\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0; }\n\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem; }\n  h2 {\n    font-size: 4.2rem; }\n  h3 {\n    font-size: 3.6rem; }\n  h4 {\n    font-size: 3.0rem; }\n  h5 {\n    font-size: 2.4rem; }\n  h6 {\n    font-size: 1.5rem; } }\n\np {\n  margin-top: 0; }\n\n/* Links\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\na {\n  color: #1EAEDB; }\n\na:hover {\n  color: #0FA0CE; }\n\n/* Buttons\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n.app__button___2p6rX,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border-radius: 4px;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box; }\n\n.app__button___2p6rX:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.app__button___2p6rX:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0; }\n\n.app__button___2p6rX.app__button-primary___2IRpb,\nbutton.app__button-primary___2IRpb,\ninput[type=\"submit\"].app__button-primary___2IRpb,\ninput[type=\"reset\"].app__button-primary___2IRpb,\ninput[type=\"button\"].app__button-primary___2IRpb {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0; }\n\n.app__button___2p6rX.app__button-primary___2IRpb:hover,\nbutton.app__button-primary___2IRpb:hover,\ninput[type=\"submit\"].app__button-primary___2IRpb:hover,\ninput[type=\"reset\"].app__button-primary___2IRpb:hover,\ninput[type=\"button\"].app__button-primary___2IRpb:hover,\n.app__button___2p6rX.app__button-primary___2IRpb:focus,\nbutton.app__button-primary___2IRpb:focus,\ninput[type=\"submit\"].app__button-primary___2IRpb:focus,\ninput[type=\"reset\"].app__button-primary___2IRpb:focus,\ninput[type=\"button\"].app__button-primary___2IRpb:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB; }\n\n/* Forms\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  border-radius: 4px;\n  box-shadow: none;\n  box-sizing: border-box; }\n\n/* Removes awkward default styles on some inputs for iOS */\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px; }\n\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0; }\n\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600; }\n\nfieldset {\n  padding: 0;\n  border-width: 0; }\n\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline; }\n\nlabel > .app__label-body___AqZeA {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal; }\n\n/* Lists\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nul {\n  list-style: circle inside; }\n\nol {\n  list-style: decimal inside; }\n\nol,\nul {\n  padding-left: 0;\n  margin-top: 0; }\n\nul ul,\nul ol,\nol ol,\nol ul {\n  margin: 1.5rem 0 1.5rem 3rem;\n  font-size: 90%; }\n\nli {\n  margin-bottom: 1rem; }\n\n/* Code\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\ncode {\n  padding: .2rem .5rem;\n  margin: 0 .2rem;\n  font-size: 90%;\n  white-space: nowrap;\n  background: #F1F1F1;\n  border: 1px solid #E1E1E1;\n  border-radius: 4px; }\n\npre > code {\n  display: block;\n  padding: 1rem 1.5rem;\n  white-space: pre; }\n\n/* Tables\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nth,\ntd {\n  padding: 12px 15px;\n  text-align: left;\n  border-bottom: 1px solid #E1E1E1; }\n\nth:first-child,\ntd:first-child {\n  padding-left: 0; }\n\nth:last-child,\ntd:last-child {\n  padding-right: 0; }\n\n/* Spacing\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nbutton,\n.app__button___2p6rX {\n  margin-bottom: 1rem; }\n\ninput,\ntextarea,\nselect,\nfieldset {\n  margin-bottom: 1.5rem; }\n\npre,\nblockquote,\ndl,\nfigure,\ntable,\np,\nul,\nol,\nform {\n  margin-bottom: 2.5rem; }\n\n/* Utilities\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n.app__u-full-width___2FKcL {\n  width: 100%;\n  box-sizing: border-box; }\n\n.app__u-max-full-width___3ZdUy {\n  max-width: 100%;\n  box-sizing: border-box; }\n\n.app__u-pull-right___1Aj2R {\n  float: right; }\n\n.app__u-pull-left___2l7MF {\n  float: left; }\n\n/* Misc\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nhr {\n  margin-top: 3rem;\n  margin-bottom: 3.5rem;\n  border-width: 0;\n  border-top: 1px solid #E1E1E1; }\n\n/* Clearing\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n/* Self Clearing Goodness */\n.app__container___3y_Xr:after,\n.app__row___2bJ2q:after,\n.app__u-cf___YYOGH {\n  content: \"\";\n  display: table;\n  clear: both; }\n\n/* Media Queries\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n/*\nNote: The best way to structure the use of media queries is to create the queries\nnear the relevant code. For example, if you wanted to change the styles for buttons\non small devices, paste the mobile query code up in the buttons section and style it\nthere.\n*/\n/* Larger than mobile */\n/* Larger than phablet (also point when grid becomes active) */\n/* Larger than tablet */\n/* Larger than desktop */\n/* Larger than Desktop HD */\n/*\n  User defined\n*/\nbody {\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif; }\n", ""]);
 
 	// exports
-
+	exports.locals = {
+		"container": "app__container___3y_Xr",
+		"column": "app__column___37kXX",
+		"columns": "app__columns___1mIcd",
+		"one": "app__one___1rgIN",
+		"two": "app__two___3PGAQ",
+		"three": "app__three___w0cdr",
+		"four": "app__four___20ov4",
+		"five": "app__five___1ikb1",
+		"six": "app__six___2h_u0",
+		"seven": "app__seven___ISm6D",
+		"eight": "app__eight___2__3g",
+		"nine": "app__nine___33jj0",
+		"ten": "app__ten___2DZ4U",
+		"eleven": "app__eleven___pAXXk",
+		"twelve": "app__twelve___26hnD",
+		"one-third": "app__one-third___1kZz_",
+		"two-thirds": "app__two-thirds___3MIE5",
+		"one-half": "app__one-half___3Jl9Z",
+		"offset-by-one": "app__offset-by-one___3C8ki",
+		"offset-by-two": "app__offset-by-two___esL2g",
+		"offset-by-three": "app__offset-by-three___2-LNM",
+		"offset-by-four": "app__offset-by-four___2twRz",
+		"offset-by-five": "app__offset-by-five___1121z",
+		"offset-by-six": "app__offset-by-six___2v_Xj",
+		"offset-by-seven": "app__offset-by-seven___3wJr1",
+		"offset-by-eight": "app__offset-by-eight___p5bQ7",
+		"offset-by-nine": "app__offset-by-nine___1I60R",
+		"offset-by-ten": "app__offset-by-ten___2j73H",
+		"offset-by-eleven": "app__offset-by-eleven___1kr53",
+		"offset-by-one-third": "app__offset-by-one-third___pJ_Ri",
+		"offset-by-two-thirds": "app__offset-by-two-thirds___2-EYM",
+		"offset-by-one-half": "app__offset-by-one-half___2_vyP",
+		"button": "app__button___2p6rX",
+		"button-primary": "app__button-primary___2IRpb",
+		"label-body": "app__label-body___AqZeA",
+		"u-full-width": "app__u-full-width___2FKcL",
+		"u-max-full-width": "app__u-max-full-width___3ZdUy",
+		"u-pull-right": "app__u-pull-right___1Aj2R",
+		"u-pull-left": "app__u-pull-left___2l7MF",
+		"row": "app__row___2bJ2q",
+		"u-cf": "app__u-cf___YYOGH"
+	};
 
 /***/ },
 /* 278 */
@@ -33979,7 +34032,7 @@
 	            _react2.default.createElement('input', { onChange: _this.onChange, value: _this.state.email, type: 'email', id: _landing2.default['post-email'], placeholder: 'jane.doe@hackathon.com' }),
 	            _react2.default.createElement(
 	              'button',
-	              { onClick: _this.onSubmit },
+	              { id: _landing2.default['submit-button'], onClick: _this.onSubmit },
 	              'Submit'
 	            )
 	          )
@@ -34028,7 +34081,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  background-color: #122342;\n  color: #ffffff; }\n\n.landing__landing___d_c8w {\n  width: 100%;\n  width: 100vw;\n  height: 100vh;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  background-image: url(" + __webpack_require__(292) + ");\n  background-size: cover;\n  background-position: center center;\n  overflow: hidden; }\n\n@media (min-width: 920px) {\n  .landing__landing___d_c8w {\n    background-size: contain; } }\n\n.landing__landing___d_c8w .landing__hero___1oGpx {\n  width: 480px;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__logo___2o3pJ {\n  width: 120px;\n  height: auto; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc {\n  position: relative;\n  width: 70%;\n  height: 280px; }\n\n.landing__dateLabel___20QrU {\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  margin: 20px 0 80px 0; }\n\n@media (min-width: 480px) {\n  .landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc {\n    height: 320px; } }\n\n.landing__hat-container___1NmUc .landing__hat-on___-NVNz,\n.landing__hat-container___1NmUc .landing__hat-off___21nl7 {\n  position: absolute;\n  width: 100%;\n  height: auto; }\n\n.landing__hat-container___1NmUc .landing__hat-on___-NVNz {\n  z-index: 2;\n  opacity: 0; }\n\n.landing__hat-container___1NmUc .landing__beam___1dMfU {\n  position: absolute;\n  width: 440px;\n  position: absolute;\n  left: 80%;\n  bottom: -6%;\n  z-index: 3;\n  opacity: 0; }\n\n@media (min-width: 440px) {\n  .landing__hat-container___1NmUc .landing__beam___1dMfU {\n    bottom: -13%; } }\n\n@media (min-width: 480px) {\n  .landing__hat-container___1NmUc .landing__beam___1dMfU {\n    width: 535px;\n    left: 85%; } }\n\n.landing__input-component___3IuSV {\n  width: 90%;\n  position: relative;\n  z-index: 4;\n  font-size: 1.3em; }\n\n@media (min-width: 520px) {\n  .landing__input-component___3IuSV {\n    width: 100%; } }\n\n.landing__input-component___3IuSV input {\n  float: left;\n  width: calc(100% - 108px);\n  height: 42px;\n  padding: 0 1em;\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  color: #808dc6;\n  line-height: 36px;\n  border: none;\n  border-top-left-radius: 21px;\n  border-bottom-left-radius: 21px; }\n\n.landing__input-component___3IuSV input:focus {\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #808dc6; }\n\n.landing__input-component___3IuSV button {\n  float: left;\n  width: 108px;\n  height: 42px;\n  padding: 0;\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  background-color: #E05926;\n  color: #ffffff;\n  border: none;\n  line-height: 36px;\n  border-top-right-radius: 21px;\n  border-bottom-right-radius: 21px;\n  cursor: pointer; }\n\n.landing__input-component___3IuSV button:hover {\n  background-color: #E06926; }\n\n.landing__input-component___3IuSV button:focus {\n  outline: none;\n  background-color: #E04A26; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc:hover .landing__hat-on___-NVNz,\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc:hover .landing__beam___1dMfU {\n  -webkit-animation: landing__flicker___PgSTC 6s linear infinite;\n  animation: landing__flicker___PgSTC 6s linear infinite; }\n\n@-webkit-keyframes landing__flicker___PgSTC {\n  0% {\n    opacity: 0; }\n  5% {\n    opacity: 0; }\n  6% {\n    opacity: 1; }\n  11% {\n    opacity: .4; }\n  11.25% {\n    opacity: .6; }\n  11.5% {\n    opacity: .4; }\n  18% {\n    opacity: 1; }\n  18.5% {\n    opacity: .9; }\n  22% {\n    opacity: 1; }\n  38.5% {\n    opacity: 1; }\n  39% {\n    opacity: .8; }\n  42% {\n    opacity: 1; }\n  60% {\n    opacity: 1; }\n  60.5% {\n    opacity: 0; }\n  62% {\n    opacity: 0; }\n  63% {\n    opacity: .2; }\n  63.25% {\n    opacity: 0; }\n  65% {\n    opacity: 1; }\n  73% {\n    opacity: 1; }\n  75% {\n    opacity: .8; }\n  79% {\n    opacity: 1; }\n  100% {\n    opacity: 1; } }\n\n@keyframes landing__flicker___PgSTC {\n  0% {\n    opacity: 0; }\n  5% {\n    opacity: 0; }\n  6% {\n    opacity: 1; }\n  11% {\n    opacity: .4; }\n  11.25% {\n    opacity: .6; }\n  11.5% {\n    opacity: .4; }\n  18% {\n    opacity: 1; }\n  18.5% {\n    opacity: .9; }\n  22% {\n    opacity: 1; }\n  38.5% {\n    opacity: 1; }\n  39% {\n    opacity: .8; }\n  42% {\n    opacity: 1; }\n  60% {\n    opacity: 1; }\n  60.5% {\n    opacity: 0; }\n  62% {\n    opacity: 0; }\n  63% {\n    opacity: .2; }\n  63.25% {\n    opacity: 0; }\n  65% {\n    opacity: 1; }\n  73% {\n    opacity: 1; }\n  75% {\n    opacity: .8; }\n  79% {\n    opacity: 1; }\n  100% {\n    opacity: 1; } }\n", ""]);
+	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  background-color: #122342;\n  color: #ffffff; }\n\n.landing__landing___d_c8w {\n  width: 100%;\n  width: 100vw;\n  height: 100vh;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  background-image: url(" + __webpack_require__(292) + ");\n  background-size: cover;\n  background-position: center center;\n  overflow: hidden; }\n\n@media (min-width: 920px) {\n  .landing__landing___d_c8w {\n    background-size: contain; } }\n\n.landing__landing___d_c8w .landing__hero___1oGpx {\n  width: 480px;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__logo___2o3pJ {\n  width: 120px;\n  height: auto; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc {\n  position: relative;\n  width: 70%;\n  height: 280px; }\n\n.landing__dateLabel___20QrU {\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  margin: 20px 0 80px 0; }\n\n@media (min-width: 480px) {\n  .landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc {\n    height: 320px; } }\n\n.landing__hat-container___1NmUc .landing__hat-on___-NVNz,\n.landing__hat-container___1NmUc .landing__hat-off___21nl7 {\n  position: absolute;\n  width: 100%;\n  height: auto; }\n\n.landing__hat-container___1NmUc .landing__hat-on___-NVNz {\n  z-index: 2;\n  opacity: 0; }\n\n.landing__hat-container___1NmUc .landing__beam___1dMfU {\n  position: absolute;\n  width: 440px;\n  position: absolute;\n  left: 80%;\n  bottom: -6%;\n  z-index: 3;\n  opacity: 0; }\n\n@media (min-width: 440px) {\n  .landing__hat-container___1NmUc .landing__beam___1dMfU {\n    bottom: -13%; } }\n\n@media (min-width: 480px) {\n  .landing__hat-container___1NmUc .landing__beam___1dMfU {\n    width: 535px;\n    left: 85%; } }\n\n.landing__input-component___3IuSV {\n  width: 90%;\n  position: relative;\n  z-index: 4;\n  font-size: 1.3em; }\n\n@media (min-width: 520px) {\n  .landing__input-component___3IuSV {\n    width: 100%; } }\n\n.landing__input-component___3IuSV input {\n  float: left;\n  width: calc(100% - 108px);\n  height: 42px;\n  padding: 0 1em;\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  color: #808dc6;\n  line-height: 36px;\n  border: none;\n  border-top-left-radius: 21px;\n  border-bottom-left-radius: 21px; }\n\n#landing__post-email___1NQBt {\n  border-top-right-radius: 0px;\n  border-bottom-right-radius: 0px; }\n\n#landing__submit-button___3iVM0 {\n  border-top-left-radius: 0px;\n  border-bottom-left-radius: 0px; }\n\n.landing__input-component___3IuSV input:focus {\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #808dc6; }\n\n.landing__input-component___3IuSV button {\n  float: left;\n  width: 108px;\n  height: 42px;\n  padding: 0;\n  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;\n  background-color: #E05926;\n  color: #ffffff;\n  border: none;\n  line-height: 36px;\n  border-top-right-radius: 21px;\n  border-bottom-right-radius: 21px;\n  cursor: pointer; }\n\n.landing__input-component___3IuSV button:hover {\n  background-color: #E06926; }\n\n.landing__input-component___3IuSV button:focus {\n  outline: none;\n  background-color: #E04A26; }\n\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc:hover .landing__hat-on___-NVNz,\n.landing__landing___d_c8w .landing__hero___1oGpx .landing__hat-container___1NmUc:hover .landing__beam___1dMfU {\n  -webkit-animation: landing__flicker___PgSTC 6s linear infinite;\n  animation: landing__flicker___PgSTC 6s linear infinite; }\n\n@-webkit-keyframes landing__flicker___PgSTC {\n  0% {\n    opacity: 0; }\n  5% {\n    opacity: 0; }\n  6% {\n    opacity: 1; }\n  11% {\n    opacity: .4; }\n  11.25% {\n    opacity: .6; }\n  11.5% {\n    opacity: .4; }\n  18% {\n    opacity: 1; }\n  18.5% {\n    opacity: .9; }\n  22% {\n    opacity: 1; }\n  38.5% {\n    opacity: 1; }\n  39% {\n    opacity: .8; }\n  42% {\n    opacity: 1; }\n  60% {\n    opacity: 1; }\n  60.5% {\n    opacity: 0; }\n  62% {\n    opacity: 0; }\n  63% {\n    opacity: .2; }\n  63.25% {\n    opacity: 0; }\n  65% {\n    opacity: 1; }\n  73% {\n    opacity: 1; }\n  75% {\n    opacity: .8; }\n  79% {\n    opacity: 1; }\n  100% {\n    opacity: 1; } }\n\n@keyframes landing__flicker___PgSTC {\n  0% {\n    opacity: 0; }\n  5% {\n    opacity: 0; }\n  6% {\n    opacity: 1; }\n  11% {\n    opacity: .4; }\n  11.25% {\n    opacity: .6; }\n  11.5% {\n    opacity: .4; }\n  18% {\n    opacity: 1; }\n  18.5% {\n    opacity: .9; }\n  22% {\n    opacity: 1; }\n  38.5% {\n    opacity: 1; }\n  39% {\n    opacity: .8; }\n  42% {\n    opacity: 1; }\n  60% {\n    opacity: 1; }\n  60.5% {\n    opacity: 0; }\n  62% {\n    opacity: 0; }\n  63% {\n    opacity: .2; }\n  63.25% {\n    opacity: 0; }\n  65% {\n    opacity: 1; }\n  73% {\n    opacity: 1; }\n  75% {\n    opacity: .8; }\n  79% {\n    opacity: 1; }\n  100% {\n    opacity: 1; } }\n", ""]);
 
 	// exports
 	exports.locals = {
@@ -34041,6 +34094,8 @@
 		"hat-off": "landing__hat-off___21nl7",
 		"beam": "landing__beam___1dMfU",
 		"input-component": "landing__input-component___3IuSV",
+		"post-email": "landing__post-email___1NQBt",
+		"submit-button": "landing__submit-button___3iVM0",
 		"flicker": "landing__flicker___PgSTC"
 	};
 
@@ -34327,7 +34382,7 @@
 
 
 	// module
-	exports.push([module.id, ".announcement__welcome-text___1F-DQ {\n  font: 38px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 100px; }\n\n.announcement__announcement-text___2ZPkZ {\n  font: 15pt 'Avenir';\n  font-weight: lighter;\n  color: #f1f9fd;\n  width: 1200px;\n  margin: 0 auto;\n  display: block;\n  padding-bottom: 100px; }\n\n.announcement__register-button___2Tav5 {\n  height: 54px;\n  width: 228px;\n  border-radius: 3px;\n  background-color: #399BAD;\n  color: #f1f9fd;\n  font: 22px 'Gotham';\n  display: block;\n  margin: 0 auto;\n  text-decoration: none;\n  line-height: 54px;\n  text-align: center;\n  margin-bottom: 150px; }\n\n/*\n.announcement-container {\n\tfont: 38px 'Gotham';\n\t//font-weight: bold;\n\tmargin: 0 auto;\n\tdisplay: block;\n\twidth: 1200px;\n\tcolor: #f1f9fd;\n}\n\n.center  {\n\ttext-align: center;\n}\n\n.signin-text {\n\tfont-size: 18pt;\n\tfont-family: 'Gotham'\n}\n\n.information {\n\tfont-size: 20px;\n\tfont-weight: normal;\n}\n\n.join-text{\n\tfont-size: 8pt;\n\tfont-family: 'Gotham';\n\twidth: 100px;\n\toverflow: wrap;\n\tmargin: 0 auto;\n\tmargin-bottom: 50px;\n}\n\n.signup-link {\n\tcolor: #399BAD;\n\ttext-decoration: underline;\n\ttext-decoration-color: #399BAD;\n}\n\n#github-logo {\n\tposition:relative;\n\tright: 10px;\n\ttop: 10px;\n}\n\n.signin-button {\n\twidth:170px;\n\theight:50px;\n\tborder-radius: 25px;\n\tbackground-color: #399BAD;\t\n\tmargin: 10px auto;\n\n}\n\n.button-text {\n\ttext-decoration: none;\n\theight: 50px;\n\twidth: 170px;\n\tline-height: 50px;\n\tcolor: white;\n\tdisplay: block;\n\tfont-family: 'Avenir'\n}\n*/\n", ""]);
+	exports.push([module.id, ".announcement__welcome-text___1F-DQ {\n  font: 38px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 50px; }\n\n.announcement__announcement-text___2ZPkZ {\n  font: 20px 'Brandon-Regular';\n  font-weight: lighter;\n  color: #f1f9fd;\n  width: 800px;\n  margin: 0 auto;\n  display: block;\n  padding-bottom: 50px; }\n\n.announcement__register-button___2Tav5 {\n  height: 54px;\n  width: 228px;\n  border-radius: 3px;\n  background-color: #399BAD;\n  color: #f1f9fd;\n  font: 22px 'Gotham';\n  display: block;\n  margin: 0 auto;\n  text-decoration: none;\n  line-height: 54px;\n  text-align: center;\n  margin-bottom: 100px; }\n\n/*\n.announcement-container {\n\tfont: 38px 'Gotham';\n\t//font-weight: bold;\n\tmargin: 0 auto;\n\tdisplay: block;\n\twidth: 1200px;\n\tcolor: #f1f9fd;\n}\n\n.center  {\n\ttext-align: center;\n}\n\n.signin-text {\n\tfont-size: 18pt;\n\tfont-family: 'Gotham'\n}\n\n.information {\n\tfont-size: 20px;\n\tfont-weight: normal;\n}\n\n.join-text{\n\tfont-size: 8pt;\n\tfont-family: 'Gotham';\n\twidth: 100px;\n\toverflow: wrap;\n\tmargin: 0 auto;\n\tmargin-bottom: 50px;\n}\n\n.signup-link {\n\tcolor: #399BAD;\n\ttext-decoration: underline;\n\ttext-decoration-color: #399BAD;\n}\n\n#github-logo {\n\tposition:relative;\n\tright: 10px;\n\ttop: 10px;\n}\n\n.signin-button {\n\twidth:170px;\n\theight:50px;\n\tborder-radius: 25px;\n\tbackground-color: #399BAD;\t\n\tmargin: 10px auto;\n\n}\n\n.button-text {\n\ttext-decoration: none;\n\theight: 50px;\n\twidth: 170px;\n\tline-height: 50px;\n\tcolor: white;\n\tdisplay: block;\n\tfont-family: 'Avenir'\n}\n*/\n", ""]);
 
 	// exports
 	exports.locals = {
@@ -34376,11 +34431,11 @@
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _userinfo = __webpack_require__(306);
+	var _userinfo = __webpack_require__(307);
 
 	var _userinfo2 = _interopRequireDefault(_userinfo);
 
-	var _forms = __webpack_require__(308);
+	var _forms = __webpack_require__(309);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34423,15 +34478,30 @@
 							'div',
 							{ className: _userinfo2.default['column-left'] },
 							_forms.left_forms.map(function (form) {
-								return _react2.default.createElement(_Input2.default, { password: form.password, dropdown: form.dropdown, key: form.id, id: form.id });
+								return _react2.default.createElement(_Input2.default, { password: form.password, options: form.options || [], key: form.id, id: form.id });
 							})
 						),
 						_react2.default.createElement(
 							'div',
 							{ className: _userinfo2.default['column-right'] },
 							_forms.right_forms.map(function (form) {
-								return _react2.default.createElement(_Input2.default, { password: form.password, dropdown: form.dropdown, key: form.id, id: form.id });
+								return _react2.default.createElement(_Input2.default, { password: form.password, options: form.options || [], key: form.id, id: form.id });
 							})
+						),
+						_react2.default.createElement(
+							'div',
+							null,
+							_react2.default.createElement(
+								'span',
+								null,
+								' Are you interested in giving a short (<5 min) lightning talk on a topic of your choice? '
+							),
+							_react2.default.createElement(_Input2.default, { password: false, options: ['Yes', 'No'], id: 'hasLightningInterest' })
+						),
+						_react2.default.createElement(
+							'div',
+							null,
+							' We\'d love to connect you to awesome opportunities at sponsoring companies. Is it okay if we share your information with our sponsors? '
 						)
 					)
 				);
@@ -34441,12 +34511,6 @@
 		return UserInfo;
 	}(_react.Component)) || _class) || _class);
 	exports.default = UserInfo;
-
-	/*
-	<div className={styles.center} >
-					{forms.map((form) => (<Input dropdown={form.dropdown} disabled={form.disabled} key={form.id} id={form.id}/>))}
-					</div>
-					*/
 
 /***/ },
 /* 303 */
@@ -34478,6 +34542,30 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var map = {
+		firstName: 'first and last name',
+		lastName: 'first and last name',
+		shirtSize: 'shirt size',
+		diet: 'dietary restrictions',
+		age: 'age',
+		graduationYear: 'grad year',
+		transportation: 'transportation',
+		school: 'school',
+		major: 'major',
+		gender: 'gender',
+		professionalInterest: 'professional interests',
+		github: 'github username',
+		linkedin: 'linkedin username',
+		interests: 'interests',
+		isNovice: 'are you a novice?',
+		isPrivate: 'is your information private?',
+		hasLightningInterest: '',
+		phoneNumber: 'phone number',
+		email: 'email',
+		createPassword: 'create password',
+		confirmPassword: 'confirm password'
+	};
+
 	var Input = (_dec = (0, _mobxReact.inject)('store'), _dec(_class = (0, _mobxReact.observer)(_class = function (_Component) {
 		_inherits(Input, _Component);
 
@@ -34494,39 +34582,29 @@
 
 			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Input.__proto__ || Object.getPrototypeOf(Input)).call.apply(_ref, [this].concat(args))), _this), _this.onChange = function (e) {
 				_this.props.store.userData[_this.props.id] = e.target.value;
+				console.log(_this.props.store.userData);
 			}, _this.render = function () {
 				return _react2.default.createElement(
 					'div',
 					{ className: _input2.default['reg-input'] },
-					_this.props.dropdown ? _react2.default.createElement(
+					_this.props.options.length != 0 ? _react2.default.createElement(
 						'select',
-						null,
-						_react2.default.createElement(
-							'option',
-							{ value: '1' },
-							' one '
-						),
-						_react2.default.createElement(
-							'option',
-							{ value: '2' },
-							' two '
-						),
-						_react2.default.createElement(
-							'option',
-							{ value: '3' },
-							' three '
-						),
-						_react2.default.createElement(
-							'option',
-							{ value: '4' },
-							' four '
-						)
+						{ value: _this.props.store.userData[_this.props.id], onChange: _this.onChange },
+						_this.props.options.map(function (option, index) {
+							return _react2.default.createElement(
+								'option',
+								{ key: index, value: option },
+								' ',
+								option,
+								' '
+							);
+						})
 					) : _react2.default.createElement('input', { type: _this.props.password ? 'password' : '', onChange: _this.onChange, value: _this.props.store.userData[_this.props.id] }),
 					_react2.default.createElement(
 						'span',
 						null,
 						' ',
-						_this.props.id.replace('_', ' '),
+						map[_this.props.id],
 						' '
 					)
 				);
@@ -34538,10 +34616,8 @@
 
 
 	Input.proptypes = {
-		editable: _react2.default.PropTypes.bool,
 		id: _react2.default.PropTypes.string.isRequired,
-		dropdown: _react2.default.PropTypes.bool.isRequired,
-		options: _react2.default.PropTypes.array,
+		options: _react2.default.PropTypes.array.isRequired,
 		password: _react2.default.PropTypes.bool
 	};
 
@@ -34582,7 +34658,7 @@
 
 
 	// module
-	exports.push([module.id, ".input__reg-input___23BlS {\n  position: relative;\n  margin-bottom: 30px; }\n\n.input__reg-input___23BlS input,\nselect {\n  height: 45px;\n  width: 485px;\n  color: #b7bcdf;\n  background-color: #122342;\n  border: 2.5px solid #57c7df;\n  border-radius: 3px;\n  position: relative;\n  outline: none;\n  padding-left: 15px;\n  font-size: 22px;\n  line-height: 22px;\n  font-family: 'Gotham', sans-serif; }\n\n.input__reg-input___23BlS span {\n  position: absolute;\n  left: 9px;\n  top: -7px;\n  background-color: #122342;\n  padding-left: 6px;\n  padding-right: 6px;\n  font-family: 'Gotham', sans-serif;\n  color: #b7bcdf;\n  text-transform: uppercase;\n  font-size: 16px;\n  font-weight: 500; }\n", ""]);
+	exports.push([module.id, ".input__reg-input___23BlS {\n  position: relative;\n  margin-bottom: 30px; }\n\n.input__reg-input___23BlS input,\nselect {\n  height: 45px;\n  width: 385px;\n  color: #b7bcdf;\n  background-color: #122342;\n  border: 2px solid #57c7df;\n  border-radius: 3px;\n  position: relative;\n  outline: none;\n  padding-left: 15px;\n  font-size: 18px;\n  line-height: 18px;\n  font-family: 'Gotham', sans-serif;\n  margin-bottom: 0px; }\n\n.input__reg-input___23BlS select {\n  -webkit-appearance: none;\n  background: url(" + __webpack_require__(306) + ") no-repeat right #122342;\n  background-size: 17px;\n  background-position: calc(100% - 10px); }\n\n.input__reg-input___23BlS span {\n  position: absolute;\n  left: 9px;\n  top: -10px;\n  background-color: #122342;\n  padding-left: 6px;\n  padding-right: 6px;\n  font-family: 'Gotham', sans-serif;\n  color: #b7bcdf;\n  text-transform: uppercase;\n  font-size: 14px;\n  font-weight: 500; }\n", ""]);
 
 	// exports
 	exports.locals = {
@@ -34593,10 +34669,16 @@
 /* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "3abf9853e88fb6d2724419257113e7a9.svg";
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(307);
+	var content = __webpack_require__(308);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(287)(content, {});
@@ -34616,7 +34698,7 @@
 	}
 
 /***/ },
-/* 307 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(278)();
@@ -34624,7 +34706,7 @@
 
 
 	// module
-	exports.push([module.id, ".userinfo__container___bUUMu {\n  width: 1000px;\n  display: block;\n  margin: 0 auto; }\n\n.userinfo__info-text___1QPXD {\n  font: 38px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 100px; }\n\n.userinfo__column-left___3W-aJ {\n  width: 500px;\n  float: left; }\n\n.userinfo__column-right___1ND4q {\n  width: 500px;\n  float: right; }\n", ""]);
+	exports.push([module.id, ".userinfo__container___bUUMu {\n  width: 800px;\n  display: block;\n  margin: 0 auto; }\n\n.userinfo__info-text___1QPXD {\n  font: 38px 'Gotham';\n  color: #f1f9fd;\n  text-align: center;\n  padding-bottom: 100px; }\n\n.userinfo__column-left___3W-aJ {\n  width: 400px;\n  float: left; }\n\n.userinfo__column-right___1ND4q {\n  width: 400px;\n  float: right; }\n", ""]);
 
 	// exports
 	exports.locals = {
@@ -34635,7 +34717,7 @@
 	};
 
 /***/ },
-/* 308 */
+/* 309 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -34644,76 +34726,62 @@
 		value: true
 	});
 	var left_forms = [{
-		id: 'github_username',
-		dropdown: false
+		id: 'github'
 	}, {
-		id: 'create_password',
-		dropdown: false,
+		id: 'createPassword',
 		password: true
 	}, {
-		id: 'name',
-		dropdown: false
+		id: 'firstName'
 	}, {
-		id: 'school',
-		dropdown: false
+		id: 'school'
 	}, {
-		id: 'grad_year',
-		dropdown: false
+		id: 'graduationYear'
 	}, {
-		id: 'shirt_size',
-		dropdown: false
+		id: 'shirtSize',
+		options: ['S', 'M', 'L', 'XL']
 	}, {
 		id: 'gender',
-		dropdown: false
+		options: ['Male', 'Female', 'Non-Binary', 'Other']
 	}, {
-		id: 'are_you_a_novice?',
-		dropdown: true
+		id: 'isNovice',
+		options: ['Yes', 'No']
 	}, {
-		id: 'resume',
-		dropdown: false
+		id: 'resume'
 	}, {
-		id: 'foss_contributors',
-		dropdown: false
+		id: 'isPrivate'
 	}];
 
 	var right_forms = [{
-		id: 'email',
-		dropdown: false
+		id: 'email'
 	}, {
-		id: 'confirm_password',
-		dropdown: false,
+		id: 'confirmPassword',
 		password: true
 	}, {
-		id: 'phone_number',
-		dropdown: false
+		id: 'phoneNumber'
 	}, {
-		id: 'major',
-		dropdown: false
+		id: 'major'
 	}, {
 		id: 'transportation',
-		dropdown: true
+		options: ['Not Needed', 'Bus Requested', 'In State', 'International']
 	}, {
-		id: 'dietary_restrictions',
-		dropdown: true
+		id: 'diet',
+		options: ['None', 'Vegetarian', 'Vegan', 'Gluten-Free']
 	}, {
-		id: 'age',
-		dropdown: false
+		id: 'age'
 	}, {
-		id: 'linkedin_username',
-		dropdown: false
+		id: 'linkedin'
 	}, {
-		id: 'professional_interests',
-		dropdown: true
+		id: 'professionalInterest',
+		options: ['None', 'Internship', 'Fulltime', 'Both']
 	}, {
-		id: 'interests',
-		dropdown: true
+		id: 'interests'
 	}];
 
 	exports.left_forms = left_forms;
 	exports.right_forms = right_forms;
 
 /***/ },
-/* 309 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34722,7 +34790,7 @@
 	  value: true
 	});
 
-	var _projects = __webpack_require__(310);
+	var _projects = __webpack_require__(311);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
@@ -34731,7 +34799,7 @@
 	exports.default = _projects2.default;
 
 /***/ },
-/* 310 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34757,7 +34825,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 311 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34766,7 +34834,7 @@
 	  value: true
 	});
 
-	var _team = __webpack_require__(312);
+	var _team = __webpack_require__(313);
 
 	var _team2 = _interopRequireDefault(_team);
 
@@ -34775,7 +34843,7 @@
 	exports.default = _team2.default;
 
 /***/ },
-/* 312 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34801,7 +34869,7 @@
 	exports.default = Team;
 
 /***/ },
-/* 313 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34810,7 +34878,7 @@
 	  value: true
 	});
 
-	var _success = __webpack_require__(314);
+	var _success = __webpack_require__(315);
 
 	var _success2 = _interopRequireDefault(_success);
 
@@ -34819,7 +34887,7 @@
 	exports.default = _success2.default;
 
 /***/ },
-/* 314 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

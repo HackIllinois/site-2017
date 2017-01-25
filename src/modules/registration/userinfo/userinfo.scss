@@ -12,11 +12,35 @@
 }
 
 .column-left {
-	width: 400px;
+	width: 385px;
 	float: left;
+	margin-right: 15px;
 }
 
 .column-right {
-	width: 400px;
+	width: 385px;
+	margin-left: 15px;
 	float: right;
+}
+
+.small-input {
+	width: 150px;
+	float: right;
+}
+
+.small-text {
+	font: 12px 'Gotham';
+	color: #b7bcdf;
+	max-width: 650px;
+	overflow: hidden;
+	float: left;
+	display: inline-block;
+	vertical-align: center;
+}
+
+.small-container {
+	width: 800px;
+	height: 50px;
+	display: inline-block;
+	margin: 0 auto;
 }

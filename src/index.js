@@ -14,7 +14,7 @@ import Registration from './modules/registration'
 //registration sub-pages
 import Announcement from './modules/registration/announcement'
 import UserInfo from './modules/registration/userinfo'
-import Projects from './modules/registration/projects'
+import Ecosystems from './modules/registration/ecosystems'
 import Team from './modules/registration/team'
 import Success from './modules/registration/success'
 
@@ -51,7 +51,7 @@ ReactDom.render(
 			<Route path='registration' component={Registration}>
 					<Route path='1' component={Announcement}/>
 					<Route path='2' component={UserInfo}/>
-					<Route path='3' component={Projects}/>
+					<Route path='3' component={Ecosystems}/>
 					<Route path='4' component={Team}/>
 					<Route path='5' component={Success}/>
 				</Route>

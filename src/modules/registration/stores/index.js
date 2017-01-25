@@ -14,25 +14,38 @@ class RegistrationStore {
 	@observable isAuthenticated = false
 	@observable userData = {
 		firstName: '',
-    lastName: '',
-    shirtSize: '',
-    diet: '',
-    age: '',
-    graduationYear: '',
-    transportation: '',
-    school: '',
-    major: '',
-    gender: '',
-    professionalInterest: '',
-    github: '',
-    linkedin: '',
-    interests: '',
-    isNovice: true,
-    isPrivate: false,
-    hasLightningInterest: false,
-    phoneNumber: '',
-    email: ''
+        lastName: '',
+        shirtSize: 'S',
+        diet: '',
+        age: '',
+        graduationYear: '',
+        transportation: 'NOT_NEEDED',
+        school: '',
+        major: '',
+        gender: 'MALE',
+        professionalInterest: 'NONE',
+        github: '',
+        linkedin: '',
+        interests: '',
+        isNovice: 'NO',
+        isPrivate: 'NO',
+        hasLightningInterest: 'NO',
+        phoneNumber: '',
+        email: '',
+        createPassword: '',
+        confirmPassword: ''
 	}
+    @observable ecosystems = {
+        javascript: false,
+        ios:false,
+        android:false,
+        ruby:false,
+        python:false,
+        embedded:false,    
+        linux:false,
+        create:false
+    }
+    @observable selectedEcosystems = 0;
 
 	constructor(code) {
 		
