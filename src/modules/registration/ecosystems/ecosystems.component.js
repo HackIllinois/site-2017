@@ -12,8 +12,7 @@ const ecosystems = [
 	'ruby',
 	'python',
 	'embedded',
-	'linux',
-	'create'
+	'linux'
 ]
 
 @inject('store') @observer
@@ -56,9 +55,12 @@ class CreateModal extends Component {
     render = () => {
         return (
             <div>
-                <button onClick={this.showModal}>Open</button>
-                <Modal ref="modal" keyboard={this.callback}>
-                    <h2>I am a dialog</h2>
+                <button onClick={this.showModal} id={styles["#create"]} className={styles['project-card']}>
+					<img draggable="false" src={"../../../../src/assets/img/card-7.svg"}/>
+					<span className={styles['label']}>CREATE</span>
+				</button>
+                <Modal ref="modal">
+                    <h2>Add Your Custom Ecosystem</h2>
                     <button onClick={this.hideModal}>Close</button>
                 </Modal>
             </div>
@@ -78,6 +80,7 @@ class Ecosystems extends Component {
         {ecosystems.map((ecosystem, index)=> (
         	<Card index={index} key={index} label={ecosystem} active={this.props.store.ecosystems[ecosystem]}/>
         ))}
+		<CreateModal />
 	    </div>
 	    <div className={styles['navigation-container']}>
 		    <div className={styles['back-button']}>

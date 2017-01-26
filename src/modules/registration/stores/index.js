@@ -43,8 +43,7 @@ class RegistrationStore {
         ruby:false,
         python:false,
         embedded:false,
-        linux:false,
-        create:false
+        linux:false
     }
     @observable selectedEcosystems = 0;
     @observable selectedFile = '';
