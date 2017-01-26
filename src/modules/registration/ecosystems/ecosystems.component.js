@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
+import boron from 'boron'
 
 import styles from './ecosystems.scss'
 import Button from '../components/button'
@@ -37,6 +38,34 @@ class Card extends Component {
     </div>
 	)
 }
+
+var Modal = require('boron/DropModal')
+class CreateModal extends Component {
+	showModal = () => {
+        this.refs.modal.show();
+    }
+
+    hideModal = () => {
+        this.refs.modal.hide();
+    }
+
+    callback = (event) => {
+        console.log(event);
+    }
+
+    render = () => {
+        return (
+            <div>
+                <button onClick={this.showModal}>Open</button>
+                <Modal ref="modal" keyboard={this.callback}>
+                    <h2>I am a dialog</h2>
+                    <button onClick={this.hideModal}>Close</button>
+                </Modal>
+            </div>
+        );
+    }
+}
+
 
 @inject('store') @observer
 class Ecosystems extends Component {
