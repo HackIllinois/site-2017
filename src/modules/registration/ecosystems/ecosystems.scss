@@ -8,7 +8,7 @@
 .instruction-text {
 	font: 22px 'Brandon-Regular';
 	text-align: center;
-	width: 700px;
+	width: 100%;
 	color: #b7bcdf;
 	margin: 0 auto;
 	display: block;
@@ -18,19 +18,36 @@
 /*-- Cards --*/
 
 .project-card-container {
-  width: 800px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
   margin: 0 auto;
 }
 
+@media (min-width: 570px) {
+  .project-card-conainer {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 800px) {
+  .project-card-container,
+  .instruction-text {
+    width: 800px;
+	  padding-left: 0;
+	  padding-right: 0;
+  }
+}
+
 .project-card {
-  width: 185px;
-  height: 185px;
+  width: 120px;
+  height: 120px;
   background-color: pink;
   display: flex;
   flex-direction: column;
@@ -41,18 +58,38 @@
   letter-spacing: 0.12em;
 }
 
+@media (min-width: 600px) {
+  .project-card {
+    height: 185px;
+    width: 185px;
+  }
+}
+
 .project-card.card-active {
   box-shadow: 0 0 0 5px #f1f9fd;
 }
 
 .project-card img {
-  width: 98px;
-  height: 98px;
+  width: 63px;
+  height: 63px;
   margin-bottom: 16px;
 }
 
+@media (min-width: 600px) {
+  .project-card img {
+    height: 98px;
+    width: 98px;
+  }
+}
+
 .project-card .label {
-  font-size: 22px;
+  font-size: 14px;
+}
+
+@media (min-width: 600px) {
+  .project-card .label {
+    font-size: 22px;
+  }
 }
 
 .max-selected {
@@ -61,9 +98,19 @@
 
 /* -- Navigation --*/
 .navigation-container {
-  width: 800px;
+  width: 100%;
   display: block;
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 800px) {
+  .navigation-container {
+    width: 800px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .back-button {

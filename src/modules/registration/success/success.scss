@@ -12,10 +12,15 @@
 	text-align: center;
 	display: block;
 	margin: 0 auto;
+	width: 100%;
+}
+
+@media (min-width: 450px) {
 	width: 450px;
 }
 
 .confirmation {
+	width: 100%;
 	width: 300px;
 	display: block;
 	margin: 0 auto;

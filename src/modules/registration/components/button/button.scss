@@ -1,6 +1,6 @@
 .button {
 	height: 54px;
-	width: 228px;
+	width: 160px;
 	border-radius: 3px;
 	background-color: #399BAD;
 	color: #f1f9fd;
@@ -11,6 +11,12 @@
 	line-height: 54px;
 	text-align: center;
 	margin-bottom: 100px;
+}
+
+@media (min-width: 540px) {
+	.button {
+		width: 228px;
+	}
 }
 
 .button:hover, .button:hover .arrow-right, .button:hover .arrow-left {
