@@ -32,9 +32,9 @@ class Card extends Component {
 
 	render = () => (
 		<div onClick={this.toggleSelect} id={styles[this.props.label]} className={[styles['project-card'],this.props.active ? styles['card-active'] : '', this.props.store.selectedEcosystems >= 4 && !this.props.active ? styles['max-selected'] : ''].join(' ')}>
-    <img draggable="false" src={"../../../src/assets/img/card-" + this.props.index + '.svg'}/>
-    <span className={styles.label}>{this.props.label.toUpperCase()}</span>
-    </div>
+		    <img draggable="false" src={"../../../src/assets/img/card-" + this.props.index + '.svg'}/>
+		    <span className={styles.label}>{this.props.label.toUpperCase()}</span>
+    	</div>
 	)
 }
 
@@ -55,9 +55,9 @@ class CreateModal extends Component {
     render = () => {
         return (
             <div>
-                <button onClick={this.showModal} id={styles["#create"]} className={styles['project-card']}>
+                <button onClick={this.showModal} id={styles["create"]} className={styles['project-card']}>
 					<img draggable="false" src={"../../../../src/assets/img/card-7.svg"}/>
-					<span className={styles['label']}>CREATE</span>
+					<span className={styles.label}>CREATE</span>
 				</button>
                 <Modal ref="modal">
                     <h2>Add Your Custom Ecosystem</h2>
