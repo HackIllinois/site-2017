@@ -44,7 +44,7 @@ class Card extends Component {
 var Modal = require('boron/DropModal')
 var modalStyle = {
 	width: '100%',
-	height: '100%',
+	height: '60%',
 	backgroundColor: '#122342',
 	border: '5px solid #57C7DF',
 	padding: '45px'
