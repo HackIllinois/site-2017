@@ -30,7 +30,7 @@ var config = {
         include: path.resolve(process.cwd(), 'src')
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file-loader',
+        test: /\.(otf|eot|svg|ttf|woff|woff2)$/, loader: 'file-loader',
         include: path.resolve(process.cwd(), 'src')
       },
       {

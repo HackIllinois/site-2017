@@ -1,3 +1,14 @@
+.member-li input {
+  background: url(../../../../assets/img/x.svg) no-repeat right #122342;
+  background-size: 12px;
+  background-position: calc(100% - 10px);
+  cursor: pointer;
+}
+
+.member-li:hover input {
+ opacity: 0.75;
+}
+
 .reg-input {
   position: relative;
   margin-bottom: 30px;
@@ -54,7 +65,7 @@
   padding-left: 15px;
   font-size: 16px;
   line-height: 16px;
-  font-family: 'Gotham', sans-serif;
+  font-family: 'Gotham-Medium', sans-serif;
   margin-bottom: 0px;
   cursor: pointer;
 }
@@ -87,7 +98,7 @@
   background-color: #122342;
   padding-left: 6px;
   padding-right: 6px;
-  font-family: 'Gotham', sans-serif;
+  font-family: 'Gotham-Medium', sans-serif;
   color: #b7bcdf;
   text-transform: uppercase;
   font-size: 14px;

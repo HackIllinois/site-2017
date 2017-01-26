@@ -34,7 +34,8 @@ class RegistrationStore {
         email: '',
         createPassword: '',
         confirmPassword: '',
-        resume: ''
+        resume: '',
+        teamMember: ''
 	}
     @observable ecosystems = {
         javascript: false,
@@ -43,12 +44,18 @@ class RegistrationStore {
         ruby:false,
         python:false,
         embedded:false,
-        linux:false
+        linux:false,
+        create: false
+    }
+    @observable project = {
+        name: '',
+        description: '',
+        repo: ''
     }
     @observable selectedEcosystems = 0;
     @observable selectedFile = '';
     @observable fileSize = 0;
-    @observable collaborators = ['John', 'Arnav', 'Achal', 'Vishrut'];
+    @observable collaborators = [];
 	@observable codeOfConductCheck = false;
 
 	constructor(code) {

@@ -1,19 +1,28 @@
 @font-face {
-  font-family: 'Gotham';
-  src: url('../../assets/fonts/Gotham/Gotham-Medium.eot');
-  src: url('../../assets/fonts/Gotham/Gotham-Medium.eot#iefix') format('embedded-opentype'),
-       url('../../assets/fonts/Gotham/Gotham-Medium.woff') format('woff'), 
-       url('../../assets/fonts/Gotham/Gotham-Medium.ttf')  format('truetype'),
-       url('../../assets/fonts/Gotham/Gotham-Medium.svg#svgFontName') format('svg');
+  font-family: 'Gotham-Medium';
+  src: url('../../assets/fonts/GothamMedium.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gotham-Regular';
+  src: url('../../assets/fonts/GothamBoldRegular.ttf') format('truetype');
+  //font-weight: bold;
 }
 
 @font-face {
   font-family: 'Brandon-Regular';
-  src: url('../../assets/fonts/BrandonGrotesque/Brandon_reg.eot');
-  src: url('../../assets/fonts/BrandonGrotesque/Brandon_reg.eot?#iefix') format('embedded-opentype'),
-       url('../../assets/fonts/BrandonGrotesque/Brandon_reg.woff') format('woff'), 
-       url('../../assets/fonts/BrandonGrotesque/Brandon_reg.ttf')  format('truetype'),
-       url('../../assets/fonts/BrandonGrotesque/Brandon_reg.svg#svgFontName') format('svg');
+  src: url('../../assets/fonts/Brandon_reg.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Brandon-Medium';
+  src: url('../../assets/fonts/Brandon_med.otf') format('truetype');
+}
+
+@font-fact {
+  font-family: 'Brandon-Bold';
+  src: url('../../assets/fonts/Brandon_bld.otf') format('truetype');
+  //font-weight: bold;
 }
 
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */

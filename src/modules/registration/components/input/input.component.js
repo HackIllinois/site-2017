@@ -25,7 +25,8 @@ const map = {
   email: 'email',
   createPassword: 'create password',
   confirmPassword: 'confirm password',
-  resume: 'resume'
+  resume: 'resume',
+  teamMember: 'add team member'
 }
 
 const formatOption = (str) => (
@@ -34,25 +35,40 @@ const formatOption = (str) => (
 
 @inject('store') @observer
 class Input extends Component {
+	
+	
 	onChange = (e) => {
 		const that = this;
-		this.props.store.userData[this.props.id] = e.target.value
-		//console.log(this.refs.fileUpload.files)
+		if(this.props.type == 'project') {
+			this.props.store.project[this.props.id] = e.target.value;
+		}
 		if(this.props.type == 'file'){
 			let reader = new FileReader();
 			reader.onload = function() {
-				//console.log(this.result)
 				that.props.store.userData.resume = this.result
 			}
-			//console.log(this.refs.fileUpload.files[0])
 			this.props.store.selectedFile = this.refs.fileUpload.files[0].name
 			this.props.store.fileSize = this.refs.fileUpload.files[0].size
   		reader.readAsBinaryString(this.refs.fileUpload.files[0]);
 		}
+		else {
+			this.props.store.userData[this.props.id] = e.target.value
+		}
+	}
+
+	removeCollaborators = () => {
+		this.props.store.collaborators = this.props.store.collaborators.filter((c) => (c != this.props.id));
+	}
+
+	addCollaborator = (e) => {
+		if(e.keyCode == 13) {
+			this.props.store.collaborators.push(this.props.store.userData[this.props.id])
+			this.props.store.userData[this.props.id] = '';
+		}
 	}
 
 	render = () => (
-		<div className={[styles['reg-input'], this.props.columns ? styles['user-info'] : ''].join(' ')}>
+		<div onClick={this.props.type == 'member-li' ? this.removeCollaborators : null} className={[styles['reg-input'], this.props.columns ? styles['user-info'] : '', this.props.type == 'member-li' ? styles['member-li'] : ''].join(' ')}>
 		{ this.props.options.length != 0 ?
 			<select value={this.props.store.userData[this.props.id]} onChange={this.onChange}>
 				{this.props.options.map((option, index) => (
@@ -60,10 +76,10 @@ class Input extends Component {
 				))}
 			</select>
 			:
-			<input id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.userData[this.props.id] || this.props.value} />
+			<input onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null } disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
 		}
 		{this.props.type == 'file' ? <label className={styles['file-label']} htmlFor='file'> {this.props.store.selectedFile || 'Choose a file...'} </label> : null }
-		<span> {map[this.props.id] || this.props.id} </span>
+		<span> {this.props.type == 'member-li' ? 'team member' : map[this.props.id] || this.props.id} </span>
 		</div>
 	)
 }
