@@ -18,6 +18,7 @@
   "homepage": "https://github.com/HackIllinois/site-2017#readme",
   "dependencies": {
     "axios": "^0.15.3",
+    "boron": "^0.2.3",
     "jsonp": "^0.2.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1"

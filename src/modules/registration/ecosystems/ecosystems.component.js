@@ -1,8 +1,12 @@
 import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
+import boron from 'boron'
 
 import styles from './ecosystems.scss'
+import buttonStyles from '../components/button/button.scss'
+import userInfoStyles from '../userinfo/userinfo.scss'
 import Button from '../components/button'
+import Input from '../components/input'
 
 const ecosystems = [
 	'javascript',
@@ -11,8 +15,7 @@ const ecosystems = [
 	'ruby',
 	'python',
 	'embedded',
-	'linux',
-	'create'
+	'linux'
 ]
 
 @inject('store') @observer
@@ -32,11 +35,52 @@ class Card extends Component {
 
 	render = () => (
 		<div onClick={this.toggleSelect} id={styles[this.props.label]} className={[styles['project-card'],this.props.active ? styles['card-active'] : '', this.props.store.selectedEcosystems >= 4 && !this.props.active ? styles['max-selected'] : ''].join(' ')}>
-    <img draggable="false" src={"../../../src/assets/img/card-" + this.props.index + '.svg'}/>
-    <span className={styles.label}>{this.props.label.toUpperCase()}</span>
-    </div>
+		    <img draggable="false" src={"../../../src/assets/img/card-" + this.props.index + '.svg'}/>
+		    <span className={styles.label}>{this.props.label.toUpperCase()}</span>
+    	</div>
 	)
 }
+
+var Modal = require('boron/DropModal')
+var modalStyle = {
+	width: '100%',
+	height: '60%',
+	backgroundColor: '#122342',
+	border: '5px solid #57C7DF',
+	padding: '45px'
+};
+class CreateModal extends Component {
+	showModal = () => {
+        this.refs.modal.show();
+    }
+
+    hideModal = () => {
+        this.refs.modal.hide();
+    }
+
+    callback = (event) => {
+        console.log(event);
+    }
+
+    render = () => {
+        return (
+            <div>
+                <button onClick={this.showModal} id={styles["create"]} className={styles['project-card']}>
+					<img draggable="false" src={"../../../../src/assets/img/card-7.svg"}/>
+					<span className={styles.label}>CREATE</span>
+				</button>
+                <Modal ref="modal" modalStyle={modalStyle}>
+                    <h2 className={styles['modal-text']}>+ CREATE</h2>
+					<Input key={"Name"} id={"Name"} options={[]} />
+					<Input key={"Description"} id={"Description"} options={[]} />
+					<Input key={"Repo"} id={"Repo"} options={[]} />
+                    <button className={buttonStyles['button']} onClick={this.hideModal}>Save</button>
+                </Modal>
+            </div>
+        );
+    }
+}
+
 
 @inject('store') @observer
 class Ecosystems extends Component {
@@ -49,6 +93,7 @@ class Ecosystems extends Component {
         {ecosystems.map((ecosystem, index)=> (
         	<Card index={index} key={index} label={ecosystem} active={this.props.store.ecosystems[ecosystem]}/>
         ))}
+		<CreateModal />
 	    </div>
 	    <div className={styles['navigation-container']}>
 		    <div className={styles['back-button']}>
