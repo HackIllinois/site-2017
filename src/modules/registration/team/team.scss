@@ -1,5 +1,7 @@
 .container {
-	width: 900px;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
 	display: block;
 	margin: 0 auto;
 }
@@ -14,13 +16,23 @@
 .instruction-text {
 	font: 22px 'Brandon-Regular';
 	text-align: center;
-	width: 900px;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
 	color: #b7bcdf;
 	margin: 0 auto;
 	display: block;
 	padding-bottom: 25px;
 }
 
+@media (min-width: 800px) {
+	.container,
+	.instruction-text {
+		width: 800px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
 .checkbox-list {
 	list-style: none;
 
@@ -38,10 +50,19 @@
 }
 
 .team-select-container {
-	width: 800px;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
 	display: block;
 	margin: 0 auto;
 }
+
+@media (min-width: 800px) {
+	.team-select-container {
+		width: 800px;
+	}
+}
+
 
 .back-button {
   float: left;
