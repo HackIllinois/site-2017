@@ -55,10 +55,10 @@ class UserInfo extends Component {
     "phoneNumber": this.props.store.userData.phoneNumber
    	};
 
-   	if(localStorage.getItem('authorization') != null && checkProperties(attendeeData)){
+   	
+   	if(localStorage.getItem('authorization') != null && checkProperties(attendeeData) && this.props.store.isFileSelected){
 			window.location = '/registration/3'
 		}
-		
 		
 
 		if(this.props.store.userData.createPassword != this.props.store.userData.confirmPassword){
@@ -67,9 +67,10 @@ class UserInfo extends Component {
 		}
 
 		if(checkProperties(attendeeData)) {
-			console.log('property check')
+			//console.log('property check')
+
 			if(this.props.store.isFileSelected){
-				console.log('file check')
+				//console.log('file check')
 				localStorage.setItem('userinfo', JSON.stringify(this.props.store.userData));
 				this.props.store.saveAttendee(attendeeData);
 			}
