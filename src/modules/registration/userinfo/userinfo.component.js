@@ -32,50 +32,52 @@ class UserInfo extends Component {
 
 	saveAttendee = (e) => {
 
-		if(localStorage.getItem('authorization') != null){
+		e.preventDefault();
+
+		const attendeeData = {
+    "firstName": this.props.store.userData.firstName,
+    "lastName": this.props.store.userData.lastName,
+    "shirtSize": this.props.store.userData.shirtSize,
+    "diet": this.props.store.userData.diet,
+    "age": this.props.store.userData.age,
+    "graduationYear": this.props.store.userData.graduationYear,
+    "transportation": this.props.store.userData.transportation,
+    "school": this.props.store.userData.school,
+    "major": this.props.store.userData.major,
+    "gender": this.props.store.userData.gender,
+    "professionalInterest": this.props.store.userData.professionalInterest,
+    "github": this.props.store.userData.github,
+    "linkedin": this.props.store.userData.linkedin,
+    "interests": this.props.store.userData.interests,
+    "isNovice": this.props.store.userData.isNovice == 'YES',
+    "isPrivate": this.props.store.userData.isPrivate == 'YES',
+    "hasLightningInterest": this.props.store.userData.hasLightningInterest == 'YES',
+    "phoneNumber": this.props.store.userData.phoneNumber
+   	};
+
+   	if(localStorage.getItem('authorization') != null && checkProperties(attendeeData)){
 			window.location = '/registration/3'
 		}
+		
+		
 
-		e.preventDefault();
 		if(this.props.store.userData.createPassword != this.props.store.userData.confirmPassword){
-			this.props.store.userData.createPassword = ''
-			this.props.store.userData.confirmPassword = ''
+			 this.props.store.userData.createPassword = ''
+			 this.props.store.userData.confirmPassword = ''
 		}
 
+		if(checkProperties(attendeeData)) {
+			console.log('property check')
+			if(this.props.store.isFileSelected){
+				console.log('file check')
+				localStorage.setItem('userinfo', JSON.stringify(this.props.store.userData));
+				this.props.store.saveAttendee(attendeeData);
+			}
+		}
 		else{
-
-			const attendeeData = {
-        "firstName": this.props.store.userData.firstName,
-        "lastName": this.props.store.userData.lastName,
-        "shirtSize": this.props.store.userData.shirtSize,
-        "diet": this.props.store.userData.diet,
-        "age": this.props.store.userData.age,
-        "graduationYear": this.props.store.userData.graduationYear,
-        "transportation": this.props.store.userData.transportation,
-        "school": this.props.store.userData.school,
-        "major": this.props.store.userData.major,
-        "gender": this.props.store.userData.gender,
-        "professionalInterest": this.props.store.userData.professionalInterest,
-        "github": this.props.store.userData.github,
-        "linkedin": this.props.store.userData.linkedin,
-        "interests": this.props.store.userData.interests,
-        "isNovice": this.props.store.userData.isNovice == 'YES',
-        "isPrivate": this.props.store.userData.isPrivate == 'YES',
-        "hasLightningInterest": this.props.store.userData.hasLightningInterest == 'YES',
-        "phoneNumber": this.props.store.userData.phoneNumber
-      }
-
-      console.log(checkProperties(attendeeData));
-			if(checkProperties(attendeeData)) {
-				if(this.props.store.resume != ''){
-					localStorage.setItem('userinfo', JSON.stringify(this.props.store.userData))
-					this.props.store.saveAttendee(attendeeData);
-				}
-			}
-			else{
-				this.props.store.status = 'TRY AGAIN';
-			}
+			this.props.store.status = 'TRY AGAIN';
 		}
+		
 	}
 
 	render = () => {

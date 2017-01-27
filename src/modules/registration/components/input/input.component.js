@@ -46,8 +46,9 @@ class Input extends Component {
 		if(this.props.type == 'file'){
 			let reader = new FileReader();
 			reader.onload = function() {
-				console.log(this.result)
+				//console.log(this.result)
 				that.props.store.userData.resume = this.result
+				that.props.store.isFileSelected = true
 			}
 			this.props.store.selectedFile = this.refs.fileUpload.files[0].name
 			this.props.store.fileSize = this.refs.fileUpload.files[0].size

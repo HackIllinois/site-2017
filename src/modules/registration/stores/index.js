@@ -77,9 +77,6 @@ class RegistrationStore {
             const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
         
             when(() => userToken.state !== 'pending',() => {
-                if(userToken.state == 'rejected' || this.userData.resume == ''){
-                    this.status = 'TRY AGAIN'
-                }
                 if(userToken.state !== 'rejected') {
                     
                     this.userAuth = userToken.value.data.data.auth
@@ -138,7 +135,7 @@ class RegistrationStore {
         repo: ''
     }
     @observable selectedEcosystems = 0;
-    @observable selectedFile = '';
+    @observable isFileSelected = false;
     @observable fileSize = 0;
     @observable collaborators = [];
 	@observable codeOfConductCheck = false;
