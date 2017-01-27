@@ -36,7 +36,6 @@ const formatOption = (str) => (
 @inject('store') @observer
 class Input extends Component {
 	
-	
 	onChange = (e) => {
 		const that = this;
 		if(this.props.type == 'project') {
@@ -45,6 +44,7 @@ class Input extends Component {
 		if(this.props.type == 'file'){
 			let reader = new FileReader();
 			reader.onload = function() {
+				console.log(this.result)
 				that.props.store.userData.resume = this.result
 			}
 			this.props.store.selectedFile = this.refs.fileUpload.files[0].name
@@ -61,6 +61,7 @@ class Input extends Component {
 	}
 
 	addCollaborator = (e) => {
+		//PRESSING ENTER
 		if(e.keyCode == 13) {
 			this.props.store.collaborators.push(this.props.store.userData[this.props.id])
 			this.props.store.userData[this.props.id] = '';
@@ -76,7 +77,7 @@ class Input extends Component {
 				))}
 			</select>
 			:
-			<input onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null } disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
+			<input className={this.props.store.userData[this.props.id] == '' && this.props.type != 'add-member' ? styles.error : ''} onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null } disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
 		}
 		{this.props.type == 'file' ? <label className={styles['file-label']} htmlFor='file'> {this.props.store.selectedFile || 'Choose a file...'} </label> : null }
 		<span> {this.props.type == 'member-li' ? 'team member' : map[this.props.id] || this.props.id} </span>

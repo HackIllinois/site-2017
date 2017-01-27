@@ -47,7 +47,6 @@ class Card extends Component {
 	showModal = () => {
 		if(!this.props.active) this.refs.modal.show();
 		this.toggleSelect();
-		
 	}
 
 	hideModal = () => {
@@ -74,44 +73,32 @@ class Card extends Component {
   	</div>
 	)
 }
-/*
-class CreateModal extends Component {
-		
-		showModal = () => {
-        this.refs.modal.show();
-    }
-
-    hideModal = () => {
-        this.refs.modal.hide();
-    }
-
-    callback = (event) => {
-        console.log(event);
-    }
-
-    render = () => {
-        return (
-          <div>
-          	<div onClick={this.showModal} id={styles["create"]} className={styles['project-card']}>
-							<img draggable="false" src={"../../../../src/assets/img/card-7.svg"}/>
-							<span className={styles.label}>CREATE</span>
-						</div>
-            <Modal ref="modal" modalStyle={modalStyle}>
-            	<h2 className={styles['modal-text']}>+ CREATE</h2>
-							<Input key={"Name"} id={"Name"} options={[]} />
-							<Input key={"Description"} id={"Description"} options={[]} />
-							<Input key={"Repo"} id={"Repo"} options={[]} />
-             	<button className={buttonStyles['button']} onClick={this.hideModal}>Save</button>
-            </Modal>
-          </div>
-        );
-    }
-}
-*/
-
 
 @inject('store') @observer
 class Ecosystems extends Component {
+
+	saveEcosystems = () => {
+		let ecosystems = []
+		if(this.props.store.ecosystems.javascript) ecosystems.push({'ecosystemId': 1})
+		if(this.props.store.ecosystems.ios) ecosystems.push({'ecosystemId': 2})
+		if(this.props.store.ecosystems.android) ecosystems.push({'ecosystemId': 3})
+		if(this.props.store.ecosystems.ruby) ecosystems.push({'ecosystemId': 4})
+		if(this.props.store.ecosystems.python) ecosystems.push({'ecosystemId': 5})
+		if(this.props.store.ecosystems.embedded) ecosystems.push({'ecosystemId': 6})
+		if(this.props.store.ecosystems.linux) ecosystems.push({'ecosystemId': 7})
+		if(this.props.store.ecosystems.create) ecosystems.push(
+			{'name': this.props.store.project.name,
+			 'description': this.props.store.project.description,
+			 'repo': this.props.store.project.repo
+			});
+
+		if(ecosystems.length > 0) {
+			//store for later
+			localStorage.setItem("ecosystemInterests", JSON.stringify(ecosystems))
+			window.location = '/registration/4'
+		}
+		
+	}
 
 	render = () => (
 		<div>
@@ -127,7 +114,7 @@ class Ecosystems extends Component {
 		    	<Button dest='/registration/2' arrow='left' label='BACK'/>
 		    </div>
 		    <div className={styles['continue-button']}>
-		    	<Button dest='/registration/4' arrow='right' label='CONTINUE'/>
+		    	<Button onClick={this.saveEcosystems} dest='#' arrow='right' label='CONTINUE'/>
 		    </div>
 		   </div>
 		</div>

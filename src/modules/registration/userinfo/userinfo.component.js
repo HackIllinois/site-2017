@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {inject, observer } from 'mobx-react'
 
+import axois from 'axios'
+
 import Input from '../components/input'
 import Button from '../components/button'
 
@@ -15,6 +17,17 @@ class UserInfo extends Component {
 
 	showStore = () => {
 		console.log(this.props.store.userData)
+	}
+
+	saveAttendee = (e) => {
+		e.preventDefault();
+		if(this.props.store.userData.createPassword != this.props.store.userData.confirmPassword){
+			this.props.store.userData.createPassword = ''
+			this.props.store.userData.confirmPassword = ''
+		}
+		else{
+			this.props.store.saveAttendee();
+		}
 	}
 
 	render = () => {
@@ -34,7 +47,7 @@ class UserInfo extends Component {
 					<div className={styles['small-input']}> <Input columns={true} password={false} options={['YES','NO']} id='isPrivate'/> </div>
 				</div>
 				<div className={styles['continue-button']}>
-		    	<Button dest='/registration/3' arrow='right' label='CONTINUE'/>
+		    	<Button onClick={this.saveAttendee} dest='#' arrow='right' label='CONTINUE'/>
 		    </div>
 			</div>
 			</div>

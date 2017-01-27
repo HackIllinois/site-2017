@@ -5,6 +5,10 @@
   cursor: pointer;
 }
 
+.error {
+  border-color: #ed2f65 !important;
+}
+
 .member-li:hover input {
  opacity: 0.75;
 }

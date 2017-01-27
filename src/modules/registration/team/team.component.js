@@ -7,6 +7,17 @@ import Button from '../components/button'
 
 @inject('store') @observer
 class Team extends Component {
+
+	submitRegistration = () => {
+		if(this.props.store.codeOfConductCheck){
+			this.props.store.registerAttendee();
+		}
+	}
+
+	toggleCheck = () => {
+		this.props.store.codeOfConductCheck = !this.props.store.codeOfConductCheck
+	}
+
 	render = () => (
 		<div className={styles.container}>
 			<div className={styles['title-text']}> TEAM </div>
@@ -18,8 +29,8 @@ class Team extends Component {
 				<Input type='add-member' id='teamMember' options={[]}/>
 				<ul className={styles['checkbox-list']}>
 				    <li>
-				        <input type='checkbox' value={this.props.store.codeOfConductCheck}/>
-				        <label>I agree to <a href="/code">the code of conduct </a></label>
+				        <input onChange={this.toggleCheck} className={styles.checkbox} type='checkbox' value={this.props.store.codeOfConductCheck}/>
+				        <label className={styles.label}>I agree to <a href="/code">the code of conduct </a></label>
 				    </li>
 				</ul>
 			</div>
@@ -28,7 +39,7 @@ class Team extends Component {
 			    	<Button dest='/registration/3' arrow='left' label='BACK'/>
 			    </div>
 			    <div className={styles['continue-button']}>
-			    	<Button dest='/registration/5' arrow='right' label='SUBMIT'/>
+			    	<Button onClick={this.submitRegistration} dest='#' arrow='right' label='SUBMIT'/>
 			    </div>
 			</div>
 		</div>
