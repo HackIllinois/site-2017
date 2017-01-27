@@ -37,6 +37,7 @@ class Landing extends Component {
       <div className={styles.hero}>
         <img className={styles.logo} src="src/assets/img/landing-logo.png"/>
         <div className={styles.dateLabel}>February 24th - 26th</div>
+        <div className={styles.host}> Co-hosted by <a href="http://fulcrum-gt.com/"> Fulcrum </a> </div>
         <div className={styles['hat-container']}>
           <img className={styles['hat-off']} src="src/assets/img/svg/landing-hat-loff.svg"/>
          

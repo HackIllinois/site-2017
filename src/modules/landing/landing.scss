@@ -79,6 +79,12 @@ body {
     margin: 20px 0 80px 0;
 }
 
+.host {
+  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;
+  position: relative;
+  bottom: 80px;
+}
+
 @media (min-width: 480px){
   .landing .hero .hat-container {
     height: 320px;
