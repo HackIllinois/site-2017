@@ -12,6 +12,17 @@ const code = loggedIn ?  window.location.search.slice(6) : ''
 import styles from './userinfo.scss'
 import {all_form_fields, left_forms, right_forms} from './forms'
 
+const checkProperties = (obj) => {
+    for (var key in obj) {
+    	if(key != 'isNovice' && key != 'isPrivate' && key != 'hasLightningInterest'){
+       if (obj[key] == ''){
+          return false;
+        }
+      }
+    }
+    return true;
+}
+
 @inject('store') @observer
 class UserInfo extends Component {
 
@@ -25,8 +36,32 @@ class UserInfo extends Component {
 			this.props.store.userData.createPassword = ''
 			this.props.store.userData.confirmPassword = ''
 		}
+
 		else{
-			this.props.store.saveAttendee();
+
+			const attendeeData = {
+        "firstName": this.props.store.userData.firstName,
+        "lastName": this.props.store.userData.lastName,
+        "shirtSize": this.props.store.userData.shirtSize,
+        "diet": this.props.store.userData.diet,
+        "age": this.props.store.userData.age,
+        "graduationYear": this.props.store.userData.graduationYear,
+        "transportation": this.props.store.userData.transportation,
+        "school": this.props.store.userData.school,
+        "major": this.props.store.userData.major,
+        "gender": this.props.store.userData.gender,
+        "professionalInterest": this.props.store.userData.professionalInterest,
+        "github": this.props.store.userData.github,
+        "linkedin": this.props.store.userData.linkedin,
+        "interests": this.props.store.userData.interests,
+        "isNovice": this.props.store.userData.isNovice == 'YES',
+        "isPrivate": this.props.store.userData.isPrivate == 'YES',
+        "hasLightningInterest": this.props.store.userData.hasLightningInterest == 'YES',
+        "phoneNumber": this.props.store.userData.phoneNumber
+      }
+
+      console.log(checkProperties(attendeeData));
+			if(checkProperties(attendeeData)) this.props.store.saveAttendee(attendeeData);
 		}
 	}
 

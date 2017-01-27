@@ -86,15 +86,27 @@ class Ecosystems extends Component {
 		if(this.props.store.ecosystems.python) ecosystems.push({'ecosystemId': 5})
 		if(this.props.store.ecosystems.embedded) ecosystems.push({'ecosystemId': 6})
 		if(this.props.store.ecosystems.linux) ecosystems.push({'ecosystemId': 7})
-		if(this.props.store.ecosystems.create) ecosystems.push(
-			{'name': this.props.store.project.name,
+		
+		let project = {
+			'name': this.props.store.project.name,
 			 'description': this.props.store.project.description,
-			 'repo': this.props.store.project.repo
-			});
+			 'repo': this.props.store.project.repo,
+			 'isSuggestion': false
+		}
+
+		let projects = []
+
+		if(this.props.store.ecosystems.create) projects.push({
+			'name': this.props.store.project.name,
+			 'description': this.props.store.project.description,
+			 'repo': this.props.store.project.repo,
+			 'isSuggestion': false
+		});
 
 		if(ecosystems.length > 0) {
 			//store for later
 			localStorage.setItem("ecosystemInterests", JSON.stringify(ecosystems))
+			localStorage.setItem("projects", JSON.stringify(projects))
 			window.location = '/registration/4'
 		}
 		

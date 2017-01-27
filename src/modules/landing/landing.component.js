@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import styles from './landing.scss'
+import Button from '../registration/components/button'
 
 //regex email validation
 const validateEmail = (email) => {
@@ -38,19 +39,20 @@ class Landing extends Component {
         <div className={styles.dateLabel}>February 24th - 26th</div>
         <div className={styles['hat-container']}>
           <img className={styles['hat-off']} src="src/assets/img/svg/landing-hat-loff.svg"/>
-          <img className={styles['hat-on']} src="src/assets/img/svg/landing-hat-lon.svg"/>
-          <img className={styles.beam} src="src/assets/img/svg/landing-beam.svg"/>
+         
         </div>
-        <div className={styles['input-component']}>
-            <input onChange={this.onChange} value={this.state.email} type="email" id={styles['post-email']} placeholder="jane.doe@hackathon.com"/>
-            <button id={styles['submit-button']} onClick={this.onSubmit}>Submit</button>
+        <div className={styles.register}>
+        <Button register={true} dest='/registration' label='REGISTER NOW' />
         </div>
       </div>
     </div>
   )
 }
 
-
+/*
+ <img className={styles['hat-on']} src="src/assets/img/svg/landing-hat-lon.svg"/>
+          <img className={styles.beam} src="src/assets/img/svg/landing-beam.svg"/>
+          */
 
 
 export default Landing

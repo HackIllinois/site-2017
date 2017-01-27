@@ -13,6 +13,7 @@ class RegistrationStore {
         const req = {
             "attendee": JSON.parse(localStorage.getItem('attendee')),
             "ecosystemInterests": JSON.parse(localStorage.getItem('ecosystemInterests')),
+            "projects": JSON.parse(localStorage.getItem('projects')),
             "collaborators": this.collaborators.map((c)=>({"collaborator":c}))
         }
 
@@ -48,7 +49,7 @@ class RegistrationStore {
 
 
     }
-    saveAttendee = () => {
+    saveAttendee = (attendeeData) => {
 
         const authToken = fromPromise(axios.post('https://api.hackillinois.org/v1/auth', {'email': 'systems@hackillinois.org', 'password': 'W5FHacHWmMwXcyxAajT'}));
         when(() => authToken.state !== 'pending',() => {
@@ -71,27 +72,6 @@ class RegistrationStore {
                     
                     this.userAuth = userToken.value.data.data.auth
                     
-                    const attendeeData = {
-                        "firstName": this.userData.firstName,
-                        "lastName": this.userData.lastName,
-                        "shirtSize": this.userData.shirtSize,
-                        "diet": this.userData.diet,
-                        "age": this.userData.age,
-                        "graduationYear": this.userData.graduationYear,
-                        "transportation": this.userData.transportation,
-                        "school": this.userData.school,
-                        "major": this.userData.major,
-                        "gender": this.userData.gender,
-                        "professionalInterest": this.userData.professionalInterest,
-                        "github": this.userData.github,
-                        "linkedin": this.userData.linkedin,
-                        "interests": this.userData.interests,
-                        "isNovice": this.userData.isNovice == 'YES',
-                        "isPrivate": this.userData.isPrivate == 'YES',
-                        "hasLightningInterest": this.userData.hasLightningInterest == 'YES',
-                        "phoneNumber": this.userData.phoneNumber
-                    }
-
                     localStorage.setItem('attendee', JSON.stringify(attendeeData))
                     localStorage.setItem('authorization', this.userAuth)
                     localStorage.setItem('resume', this.userData.resume)
