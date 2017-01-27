@@ -3,6 +3,25 @@ import {inject, observer } from 'mobx-react'
 
 import styles from './input.scss'
 
+/*
+const checkValidYear  = (year) => {
+	var reg = new RegExp("^[12][0-9]{3}$");
+	return reg.test(year);
+}
+
+const checkValidAge = (age) => {
+    //Two digits, so anything between and including 0 and 99
+    var reg = new RegExp(/^\d{1,2}$/);
+    return reg.test(age);
+}
+
+const checkAgeandYear = (val) => {
+	if(val != 'graduationYear' && val != 'age') return true;
+	if(val == 'graduationYear') return checkValidYear(this.props.store.userData[val]);
+	if(val == 'age') return checkValidYear(this.props.store.userData[val]);
+}
+*/
+
 const map = {
 	firstName: 'first name',
   lastName: 'last name',
@@ -37,6 +56,23 @@ const formatOption = (str) => (
 
 @inject('store') @observer
 class Input extends Component {
+
+	checkAgeandYear = (val) => {
+
+		if(this.props.type == 'add-member' || this.props.type == 'member-li') return true;
+		if(this.props.store.userData[val] == '') return false;
+		if(val != 'graduationYear' && val != 'age') return true;
+		if(val == 'graduationYear') {
+			var reg = new RegExp("^[12][0-9]{3}$");
+			console.log(reg.test(this.props.store.userData[val]))
+    	return reg.test(this.props.store.userData[val]);
+		}
+		if(val == 'age') {
+			var reg = new RegExp(/^\d{1,2}$/);
+			console.log(reg.test(this.props.store.userData[val]))
+    	return reg.test(this.props.store.userData[val]);
+		}
+	}
 	
 	onChange = (e) => {
 		const that = this;
@@ -74,7 +110,7 @@ class Input extends Component {
 	}
 
 	render = () => (
-		<div onClick={this.props.type == 'member-li' ? this.removeCollaborators : null} className={[styles['reg-input'], this.props.columns ? styles['user-info'] : '', this.props.type == 'member-li' ? styles['member-li'] : ''].join(' ')}>
+		<div onClick={this.props.type == 'member-li' ? this.removeCollaborators : null} className={[styles['reg-input'], this.props.columns ? styles['user-info'] : ''].join(' ')}>
 		{ this.props.options.length != 0 ?
 			<select className={this.props.store.userData[this.props.id] == '' || this.props.store.userData[this.props.id] == 'Select a School'? styles.red : ''} value={this.props.store.userData[this.props.id]} onChange={this.onChange}>
 				{this.props.options.map((option, index) => (
@@ -82,7 +118,7 @@ class Input extends Component {
 				))}
 			</select>
 			:
-			<input className={this.props.store.userData[this.props.id] == '' && this.props.type != 'add-member' ? styles.red : ''} onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null } disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
+			<input className={this.checkAgeandYear(this.props.id) == false ? styles.red : '' && this.props.type != 'add-member' } onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null } disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
 		}
 		{this.props.type == 'file' ? <label className={[styles['file-label'], !this.props.store.isFileSelected ? styles.red : ''].join(' ')} htmlFor='file'> {this.props.store.selectedFile || 'Choose a file...'} </label> : null }
 		<span> {this.props.type == 'member-li' ? 'team member' : map[this.props.id] || this.props.id} </span>
