@@ -23,7 +23,7 @@ const checkAgeandYear = (val) => {
 */
 
 const map = {
-	firstName: 'first name',
+  firstName: 'first name',
   lastName: 'last name',
   shirtSize: 'shirt size',
   diet: 'dietary restrictions',
@@ -47,7 +47,8 @@ const map = {
   resume: 'resume',
   teamMember: 'add team member',
   repo: 'repo (optional)',
-  description: 'describe your idea'
+  description: 'describe your idea',
+  name: 'project name'
 }
 
 const formatOption = (str) => (
@@ -121,7 +122,7 @@ class Input extends Component {
 				))}
 			</select>
 			:
-			<input className={this.checkAgeandYear(this.props.id) == false ? styles.red : '' && this.props.type != 'add-member' } onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null } disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
+			<input placeholder={this.props.id == 'teamMember' ? 'Press enter to add team members' : ''} className={this.checkAgeandYear(this.props.id) == false ? styles.red : '' && this.props.type != 'add-member' } onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null } disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
 		}
 		{this.props.type == 'file' ? <label className={[styles['file-label'], !this.props.store.isFileSelected ? styles.red : ''].join(' ')} htmlFor='file'> {this.props.store.selectedFile || 'Choose a file...'} </label> : null }
 		<span> {this.props.type == 'member-li' ? 'team member' : map[this.props.id] || this.props.id} </span>

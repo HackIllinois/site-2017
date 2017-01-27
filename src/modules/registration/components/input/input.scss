@@ -1,3 +1,23 @@
+::-webkit-input-placeholder {
+   font-family: 'Gotham', sans-serif;
+   color: #b7bcdf;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-family: 'Gotham', sans-serif; 
+   color: #b7bcdf;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-family: 'Gotham', sans-serif;
+   color: #b7bcdf;
+}
+
+:-ms-input-placeholder {  
+   font-family: 'Gotham', sans-serif; 
+   color: #b7bcdf; 
+}
+
 .member-li input {
   background: url(../../../../assets/img/x.svg) no-repeat right #122342;
   background-size: 12px;
