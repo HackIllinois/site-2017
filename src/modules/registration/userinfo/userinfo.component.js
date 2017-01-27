@@ -14,14 +14,23 @@ import {all_form_fields, left_forms, right_forms} from './forms'
 
 const checkProperties = (obj) => {
     for (var key in obj) {
+    	if(key === 'graduationYear' && !checkValidYear(obj[key])){
+    		return false;
+    	} 
     	if(key != 'isNovice' && key != 'isPrivate' && key != 'hasLightningInterest'){
-       if (obj[key] == ''){
-          return false;
-        }
-      }
+	        if (obj[key] == ''){
+	          return false;
+	        }
+	    }
     }
     return true;
 }
+
+function checkValidYear (year) {
+	var reg = new RegExp("^[12][0-9]{3}$");
+	return reg.test(year);
+}
+
 
 @inject('store') @observer
 class UserInfo extends Component {
