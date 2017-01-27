@@ -98,8 +98,8 @@ class Ecosystems extends Component {
 
 		if(ecosystems.length > 0 || projects.length > 0) {
 			//store for later
-			localStorage.setItem("ecosystemInterests", JSON.stringify(ecosystems))
-			localStorage.setItem("projects", JSON.stringify(projects))
+			sessionStorage.setItem("ecosystemInterests", JSON.stringify(ecosystems))
+			sessionStorage.setItem("projects", JSON.stringify(projects))
 			window.location = '/registration/4'
 		}
 		

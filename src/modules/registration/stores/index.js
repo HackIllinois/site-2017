@@ -29,25 +29,35 @@ function base64ToArrayBuffer(base64) {
 class RegistrationStore {
 
     constructor() {
-        if(localStorage.getItem('userinfo') != null) {
-            this.userData = JSON.parse(localStorage.getItem('userinfo'));
+
+        //console.log('getting userinfo')
+        //console.log(sessionStorage.getItem('userinfo'))
+
+        if(sessionStorage.getItem('userinfo') != null) {
+            this.userData = JSON.parse(sessionStorage.getItem('userinfo'));
+        }
+
+        console.log(sessionStorage.getItem('authorization'))
+
+        if(sessionStorage.getItem('authorization') != null) {
+            this.previouslyRegistered = true;
         }
     }
 
     registerAttendee = () => {
 
-        console.log(JSON.parse(localStorage.getItem('attendee')))
+        console.log(JSON.parse(sessionStorage.getItem('attendee')))
 
         const req = {
-            "attendee": JSON.parse(localStorage.getItem('attendee')),
-            "ecosystemInterests": JSON.parse(localStorage.getItem('ecosystemInterests')),
-            "projects": JSON.parse(localStorage.getItem('projects')),
+            "attendee": JSON.parse(sessionStorage.getItem('attendee')),
+            "ecosystemInterests": JSON.parse(sessionStorage.getItem('ecosystemInterests')),
+            "projects": JSON.parse(sessionStorage.getItem('projects')),
             "collaborators": this.collaborators.map((c)=>({"collaborator":c}))
         }
 
         const config = {
             headers: {
-                'Authorization': localStorage.getItem('authorization'),
+                'Authorization': sessionStorage.getItem('authorization'),
                 'Content-Type': 'application/json'
             }
         };
@@ -58,11 +68,11 @@ class RegistrationStore {
              () => {                    
                 const config = {
                     headers: {
-                        'Authorization': localStorage.getItem('authorization'),
+                        'Authorization': sessionStorage.getItem('authorization'),
                         'Content-Type': 'application/pdf',
                     }
                 };
-                const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(localStorage.getItem('resume')), config));
+                const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
                 when(() => resumeToken.state !== 'pending',
                      () => { 
                             if(resumeToken.state !== 'rejected') window.location = '/registration/5'
@@ -70,54 +80,31 @@ class RegistrationStore {
         }); 
     }
    saveAttendee = (attendeeData) => {
-    localStorage.setItem('attendee', JSON.stringify(attendeeData))
-    const authToken = fromPromise(axios.post('https://api.hackillinois.org/v1/auth', {'email': 'systems@hackillinois.org', 'password': 'W5FHacHWmMwXcyxAajT'}));
-    when(() => authToken.state !== 'pending',() => {
-        if(authToken.state !== 'rejected') {
-        this.adminAuth = authToken.value.data.data.auth
-        const config = {
-            headers: {
-                'Authorization': this.adminAuth,
-                'Content-Type': 'application/json'
-            }
-        };
-        //Create new User
-        const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
-        when(() => userToken.state !== 'pending',() => {
-            if(userToken.state !== 'rejected') {
-                this.userAuth = userToken.value.data.data.auth
-                localStorage.setItem('authorization', this.userAuth)
-                localStorage.setItem('resume', arrayBufferToBase64(this.userData.resume))
-                // window.file = this.userData.resume
-                window.location = '/registration/3'
-                }});
-            }});
-    }
-    /*
-    saveAttendee = (attendeeData) => {
-        localStorage.setItem('attendee', JSON.stringify(attendeeData))
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-
-        //Create new User
-        const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
     
-        when(() => userToken.state !== 'pending',() => {
-            if(userToken.state !== 'rejected') {
-                this.userAuth = userToken.value.data.data.auth
-                localStorage.setItem('authorization', this.userAuth)
-                window.hackillinois["upload"] = this.userData.resume
-                window.location = '/registration/3'
-            }
-            else {
-                console.log("issue");
-            }
-        });
+    sessionStorage.setItem('attendee', JSON.stringify(attendeeData))
+    sessionStorage.setItem('resume', arrayBufferToBase64(this.userData.resume))
+
+    if(this.previouslyRegistered) {
+        window.location = '/registration/3'
     }
-    */
+    
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+        
+    //Create new User
+    const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
+    when(() => userToken.state !== 'pending',() => {
+        if(userToken.state !== 'rejected') {
+            this.userAuth = userToken.value.data.data.auth
+            sessionStorage.setItem('authorization', this.userAuth)
+            // window.file = this.userData.resume
+            window.location = '/registration/3'
+            }});
+            
+    }
 
     @observable adminAuth = ''
     @observable userAuth = ''
@@ -162,9 +149,9 @@ class RegistrationStore {
         description: '',
         repo: ''
     }
+    @observable previouslyRegistered = false;
     @observable selectedEcosystems = 0;
     @observable isFileSelected = false;
-    @observable fileSize = 0;
     @observable collaborators = [];
 	@observable codeOfConductCheck = false;
 }

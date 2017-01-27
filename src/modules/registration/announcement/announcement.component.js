@@ -9,10 +9,11 @@ class Announcement extends Component {
 
     clearStorage = () => {
         //wipe
-        localStorage.removeItem('userinfo');
-        localStorage.removeItem('projects');
-        localStorage.removeItem('ecosystemInterests');
-        localStorage.removeItem('attendee');
+        sessionStorage.removeItem('userinfo');
+        sessionStorage.removeItem('projects');
+        sessionStorage.removeItem('ecosystemInterests');
+        sessionStorage.removeItem('attendee');
+        sessionStorage.removeItem('authorization');
 
         window.location = '/registration/2'
     }

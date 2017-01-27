@@ -43,7 +43,8 @@ class Input extends Component {
 		if(this.props.type == 'project') {
 			this.props.store.project[this.props.id] = e.target.value;
 		}
-		if(this.props.type == 'file'){
+		
+		if(this.props.type == 'file' && this.refs.fileUpload.files[0] != undefined){
 			let reader = new FileReader();
 			reader.onload = function() {
 				//console.log(this.result)
@@ -75,15 +76,15 @@ class Input extends Component {
 	render = () => (
 		<div onClick={this.props.type == 'member-li' ? this.removeCollaborators : null} className={[styles['reg-input'], this.props.columns ? styles['user-info'] : '', this.props.type == 'member-li' ? styles['member-li'] : ''].join(' ')}>
 		{ this.props.options.length != 0 ?
-			<select value={this.props.store.userData[this.props.id]} onChange={this.onChange}>
+			<select className={this.props.store.userData[this.props.id] == '' || this.props.store.userData[this.props.id] == 'Select a School'? styles.red : ''} value={this.props.store.userData[this.props.id]} onChange={this.onChange}>
 				{this.props.options.map((option, index) => (
 				<option key={index} value={option}> {formatOption(option)} </option>
 				))}
 			</select>
 			:
-			<input className={this.props.store.userData[this.props.id] == '' && this.props.type != 'add-member' ? styles.error : ''} onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null } disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
+			<input className={this.props.store.userData[this.props.id] == '' && this.props.type != 'add-member' ? styles.red : ''} onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null } disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null } accept='.pdf' ref='fileUpload' type={this.props.type} onChange={this.onChange} value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
 		}
-		{this.props.type == 'file' ? <label className={styles['file-label']} htmlFor='file'> {this.props.store.selectedFile || 'Choose a file...'} </label> : null }
+		{this.props.type == 'file' ? <label className={[styles['file-label'], !this.props.store.isFileSelected ? styles.red : ''].join(' ')} htmlFor='file'> {this.props.store.selectedFile || 'Choose a file...'} </label> : null }
 		<span> {this.props.type == 'member-li' ? 'team member' : map[this.props.id] || this.props.id} </span>
 		</div>
 	)

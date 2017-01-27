@@ -10,7 +10,7 @@ const loggedIn = window.location.href.includes('code')
 const code = loggedIn ?  window.location.search.slice(6) : ''
 
 import styles from './userinfo.scss'
-import {all_form_fields, left_forms, right_forms} from './forms'
+import {all_form_fields} from './forms'
 
 const checkProperties = (obj) => {
     for (var key in obj) {
@@ -65,22 +65,15 @@ class UserInfo extends Component {
    	};
 
    	
-   	if(localStorage.getItem('authorization') != null && checkProperties(attendeeData) && this.props.store.isFileSelected){
-			//window.location = '/registration/3'
-		}
-		else{
-			this.props.store.status = 'TRY AGAIN';
-		}
-		
-
 		if(this.props.store.userData.createPassword != this.props.store.userData.confirmPassword){
 			 this.props.store.userData.createPassword = ''
 			 this.props.store.userData.confirmPassword = ''
 		}
 
+		//console.log(this.props.store.previouslyRegistered)
 		if(checkProperties(attendeeData) && this.props.store.isFileSelected) {
 	
-			localStorage.setItem('userinfo', JSON.stringify(this.props.store.userData));
+			sessionStorage.setItem('userinfo', JSON.stringify(this.props.store.userData));
 			this.props.store.saveAttendee(attendeeData);
 			
 		}

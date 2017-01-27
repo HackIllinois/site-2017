@@ -9,7 +9,9 @@ class Registration extends Component {
 	render = () => (
 			<div>
 				<div className={styles.registrationHeader}>
+        	<a href="/">
         	<img className={styles.headerLogo} src="http://hackillinois.org/src/assets/img/landing-logo.png"/>
+        	</a>
     		</div>
 				{this.props.children} 
 			</div>

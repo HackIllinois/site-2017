@@ -9,7 +9,9 @@ import Button from '../components/button'
 class Team extends Component {
 
 	submitRegistration = () => {
+		if(this.props.store.codeOfConductCheck){
 			this.props.store.registerAttendee();
+		}
 	}
 
 	toggleCheck = () => {
