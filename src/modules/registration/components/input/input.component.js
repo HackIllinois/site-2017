@@ -51,9 +51,10 @@ const map = {
   name: 'project name'
 }
 
-const formatOption = (str) => (
-	str.replace(/_/g, " ").replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})
-)
+const formatOption = (str) => {
+	if(str == "XL") return str;
+	return str.replace(/_/g, " ").replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})
+}
 
 @inject('store') @observer
 class Input extends Component {
@@ -65,7 +66,11 @@ class Input extends Component {
 			if(this.props.store.userData[val].length < 8) return false;
 		}
 		if(this.props.store.userData[val] == '') return false;
-		if(val != 'graduationYear' && val != 'age') return true;
+		if(val != 'graduationYear' && val != 'age'  && val != 'email') return true;
+		if(val == 'email') {
+  		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  		return re.test(this.props.store.userData[val]);
+		}
 		if(val == 'graduationYear') {
 			var reg = new RegExp("^[12][0-9]{3}$");
 			console.log(reg.test(this.props.store.userData[val]))
