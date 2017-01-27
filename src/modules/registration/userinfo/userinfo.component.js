@@ -67,8 +67,13 @@ class UserInfo extends Component {
 
       console.log(checkProperties(attendeeData));
 			if(checkProperties(attendeeData)) {
-				localStorage.setItem('userinfo', JSON.stringify(this.props.store.userData))
-				this.props.store.saveAttendee(attendeeData);
+				if(this.props.store.resume != ''){
+					localStorage.setItem('userinfo', JSON.stringify(this.props.store.userData))
+					this.props.store.saveAttendee(attendeeData);
+				}
+			}
+			else{
+				this.props.store.status = 'TRY AGAIN';
 			}
 		}
 	}
