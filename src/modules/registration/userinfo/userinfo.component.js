@@ -57,7 +57,7 @@ class UserInfo extends Component {
 
    	
    	if(localStorage.getItem('authorization') != null && checkProperties(attendeeData) && this.props.store.isFileSelected){
-			window.location = '/registration/3'
+			//window.location = '/registration/3'
 		}
 		else{
 			this.props.store.status = 'TRY AGAIN';

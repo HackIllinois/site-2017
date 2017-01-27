@@ -6,13 +6,13 @@ import {browserHistory} from 'react-router'
 const loggedIn = window.location.href.includes('code')
 const code = loggedIn ?  window.location.search.slice(6) : ''
 
-const ab2str => (buf) {
-    return String.fromCharCode.apply(null, new Uint16Array(buf));
+const ab2str = (buf) => {
+    return String.fromCharCode.apply(null, new Uint8Array(buf));
 }
 
 const str2ab = (str) => {
-  var buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
-  var bufView = new Uint16Array(buf);
+  var buf = new ArrayBuffer(str.length*1); // 2 bytes for each char
+  var bufView = new Uint8Array(buf);
   for (var i=0, strLen=str.length; i<strLen; i++) {
     bufView[i] = str.charCodeAt(i);
   }
@@ -58,7 +58,7 @@ class RegistrationStore {
                             }
                         };
 
-                        const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', str2ab(localStorage.getItem('resume'), config)));
+                        const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', str2ab(localStorage.getItem('resume')), config));
                     
                         when(() => resumeToken.state !== 'pending',
                              () => { 
@@ -98,9 +98,10 @@ class RegistrationStore {
                     this.userAuth = userToken.value.data.data.auth
                     
                     localStorage.setItem('authorization', this.userAuth)
+                    console.log(ab2str(this.userData.resume))
                     localStorage.setItem('resume', ab2str(this.userData.resume))
 
-                    window.location = '/registration/3'
+                    //window.location = '/registration/3'
 
                     }});
                 }});
