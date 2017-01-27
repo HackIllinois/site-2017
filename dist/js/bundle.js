@@ -35119,13 +35119,15 @@
 		email: 'email',
 		createPassword: 'create password (8+ chars)',
 		confirmPassword: 'confirm password',
-		resume: 'resume',
+		resume: 'resume (pdf)',
 		teamMember: 'add team member',
 		repo: 'repo (optional)',
-		description: 'describe your idea'
+		description: 'describe your idea',
+		name: 'project name'
 	};
 
 	var formatOption = function formatOption(str) {
+		if (str == "XL") return str;
 		return str.replace(/_/g, " ").replace(/\w\S*/g, function (txt) {
 			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 		});
@@ -35152,7 +35154,11 @@
 					if (_this.props.store.userData[val].length < 8) return false;
 				}
 				if (_this.props.store.userData[val] == '') return false;
-				if (val != 'graduationYear' && val != 'age') return true;
+				if (val != 'graduationYear' && val != 'age' && val != 'email' && val != 'phoneNumber') return true;
+				if (val == 'email') {
+					var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+					return re.test(_this.props.store.userData[val]);
+				}
 				if (val == 'graduationYear') {
 					var reg = new RegExp("^[12][0-9]{3}$");
 					console.log(reg.test(_this.props.store.userData[val]));
@@ -35161,6 +35167,10 @@
 				if (val == 'age') {
 					var reg = new RegExp(/^\d{1,2}$/);
 					console.log(reg.test(_this.props.store.userData[val]));
+					return reg.test(_this.props.store.userData[val]);
+				}
+				if (val == 'phoneNumber') {
+					var reg = new RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 					return reg.test(_this.props.store.userData[val]);
 				}
 			}, _this.onChange = function (e) {
@@ -35209,7 +35219,7 @@
 								' '
 							);
 						})
-					) : _react2.default.createElement('input', { className: _this.checkAgeandYear(_this.props.id) == false ? _input2.default.red : '' && _this.props.type != 'add-member', onKeyUp: _this.props.type == 'add-member' ? _this.addCollaborator : null, disabled: _this.props.type == 'member-li' ? 'disabled' : '', id: _this.props.type == 'file' ? 'file' : null, accept: '.pdf', ref: 'fileUpload', type: _this.props.type, onChange: _this.onChange, value: _this.props.type == 'file' ? undefined : _this.props.store.project[_this.props.id] || _this.props.store.userData[_this.props.id] || _this.props.store.collaborators.filter(function (c) {
+					) : _react2.default.createElement('input', { placeholder: _this.props.id == 'teamMember' ? 'Press enter to add team members' : '', className: _this.checkAgeandYear(_this.props.id) == false ? _input2.default.red : '' && _this.props.type != 'add-member', onKeyUp: _this.props.type == 'add-member' ? _this.addCollaborator : null, disabled: _this.props.type == 'member-li' ? 'disabled' : '', id: _this.props.type == 'file' ? 'file' : null, accept: '.pdf', ref: 'fileUpload', type: _this.props.type, onChange: _this.onChange, value: _this.props.type == 'file' ? undefined : _this.props.store.project[_this.props.id] || _this.props.store.userData[_this.props.id] || _this.props.store.collaborators.filter(function (c) {
 							return c == _this.props.id;
 						})[0] || '' }),
 					_this.props.type == 'file' ? _react2.default.createElement(
@@ -35279,7 +35289,7 @@
 
 
 	// module
-	exports.push([module.id, ".input__member-li___-pmMX input {\n  background: url(" + __webpack_require__(317) + ") no-repeat right #122342;\n  background-size: 12px;\n  background-position: calc(100% - 10px);\n  cursor: pointer; }\n\n.input__red___2fS0- {\n  border-color: #ed2f65 !important; }\n\n.input__member-li___-pmMX:hover input {\n  opacity: 0.75; }\n\n.input__reg-input___q5icy {\n  position: relative;\n  margin-bottom: 30px;\n  width: 100%; }\n\n.input__reg-input___q5icy input,\nselect {\n  height: 45px;\n  width: 100%;\n  min-width: 114px;\n  color: #b7bcdf;\n  background-color: #122342;\n  border: 2px solid #57c7df;\n  border-radius: 3px;\n  position: relative;\n  outline: none;\n  padding-left: 15px;\n  font-size: 16px;\n  line-height: 16px;\n  font-family: 'Gotham', sans-serif;\n  margin-bottom: 0px; }\n\n.input__reg-input___q5icy input:focus,\nselect:focus {\n  border: 2px solid #57c7df;\n  border-radius: 3px; }\n\n.input__reg-input___q5icy [type=file] {\n  padding-top: 10px;\n  line-height: 20px;\n  display: inline-block;\n  width: 0.1px;\n  height: 0.1px;\n  opacity: 0;\n  overflow: hidden;\n  position: absolute;\n  z-index: -1; }\n\n.input__file-label___22K5n {\n  padding-top: 13px;\n  display: inline-block;\n  height: 45px;\n  width: 100%;\n  min-width: 114px;\n  color: #b7bcdf;\n  background-color: #122342;\n  border: 2px solid #57c7df;\n  border-radius: 3px;\n  position: relative;\n  outline: none;\n  padding-left: 15px;\n  font-size: 16px;\n  line-height: 16px;\n  font-family: 'Gotham-Medium', sans-serif;\n  margin-bottom: 0px;\n  cursor: pointer; }\n\n@media (min-width: 500px) {\n  .input__user-info___1iGru {\n    min-width: 150px;\n    width: 48%; }\n  .input__small-input___ktWB_ {\n    width: 150px; } }\n\n.input__reg-input___q5icy select {\n  -webkit-appearance: none;\n  background: url(" + __webpack_require__(318) + ") no-repeat right #122342;\n  background-size: 17px;\n  background-position: calc(100% - 10px); }\n\n.input__small-input___ktWB_ {\n  width: 100%; }\n\n.input__reg-input___q5icy span {\n  position: absolute;\n  left: 9px;\n  top: -10px;\n  background-color: #122342;\n  padding-left: 6px;\n  padding-right: 6px;\n  font-family: 'Gotham-Medium', sans-serif;\n  color: #b7bcdf;\n  text-transform: uppercase;\n  font-size: 14px;\n  font-weight: 500; }\n", ""]);
+	exports.push([module.id, "::-webkit-input-placeholder {\n  font-family: 'Gotham', sans-serif;\n  color: #b7bcdf; }\n\n:-moz-placeholder {\n  /* Firefox 18- */\n  font-family: 'Gotham', sans-serif;\n  color: #b7bcdf; }\n\n::-moz-placeholder {\n  /* Firefox 19+ */\n  font-family: 'Gotham', sans-serif;\n  color: #b7bcdf; }\n\n:-ms-input-placeholder {\n  font-family: 'Gotham', sans-serif;\n  color: #b7bcdf; }\n\n.input__member-li___-pmMX input {\n  background: url(" + __webpack_require__(317) + ") no-repeat right #122342;\n  background-size: 12px;\n  background-position: calc(100% - 10px);\n  cursor: pointer; }\n\n.input__red___2fS0- {\n  border-color: #ed2f65 !important; }\n\n.input__member-li___-pmMX:hover input {\n  opacity: 0.75; }\n\n.input__reg-input___q5icy {\n  position: relative;\n  margin-bottom: 30px;\n  width: 100%; }\n\n.input__reg-input___q5icy input,\nselect {\n  height: 45px;\n  width: 100%;\n  min-width: 114px;\n  color: #b7bcdf;\n  background-color: #122342;\n  border: 2px solid #57c7df;\n  border-radius: 3px;\n  position: relative;\n  outline: none;\n  padding-left: 15px;\n  font-size: 16px;\n  line-height: 16px;\n  font-family: 'Gotham', sans-serif;\n  margin-bottom: 0px; }\n\n.input__reg-input___q5icy input:focus,\nselect:focus {\n  border: 2px solid #57c7df;\n  border-radius: 3px; }\n\n.input__reg-input___q5icy [type=file] {\n  padding-top: 10px;\n  line-height: 20px;\n  display: inline-block;\n  width: 0.1px;\n  height: 0.1px;\n  opacity: 0;\n  overflow: hidden;\n  position: absolute;\n  z-index: -1; }\n\n.input__file-label___22K5n {\n  padding-top: 13px;\n  display: inline-block;\n  height: 45px;\n  width: 100%;\n  min-width: 114px;\n  color: #b7bcdf;\n  background-color: #122342;\n  border: 2px solid #57c7df;\n  border-radius: 3px;\n  position: relative;\n  outline: none;\n  padding-left: 15px;\n  font-size: 16px;\n  line-height: 16px;\n  font-family: 'Gotham-Medium', sans-serif;\n  margin-bottom: 0px;\n  cursor: pointer; }\n\n@media (min-width: 500px) {\n  .input__user-info___1iGru {\n    min-width: 150px;\n    width: 48%; }\n  .input__small-input___ktWB_ {\n    width: 150px; } }\n\n.input__reg-input___q5icy select {\n  -webkit-appearance: none;\n  background: url(" + __webpack_require__(318) + ") no-repeat right #122342;\n  background-size: 17px;\n  background-position: calc(100% - 10px); }\n\n.input__small-input___ktWB_ {\n  width: 100%; }\n\n.input__reg-input___q5icy span {\n  position: absolute;\n  left: 9px;\n  top: -10px;\n  background-color: #122342;\n  padding-left: 6px;\n  padding-right: 6px;\n  font-family: 'Gotham-Medium', sans-serif;\n  color: #b7bcdf;\n  text-transform: uppercase;\n  font-size: 14px;\n  font-weight: 500; }\n", ""]);
 
 	// exports
 	exports.locals = {

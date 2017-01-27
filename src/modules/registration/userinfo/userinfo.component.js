@@ -95,7 +95,7 @@ class UserInfo extends Component {
 	render = () => {
 		return(
 			<div>
-			<div className={styles['info-text']}> INFO </div>
+			<div className={styles['info-text']}> INFORMATION </div>
 			<div className={styles.container}>
 			<div className={styles['form-field-container']}>
 				{all_form_fields.map((form) =>(<Input columns={true} type={form.type || ''} options={form.options || []} key={form.id} id={form.id} />))}
