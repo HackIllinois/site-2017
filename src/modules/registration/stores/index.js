@@ -48,16 +48,13 @@ class RegistrationStore {
         const submitToken = fromPromise(axios.post('https://api.hackillinois.org/v1/registration/attendee', req, config))
                     
         when(() => submitToken.state !== 'pending',
-             () => {    
-                        console.log('finish')
-                        
+             () => {                            
                         const config = {
                             headers: {
                                 'Authorization': localStorage.getItem('authorization'),
                                 'Content-Type': 'application/pdf',
                             }
                         };
-
                         const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', str2ab(localStorage.getItem('resume')), config));
                     
                         when(() => resumeToken.state !== 'pending',
@@ -66,13 +63,8 @@ class RegistrationStore {
                             });
                             
                         }); 
-                        
-
-
     }
     saveAttendee = (attendeeData) => {
-
-        
 
         localStorage.setItem('attendee', JSON.stringify(attendeeData))
 
@@ -101,9 +93,7 @@ class RegistrationStore {
                     console.log(ab2str(this.userData.resume))
                     localStorage.setItem('resume', ab2str(this.userData.resume))
 
-                    //window.location = '/registration/3'
-
-                    }});
+                    window.location = '/registration/3'
                 }});
     }
 
