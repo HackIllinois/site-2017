@@ -30,7 +30,7 @@ class Team extends Component {
 				<ul className={styles['checkbox-list']}>
 				    <li>
 				        <input onChange={this.toggleCheck} className={styles.checkbox} type='checkbox' value={this.props.store.codeOfConductCheck}/>
-				        <label className={styles.label}>I agree to <a href="/code">the code of conduct </a></label>
+				        <label className={[styles.label, this.props.store.codeOfConductCheck ? '' : styles.red].join(' ')}>I agree to <a className={this.props.store.codeOfConductCheck ? '' : styles.red}href="/code">the code of conduct </a></label>
 				    </li>
 				</ul>
 			</div>
