@@ -28,7 +28,7 @@ const map = {
   resume: 'resume',
   teamMember: 'add team member',
   repo: 'repo (optional)',
-  description: 'describe your project'
+  description: 'describe your idea'
 }
 
 const formatOption = (str) => (

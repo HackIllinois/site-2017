@@ -42,7 +42,7 @@ const all_form_fields = [
 	},
 	{
 			id: 'gender',
-			options: ['MALE', 'FEMALE', 'NON_BINARY', 'OTHER']
+			options: ['FEMALE', 'MALE', 'NON_BINARY', 'OTHER']
 	},
 	{
 			id: 'age',

@@ -106,7 +106,7 @@ class RegistrationStore {
         transportation: 'NOT_NEEDED',
         school: '',
         major: '',
-        gender: 'MALE',
+        gender: 'FEMALE',
         professionalInterest: 'NONE',
         github: '',
         linkedin: '',
