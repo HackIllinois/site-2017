@@ -77,6 +77,9 @@ class RegistrationStore {
             const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
         
             when(() => userToken.state !== 'pending',() => {
+                if(userToken.state == 'rejected' || this.userData.resume == ''){
+                    this.status = 'TRY AGAIN'
+                }
                 if(userToken.state !== 'rejected') {
                     
                     this.userAuth = userToken.value.data.data.auth
@@ -93,9 +96,7 @@ class RegistrationStore {
 
     @observable adminAuth = ''
     @observable userAuth = ''
-	@observable progress = 0
-	@observable auth_token = ''
-	@observable isAuthenticated = false
+	@observable status = 'CONTINUE'
 	@observable userData = {
 		firstName: '',
         lastName: '',

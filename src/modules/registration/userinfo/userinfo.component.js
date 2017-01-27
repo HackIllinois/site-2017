@@ -90,7 +90,7 @@ class UserInfo extends Component {
 					<div className={styles['small-input']}> <Input columns={true} password={false} options={['YES','NO']} id='isPrivate'/> </div>
 				</div>
 				<div className={styles['continue-button']}>
-		    	<Button onClick={this.saveAttendee} dest='#' arrow='right' label='CONTINUE'/>
+		    	<Button onClick={this.saveAttendee} dest='#' arrow='right' label={this.props.store.status}/>
 		    </div>
 			</div>
 			</div>

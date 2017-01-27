@@ -6,6 +6,17 @@ import Button from '../components/button'
 
 @inject('store') @observer
 class Announcement extends Component {
+
+    clearStorage = () => {
+        //wipe
+        localStorage.removeItem('userinfo');
+        localStorage.removeItem('projects');
+        localStorage.removeItem('ecosystemInterests');
+        localStorage.removeItem('attendee');
+
+        window.location = '/registration/2'
+    }
+
 	render = () => (
 		<div>
             <div className={styles['welcome-text']}> Welcome to HackIllinois 2017</div>
@@ -14,7 +25,7 @@ class Announcement extends Component {
             In the <strong> Contribute </strong> track, attendees will be mentored while working on popular Open Source projects, providing a welcoming environment to make their first additions to the community. In the <strong> Create </strong> track, attendees will venture into the process of creating a brand new Open Source project and community, whether it is a fork, simply a script, or a new web framework. <br/><br/>
             In making this shift, we've rebuilt our event format from the ground up to focus on collaboration and sustainability rather than competition. And as always, attendance is free, free as in gratis. 
             </div>
-            <Button label='REGISTER' dest='/registration/2' arrow='none' />
+            <Button onClick={this.clearStorage} label='REGISTER' dest='#' arrow='none' />
         </div>
 	)
 }

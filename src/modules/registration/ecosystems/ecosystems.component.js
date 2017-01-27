@@ -103,7 +103,7 @@ class Ecosystems extends Component {
 			 'isSuggestion': false
 		});
 
-		if(ecosystems.length > 0) {
+		if(ecosystems.length > 0 || project.length > 0) {
 			//store for later
 			localStorage.setItem("ecosystemInterests", JSON.stringify(ecosystems))
 			localStorage.setItem("projects", JSON.stringify(projects))
