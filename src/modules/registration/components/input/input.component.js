@@ -66,21 +66,25 @@ class Input extends Component {
 			if(this.props.store.userData[val].length < 8) return false;
 		}
 		if(this.props.store.userData[val] == '') return false;
-		if(val != 'graduationYear' && val != 'age'  && val != 'email') return true;
+		if(val != 'graduationYear' && val != 'age'  && val != 'email' && val != 'phoneNumber') return true;
 		if(val == 'email') {
-  		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  		return re.test(this.props.store.userData[val]);
+  			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  			return re.test(this.props.store.userData[val]);
 		}
 		if(val == 'graduationYear') {
 			var reg = new RegExp("^[12][0-9]{3}$");
 			console.log(reg.test(this.props.store.userData[val]))
-    	return reg.test(this.props.store.userData[val]);
+    		return reg.test(this.props.store.userData[val]);
 		}
 		if(val == 'age') {
 			var reg = new RegExp(/^\d{1,2}$/);
 			console.log(reg.test(this.props.store.userData[val]))
-    	return reg.test(this.props.store.userData[val]);
+    		return reg.test(this.props.store.userData[val]);
 		}
+		if(val == 'phoneNumber') {
+			var reg = new RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
+			return reg.test(this.props.store.userData[val]);
+		} 
 	}
 	
 	onChange = (e) => {
