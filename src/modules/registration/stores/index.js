@@ -6,12 +6,12 @@ import {browserHistory} from 'react-router'
 const loggedIn = window.location.href.includes('code')
 const code = loggedIn ?  window.location.search.slice(6) : ''
 
-const ab2str => (buf) {
-    return String.fromCharCode.apply(null, new Uint16Array(buf));
+const ab2str = (buf) => {
+    return String.fromCharCode.apply(null, new Uint8Array(buf));
 }
 
 const str2ab = (str) => {
-  var buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
+  var buf = new ArrayBuffer(str.length*1); 
   var bufView = new Uint16Array(buf);
   for (var i=0, strLen=str.length; i<strLen; i++) {
     bufView[i] = str.charCodeAt(i);
@@ -72,38 +72,23 @@ class RegistrationStore {
     }
     saveAttendee = (attendeeData) => {
 
-        
-
         localStorage.setItem('attendee', JSON.stringify(attendeeData))
 
-        const authToken = fromPromise(axios.post('https://api.hackillinois.org/v1/auth', {'email': 'systems@hackillinois.org', 'password': 'W5FHacHWmMwXcyxAajT'}));
-        when(() => authToken.state !== 'pending',() => {
-            if(authToken.state !== 'rejected') {
+        //Create new User
+        const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }));
+    
+        when(() => userToken.state !== 'pending',() => {
+            if(userToken.state !== 'rejected') {
+                
+                this.userAuth = userToken.value.data.data.auth
+                
+                localStorage.setItem('authorization', this.userAuth)
+                localStorage.setItem('resume', ab2str(this.userData.resume))
 
-            this.adminAuth = authToken.value.data.data.auth
-            
-            const config = {
-                headers: {
-                    'Authorization': this.adminAuth,
-                    'Content-Type': 'application/json'
-                }
-            };
+                window.location = '/registration/3'
 
-            //Create new User
-            const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
-        
-            when(() => userToken.state !== 'pending',() => {
-                if(userToken.state !== 'rejected') {
-                    
-                    this.userAuth = userToken.value.data.data.auth
-                    
-                    localStorage.setItem('authorization', this.userAuth)
-                    localStorage.setItem('resume', ab2str(this.userData.resume))
-
-                    window.location = '/registration/3'
-
-                    }});
                 }});
+              
     }
 
     @observable adminAuth = ''
