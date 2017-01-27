@@ -23,10 +23,12 @@ const map = {
   hasLightningInterest: ' ',
   phoneNumber: 'phone number',
   email: 'email',
-  createPassword: 'create password',
+  createPassword: 'create password (8+ chars)',
   confirmPassword: 'confirm password',
   resume: 'resume',
-  teamMember: 'add team member'
+  teamMember: 'add team member',
+  repo: 'repo (optional)',
+  description: 'describe your project'
 }
 
 const formatOption = (str) => (

@@ -8,6 +8,15 @@ const code = loggedIn ?  window.location.search.slice(6) : ''
 
 class RegistrationStore {
 
+    constructor() {
+        //console.log(localStorage.getItem('userinfo'))
+        
+        if(localStorage.getItem('userinfo') != null) {
+            this.userData = JSON.parse(localStorage.getItem('userinfo'));
+        }
+        
+    }
+
     registerAttendee = () => {
 
         const req = {
@@ -78,45 +87,6 @@ class RegistrationStore {
 
                     window.location = '/registration/3'
 
-                    /*
-                    const req = {
-                        "attendee": attendeeData,
-                        "ecosystemInterests": [{"ecosystemId": 1}]
-                    }
-
-                    const config = {
-                        headers: {
-                            'Authorization': this.userAuth,
-                            'Content-Type': 'application/json'
-                        }
-                    };
-
-                    const submitToken = fromPromise(axios.post('https://api.hackillinois.org/v1/registration/attendee', req, config))
-                    
-                    when(
-                        () => submitToken.state !== 'pending',
-                        () => {*/
-                            /*
-                            const config = {
-                                headers: {
-                                    'Authorization': this.userAuth,
-                                    'Content-Type': 'application/pdf',
-                                }
-                            };
-
-                            const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', this.userData.resume, config));
-                    
-                            when(() => resumeToken.state !== 'pending',
-                                () => { 
-                                    //console.log(resumeToken.value.data)
-                                    //window.location = '/registration/3'
-                            
-                            });
-                            */
-                        /* 
-                        }); 
-                        */ 
-                         
                     }});
                 }});
     }
@@ -176,6 +146,7 @@ class RegistrationStore {
 }
 
 export default new RegistrationStore(code);
+
 
 
 /*

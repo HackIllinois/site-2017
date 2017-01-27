@@ -31,6 +31,11 @@ class UserInfo extends Component {
 	}
 
 	saveAttendee = (e) => {
+
+		if(localStorage.getItem('authorization') != null){
+			window.location = '/registration/3'
+		}
+
 		e.preventDefault();
 		if(this.props.store.userData.createPassword != this.props.store.userData.confirmPassword){
 			this.props.store.userData.createPassword = ''
@@ -61,7 +66,10 @@ class UserInfo extends Component {
       }
 
       console.log(checkProperties(attendeeData));
-			if(checkProperties(attendeeData)) this.props.store.saveAttendee(attendeeData);
+			if(checkProperties(attendeeData)) {
+				localStorage.setItem('userinfo', JSON.stringify(this.props.store.userData))
+				this.props.store.saveAttendee(attendeeData);
+			}
 		}
 	}
 
