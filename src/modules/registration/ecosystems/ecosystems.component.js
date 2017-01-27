@@ -88,9 +88,9 @@ class Ecosystems extends Component {
 		if(this.props.store.ecosystems.linux) ecosystems.push({'ecosystemId': 7})
 		
 		let project = {
-			'name': {this.props.store.project.name == '' ? 'N/A' : this.props.store.project.name },
-			'description': {this.props.store.project.description == '' ? 'N/A' : this.props.store.project.description }
-			'repo': { this.props.store.project.repo == '' ? || "N/A" : this.props.store.project.repo }
+			'name': this.props.store.project.name == '' ? 'N/A' : this.props.store.project.name,
+			'description': this.props.store.project.description == '' ? 'N/A' : this.props.store.project.description,
+			'repo': this.props.store.project.repo == '' ? "N/A" : this.props.store.project.repo,
 			'isSuggestion': false
 		}
 
@@ -103,7 +103,7 @@ class Ecosystems extends Component {
 			 'isSuggestion': false
 		});
 
-		if(ecosystems.length > 0 || project.length > 0) {
+		if(ecosystems.length > 0 || projects.length > 0) {
 			//store for later
 			localStorage.setItem("ecosystemInterests", JSON.stringify(ecosystems))
 			localStorage.setItem("projects", JSON.stringify(projects))
