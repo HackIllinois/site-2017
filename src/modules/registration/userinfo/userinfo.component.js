@@ -17,6 +17,9 @@ const checkProperties = (obj) => {
     	if(key === 'graduationYear' && !checkValidYear(obj[key])){
     		return false;
     	} 
+    	if(key === 'age' && !checkValidAge(obj[key])){
+    		return false;
+    	}
     	if(key != 'isNovice' && key != 'isPrivate' && key != 'hasLightningInterest'){
 	        if (obj[key] == ''){
 	          return false;
@@ -29,6 +32,12 @@ const checkProperties = (obj) => {
 function checkValidYear (year) {
 	var reg = new RegExp("^[12][0-9]{3}$");
 	return reg.test(year);
+}
+
+function checkValidAge(age){
+    //Two digits, so anything between and including 0 and 99
+    var reg = new RegExp(/^\d{1,2}$/);
+    return reg.test(age);
 }
 
 
