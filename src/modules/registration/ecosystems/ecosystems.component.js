@@ -88,10 +88,10 @@ class Ecosystems extends Component {
 		if(this.props.store.ecosystems.linux) ecosystems.push({'ecosystemId': 7})
 		
 		let project = {
-			'name': this.props.store.project.name,
-			 'description': this.props.store.project.description,
-			 'repo': this.props.store.project.repo,
-			 'isSuggestion': false
+			'name': this.props.store.project.name || "N/A",
+			'description': this.props.store.project.description || "N/A",
+			'repo': this.props.store.project.repo || "N/A",
+			'isSuggestion': false
 		}
 
 		let projects = []
