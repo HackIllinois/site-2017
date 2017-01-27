@@ -44,7 +44,7 @@ const map = {
   email: 'email',
   createPassword: 'create password (8+ chars)',
   confirmPassword: 'confirm password',
-  resume: 'resume',
+  resume: 'resume (pdf)',
   teamMember: 'add team member',
   repo: 'repo (optional)',
   description: 'describe your idea',
