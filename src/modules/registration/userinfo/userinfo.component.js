@@ -69,14 +69,11 @@ class UserInfo extends Component {
 			 this.props.store.userData.confirmPassword = ''
 		}
 
-		if(checkProperties(attendeeData)) {
-			//console.log('property check')
-
-			if(this.props.store.isFileSelected){
-				//console.log('file check')
-				localStorage.setItem('userinfo', JSON.stringify(this.props.store.userData));
-				this.props.store.saveAttendee(attendeeData);
-			}
+		if(checkProperties(attendeeData) && this.props.store.isFileSelected) {
+	
+			localStorage.setItem('userinfo', JSON.stringify(this.props.store.userData));
+			this.props.store.saveAttendee(attendeeData);
+			
 		}
 		else{
 			this.props.store.status = 'TRY AGAIN';

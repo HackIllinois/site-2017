@@ -47,12 +47,13 @@ class Input extends Component {
 			let reader = new FileReader();
 			reader.onload = function() {
 				//console.log(this.result)
+				//console.log(JSON.stringify(this.result))
 				that.props.store.userData.resume = this.result
 				that.props.store.isFileSelected = true
 			}
 			this.props.store.selectedFile = this.refs.fileUpload.files[0].name
 			this.props.store.fileSize = this.refs.fileUpload.files[0].size
-  		reader.readAsBinaryString(this.refs.fileUpload.files[0]);
+  		reader.readAsArrayBuffer(this.refs.fileUpload.files[0]);
 		}
 		else {
 			this.props.store.userData[this.props.id] = e.target.value
@@ -65,7 +66,7 @@ class Input extends Component {
 
 	addCollaborator = (e) => {
 		//PRESSING ENTER
-		if(e.keyCode == 13) {
+		if(e.keyCode == 13 && this.props.store.collaborators.length <= 8) {
 			this.props.store.collaborators.push(this.props.store.userData[this.props.id])
 			this.props.store.userData[this.props.id] = '';
 		}

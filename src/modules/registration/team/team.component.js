@@ -9,9 +9,7 @@ import Button from '../components/button'
 class Team extends Component {
 
 	submitRegistration = () => {
-		if(this.props.store.codeOfConductCheck){
 			this.props.store.registerAttendee();
-		}
 	}
 
 	toggleCheck = () => {
@@ -48,8 +46,4 @@ class Team extends Component {
 
 export default Team
 
-/*
-{this.props.store.teammates.map((member)=>(
-				<Input id='team member' options={[]} />
-			))}
-			*/
+

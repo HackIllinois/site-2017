@@ -6,18 +6,30 @@ import {browserHistory} from 'react-router'
 const loggedIn = window.location.href.includes('code')
 const code = loggedIn ?  window.location.search.slice(6) : ''
 
+const ab2str => (buf) {
+    return String.fromCharCode.apply(null, new Uint16Array(buf));
+}
+
+const str2ab = (str) => {
+  var buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
+  var bufView = new Uint16Array(buf);
+  for (var i=0, strLen=str.length; i<strLen; i++) {
+    bufView[i] = str.charCodeAt(i);
+  }
+  return buf;
+}
+
 class RegistrationStore {
 
     constructor() {
-        //console.log(localStorage.getItem('userinfo'))
-        
         if(localStorage.getItem('userinfo') != null) {
             this.userData = JSON.parse(localStorage.getItem('userinfo'));
         }
-        
     }
 
     registerAttendee = () => {
+
+        console.log(JSON.parse(localStorage.getItem('attendee')))
 
         const req = {
             "attendee": JSON.parse(localStorage.getItem('attendee')),
@@ -46,7 +58,7 @@ class RegistrationStore {
                             }
                         };
 
-                        const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', localStorage.getItem('resume'), config));
+                        const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', str2ab(localStorage.getItem('resume'), config)));
                     
                         when(() => resumeToken.state !== 'pending',
                              () => { 
@@ -59,6 +71,10 @@ class RegistrationStore {
 
     }
     saveAttendee = (attendeeData) => {
+
+        
+
+        localStorage.setItem('attendee', JSON.stringify(attendeeData))
 
         const authToken = fromPromise(axios.post('https://api.hackillinois.org/v1/auth', {'email': 'systems@hackillinois.org', 'password': 'W5FHacHWmMwXcyxAajT'}));
         when(() => authToken.state !== 'pending',() => {
@@ -81,9 +97,8 @@ class RegistrationStore {
                     
                     this.userAuth = userToken.value.data.data.auth
                     
-                    localStorage.setItem('attendee', JSON.stringify(attendeeData))
                     localStorage.setItem('authorization', this.userAuth)
-                    localStorage.setItem('resume', this.userData.resume)
+                    localStorage.setItem('resume', ab2str(this.userData.resume))
 
                     window.location = '/registration/3'
 
