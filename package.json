@@ -42,7 +42,6 @@
     "node-sass": "^3.10.1",
     "path": "^0.12.7",
     "react-dropzone": "^3.9.1",
-    "react-file-input": "^0.2.5",
     "react-router": "^2.8.0",
     "resolve-url-loader": "^1.6.0",
     "sass-loader": "^4.0.2",
