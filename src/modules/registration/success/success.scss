@@ -1,0 +1,28 @@
+.thanks {
+	text-align: center;
+	font: 34px 'Gotham-Medium';
+	color: #f1f9fd;
+	display: block;
+	margin: 0 auto;
+}
+
+.instruction-text {
+	font: 22px 'Brandon-Regular';
+	color: #f1f9fd;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
+
+@media (min-width: 450px) {
+	width: 450px;
+}
+
+.confirmation {
+	width: 100%;
+	width: 300px;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
