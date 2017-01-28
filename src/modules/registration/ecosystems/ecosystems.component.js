@@ -40,6 +40,7 @@ else if (screen.width < 800 && screen.width > 320) {
 }
 else if (screen.width <= 320) {
 	modalStyle['width'] = '100%';
+	modalStyle['padding'] = '20px';
 }
 
 @inject('store') @observer
