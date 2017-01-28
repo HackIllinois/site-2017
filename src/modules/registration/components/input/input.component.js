@@ -47,7 +47,7 @@ const map = {
   resume: 'resume (pdf)',
   teamMember: 'add team member',
   repo: 'repo (optional)',
-  description: 'describe your idea (optional)',
+  description: 'describe idea (optional)',
   name: 'project name (optional)'
 }
 
