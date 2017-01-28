@@ -61,8 +61,11 @@ class Input extends Component {
 
 	checkAgeandYear = (val) => {
 		if (this.props.type == 'add-member' || this.props.type == 'member-li') return true;
-		if (val == 'createPassword' || val == 'confirmPassword'){
-			if(this.props.store.userData[val].length < 8) return false;
+		if (val == 'createPassword' || val == 'confirmPassword') {
+            return !(this.props.store.userData[val].length < 8) && (
+                this.props.store.userData['createPassword'] ===
+                this.props.store.userData['confirmPassword']
+            );
 		}
 		if (this.props.store.userData[val] == '') return false;
 		if (val != 'graduationYear' && val != 'age'  && val != 'email' && val != 'phoneNumber') return true;
