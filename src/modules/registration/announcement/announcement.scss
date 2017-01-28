@@ -8,10 +8,16 @@
 .announcement-text {
 	font: 22px 'Brandon-Regular';
 	color: #f1f9fd;
-	width: 800px;
+	width: 40%;
 	margin: 0 auto;
 	display: block;
 	padding-bottom: 50px;
+}
+
+@media (max-width: 1200px) {
+	.announcement-text {
+		width: 90%;
+	}
 }
 
 .strong {
