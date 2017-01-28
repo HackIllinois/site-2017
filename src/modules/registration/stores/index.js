@@ -37,7 +37,7 @@ class RegistrationStore {
             this.userData = JSON.parse(sessionStorage.getItem('userinfo'));
         }
 
-        console.log(sessionStorage.getItem('authorization'))
+        //console.log(sessionStorage.getItem('authorization'))
 
         if(sessionStorage.getItem('authorization') != null) {
             this.previouslyRegistered = true;
@@ -46,7 +46,7 @@ class RegistrationStore {
 
     registerAttendee = () => {
 
-        console.log(JSON.parse(sessionStorage.getItem('attendee')))
+        //console.log(JSON.parse(sessionStorage.getItem('attendee')))
 
         const req = {
             "attendee": JSON.parse(sessionStorage.getItem('attendee')),

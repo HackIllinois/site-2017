@@ -73,12 +73,12 @@ class Input extends Component {
 		}
 		if(val == 'graduationYear') {
 			var reg = new RegExp("^[12][0-9]{3}$");
-			console.log(reg.test(this.props.store.userData[val]))
+			//console.log(reg.test(this.props.store.userData[val]))
     		return reg.test(this.props.store.userData[val]);
 		}
 		if(val == 'age') {
 			var reg = new RegExp(/^\d{1,2}$/);
-			console.log(reg.test(this.props.store.userData[val]))
+			//console.log(reg.test(this.props.store.userData[val]))
     		return reg.test(this.props.store.userData[val]);
 		}
 		if(val == 'phoneNumber') {

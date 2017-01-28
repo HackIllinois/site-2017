@@ -44,10 +44,6 @@ function checkValidAge(age){
 @inject('store') @observer
 class UserInfo extends Component {
 
-	showStore = () => {
-		console.log(this.props.store.userData)
-	}
-
 	saveAttendee = (e) => {
 
 		e.preventDefault();

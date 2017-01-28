@@ -5,7 +5,7 @@ var config = {
   output: {
     path: './dist/js',
     filename: 'bundle.js',
-    publicPath: '/dist/js'
+    publicPath: '/dist/js/'
   },
   devServer: {
     inline: true,
