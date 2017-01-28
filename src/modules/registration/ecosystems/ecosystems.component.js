@@ -86,7 +86,7 @@ class Ecosystems extends Component {
 		if(this.props.store.ecosystems.python) ecosystems.push({'ecosystemId': 5})
 		if(this.props.store.ecosystems.embedded) ecosystems.push({'ecosystemId': 6})
 		if(this.props.store.ecosystems.linux) ecosystems.push({'ecosystemId': 7})
-		
+
 		let projects = []
 
 		if(this.props.store.ecosystems.create) projects.push({
@@ -102,13 +102,14 @@ class Ecosystems extends Component {
 			sessionStorage.setItem("projects", JSON.stringify(projects))
 			window.location = '/registration/4'
 		}
-		
+
 	}
 
 	render = () => (
 		<div>
 			<div className={styles['title-text']}> ECOSYSTEMS </div>
 			<div className={styles['instruction-text']}> Pick ecosystems you think you can contribute to and/or propose a new project you'd like to build. You may pick up to 4. </div>
+			<div className={styles['help']}>Questions? <a href="mailto:contact@hackillinois.org">Email us</a></div>
 			<div className={styles['project-card-container']}>
         {ecosystems.map((ecosystem, index)=> (
         	<Card index={index} key={index} label={ecosystem} active={this.props.store.ecosystems[ecosystem]}/>

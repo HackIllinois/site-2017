@@ -16,7 +16,7 @@ const checkProperties = (obj) => {
     for (var key in obj) {
     	if(key === 'graduationYear' && !checkValidYear(obj[key])){
     		return false;
-    	} 
+    	}
     	if(key === 'age' && !checkValidAge(obj[key])){
     		return false;
     	}
@@ -69,7 +69,7 @@ class UserInfo extends Component {
     "phoneNumber": this.props.store.userData.phoneNumber
    	};
 
-   	
+
 		if(this.props.store.userData.createPassword != this.props.store.userData.confirmPassword){
 			 this.props.store.userData.createPassword = ''
 			 this.props.store.userData.confirmPassword = ''
@@ -77,37 +77,40 @@ class UserInfo extends Component {
 
 		//console.log(this.props.store.previouslyRegistered)
 		if(checkProperties(attendeeData) && this.props.store.isFileSelected) {
-	
+
 			sessionStorage.setItem('userinfo', JSON.stringify(this.props.store.userData));
 			this.props.store.saveAttendee(attendeeData);
-			
+
 		}
 		else{
 			this.props.store.status = 'TRY AGAIN';
 		}
-		
+
 	}
 
 	render = () => {
 		return(
 			<div>
-			<div className={styles['info-text']}> INFORMATION </div>
-			<div className={styles.container}>
-			<div className={styles['form-field-container']}>
-				{all_form_fields.map((form) =>(<Input columns={true} type={form.type || ''} options={form.options || []} key={form.id} id={form.id} />))}
-			</div>
-				<div className={styles['small-container']}>
-					<div className={styles['small-text']}> Are you interested in giving a short (&lt;5 min) lightning talk on a topic of your choice? </div>
-					<div className={styles['small-input']}> <Input columns={true} password={false} options={['YES','NO']} id='hasLightningInterest'/> </div>
-				</div>
-				<div className={styles['small-container']}>
-					<div className={styles['small-text']}> We'd love to connect you to awesome opportunities at sponsoring companies. Is it okay if we share your information with our sponsors? </div>
-					<div className={styles['small-input']}> <Input columns={true} password={false} options={['YES','NO']} id='isPrivate'/> </div>
-				</div>
-				<div className={styles['continue-button']}>
-		    	<Button onClick={this.saveAttendee} dest='#' arrow='right' label={this.props.store.status}/>
-		    </div>
-			</div>
+    			<div className={styles['info-text']}>
+                    INFORMATION
+                </div>
+                <div className={styles['help']}>Questions? <a href="mailto:contact@hackillinois.org">Email us</a></div>
+    			<div className={styles.container}>
+        			<div className={styles['form-field-container']}>
+        				{all_form_fields.map((form) =>(<Input columns={true} type={form.type || ''} options={form.options || []} key={form.id} id={form.id} />))}
+        			</div>
+    				<div className={styles['small-container']}>
+    					<div className={styles['small-text']}> Are you interested in giving a short (&lt;5 min) lightning talk on a topic of your choice? </div>
+    					<div className={styles['small-input']}> <Input columns={true} password={false} options={['YES','NO']} id='hasLightningInterest'/> </div>
+    				</div>
+    				<div className={styles['small-container']}>
+    					<div className={styles['small-text']}> We'd love to connect you to awesome opportunities at sponsoring companies. Is it okay if we share your information with our sponsors? </div>
+    					<div className={styles['small-input']}> <Input columns={true} password={false} options={['YES','NO']} id='isPrivate'/> </div>
+    				</div>
+    				<div className={styles['continue-button']}>
+    		    	    <Button onClick={this.saveAttendee} dest='#' arrow='right' label={this.props.store.status}/>
+    		        </div>
+    			</div>
 			</div>
 		)
 	}
