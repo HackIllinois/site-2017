@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
 html {
   box-sizing: border-box;
 }
@@ -32,6 +34,7 @@ body {
   background-size: cover;
   background-position: center center;
   overflow: hidden;
+  font-family: 'GothamBlack', sans-serif;
 }
 
 @media (min-width: 920px){

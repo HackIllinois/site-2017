@@ -12,10 +12,7 @@ const Landing = () => (
         <img className={styles['hat-on']} src="src/assets/img/svg/landing-hat-lon.svg"/> 
         <img className={styles.beam} src="src/assets/img/svg/landing-beam.svg"/>
       </div>
-      <div className={styles['input-component']}>
-        <input type="email" id={styles['post-email']} placeholder="jane.doe@hackathon.com"/>
-        <button>Submit</button>
-      </div>
+      <h1>We'll be Back...</h1>
     </div>
 	</div>
 )
