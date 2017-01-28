@@ -53,6 +53,9 @@ const map = {
 
 const formatOption = (str) => {
 	if(str == "XL") return str;
+	if(str == 'IN_STATE') return 'Driving';
+	if(str == 'OUT_OF_STATE') return 'Flying';
+	if(str == 'BUS_REQUESTED') return 'Bus Requested';
 	return str.replace(/_/g, " ").replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})
 }
 

@@ -31,7 +31,7 @@ const all_form_fields = [
 	},
 	{
 			id: 'transportation',
-			options: ['NOT_NEEDED','BUS_REQUESTED','DRIVING', 'FLYING']
+			options: ['NOT_NEEDED', 'BUS_REQUESTED', 'IN_STATE', 'OUT_OF_STATE']
 	},
 	{
 			id: 'shirtSize',
