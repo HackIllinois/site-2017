@@ -63,9 +63,9 @@ class RegistrationStore {
         };
 
         const submitToken = fromPromise(axios.post('https://api.hackillinois.org/v1/registration/attendee', req, config))
-                    
+
         when(() => submitToken.state !== 'pending',
-             () => {                    
+             () => {
                 const config = {
                     headers: {
                         'Authorization': sessionStorage.getItem('authorization'),
@@ -74,26 +74,26 @@ class RegistrationStore {
                 };
                 const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
                 when(() => resumeToken.state !== 'pending',
-                     () => { 
+                     () => {
                             if(resumeToken.state !== 'rejected') window.location = '/registration/5'
-                });            
-        }); 
+                });
+        });
     }
    saveAttendee = (attendeeData) => {
-    
+
     sessionStorage.setItem('attendee', JSON.stringify(attendeeData))
     sessionStorage.setItem('resume', arrayBufferToBase64(this.userData.resume))
 
     if(this.previouslyRegistered) {
         window.location = '/registration/3'
     }
-    
+
     const config = {
         headers: {
             'Content-Type': 'application/json'
         }
     };
-        
+
     //Create new User
     const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
     when(() => userToken.state !== 'pending',() => {
@@ -103,7 +103,7 @@ class RegistrationStore {
             // window.file = this.userData.resume
             window.location = '/registration/3'
             }});
-            
+
     }
 
     @observable adminAuth = ''
