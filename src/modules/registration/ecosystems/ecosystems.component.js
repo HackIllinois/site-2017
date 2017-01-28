@@ -22,12 +22,25 @@ const ecosystems = [
 ]
 
 const modalStyle = {
-	width: '50%',
+	// width: '50%',
+	// width: '90%',
+	// padding: '20px',
 	height: '475px',
 	backgroundColor: '#122342',
 	border: '5px solid #57C7DF',
 	padding: '45px'
 };
+
+if (screen.width > 800) {
+	modalStyle['width'] = '50%';
+}
+else if (screen.width < 800 && screen.width > 320) {
+	modalStyle['width'] = '90%';
+	modalStyle['padding'] = '20px';
+}
+else if (screen.width <= 320) {
+	modalStyle['width'] = '100%';
+}
 
 @inject('store') @observer
 class Card extends Component {
@@ -64,7 +77,7 @@ class Card extends Component {
 		    {
 				this.props.label == 'create'
 				?
-			    <Modal ref="modal" modalStyle={modalStyle}>
+			    <Modal ref="modal" modalStyle={modalStyle} className={"create_modal"}>
 			    	<div className={styles['modal-text']}>+ CREATE</div>
 						<Input type={'project'} key={'name'} id={'name'} options={[]} />
 						<Input type={'project'} key={'description'} id={'description'} options={[]} />
@@ -106,7 +119,6 @@ class Ecosystems extends Component {
 			sessionStorage.setItem("projects", JSON.stringify(projects))
 			window.location = '/registration/4'
 		}
-
 	}
 
 	render = () => (
