@@ -47,8 +47,8 @@ const map = {
   resume: 'resume (pdf)',
   teamMember: 'add team member',
   repo: 'repo (optional)',
-  description: 'describe your idea',
-  name: 'project name'
+  description: 'describe your idea (optional)',
+  name: 'project name (optional)'
 }
 
 const formatOption = (str) => {
