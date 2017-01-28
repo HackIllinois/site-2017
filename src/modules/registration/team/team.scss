@@ -29,6 +29,11 @@
 	padding-bottom: 25px;
 }
 
+.help {
+    text-align: center;
+    padding: 0 0 5% 0;
+}
+
 @media (min-width: 800px) {
 	.container,
 	.instruction-text {
@@ -118,6 +123,6 @@
     visibility: hidden;
     &:checked + label:after {
       opacity: 1;
-    }    
+    }
   }
 }
