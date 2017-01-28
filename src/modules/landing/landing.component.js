@@ -40,7 +40,7 @@ class Landing extends Component {
         <div className={styles.host}> Co-hosted by <a href="http://fulcrum-gt.com/"> Fulcrum </a> </div>
         <div className={styles['hat-container']}>
           <img className={styles['hat-off']} src="src/assets/img/svg/landing-hat-loff.svg"/>
-         
+
         </div>
         <div className={styles.register}>
         <Button register={true} dest='/registration' label='REGISTER NOW' />
