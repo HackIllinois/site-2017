@@ -10,7 +10,7 @@ class Registration extends Component {
 			<div>
 				<div className={styles.registrationHeader}>
         	<a href="/">
-        	<img className={styles.headerLogo} src="src/assets/img/landing-logo.png"/>
+        	<img className={styles.headerLogo} src="../src/assets/img/landing-logo.png"/>
         	</a>
     		</div>
 				{this.props.children}
