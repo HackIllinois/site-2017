@@ -125,7 +125,7 @@ class RegistrationStore {
         linkedin: '',
         interests: '',
         isNovice: 'NO',
-        isPrivate: 'NO',
+        isPrivate: 'YES',
         hasLightningInterest: 'NO',
         phoneNumber: '',
         email: '',
