@@ -71,7 +71,7 @@ class Input extends Component {
             );
 		}
 		if (this.props.store.userData[val] == '') return false;
-		if (val != 'graduationYear' && val != 'age'  && val != 'email' && val != 'phoneNumber') return true;
+		if (val != 'graduationYear' && val != 'age'  && val != 'email' && val != 'phoneNumber' && val != 'linkedin') return true;
 		if (val == 'email') {
   			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   			return re.test(this.props.store.userData[val]);
@@ -89,6 +89,11 @@ class Input extends Component {
 		if (val == 'phoneNumber') {
 			var reg = new RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 			return reg.test(this.props.store.userData[val]);
+		}
+		if (val == 'linkedin') {
+			console.log('asdf')
+			console.log(this.props.store.userData[val].length < 50);
+			return (this.props.store.userData[val].length < 50);
 		}
 	}
 
