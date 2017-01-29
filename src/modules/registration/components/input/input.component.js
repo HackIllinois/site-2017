@@ -35,8 +35,8 @@ const map = {
   gender: 'gender',
   professionalInterest: 'professional interests',
   github: 'github username',
-  linkedin: 'linkedin username',
-  interests: 'interests',
+  linkedin: 'linkedin username (<50 chars)',
+  interests: 'interests (optional)',
   isNovice: 'are you a beginner?',
   isPrivate: ' ',
   hasLightningInterest: ' ',
@@ -64,6 +64,7 @@ class Input extends Component {
 
 	checkAgeandYear = (val) => {
 		if (this.props.type == 'add-member' || this.props.type == 'member-li') return true;
+		if (val == 'interests') return true;
 		if (val == 'createPassword' || val == 'confirmPassword') {
             return !(this.props.store.userData[val].length < 8) && (
                 this.props.store.userData['createPassword'] ===

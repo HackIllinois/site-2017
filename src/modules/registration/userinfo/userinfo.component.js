@@ -62,7 +62,7 @@ class UserInfo extends Component {
             "professionalInterest": this.props.store.userData.professionalInterest,
             "github": this.props.store.userData.github,
             "linkedin": this.props.store.userData.linkedin,
-            "interests": this.props.store.userData.interests,
+            "interests": this.props.store.userData.interests || 'N/A',
             "isNovice": this.props.store.userData.isNovice == 'YES',
             "isPrivate": this.props.store.userData.isPrivate == 'YES',
             "hasLightningInterest": this.props.store.userData.hasLightningInterest == 'YES',
