@@ -88,12 +88,16 @@ class RegistrationStore {
     //Create new User
     const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
     when(() => userToken.state !== 'pending',() => {
+        if(userToken.state == 'rejected') {
+            console.log('rejected')
+            console.log(userToken)
+        }
         if(userToken.state !== 'rejected') {
             this.userAuth = userToken.value.data.data.auth
+            console.log(userToken);
             sessionStorage.setItem('authorization', this.userAuth)
-            // window.file = this.userData.resume
             window.location = '/registration/3'
-            }});
+        }});
 
     }
 
