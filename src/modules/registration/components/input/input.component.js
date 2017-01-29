@@ -91,8 +91,6 @@ class Input extends Component {
 			return reg.test(this.props.store.userData[val]);
 		}
 		if (val == 'linkedin') {
-			console.log('asdf')
-			console.log(this.props.store.userData[val].length < 50);
 			return (this.props.store.userData[val].length < 50);
 		}
 	}
