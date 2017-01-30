@@ -66,7 +66,15 @@ class RegistrationStore {
                 const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
                 when(() => resumeToken.state !== 'pending',
                      () => {
-                            if(resumeToken.state !== 'rejected') window.location = '/registration/5'
+                            if(resumeToken.state !== 'rejected')  {
+                                window.location = '/registration/5'
+                            }
+                            else {
+                                ga('send', 'exception', {
+                                    'exDescription': submitToken.value, 
+                                    'exFatal': true
+                                })
+                            }
                 });
         });
     }
@@ -91,6 +99,10 @@ class RegistrationStore {
         if(userToken.state == 'rejected') {
             console.log('rejected')
             console.log(userToken)
+            ga('send', 'exception', {
+                'exDescription': userToken.value,
+                'exFatal':true
+            })
         }
         if(userToken.state !== 'rejected') {
             this.userAuth = userToken.value.data.data.auth
