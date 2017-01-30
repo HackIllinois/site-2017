@@ -10,7 +10,9 @@ const code = loggedIn ?  window.location.search.slice(6) : '';
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-46010489-2', 'auto');
+ga('create', 'UA-46010489-2', {
+    'cookieDomain': 'hackillinois.org'
+});
 
 function arrayBufferToBase64( buffer ) {
     var binary = '';
