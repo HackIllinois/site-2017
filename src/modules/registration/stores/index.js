@@ -70,10 +70,12 @@ class RegistrationStore {
                                 window.location = '/registration/5'
                             }
                             else {
-                                ga('send', 'exception', {
-                                    'exDescription': submitToken.value, 
-                                    'exFatal': true
-                                })
+                                if (ga) {
+                                    ga('send', 'exception', {
+                                        'exDescription': submitToken.value, 
+                                        'exFatal': true
+                                    })
+                                }
                             }
                 });
         });
@@ -99,10 +101,12 @@ class RegistrationStore {
         if(userToken.state == 'rejected') {
             console.log('rejected')
             console.log(userToken)
-            ga('send', 'exception', {
-                'exDescription': userToken.value,
-                'exFatal':true
-            })
+            if (ga) {
+                ga('send', 'exception', {
+                    'exDescription': userToken.value,
+                    'exFatal':true
+                })
+            }
         }
         if(userToken.state !== 'rejected') {
             this.userAuth = userToken.value.data.data.auth
