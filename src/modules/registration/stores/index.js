@@ -4,7 +4,13 @@ import axios from 'axios'
 import {browserHistory} from 'react-router'
 
 const loggedIn = window.location.href.includes('code')
-const code = loggedIn ?  window.location.search.slice(6) : ''
+const code = loggedIn ?  window.location.search.slice(6) : '';
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-46010489-2', 'auto');
 
 function arrayBufferToBase64( buffer ) {
     var binary = '';
@@ -72,7 +78,7 @@ class RegistrationStore {
                             else {
                                 if (ga) {
                                     ga('send', 'exception', {
-                                        'exDescription': submitToken.value, 
+                                        'exDescription': '/attendee : ' + submitToken.value, 
                                         'exFatal': true
                                     })
                                 }
@@ -103,7 +109,7 @@ class RegistrationStore {
             console.log(userToken)
             if (ga) {
                 ga('send', 'exception', {
-                    'exDescription': userToken.value,
+                    'exDescription': '/user : ' + userToken.value,
                     'exFatal':true
                 })
             }
@@ -130,7 +136,7 @@ class RegistrationStore {
         transportation: 'NOT_NEEDED',
         school: '',
         major: '',
-        gender: 'FEMALE',
+        gender: 'OTHER',
         professionalInterest: 'NONE',
         github: '',
         linkedin: '',
