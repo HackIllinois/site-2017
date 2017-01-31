@@ -59,8 +59,6 @@ class RegistrationStore {
         const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': sessionStorage.getItem('email'), 'password': sessionStorage.getItem('password') }, config));
         when(() => userToken.state !== 'pending',() => {
             if(userToken.state == 'rejected') {
-                console.log('rejected')
-                console.log(userToken)
                 if (ga) {
                     ga('send', 'exception', {
                         'exDescription': '/user : ' + userToken.value,
@@ -110,10 +108,11 @@ class RegistrationStore {
         sessionStorage.setItem('resume', arrayBufferToBase64(this.userData.resume))
         sessionStorage.setItem('email', this.userData.email)
         sessionStorage.setItem('password', this.userData.createPassword)
-
+        /*
         if(this.previouslyRegistered) {
             window.location = '/registration/3'
         }
+        */
         /*
         const config = {
             headers: {
