@@ -61,7 +61,7 @@ class RegistrationStore {
             if(userToken.state == 'rejected') {
                 if (ga) {
                     ga('send', 'exception', {
-                        'exDescription': '/user : ' + JSON.stringify(userToken.value.response.data.error),
+                        'exDescription': '/user : ' + sessionStorage.getItem('email') + JSON.stringify(userToken.value.response.data.error),
                         'exFatal':true
                     })
                 }
@@ -93,7 +93,7 @@ class RegistrationStore {
                                     else {
                                         if (ga) {
                                             ga('send', 'exception', {
-                                                'exDescription': '/attendee : ' + JSON.stringify(submitToken.value.response.data.error), 
+                                                'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
                                                 'exFatal': true
                                             })
                                         }
