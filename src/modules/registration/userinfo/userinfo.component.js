@@ -74,7 +74,11 @@ class UserInfo extends Component {
 			 this.props.store.userData.confirmPassword = ''
 		}
 
-		if (checkProperties(attendeeData) && this.props.store.isFileSelected) {
+		if (checkProperties(attendeeData) && this.props.store.isFileSelected
+            && this.props.store.userData.createPassword.length > 7 
+            && this.props.store.userData.createPassword.length < 50
+            && this.props.store.userData.confirmPassword.length > 7 
+            && this.props.store.userData.confirmPassword.length < 50) {
 			sessionStorage.setItem('userinfo', JSON.stringify(this.props.store.userData));
 			this.props.store.saveAttendee(attendeeData);
 		} else{

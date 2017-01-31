@@ -4,7 +4,15 @@ import axios from 'axios'
 import {browserHistory} from 'react-router'
 
 const loggedIn = window.location.href.includes('code')
-const code = loggedIn ?  window.location.search.slice(6) : ''
+const code = loggedIn ?  window.location.search.slice(6) : '';
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-46010489-2', {
+    'cookieDomain': 'hackillinois.org'
+});
 
 function arrayBufferToBase64( buffer ) {
     var binary = '';
@@ -66,7 +74,17 @@ class RegistrationStore {
                 const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
                 when(() => resumeToken.state !== 'pending',
                      () => {
-                            if(resumeToken.state !== 'rejected') window.location = '/registration/5'
+                            if(resumeToken.state !== 'rejected')  {
+                                window.location = '/registration/5'
+                            }
+                            else {
+                                if (ga) {
+                                    ga('send', 'exception', {
+                                        'exDescription': '/attendee : ' + submitToken.value, 
+                                        'exFatal': true
+                                    })
+                                }
+                            }
                 });
         });
     }
@@ -91,6 +109,12 @@ class RegistrationStore {
         if(userToken.state == 'rejected') {
             console.log('rejected')
             console.log(userToken)
+            if (ga) {
+                ga('send', 'exception', {
+                    'exDescription': '/user : ' + userToken.value,
+                    'exFatal':true
+                })
+            }
         }
         if(userToken.state !== 'rejected') {
             this.userAuth = userToken.value.data.data.auth
@@ -114,7 +138,7 @@ class RegistrationStore {
         transportation: 'NOT_NEEDED',
         school: '',
         major: '',
-        gender: 'FEMALE',
+        gender: 'OTHER',
         professionalInterest: 'NONE',
         github: '',
         linkedin: '',
