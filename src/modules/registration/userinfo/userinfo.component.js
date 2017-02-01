@@ -73,15 +73,16 @@ class UserInfo extends Component {
 			 this.props.store.userData.createPassword = ''
 			 this.props.store.userData.confirmPassword = ''
 		}
-
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		if (checkProperties(attendeeData) && this.props.store.isFileSelected
             && this.props.store.userData.createPassword.length > 7 
             && this.props.store.userData.createPassword.length < 50
             && this.props.store.userData.confirmPassword.length > 7 
-            && this.props.store.userData.confirmPassword.length < 50) {
+            && this.props.store.userData.confirmPassword.length < 50
+            && re.test(this.props.store.userData.email)) {
 			sessionStorage.setItem('userinfo', JSON.stringify(this.props.store.userData));
 			this.props.store.saveAttendee(attendeeData);
-		} else{
+		} else {
 			this.props.store.status = 'TRY AGAIN';
 		}
 	}
