@@ -15,7 +15,7 @@ import {all_form_fields} from './forms'
 const checkProperties = (obj) => {
     for (var key in obj) {
         if (key === 'linkedin'){
-            return obj[key].length < 50;
+            return (obj[key].length < 50 && obj[key].length > 0);
         }        
     	if (key === 'graduationYear' && !checkValidYear(obj[key])){
     		return false;
