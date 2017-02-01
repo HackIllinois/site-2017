@@ -65,6 +65,52 @@ class RegistrationStore {
                         'exFatal':true
                     })
                 }
+                const authToken = fromPromise(axios.post('https://api.hackillinois.org/v1/auth', {'email': sessionStorage.getItem('email'), 'password': sessionStorage.getItem('password') }, config));
+                when(() => authToken.state !== 'pending', () => {
+                    if (authToken.state == 'rejected') {
+                        if (ga) {
+                            ga('send', 'exception', {
+                                'exDescription': '/auth : ' + sessionStorage.getItem('email') + JSON.stringify(authToken.value.response.data.error),
+                                'exFatal':true
+                            })
+                        }
+                    }
+                    else {
+                        this.userAuth = authToken.value.data.data.auth;
+                        sessionStorage.setItem('authorization', this.userAuth)
+                        const config = {
+                            headers: {
+                                'Authorization': sessionStorage.getItem('authorization'),
+                                'Content-Type': 'application/json'
+                            }
+                        };
+                        const submitToken = fromPromise(axios.put('https://api.hackillinois.org/v1/registration/attendee', req, config))
+                        when(() => submitToken.state !== 'pending',
+                             () => {
+                                const config = {
+                                    headers: {
+                                        'Authorization': sessionStorage.getItem('authorization'),
+                                        'Content-Type': 'application/pdf',
+                                    }
+                                };
+                                const resumeToken = fromPromise(axios.put('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
+                                when(() => resumeToken.state !== 'pending',
+                                     () => {
+                                            if(resumeToken.state !== 'rejected')  {
+                                                window.location = '/registration/5'
+                                            }
+                                            else {
+                                                if (ga) {
+                                                    ga('send', 'exception', {
+                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                        'exFatal': true
+                                                    })
+                                                }
+                                            }
+                                });
+                        });
+                    }
+                });
             }
             else {
                 this.userAuth = userToken.value.data.data.auth
