@@ -84,31 +84,68 @@ class RegistrationStore {
                                 'Content-Type': 'application/json'
                             }
                         };
-                        const submitToken = fromPromise(axios.put('https://api.hackillinois.org/v1/registration/attendee', req, config))
-                        when(() => submitToken.state !== 'pending',
-                             () => {
-                                const config = {
-                                    headers: {
-                                        'Authorization': sessionStorage.getItem('authorization'),
-                                        'Content-Type': 'application/pdf',
-                                    }
-                                };
-                                const resumeToken = fromPromise(axios.put('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
-                                when(() => resumeToken.state !== 'pending',
-                                     () => {
-                                            if(resumeToken.state !== 'rejected')  {
-                                                window.location = '/registration/5'
-                                            }
-                                            else {
-                                                if (ga) {
-                                                    ga('send', 'exception', {
-                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
-                                                        'exFatal': true
-                                                    })
+                        const attendeeToken = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
+                        when(() => attendeeToken.state !== 'pending', 
+                            () => {
+                                console.log(attendeeToken)
+                                if (attendeeToken.state !== 'rejected') {
+                                    // they have an attendee, do a put
+                                    const submitToken = fromPromise(axios.put('https://api.hackillinois.org/v1/registration/attendee', req, config))
+                                    when(() => submitToken.state !== 'pending',
+                                         () => {
+                                            const config = {
+                                                headers: {
+                                                    'Authorization': sessionStorage.getItem('authorization'),
+                                                    'Content-Type': 'application/pdf',
                                                 }
-                                            }
-                                });
+                                            };
+                                            const resumeToken = fromPromise(axios.put('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
+                                            when(() => resumeToken.state !== 'pending',
+                                                 () => {
+                                                        if(resumeToken.state !== 'rejected')  {
+                                                            window.location = '/registration/5'
+                                                        }
+                                                        else {
+                                                            if (ga) {
+                                                                ga('send', 'exception', {
+                                                                    'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                                    'exFatal': true
+                                                                })
+                                                            }
+                                                        }
+                                            });
+                                    });
+                                }
+                                else {
+                                    // they don't have an attendee, do a post
+                                    const submitToken = fromPromise(axios.post('https://api.hackillinois.org/v1/registration/attendee', req, config))
+                                    when(() => submitToken.state !== 'pending',
+                                         () => {
+                                            const config = {
+                                                headers: {
+                                                    'Authorization': sessionStorage.getItem('authorization'),
+                                                    'Content-Type': 'application/pdf',
+                                                }
+                                            };
+                                            const resumeToken = fromPromise(axios.put('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
+                                            when(() => resumeToken.state !== 'pending',
+                                                 () => {
+                                                        if(resumeToken.state !== 'rejected')  {
+                                                            window.location = '/registration/5'
+                                                        }
+                                                        else {
+                                                            if (ga) {
+                                                                ga('send', 'exception', {
+                                                                    'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                                    'exFatal': true
+                                                                })
+                                                            }
+                                                        }
+                                            });
+                                    });
+                                }
                         });
+                        
                     }
                 });
             }
