@@ -35,7 +35,6 @@ function base64ToArrayBuffer(base64) {
 }
 
 class RegistrationStore {
-
     constructor() {
         if(sessionStorage.getItem('userinfo') != null) {
             this.userData = JSON.parse(sessionStorage.getItem('userinfo'));
@@ -46,83 +45,187 @@ class RegistrationStore {
     }
 
     registerAttendee = () => {
-
         const req = {
             "attendee": JSON.parse(sessionStorage.getItem('attendee')),
             "ecosystemInterests": JSON.parse(sessionStorage.getItem('ecosystemInterests')),
             "projects": JSON.parse(sessionStorage.getItem('projects')),
             "collaborators": this.collaborators.map((c)=>({"collaborator":c}))
         }
-
         const config = {
             headers: {
-                'Authorization': sessionStorage.getItem('authorization'),
+                'Content-Type': 'application/json'
+            }
+        };
+        const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': sessionStorage.getItem('email'), 'password': sessionStorage.getItem('password') }, config));
+        when(() => userToken.state !== 'pending',() => {
+            if(userToken.state == 'rejected') {
+                if (ga) {
+                    ga('send', 'exception', {
+                        'exDescription': '/user : ' + sessionStorage.getItem('email') + JSON.stringify(userToken.value.response.data.error),
+                        'exFatal':true
+                    })
+                }
+                const authToken = fromPromise(axios.post('https://api.hackillinois.org/v1/auth', {'email': sessionStorage.getItem('email'), 'password': sessionStorage.getItem('password') }, config));
+                when(() => authToken.state !== 'pending', () => {
+                    if (authToken.state == 'rejected') {
+                        if (ga) {
+                            ga('send', 'exception', {
+                                'exDescription': '/auth : ' + sessionStorage.getItem('email') + JSON.stringify(authToken.value.response.data.error),
+                                'exFatal':true
+                            })
+                        }
+                    }
+                    else {
+                        this.userAuth = authToken.value.data.data.auth;
+                        sessionStorage.setItem('authorization', this.userAuth)
+                        const config = {
+                            headers: {
+                                'Authorization': sessionStorage.getItem('authorization'),
+                                'Content-Type': 'application/json'
+                            }
+                        };
+                        const attendeeToken = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
+                        when(() => attendeeToken.state !== 'pending', 
+                            () => {
+                                console.log(attendeeToken)
+                                if (attendeeToken.state !== 'rejected') {
+                                    // they have an attendee, do a put
+                                    const submitToken = fromPromise(axios.put('https://api.hackillinois.org/v1/registration/attendee', req, config))
+                                    when(() => submitToken.state !== 'pending',
+                                         () => {
+                                            const config = {
+                                                headers: {
+                                                    'Authorization': sessionStorage.getItem('authorization'),
+                                                    'Content-Type': 'application/pdf',
+                                                }
+                                            };
+                                            const resumeToken = fromPromise(axios.put('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
+                                            when(() => resumeToken.state !== 'pending',
+                                                 () => {
+                                                        if(resumeToken.state !== 'rejected')  {
+                                                            window.location = '/registration/5'
+                                                        }
+                                                        else {
+                                                            if (ga) {
+                                                                ga('send', 'exception', {
+                                                                    'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                                    'exFatal': true
+                                                                })
+                                                            }
+                                                        }
+                                            });
+                                    });
+                                }
+                                else {
+                                    // they don't have an attendee, do a post
+                                    const submitToken = fromPromise(axios.post('https://api.hackillinois.org/v1/registration/attendee', req, config))
+                                    when(() => submitToken.state !== 'pending',
+                                         () => {
+                                            const config = {
+                                                headers: {
+                                                    'Authorization': sessionStorage.getItem('authorization'),
+                                                    'Content-Type': 'application/pdf',
+                                                }
+                                            };
+                                            const resumeToken = fromPromise(axios.put('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
+                                            when(() => resumeToken.state !== 'pending',
+                                                 () => {
+                                                        if(resumeToken.state !== 'rejected')  {
+                                                            window.location = '/registration/5'
+                                                        }
+                                                        else {
+                                                            if (ga) {
+                                                                ga('send', 'exception', {
+                                                                    'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                                    'exFatal': true
+                                                                })
+                                                            }
+                                                        }
+                                            });
+                                    });
+                                }
+                        });
+                        
+                    }
+                });
+            }
+            else {
+                this.userAuth = userToken.value.data.data.auth
+                sessionStorage.setItem('authorization', this.userAuth)
+                const config = {
+                    headers: {
+                        'Authorization': sessionStorage.getItem('authorization'),
+                        'Content-Type': 'application/json'
+                    }
+                };
+                const submitToken = fromPromise(axios.post('https://api.hackillinois.org/v1/registration/attendee', req, config))
+                when(() => submitToken.state !== 'pending',
+                     () => {
+                        const config = {
+                            headers: {
+                                'Authorization': sessionStorage.getItem('authorization'),
+                                'Content-Type': 'application/pdf',
+                            }
+                        };
+                        const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
+                        when(() => resumeToken.state !== 'pending',
+                             () => {
+                                    if(resumeToken.state !== 'rejected')  {
+                                        window.location = '/registration/5'
+                                    }
+                                    else {
+                                        if (ga) {
+                                            ga('send', 'exception', {
+                                                'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                'exFatal': true
+                                            })
+                                        }
+                                    }
+                        });
+                });
+            }
+        });
+    }
+    saveAttendee = (attendeeData) => {
+        sessionStorage.setItem('attendee', JSON.stringify(attendeeData))
+        sessionStorage.setItem('resume', arrayBufferToBase64(this.userData.resume))
+        sessionStorage.setItem('email', this.userData.email)
+        sessionStorage.setItem('password', this.userData.createPassword)
+        /*
+        if(this.previouslyRegistered) {
+            window.location = '/registration/3'
+        }
+        */
+        /*
+        const config = {
+            headers: {
                 'Content-Type': 'application/json'
             }
         };
 
-        const submitToken = fromPromise(axios.post('https://api.hackillinois.org/v1/registration/attendee', req, config))
-
-        when(() => submitToken.state !== 'pending',
-             () => {
-                const config = {
-                    headers: {
-                        'Authorization': sessionStorage.getItem('authorization'),
-                        'Content-Type': 'application/pdf',
-                    }
-                };
-                const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
-                when(() => resumeToken.state !== 'pending',
-                     () => {
-                            if(resumeToken.state !== 'rejected')  {
-                                window.location = '/registration/5'
-                            }
-                            else {
-                                if (ga) {
-                                    ga('send', 'exception', {
-                                        'exDescription': '/attendee : ' + submitToken.value, 
-                                        'exFatal': true
-                                    })
-                                }
-                            }
-                });
-        });
-    }
-   saveAttendee = (attendeeData) => {
-
-    sessionStorage.setItem('attendee', JSON.stringify(attendeeData))
-    sessionStorage.setItem('resume', arrayBufferToBase64(this.userData.resume))
-
-    if(this.previouslyRegistered) {
-        window.location = '/registration/3'
-    }
-
-    const config = {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    };
-
-    //Create new User
-    const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
-    when(() => userToken.state !== 'pending',() => {
-        if(userToken.state == 'rejected') {
-            console.log('rejected')
-            console.log(userToken)
-            if (ga) {
-                ga('send', 'exception', {
-                    'exDescription': '/user : ' + userToken.value,
-                    'exFatal':true
-                })
+        //Create new User
+        const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
+        when(() => userToken.state !== 'pending',() => {
+            if(userToken.state == 'rejected') {
+                console.log('rejected')
+                console.log(userToken)
+                if (ga) {
+                    ga('send', 'exception', {
+                        'exDescription': '/user : ' + userToken.value,
+                        'exFatal':true
+                    })
+                }
             }
-        }
-        if(userToken.state !== 'rejected') {
-            this.userAuth = userToken.value.data.data.auth
-            console.log(userToken);
-            sessionStorage.setItem('authorization', this.userAuth)
-            window.location = '/registration/3'
-        }});
+            if(userToken.state !== 'rejected') {
+                this.userAuth = userToken.value.data.data.auth
+                console.log(userToken);
+                sessionStorage.setItem('authorization', this.userAuth)
+                window.location = '/registration/3'
+            }
+        });
+        */
 
+        window.location = '/registration/3'
     }
 
     @observable adminAuth = ''
