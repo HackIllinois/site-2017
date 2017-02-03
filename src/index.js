@@ -18,6 +18,8 @@ import Ecosystems from './modules/registration/ecosystems'
 import Team from './modules/registration/team'
 import Success from './modules/registration/success'
 
+import Login from './modules/registration/login'
+
 //PDFs
 const OpenSource = () => {
 	window.location = 'src/assets/pdf/opensource.pdf'
@@ -54,13 +56,14 @@ ReactDom.render(
 				<Route path='code' component={Code}/>
 			</Route>
 			<Route path='registration' component={Registration}>
-					<IndexRoute component={Announcement}/>
-					<Route path='1' component={Announcement}/>
-					<Route path='2' component={UserInfo}/>
-					<Route path='3' component={Ecosystems}/>
-					<Route path='4' component={Team}/>
-					<Route path='5' component={Success}/>
-				</Route>
+				<IndexRoute component={Announcement}/>
+				<Route path='1' component={Announcement}/>
+				<Route path='2' component={UserInfo}/>
+				<Route path='3' component={Ecosystems}/>
+				<Route path='4' component={Team}/>
+				<Route path='5' component={Success}/>
+			</Route>
+			<Route path='authenticate' component={Login}/>
 		</Router>
 	</Provider>
 		, root)

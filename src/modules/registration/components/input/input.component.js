@@ -141,7 +141,7 @@ class Input extends Component {
     			</select>
     			:
     			<input
-                    placeholder={this.props.id == 'teamMember' ? 'Press enter to add team members' : ''}
+                    placeholder={this.props.id == 'teamMember' ? 'Press enter to add team members' : this.props.placeholder}
                     className={this.checkAgeandYear(this.props.id) == false ? styles.red : '' && this.props.type != 'add-member' }
                     onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null }
                     disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null }

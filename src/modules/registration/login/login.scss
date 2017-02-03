@@ -1,0 +1,93 @@
+.registrationHeader {
+    //padding-top: calc(15vh);
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.registrationHeader .headerLogo {
+    height: 100px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+ }
+
+ .instruction-text {
+	font: 22px 'Brandon-Regular';
+	text-align: center;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #b7bcdf;
+	margin: 0 auto;
+	display: block;
+	padding-bottom: 25px;
+	width: 500px;
+}
+
+@media (max-width: 500px) {
+	.instruction-text, .form-container {
+		width: calc(100% - 20px);
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 415px){
+	.form-container {
+		width: 400px;
+	}
+}
+
+.form-container {
+	//width: 400px;
+	margin: 0 auto;
+}
+
+/*-- Input Styling --*/
+
+::-webkit-input-placeholder {
+   font-family: 'Gotham-Medium', sans-serif;
+   color: #b7bcdf;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-family: 'Gotham-Medium', sans-serif; 
+   color: #b7bcdf;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-family: 'Gotham-Medium', sans-serif;
+   color: #b7bcdf;
+}
+
+:-ms-input-placeholder {  
+   font-family: 'Gotham-Medium', sans-serif; 
+   color: #b7bcdf; 
+}
+
+.reg-input {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.top-component {
+	border-bottom: none !important;
+}
+
+.reg-input input, select{
+  height: 45px;
+  width: 100%;
+  min-width: 114px;
+  color: #b7bcdf;
+  background-color: #122342;
+  border: 2px solid #57c7df;
+  //border-radius: 3px;
+  position: relative;
+  outline: none;
+  padding-left: 15px;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: 'Gotham', sans-serif;
+  margin-bottom: 0px;
+}
