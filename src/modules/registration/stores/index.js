@@ -87,9 +87,9 @@ class RegistrationStore {
                         const attendeeToken = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
                         when(() => attendeeToken.state !== 'pending', 
                             () => {
-                                console.log(attendeeToken)
                                 if (attendeeToken.state !== 'rejected') {
                                     // they have an attendee, do a put
+                                    /*
                                     const submitToken = fromPromise(axios.put('https://api.hackillinois.org/v1/registration/attendee', req, config))
                                     when(() => submitToken.state !== 'pending',
                                          () => {
@@ -115,6 +115,7 @@ class RegistrationStore {
                                                         }
                                             });
                                     });
+                                    */
                                 }
                                 else {
                                     // they don't have an attendee, do a post
@@ -127,7 +128,7 @@ class RegistrationStore {
                                                     'Content-Type': 'application/pdf',
                                                 }
                                             };
-                                            const resumeToken = fromPromise(axios.put('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
+                                            const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
                                             when(() => resumeToken.state !== 'pending',
                                                  () => {
                                                         if(resumeToken.state !== 'rejected')  {
