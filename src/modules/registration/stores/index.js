@@ -70,6 +70,7 @@ class RegistrationStore {
                 const authToken = fromPromise(axios.post('https://api.hackillinois.org/v1/auth', {'email': sessionStorage.getItem('email'), 'password': sessionStorage.getItem('password') }, config));
                 when(() => authToken.state !== 'pending', () => {
                     if (authToken.state == 'rejected') 
+                    {
                         if (ga) {
                             ga('send', 'exception', {
                                 'exDescription': '/auth : ' + sessionStorage.getItem('email') + JSON.stringify(authToken.value.response.data.error),
