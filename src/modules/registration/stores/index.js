@@ -11,7 +11,7 @@ const code = loggedIn ?  window.location.search.slice(6) : '';
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-46010489-2', {
-    'cookieDomain': 'hackillinois.org'
+    'cookieDomain': 'illinihackers.org'
 });
 
 function arrayBufferToBase64( buffer ) {
