@@ -43,7 +43,7 @@ class Landing extends Component {
 
         </div>
         <div className={styles.register}>
-        <Button register={true} dest='/registration' label='REGISTER NOW' />
+        <Button register={true} dest='https://illinihackers.org/registration' label='REGISTER NOW' />
         </div>
       </div>
     </div>
