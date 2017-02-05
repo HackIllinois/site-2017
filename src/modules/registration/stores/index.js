@@ -91,6 +91,12 @@ class RegistrationStore {
                         when(() => attendeeToken.state !== 'pending', 
                             () => {
                                 if (attendeeToken.state !== 'rejected') {
+                                    if (ga) {
+                                        ga('send', 'exception', {
+                                            'exDescription': sessionStorage.getItem('email') + ': has an attendee already', 
+                                            'exFatal': false
+                                        })
+                                    }
                                     // they have an attendee, do a put
                                     /*
                                     const submitToken = fromPromise(axios.put('https://api.hackillinois.org/v1/registration/attendee', req, config))
@@ -135,6 +141,12 @@ class RegistrationStore {
                                             when(() => resumeToken.state !== 'pending',
                                                  () => {
                                                         if(resumeToken.state !== 'rejected')  {
+                                                            if (ga) {
+                                                                ga('send', 'exception', {
+                                                                    'exDescription': sessionStorage.getItem('email') + ': has registered', 
+                                                                    'exFatal': false
+                                                                })
+                                                            }
                                                             window.location = '/registration/5'
                                                         }
                                                         else {
@@ -175,6 +187,12 @@ class RegistrationStore {
                         when(() => resumeToken.state !== 'pending',
                              () => {
                                     if(resumeToken.state !== 'rejected')  {
+                                        if (ga) {
+                                            ga('send', 'exception', {
+                                                'exDescription': sessionStorage.getItem('email') + ': has registered', 
+                                                'exFatal': false
+                                            })
+                                        }
                                         window.location = '/registration/5'
                                     }
                                     else {
