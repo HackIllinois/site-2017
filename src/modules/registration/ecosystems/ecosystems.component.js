@@ -63,7 +63,7 @@ class Card extends Component {
 	}
 
 	hideModal = () => {
-    this.refs.modal.hide();
+	    this.refs.modal.hide();
   }
 
 	render = () => (
@@ -109,9 +109,9 @@ class Ecosystems extends Component {
 
 		if (this.props.store.ecosystems.create) projects.push({
 			'name': this.props.store.project.name || 'N/A',
-			 'description': this.props.store.project.description || 'N/A',
-			 'repo': this.props.store.project.repo || 'N/A',
-			 'isSuggestion': false
+			'description': this.props.store.project.description || 'N/A',
+			'repo': this.props.store.project.repo || 'N/A',
+			'isSuggestion': false
 		});
 
 		if (ecosystems.length > 0 || projects.length > 0) {
