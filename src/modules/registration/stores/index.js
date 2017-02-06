@@ -47,6 +47,11 @@ class RegistrationStore {
             const token = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
             when(() => token.state !== 'pending',
                  () => { 
+                    if(token.state == 'rejected') {
+                        this.userData.email = sessionStorage.getItem('email')
+                        this.userData.createPassword = sessionStorage.getItem('password')
+                        this.userData.confirmPassword = sessionStorage.getItem('password')
+                    }
                     if(token.state !== 'rejected') {
                       //console.log(token.value.data.data.firstName)
                       for (var key in this.userData) {
