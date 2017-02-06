@@ -54,8 +54,9 @@ class RegistrationStore {
                     }
                     if(token.state !== 'rejected') {
                         for (var key in this.userData) {
-                            if(key == 'email') this.userData[key] = sessionStorage.getItem('email')
-                            else if(key == 'createPassword' || key == 'confirmPassword') this.userData[key] = sessionStorage.getItem('password')
+                            if (key == 'email') this.userData[key] = sessionStorage.getItem('email')
+                            else if (key == 'createPassword' || key == 'confirmPassword') this.userData[key] = sessionStorage.getItem('password')
+                            // else if (key == 'resume')
                             else this.userData[key] = token.value.data.data[key];
                         }
                     }
