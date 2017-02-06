@@ -12,8 +12,14 @@ body {
 }
 
 .register {
+  position: absolute;
+  top: 650px;
+}
+
+.login {
+  text-align: center;
   position: relative;
-  top: 60px;
+  bottom: 80px;  
 }
 
 .landing {
