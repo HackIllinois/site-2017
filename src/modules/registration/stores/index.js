@@ -59,14 +59,14 @@ class RegistrationStore {
         const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': sessionStorage.getItem('email'), 'password': sessionStorage.getItem('password') }, config));
         when(() => userToken.state !== 'pending',() => {
             if(userToken.state == 'rejected') {
-                /*
+                
                 if (ga) {
                     ga('send', 'exception', {
                         'exDescription': '/user : ' + sessionStorage.getItem('email') + JSON.stringify(userToken.value.response.data.error),
                         'exFatal':true
                     })
                 }
-                */
+                
                 const authToken = fromPromise(axios.post('https://api.hackillinois.org/v1/auth', {'email': sessionStorage.getItem('email'), 'password': sessionStorage.getItem('password') }, config));
                 when(() => authToken.state !== 'pending', () => {
                     if (authToken.state == 'rejected') 
