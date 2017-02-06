@@ -8,9 +8,9 @@ class Registration extends Component {
 	render = () => (
 		<div>
 			<div className={styles.registrationHeader}>
-	        	<a href="/">
-	        	<img className={styles.headerLogo} src="../src/assets/img/landing-logo.png"/>
-	        	</a>
+      	<a href="/">
+      	<img className={styles.headerLogo} src="../src/assets/img/landing-logo.png"/>
+      	</a>
 			</div>
 			{this.props.children}
 		</div>

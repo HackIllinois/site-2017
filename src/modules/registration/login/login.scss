@@ -1,5 +1,15 @@
+.forgotPass {
+  text-align: center;
+  text-decoration: none !important;
+  position: relative;
+  top: -80px;
+}
+
+.forgotPass a {
+  text-decoration: none;
+}
+
 .registrationHeader {
-    //padding-top: calc(15vh);
     padding-top: 60px;
     padding-bottom: 30px;
 }
@@ -73,6 +83,22 @@
 
 .top-component {
 	border-bottom: none !important;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.reg-input [type=password] {
+  border: 2px solid #57c7cf;
+  border-radius: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.reg-input [type=password]:focus {
+  border: 2px solid #57c7df;
+  border-radius: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .reg-input input, select{
@@ -86,8 +112,8 @@
   position: relative;
   outline: none;
   padding-left: 15px;
-  font-size: 16px;
-  line-height: 16px;
-  font-family: 'Gotham', sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: 'Gotham-Medium', sans-serif;
   margin-bottom: 0px;
 }

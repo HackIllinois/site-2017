@@ -6,6 +6,8 @@ import { Router, Route, Link, browserHistory, IndexRoute, withRouter } from 'rea
 //stores
 import { Provider } from 'mobx-react'
 import RegistrationStore from './modules/registration/stores'
+import LoginStore from './modules/registration/stores/loginStore'
+import ResetStore from './modules/registration/stores/resetStore'
 
 import App from './modules/app'
 import Landing from './modules/landing'
@@ -19,6 +21,7 @@ import Team from './modules/registration/team'
 import Success from './modules/registration/success'
 
 import Login from './modules/registration/login'
+import Reset from './modules/registration/reset'
 
 //PDFs
 const OpenSource = () => {
@@ -45,7 +48,7 @@ const Code = () => {
 const root = document.getElementById("app")
 
 ReactDom.render(
-	<Provider store={RegistrationStore}>
+	<Provider resetStore={ResetStore} loginStore={LoginStore} store={RegistrationStore}>
 		<Router history={browserHistory}>
 			<Route path='/' component={App}>
 				<IndexRoute component={Landing}/>
@@ -64,6 +67,7 @@ ReactDom.render(
 				<Route path='5' component={Success}/>
 			</Route>
 			<Route path='authenticate' component={Login}/>
+			<Route path='reset' component={Reset}/>
 		</Router>
 	</Provider>
 		, root)
@@ -75,5 +79,5 @@ ReactDom.render(
 					<Route path='3' component={Projects}/>
 					<Route path='4' component={Team}/>
 					<Route path='5' component={Success}/>
-				</Route>
-				*/
+				</Route>*/
+				

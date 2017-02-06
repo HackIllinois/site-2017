@@ -46,6 +46,8 @@
 	list-style: none;
 	text-align: center;
 
+	
+	
 	input {
 		display: inline-block;
 		transform: scale(1.75);
@@ -57,7 +59,9 @@
 		display: inline-block;
 		margin-left: 10px;
 	}
+	
 }
+
 
 .team-select-container {
 	width: 100%;
@@ -86,6 +90,7 @@
 	position: relative;
 	bottom: -3px;
 }
+
 
 .checkbox {
   width: 20px;
@@ -126,3 +131,4 @@
     }
   }
 }
+

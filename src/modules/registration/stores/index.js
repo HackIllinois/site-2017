@@ -36,6 +36,29 @@ function base64ToArrayBuffer(base64) {
 
 class RegistrationStore {
     constructor() {
+        if(sessionStorage.getItem('auth') != null) {
+            //if the user has an auth token, prepopulate data
+            const config = {
+              headers: {
+                'Authorization': sessionStorage.getItem('auth'),
+                'Content-Type': 'application/json'
+              }
+            };
+            const token = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
+            when(() => token.state !== 'pending',
+                 () => { 
+                    if(token.state !== 'rejected') {
+                      //console.log(token.value.data.data.firstName)
+                      for (var key in this.userData) {
+                        //copy all the fields
+                        if(key == 'email') this.userData[key] = sessionStorage.getItem('email')
+                        else if(key == 'createPassword' || key == 'confirmPassword') this.userData[key] = sessionStorage.getItem('password')
+                        else this.userData[key] = token.value.data.data[key];
+                      }
+                      //console.log(this.userData)
+                    }
+                 })
+        }
         if(sessionStorage.getItem('userinfo') != null) {
             this.userData = JSON.parse(sessionStorage.getItem('userinfo'));
         }
@@ -256,26 +279,27 @@ class RegistrationStore {
         resume: '',
         teamMember: ''
 	}
-    @observable ecosystems = {
-        javascript: false,
-        ios:false,
-        android:false,
-        ruby:false,
-        python:false,
-        embedded:false,
-        linux:false,
-        create: false
-    }
-    @observable project = {
-        name: '',
-        description: '',
-        repo: ''
-    }
-    @observable previouslyRegistered = false;
-    @observable selectedEcosystems = 0;
-    @observable isFileSelected = false;
-    @observable collaborators = [];
-	@observable codeOfConductCheck = false;
+  
+  @observable ecosystems = {
+      javascript: false,
+      ios:false,
+      android:false,
+      ruby:false,
+      python:false,
+      embedded:false,
+      linux:false,
+      create: false
+  }
+  @observable project = {
+      name: '',
+      description: '',
+      repo: ''
+  }
+  @observable previouslyRegistered = false;
+  @observable selectedEcosystems = 0;
+  @observable isFileSelected = false;
+  @observable collaborators = [];
+  @observable codeOfConductCheck = false;
 }
 
-export default new RegistrationStore(code);
+export default new RegistrationStore();

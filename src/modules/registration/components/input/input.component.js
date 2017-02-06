@@ -3,25 +3,6 @@ import {inject, observer } from 'mobx-react'
 
 import styles from './input.scss'
 
-/*
-const checkValidYear  = (year) => {
-	var reg = new RegExp("^[12][0-9]{3}$");
-	return reg.test(year);
-}
-
-const checkValidAge = (age) => {
-    //Two digits, so anything between and including 0 and 99
-    var reg = new RegExp(/^\d{1,2}$/);
-    return reg.test(age);
-}
-
-const checkAgeandYear = (val) => {
-	if(val != 'graduationYear' && val != 'age') return true;
-	if(val == 'graduationYear') return checkValidYear(this.props.store.userData[val]);
-	if(val == 'age') return checkValidYear(this.props.store.userData[val]);
-}
-*/
-
 const map = {
   firstName: 'first name',
   lastName: 'last name',
@@ -62,6 +43,12 @@ const formatOption = (str) => {
 
 @inject('store') @observer
 class Input extends Component {
+
+	checkSelect = (val) => {
+		if (val == 'school' && this.props.store.userData[val] == '') return true;
+		if (val == 'isNovice' || val == 'isPrivate' || val == 'hasLightningInterest') return false;
+		return false;
+	}
 
 	checkAgeandYear = (val) => {
 		if (this.props.type == 'add-member' || this.props.type == 'member-li') return true;
@@ -133,8 +120,8 @@ class Input extends Component {
 	render = () => (
 		<div onClick={this.props.type == 'member-li' ? this.removeCollaborators : null} className={[styles['reg-input'], this.props.columns ? styles['user-info'] : ''].join(' ')}>
     		{
-                this.props.options.length != 0 ?
-    			<select className={this.props.store.userData[this.props.id] == '' || this.props.store.userData[this.props.id] == 'Select a School'? styles.red : ''} value={this.props.store.userData[this.props.id]} onChange={this.onChange}>
+          this.props.options.length != 0 ?
+    			<select className={this.checkSelect(this.props.id) ? styles.red : ''} value={this.props.store.userData[this.props.id]} onChange={this.onChange}>
     				{this.props.options.map((option, index) => (
     				    <option key={index} value={option}> {formatOption(option)} </option>
     				))}
