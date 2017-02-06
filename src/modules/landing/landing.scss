@@ -13,7 +13,7 @@ body {
 
 .register {
   position: absolute;
-  top: 650px;
+  top: calc(100vh - 20px);
 }
 
 .login {
