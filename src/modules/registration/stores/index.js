@@ -53,21 +53,18 @@ class RegistrationStore {
                         this.userData.confirmPassword = sessionStorage.getItem('password')
                     }
                     if(token.state !== 'rejected') {
-                      //console.log(token.value.data.data.firstName)
-                      for (var key in this.userData) {
-                        //copy all the fields
-                        if(key == 'email') this.userData[key] = sessionStorage.getItem('email')
-                        else if(key == 'createPassword' || key == 'confirmPassword') this.userData[key] = sessionStorage.getItem('password')
-                        else this.userData[key] = token.value.data.data[key];
-                      }
-                      //console.log(this.userData)
+                        for (var key in this.userData) {
+                            if(key == 'email') this.userData[key] = sessionStorage.getItem('email')
+                            else if(key == 'createPassword' || key == 'confirmPassword') this.userData[key] = sessionStorage.getItem('password')
+                            else this.userData[key] = token.value.data.data[key];
+                        }
                     }
                  })
         }
-        if(sessionStorage.getItem('userinfo') != null) {
+        if (sessionStorage.getItem('userinfo') != null) {
             this.userData = JSON.parse(sessionStorage.getItem('userinfo'));
         }
-        if(sessionStorage.getItem('authorization') != null) {
+        if (sessionStorage.getItem('authorization') != null) {
             this.previouslyRegistered = true;
         }
     }

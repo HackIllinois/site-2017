@@ -44,7 +44,7 @@ class Landing extends Component {
         </div>
         <div className={styles.register}>
         <Button register={true} dest='/registration' label='REGISTER NOW' />
-        <div className={styles.login} > Already registered? <a href='/authenticate'> Log in </a> </div>
+        <div className={styles.login} > Already registered? <a href='/login'> Log in </a> </div>
         </div>
       </div>
     </div>
@@ -52,9 +52,9 @@ class Landing extends Component {
 }
 
 /*
- <img className={styles['hat-on']} src="src/assets/img/svg/landing-hat-lon.svg"/>
-          <img className={styles.beam} src="src/assets/img/svg/landing-beam.svg"/>
-          */
+<img className={styles['hat-on']} src="src/assets/img/svg/landing-hat-lon.svg"/>
+<img className={styles.beam} src="src/assets/img/svg/landing-beam.svg"/>
+*/
 
 
 export default Landing
