@@ -96,6 +96,7 @@ class Card extends Component {
 class Ecosystems extends Component {
 
 	saveEcosystems = () => {
+
 		let ecosystems = []
 		if (this.props.store.ecosystems.javascript) ecosystems.push({'ecosystemId': 1})
 		if (this.props.store.ecosystems.ios) ecosystems.push({'ecosystemId': 2})

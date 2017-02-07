@@ -53,7 +53,12 @@ class RegistrationStore {
                         this.userData.confirmPassword = sessionStorage.getItem('password')
                     }
                     if(token.state !== 'rejected') {
-                      //console.log(token.value.data.data.firstName)
+                      //console.log(token.value.data.data)
+                      this.populateEcosystems(token.value.data.data)
+                      let data = {}
+                      data.ecosystemInterests = JSON.parse(sessionStorage.getItem('ecosystemInterests'))
+                      data.projects = JSON.parse(sessionStorage.getItem('projects'))
+                      this.populateEcosystems(data)
                       for (var key in this.userData) {
                         //copy all the fields
                         if(key == 'email') this.userData[key] = sessionStorage.getItem('email')
@@ -70,6 +75,29 @@ class RegistrationStore {
         if(sessionStorage.getItem('authorization') != null) {
             this.previouslyRegistered = true;
         }
+    }
+
+    populateEcosystems = (data) => {
+
+        //Ecosystems
+        for (let e of data.ecosystemInterests) {
+            if(e.ecosystemId == 1) this.ecosystems.javascript = true;
+            if(e.ecosystemId == 2) this.ecosystems.ios = true;
+            if(e.ecosystemId == 3) this.ecosystems.android = true;
+            if(e.ecosystemId == 4) this.ecosystems.ruby = true;
+            if(e.ecosystemId == 5) this.ecosystems.python = true;
+            if(e.ecosystemId == 6) this.ecosystems.embedded = true;
+            if(e.ecosystemId == 7) this.ecosystems.linux = true;
+        }
+
+        //Projects
+        for(let p of data.projects) {
+            this.project.name = p.name
+            this.project.description = p.description
+            this.project.repo = p.repo
+        }
+
+
     }
 
     registerAttendee = () => {
@@ -219,39 +247,6 @@ class RegistrationStore {
         sessionStorage.setItem('resume', arrayBufferToBase64(this.userData.resume))
         sessionStorage.setItem('email', this.userData.email)
         sessionStorage.setItem('password', this.userData.createPassword)
-        /*
-        if(this.previouslyRegistered) {
-            window.location = '/registration/3'
-        }
-        */
-        /*
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-
-        //Create new User
-        const userToken = fromPromise(axios.post('https://api.hackillinois.org/v1/user', {'email': this.userData.email, 'password': this.userData.createPassword }, config));
-        when(() => userToken.state !== 'pending',() => {
-            if(userToken.state == 'rejected') {
-                console.log('rejected')
-                console.log(userToken)
-                if (ga) {
-                    ga('send', 'exception', {
-                        'exDescription': '/user : ' + userToken.value,
-                        'exFatal':true
-                    })
-                }
-            }
-            if(userToken.state !== 'rejected') {
-                this.userAuth = userToken.value.data.data.auth
-                console.log(userToken);
-                sessionStorage.setItem('authorization', this.userAuth)
-                window.location = '/registration/3'
-            }
-        });
-        */
 
         window.location = '/registration/3'
     }
