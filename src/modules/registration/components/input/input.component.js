@@ -84,6 +84,7 @@ class Input extends Component {
 	}
 
 	onChange = (e) => {
+
 		const that = this;
 		if(this.props.type == 'project') {
 			this.props.store.project[this.props.id] = e.target.value;
@@ -99,8 +100,12 @@ class Input extends Component {
 			this.props.store.fileSize = this.refs.fileUpload.files[0].size
   		    reader.readAsArrayBuffer(this.refs.fileUpload.files[0]);
 		}
+		if(this.props.type == 'add-member') {
+			this.props.store.teamMember  = e.target.value
+		}
 		else {
 			this.props.store.userData[this.props.id] = e.target.value
+			//console.log(this.props.store.userData[this.props.id])
 		}
 	}
 
@@ -111,13 +116,35 @@ class Input extends Component {
 	addCollaborator = (e) => {
 		//PRESSING ENTER
 		if(e.keyCode == 13 && this.props.store.collaborators.length <= 8) {
-			this.props.store.collaborators.push(this.props.store.userData[this.props.id])
-			this.props.store.userData[this.props.id] = '';
+			this.props.store.collaborators.push(this.props.store.teamMember)
+			this.props.store.teamMember = '';
 		}
 	}
 
+	getValue = () => {
+		if(this.props.type == 'file') {
+			return undefined;
+		}
+		else if(this.props.type == 'member-li') {
+			return this.props.store.collaborators.filter((c)=>(c == this.props.id))[0]
+		}
+		else if(this.props.type == 'project') {
+			return this.props.store.project[this.props.id]
+		}
+		else if(this.props.type == 'add-member') {
+			return this.props.store.teamMember
+		}
+		else {
+			return this.props.store.userData[this.props.id] || ''
+		}
+	}
+
+	getClassName = () => {
+		return this.checkAgeandYear(this.props.id) == false ? styles.red : '' && this.props.type != 'add-member'
+	}
+
 	render = () => (
-		<div onClick={this.props.type == 'member-li' ? this.removeCollaborators : null} className={[styles['reg-input'], this.props.columns ? styles['user-info'] : ''].join(' ')}>
+		<div onClick={this.props.type == 'member-li' ? this.removeCollaborators : null} className={[styles['reg-input'], this.props.columns ? styles['user-info'] : '', this.props.type == 'member-li' ? styles['member-li'] : ''].join(' ')}>
     		{
           this.props.options.length != 0 ?
     			<select className={this.checkSelect(this.props.id) ? styles.red : ''} value={this.props.store.userData[this.props.id]} onChange={this.onChange}>
@@ -128,12 +155,12 @@ class Input extends Component {
     			:
     			<input
                     placeholder={this.props.id == 'teamMember' ? 'Press enter to add team members' : this.props.placeholder}
-                    className={this.checkAgeandYear(this.props.id) == false ? styles.red : '' && this.props.type != 'add-member' }
+                    className={this.getClassName()}
                     onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null }
                     disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null }
                     accept='.pdf' ref='fileUpload' type={this.props.type}
                     onChange={this.onChange}
-                    value={this.props.type == 'file' ? undefined : this.props.store.project[this.props.id] || this.props.store.userData[this.props.id] || this.props.store.collaborators.filter((c)=>(c == this.props.id))[0] ||  ''} />
+                    value={this.getValue()} />
     		}
     		{this.props.type == 'file' ? <label className={[styles['file-label'], !this.props.store.isFileSelected ? styles.red : ''].join(' ')} htmlFor='file'> {this.props.store.selectedFile || 'Choose a file...'} </label> : null }
     		<span> {this.props.type == 'member-li' ? 'team member' : map[this.props.id] || this.props.id} </span>

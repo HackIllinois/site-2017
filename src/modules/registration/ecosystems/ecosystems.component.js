@@ -119,6 +119,7 @@ class Ecosystems extends Component {
 			//store for later
 			sessionStorage.setItem("ecosystemInterests", JSON.stringify(ecosystems))
 			sessionStorage.setItem("projects", JSON.stringify(projects))
+			//console.log(projects)
 			window.location = '/registration/4'
 		}
 	}

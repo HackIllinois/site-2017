@@ -37,6 +37,8 @@ function base64ToArrayBuffer(base64) {
 class RegistrationStore {
     constructor() {
         if (sessionStorage.getItem('auth') != null) {
+            //set flag
+            this.loggedIn = true;
             //if the user has an auth token, prepopulate data
             const config = {
               headers: {
@@ -53,24 +55,32 @@ class RegistrationStore {
                         this.userData.confirmPassword = sessionStorage.getItem('password')
                     }
                     if(token.state !== 'rejected') {
-                      //console.log(token.value.data.data)
+                      if(token.value.data.data.resume) {
+                        this.resumeOnFile = true;
+                        this.isFileSelected = true;
+                      }    
+                      this.collaborators = token.value.data.data.collaborators.map((c)=>(c.collaborator))
+                      //console.log(token.value.data.data.collaborators)
                       this.populateEcosystems(token.value.data.data)
-                      let data = {}
-                      data.ecosystemInterests = JSON.parse(sessionStorage.getItem('ecosystemInterests'))
-                      data.projects = JSON.parse(sessionStorage.getItem('projects'))
-                      this.populateEcosystems(data)
+                      if(sessionStorage.getItem('projects')){
+                          let data = {}
+                          data.ecosystemInterests = JSON.parse(sessionStorage.getItem('ecosystemInterests'))
+                          data.projects = JSON.parse(sessionStorage.getItem('projects'))
+                          this.populateEcosystems(data)
+                      }
                       for (var key in this.userData) {
                         //copy all the fields
                         if(key == 'email') this.userData[key] = sessionStorage.getItem('email')
                         else if(key == 'createPassword' || key == 'confirmPassword') this.userData[key] = sessionStorage.getItem('password')
+                        else if(key == 'isNovice' || key == 'isPrivate' || key == 'hasLightningInterest') token.value.data[key] ? 'YES' : 'NO'
                         else this.userData[key] = token.value.data.data[key];
                       }
-                      //console.log(this.userData)
+                      //get local data first
+                      if (sessionStorage.getItem('userinfo') != null) {
+                        this.userData = JSON.parse(sessionStorage.getItem('userinfo'));
+                      }
                     }
                  })
-        }
-        if (sessionStorage.getItem('userinfo') != null) {
-            this.userData = JSON.parse(sessionStorage.getItem('userinfo'));
         }
         if (sessionStorage.getItem('authorization') != null) {
             this.previouslyRegistered = true;
@@ -92,13 +102,19 @@ class RegistrationStore {
         this.selectedEcosystems = data.ecosystemInterests.length
 
         //Projects
-        this.ecosystems.create = true;
-        for(let p of data.projects) {
-            this.project.name = p.name
-            this.project.description = p.description
-            this.project.repo = p.repo
-        }
+        if(data.projects.length > 0) {
+            //book-keeping
+            this.ecosystems.create = true;
+            this.selectedEcosystems++;
 
+            //iterate
+            for(let p of data.projects) {
+                this.project.name = p.name
+                this.project.description = p.description
+                this.project.repo = p.repo
+            }
+        }
+        
 
     }
 
@@ -131,10 +147,11 @@ class RegistrationStore {
                              () => {
                                 const config = {
                                     headers: {
-                                        'Authorization': sessionStorage.getItem('authorization'),
+                                        'Authorization': sessionStorage.getItem('auth'),
                                         'Content-Type': 'application/pdf',
                                     }
                                 };
+
                                 const resumeToken = fromPromise(axios.post('https://api.hackillinois.org/v1/upload/resume', base64ToArrayBuffer(sessionStorage.getItem('resume')), config));
                                 when(() => resumeToken.state !== 'pending',
                                      () => {
@@ -148,6 +165,7 @@ class RegistrationStore {
                                                         'exFatal': true
                                                     })
                                                 }
+                                                
                                             }
                                 });
                         });
@@ -159,7 +177,7 @@ class RegistrationStore {
                              () => {
                                 const config = {
                                     headers: {
-                                        'Authorization': sessionStorage.getItem('authorization'),
+                                        'Authorization': sessionStorage.getItem('auth'),
                                         'Content-Type': 'application/pdf',
                                     }
                                 };
@@ -320,7 +338,7 @@ class RegistrationStore {
     @observable userAuth = ''
 	@observable status = 'CONTINUE'
 	@observable userData = {
-		firstName: '',
+		    firstName: '',
         lastName: '',
         shirtSize: 'S',
         diet: 'NONE',
@@ -365,6 +383,9 @@ class RegistrationStore {
   @observable isFileSelected = false;
   @observable collaborators = [];
   @observable codeOfConductCheck = false;
+  @observable loggedIn = false;
+  @observable resumeOnFile = true;
+  @observable teamMember = '';
 }
 
 export default new RegistrationStore();
