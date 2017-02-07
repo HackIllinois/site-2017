@@ -43,7 +43,6 @@ const formatOption = (str) => {
 
 @inject('store') @observer
 class Input extends Component {
-
 	checkSelect = (val) => {
 		if (val == 'school' && this.props.store.userData[val] == '') return true;
 		if (val == 'isNovice' || val == 'isPrivate' || val == 'hasLightningInterest') return false;

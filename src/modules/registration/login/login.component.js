@@ -16,7 +16,7 @@ class Login extends Component {
 		this.props.loginStore.authenticate();
 	}
 	onKeyUp = (e) => {
-		if(e.keyCode == 13) {
+		if (e.keyCode == 13) {
 			this.props.loginStore.authenticate();
 		}
 	}
@@ -39,7 +39,6 @@ class Login extends Component {
 			<div className={styles.forgotPass}> <a href='/reset'> Forgot your password? </a> </div>
 			<div className={styles.forgotPass}> <a href='/registration'> Create new account </a> </div>
 		</div>
-
 	)
 }
 

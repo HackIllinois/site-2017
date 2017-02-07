@@ -66,7 +66,7 @@ ReactDom.render(
 				<Route path='4' component={Team}/>
 				<Route path='5' component={Success}/>
 			</Route>
-			<Route path='authenticate' component={Login}/>
+			<Route path='login' component={Login}/>
 			<Route path='reset' component={Reset}/>
 		</Router>
 	</Provider>
@@ -74,10 +74,10 @@ ReactDom.render(
 
 /*
 <Route path='registration' component={Registration}>
-					<Route path='1' component={Announcement}/>
-					<Route path='2' component={UserInfo}/>
-					<Route path='3' component={Projects}/>
-					<Route path='4' component={Team}/>
-					<Route path='5' component={Success}/>
-				</Route>*/
-				
+	<Route path='1' component={Announcement}/>
+	<Route path='2' component={UserInfo}/>
+	<Route path='3' component={Projects}/>
+	<Route path='4' component={Team}/>
+	<Route path='5' component={Success}/>
+</Route>
+*/				
