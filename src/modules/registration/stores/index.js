@@ -89,6 +89,15 @@ class RegistrationStore {
 
     populateEcosystems = (data) => {
 
+        //reset all data
+        this.ecosystems.javascript = false;
+        this.ecosystems.ios = false;
+        this.ecosystems.android = false;
+        this.ecosystems.ruby = false;
+        this.ecosystems.python = false;
+        this.ecosystems.embedded = false;
+        this.ecosystems.linux = false;
+
         //Ecosystems
         for (let e of data.ecosystemInterests) {
             if(e.ecosystemId == 1) this.ecosystems.javascript = true;

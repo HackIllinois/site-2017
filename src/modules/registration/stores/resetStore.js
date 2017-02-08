@@ -47,7 +47,7 @@ class ResetStore {
 				 	}
 				 	if(token.state !== 'rejected') {
 				 		this.emailSent = true;
-				 		//console.log(token)
+				 		this.email = ''
 				 	}
 				 });
 	}	
