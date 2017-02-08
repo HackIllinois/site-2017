@@ -24,6 +24,12 @@
 	}
 }
 
+@media (max-width: 540px) {
+	.button {
+		font-size: 14px;
+	}
+}
+
 .button:hover, .button:hover .arrow-right, .button:hover .arrow-left {
 	color: #f1f9fd;
 	background-color: lighten(#399BAD, 5%);
