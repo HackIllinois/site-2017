@@ -8,6 +8,7 @@ class ResetStore {
 	@observable createPassword = ''
 	@observable confirmPassword = ''
 	@observable token = ''
+	@observable emailSent = false;
 
 	constructor() {
 		this.token = window.location.href.includes('token') ?  window.location.search.slice(7) : ''
@@ -26,7 +27,11 @@ class ResetStore {
     const token = fromPromise(axios.post('https://api.hackillinois.org/v1/auth/reset', {'token': this.token, 'password': this.confirmPassword}, config));
     when(() => token.state !== 'pending',
     		 () => {
-    		 	if(token.state !== 'rejected') window.location = '/authenticate'
+    		 	if(token.state === 'rejected') {
+    		 		this.createPassword = ''
+    		 		this.confirmPassword = ''
+    		 	}
+    		 	if(token.state !== 'rejected') window.location = '/login'
     		 });
 	}
 
@@ -41,7 +46,8 @@ class ResetStore {
 				 		//rejected action
 				 	}
 				 	if(token.state !== 'rejected') {
-				 		console.log(token)
+				 		this.emailSent = true;
+				 		//console.log(token)
 				 	}
 				 });
 	}	
