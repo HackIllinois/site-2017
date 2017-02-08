@@ -6,6 +6,7 @@ class LoginStore {
 	//member variables
 	@observable email = ''
 	@observable password = ''
+	@observable error = false
 
 	authenticate = () => {
 		const config = {
@@ -18,6 +19,11 @@ class LoginStore {
 				// set password field to blank if empty
 				if (token.value.response.data.error.source == 'password') {
 					this.password = ''
+					this.error = true;
+				}
+				else {
+					this.password = ''
+					this.email = ''
 				}
 			}
 			if (token.state !== 'rejected') {

@@ -36,10 +36,13 @@ class Login extends Component {
 				</div> 
 				<Button onClick={this.onSubmit} label="LOG IN" />
 			</div>
-			<div className={styles.forgotPass}> <a href='/reset'> Forgot your password? </a> </div>
+			<div className={[styles.forgotPass, this.props.loginStore.error ? styles.error : ''].join(' ')}> <a href='/reset'> Forgot your password? </a> </div>
 			<div className={styles.forgotPass}> <a href='/registration'> Create new account </a> </div>
+
 		</div>
 	)
 }
+
+//{this.props.loginStore.error ? <div className={styles.error}> Invalid password </div> : <div className={styles.placeholder}> ~ </div>}
 
 export default Login

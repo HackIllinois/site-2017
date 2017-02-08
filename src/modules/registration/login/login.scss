@@ -1,3 +1,28 @@
+/*
+.error {
+  text-align: center;
+  position: relative;
+  top: -80px;
+  color: #ed2f65;
+  padding-bottom: 5px;
+}
+
+.placeholder {
+  text-align: center;
+  position: relative;
+  color: #122342;
+  padding-bottom: 5px;
+}
+*/
+
+.error a {
+  color: #ed2f65 !important;
+}
+
+.error a:hover {
+  color: lighten(#ed2f65, 10%) !important;
+}
+
 .forgotPass {
   text-align: center;
   text-decoration: none !important;
