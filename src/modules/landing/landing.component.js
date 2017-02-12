@@ -34,27 +34,68 @@ class Landing extends Component {
   }
   render = () => (
     <div className={styles.landing}>
+      <div className={styles.lanterns}>
+        <div className={styles.lanternUnit}></div>
+        <div className={styles.lanternUnit}></div>
+        <div className={styles.lanternUnit}></div>
+        <div className={styles.lanternUnit}></div>
+        <div className={styles.lanternUnit}></div>
+        <div className={styles.lanternUnit}></div>
+        <div className={styles.lanternUnit}></div>
+      </div>
       <div className={styles.hero}>
         <img className={styles.logo} src="src/assets/img/landing-logo.png"/>
         <div className={styles.dateLabel}>February 24th - 26th</div>
-        <div className={styles.host}> Co-hosted by <a href="http://fulcrum-gt.com/"> Fulcrum </a> </div>
-        <div className={styles['hat-container']}>
-          <img className={styles['hat-off']} src="src/assets/img/svg/landing-hat-loff.svg"/>
-
+        <div className={styles.host}>
+          Co-hosted by <a href="http://fulcrum-gt.com/">Fulcrum</a>
         </div>
         <div className={styles.register}>
-        <Button register={true} dest='/registration' label='REGISTER NOW' />
+        <Button className={styles.mb20} register={true} dest='/registration' label='REGISTER NOW' />
         <div className={styles.login} > Already registered? <a href='/login'> Log in </a> </div>
+        </div>
+      </div>
+
+      <h4 className={styles.sponsorHeading}>Sponsors</h4>
+      <div className={styles.sponsorContainer}>
+        <div className={styles.tierSeparator}>
+          <div className={styles.sponsorLogoBoxFull}>
+            <img src="src/assets/img/home/sponsors/fulcrum-logo.svg"/>
+          </div>
+        </div>
+        <div className={styles.tierSeparator}>
+          <div className={styles.sponsorLogoBoxHalf}>
+            <img src="src/assets/img/home/sponsors/imo.svg"/>
+          </div>
+          <div className={styles.sponsorLogoBoxHalf}>
+            <img src="src/assets/img/home/sponsors/microsoft.png"/>
+          </div>
+        </div>
+        <div className={styles.tierSeparator}>
+          <div className={styles.sponsorLogoBoxThird}>
+            <img src="src/assets/img/home/sponsors/imo.svg"/>
+          </div>
+          <div className={styles.sponsorLogoBoxThird}>
+            <img src="src/assets/img/home/sponsors/microsoft.png"/>
+          </div>
+          <div className={styles.sponsorLogoBoxThird}>
+            <img src="src/assets/img/home/sponsors/microsoft.png"/>
+          </div>          
+        </div>
+        <div className={styles.tierSeparator}>
+          <div className={styles.sponsorLogoBoxThird}>
+            <img src="src/assets/img/home/sponsors/imo.svg"/>
+          </div>
+          <div className={styles.sponsorLogoBoxThird}>
+            <img src="src/assets/img/home/sponsors/microsoft.png"/>
+          </div>
+          <div className={styles.sponsorLogoBoxThird}>
+            <img src="src/assets/img/home/sponsors/microsoft.png"/>
+          </div>          
         </div>
       </div>
     </div>
   )
 }
-
-/*
-<img className={styles['hat-on']} src="src/assets/img/svg/landing-hat-lon.svg"/>
-<img className={styles.beam} src="src/assets/img/svg/landing-beam.svg"/>
-*/
 
 
 export default Landing
