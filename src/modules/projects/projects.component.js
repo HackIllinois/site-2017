@@ -9,7 +9,7 @@ class Projects extends Component {
         <div className={styles['artboard-container']}>
             <img
                 className={styles['artboard']}
-                src="src/assets/img/project_artboard.png"/>
+                src="src/assets/img/project_artboard_svg.svg"/>
         </div>
   )
 }
