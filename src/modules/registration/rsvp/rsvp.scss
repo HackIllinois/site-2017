@@ -7,6 +7,25 @@
 	padding-bottom: 1%;
 }
 
+.lightning {
+	padding-top: 40px;
+	font: 22px 'Brandon-Regular';
+	color: #b7bcdf;
+	text-align: center;
+}
+
+.project-card.card-active {
+  box-shadow: 0 0 0 5px #f1f9fd;
+}
+
+.nothanks-active {
+  box-shadow: 0 0 0 5px #B7BCDF;
+}
+
+.project-card:hover{
+	color: white;
+}
+
 .confirmation {
 	width: 100%;
 	width: 300px;

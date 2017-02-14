@@ -10,6 +10,9 @@ class RSVPStore {
   @observable responseRecorded = false
   @observable thanksText = ''
   @observable infoText = ''
+  @observable isAttending
+  @observable type
+  @observable RVSPd
 
 	acceptCreate = () => {
 		
@@ -25,7 +28,10 @@ class RSVPStore {
       }
     };
 
-    const token = fromPromise(axios.post('https://api.hackillinois.org/v1/rsvp', req, config))
+    let token
+    
+    if(this.RVSPd) token = fromPromise(axios.put('https://api.hackillinois.org/v1/rsvp/attendee', req, config))
+    else token = fromPromise(axios.post('https://api.hackillinois.org/v1/rsvp/attendee', req, config))
 
     when(() => token.state !== 'pending',
          () => {
@@ -55,7 +61,10 @@ class RSVPStore {
       }
     };
 
-    const token = fromPromise(axios.post('https://api.hackillinois.org/v1/rsvp', req, config))
+    let token
+    
+    if(this.RVSPd) token = fromPromise(axios.put('https://api.hackillinois.org/v1/rsvp/attendee', req, config))
+    else token = fromPromise(axios.post('https://api.hackillinois.org/v1/rsvp/attendee', req, config))
 
     when(() => token.state !== 'pending',
          () => {
@@ -87,7 +96,11 @@ class RSVPStore {
       }
     };
 
-    const token = fromPromise(axios.post('https://api.hackillinois.org/v1/rsvp', req, config))
+
+    let token
+    
+    if(this.RVSPd) token = fromPromise(axios.put('https://api.hackillinois.org/v1/rsvp/attendee', req, config))
+    else token = fromPromise(axios.post('https://api.hackillinois.org/v1/rsvp/attendee', req, config))
     
     when(() => token.state !== 'pending',
          () => {
@@ -117,28 +130,36 @@ class RSVPStore {
       };
       
       const token = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
-      const rsvpToken = fromPromise(axios.get('https://api.hackillinois.org/v1/rsvp', config))
+      const rsvpToken = fromPromise(axios.get('https://api.hackillinois.org/v1/rsvp/attendee', config))
 
       when(() => rsvpToken.state !== 'pending',
            () => {
             if(rsvpToken.state == 'rejected') { 
-              this.responseRecorded = false;
+              //this.responseRecorded = false;
             }
             if(rsvpToken.state != 'rejected') {
+              //console.log(rsvpToken.value.data.ata)
               if(rsvpToken.value.data.data == {}) {
-                this.responseRecorded = false;
+                //this.responseRecorded = false;
               }
               if(rsvpToken.value.data.data.isAttending) {
                 this.thanksText = "You're all set!"
                 this.infoText = ''
-                this.responseRecorded = true;
+                //this.responseRecorded = true;
                 //sessionStorage.removeItem('auth')
+                this.isAttending = rsvpToken.value.data.data.isAttending
+                this.type = rsvpToken.value.data.data.type
+                this.RVSPd = true;
               }
               else {
                 this.thanksText = "Thanks for applying!"
                 this.infoText = "We'd love to see you next year."
-                this.responseRecorded = true;
+                //this.responseRecorded = true;
                 //sessionStorage.removeItem('auth')
+                console.log(rsvpToken.value.data.data.isAttending)
+                this.isAttending = rsvpToken.value.data.data.isAttending
+                this.type = rsvpToken.value.data.data.type
+                this.RVSPd = true;
               }
             }
           })

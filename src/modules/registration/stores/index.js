@@ -52,6 +52,14 @@ class RegistrationStore {
               }
             };
             const token = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
+            /*
+            const rsvpToken = fromPromise(axios.get('https://api.hackillinois.org/v1/rsvp', config))
+
+            when(() => rsvpToken.state !== 'pending', 
+                 () => {
+                    console.log('return')
+                 });*/
+
             when(() => token.state !== 'pending',
                  () => { 
                     if(token.state == 'rejected') {
@@ -60,9 +68,10 @@ class RegistrationStore {
                         this.userData.confirmPassword = sessionStorage.getItem('password')
                     }
                     if(token.state !== 'rejected') {
-                      //console.log(token.value.data.data.status)
+                      console.log(token.value.data.data.rsvp)
                       if(token.value.data.data.status == 'ACCEPTED') {
-                        if(window.location.pathname != '/rsvp' && sessionStorage.getItem('rsvp') != 'true') window.location = '/rsvp'
+                        if(token.value.data.data.hasLightningInterest) sessionStorage.setItem('hasLightningInterest','true');
+                        if(window.location.pathname != '/rsvp') window.location = '/rsvp'
                       }
 
                       if(token.value.data.data.resume) {
@@ -92,7 +101,7 @@ class RegistrationStore {
                     }
                  })
         }
-        if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login' && window.location.pathname != '/' && window.location.pathname != '/rsvp' && window.location.pathname != '/projects') {
+        if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login' && window.location.pathname != '/' && window.location.pathname != '/projects') {
             window.location = '/login'
         }
         if (sessionStorage.getItem('authorization') != null) {
