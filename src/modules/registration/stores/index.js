@@ -92,7 +92,7 @@ class RegistrationStore {
                     }
                  })
         }
-        if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login' && window.location.pathname != '/' && window.location.pathname != '/rsvp') {
+        if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login' && window.location.pathname != '/' && window.location.pathname != '/rsvp' && window.location.pathname != '/projects') {
             window.location = '/login'
         }
         if (sessionStorage.getItem('authorization') != null) {

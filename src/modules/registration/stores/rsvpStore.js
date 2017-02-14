@@ -122,7 +122,7 @@ class RSVPStore {
       when(() => rsvpToken.state !== 'pending',
            () => {
             if(rsvpToken.state == 'rejected') { 
-              
+              this.responseRecorded = false;
             }
             if(rsvpToken.state != 'rejected') {
               if(rsvpToken.value.data.data == {}) {
