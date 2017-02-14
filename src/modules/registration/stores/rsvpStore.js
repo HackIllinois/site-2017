@@ -125,18 +125,19 @@ class RSVPStore {
               
             }
             if(rsvpToken.state != 'rejected') {
-              this.responseRecorded = true;
               if(rsvpToken.value.data.data == {}) {
-                return;
+                this.responseRecorded = false;
               }
               if(rsvpToken.value.data.data.isAttending) {
                 this.thanksText = "You're all set!"
                 this.infoText = ''
+                this.responseRecorded = true;
                 //sessionStorage.removeItem('auth')
               }
               else {
                 this.thanksText = "Thanks for applying!"
                 this.infoText = "We'd love to see you next year."
+                this.responseRecorded = true;
                 //sessionStorage.removeItem('auth')
               }
             }
