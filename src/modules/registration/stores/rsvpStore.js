@@ -49,6 +49,8 @@ class RSVPStore {
 
 	acceptEcosystem = () => {
 		
+    if(this.acceptedEcosystemId == 0) return;
+    
     const req = {
     	"isAttending": true, 
     	"type": "CONTRIBUTE"

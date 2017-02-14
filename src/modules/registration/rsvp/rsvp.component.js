@@ -4,7 +4,7 @@ import {inject, observer} from 'mobx-react'
 import styles from './rsvp.scss'
 
 const ecosystems = {
-	0:'accepted',
+	0:'create',
 	1:'javascript',
 	2:'ios',
 	3:'android',
