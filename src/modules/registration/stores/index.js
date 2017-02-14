@@ -101,7 +101,7 @@ class RegistrationStore {
                     }
                  })
         }
-        if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login' && window.location.pathname != '/' && window.location.pathname != '/projects') {
+        if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login' && window.location.pathname != '/' && window.location.pathname != '/projects' && window.location.pathname != '/registration/1') {
             window.location = '/login'
         }
         if (sessionStorage.getItem('authorization') != null) {
