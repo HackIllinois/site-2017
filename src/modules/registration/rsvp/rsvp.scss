@@ -1,0 +1,181 @@
+.thanks {
+	text-align: center;
+	font: 34px 'Gotham-Medium';
+	color: #f1f9fd;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 1%;
+}
+
+.confirmation {
+	width: 100%;
+	width: 300px;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+a {
+	color: #B7BCDF;
+}
+
+a:hover {
+	color: #4E5D95;
+}
+
+.logout {
+  position:absolute;
+  top:10px;
+  right:15px;
+  text-decoration: none;
+ }
+
+ .logout a {
+ 	text-decoration: none;
+ }
+
+/* ======= */
+
+.registrationHeader {
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.registrationHeader .headerLogo {
+    height: 100px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+ }
+
+ .instruction-text {
+	font: 22px 'Brandon-Regular';
+	text-align: center;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #b7bcdf;
+	margin: 0 auto;
+	display: block;
+	padding-bottom: 25px;
+	width: 500px;
+}
+
+@media (max-width: 500px) {
+	.instruction-text {
+		width: calc(100% - 20px);
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.accept-container {
+	margin: 0 auto;
+	width: 250px;
+	margin-top: 10px;
+
+}
+
+.project-card {
+  width: 120px;
+  height: 120px;
+  background-color: pink;	
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 0.12em;
+  color: white;
+  font-weight: 400;
+}
+
+.rect {
+	margin-top: 10px;
+	width: 250px;
+	height: 75px;
+	background-color: white;	
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 0.12em;
+  color: black;
+  font-weight: 400;
+}
+
+.lightning {
+	width: 500px;
+
+	font: 12px 'Gotham-Medium';
+	color: #b7bcdf;
+	max-width: 650px;
+	overflow: hidden;
+	//float: left;
+	display: block;
+	margin: 0 auto;
+	vertical-align: center;
+}
+
+.project-card:hover{
+	color: white;
+}
+
+.project-card .label {
+  font-size: 14px;
+}
+
+.project-card img {
+  width: 63px;
+  height: 63px;
+  margin-bottom: 16px;
+}
+
+#javascript {
+	background-color: #f6c860;
+	margin-right: 5px;
+}
+
+#ios {
+	background-color: #dd5926;
+	margin-right: 5px;
+}
+
+#android {
+	background-color: #296773;
+	margin-right: 5px;
+}
+
+#ruby {
+	background-color: #891738;
+	margin-right: 5px;
+}
+
+#python {
+	background-color: #3b9aac;
+	margin-right: 5px;
+}
+
+#embedded {
+	background-color: #ed2f65;
+	margin-right: 5px;
+}
+
+#linux {
+	background-color: #57c7df;
+	margin-right: 5px;
+}
+
+#accepted {
+	background-color: black;
+	color: white;
+	margin-right: 5px;
+}
+
+#create {
+	background-color: #b7bcdf;
+	margin-left: 5px;
+}
+
+

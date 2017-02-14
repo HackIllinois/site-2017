@@ -36,6 +36,11 @@ function base64ToArrayBuffer(base64) {
 
 class RegistrationStore {
     constructor() {
+        if(sessionStorage.getItem('rsvp')) {
+            this.confirmRSVP = true;
+            //this.status = 'CONFIRM'
+        } 
+        //console.log('RegistrationStore')
         if (sessionStorage.getItem('auth') != null) {
             //set flag
             this.loggedIn = true;
@@ -55,6 +60,12 @@ class RegistrationStore {
                         this.userData.confirmPassword = sessionStorage.getItem('password')
                     }
                     if(token.state !== 'rejected') {
+                      console.log(token.value.data.data.status)
+                      if(token.value.data.data.status == 'REJECTED') {
+                        //console.log(token.value.data.data.status)
+                        if(window.location.pathname != '/rsvp' && sessionStorage.getItem('rsvp') != 'true') window.location = '/rsvp'
+                      }
+
                       if(token.value.data.data.resume) {
                         this.resumeOnFile = true;
                         this.isFileSelected = true;
@@ -81,6 +92,9 @@ class RegistrationStore {
                       }
                     }
                  })
+        }
+        if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login' && window.location.pathname != '/' && window.location.pathname != '/rsvp') {
+            window.location = '/login'
         }
         if (sessionStorage.getItem('authorization') != null) {
             this.previouslyRegistered = true;
@@ -395,6 +409,7 @@ class RegistrationStore {
   @observable loggedIn = false;
   @observable resumeOnFile = true;
   @observable teamMember = '';
+
 }
 
 export default new RegistrationStore();
