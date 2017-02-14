@@ -229,3 +229,51 @@ body {
   position: relative;
   top: -14px;
 }
+
+/* Sponsors */
+
+.list {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.listItemLink {
+    position: relative;
+}
+
+.listItemImage {
+    top: 50%;
+    width: auto;
+    max-width: 100%;
+    max-height: 200px;
+}
+
+@media all and (min-width: 40em) {
+  .listItem {
+    width: 50%;
+  }
+}
+
+@media all and (min-width: 60em) {
+  .listItem {
+    width: 20%;
+    padding: 2%;
+  }
+}
+
+@media all and (max-width: 40em) {
+  .listItem {
+    width: 50%;
+  }
+}

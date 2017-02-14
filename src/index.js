@@ -80,4 +80,4 @@ ReactDom.render(
 	<Route path='4' component={Team}/>
 	<Route path='5' component={Success}/>
 </Route>
-*/				
+*/
