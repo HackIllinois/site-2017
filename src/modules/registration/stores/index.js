@@ -61,7 +61,7 @@ class RegistrationStore {
                     }
                     if(token.state !== 'rejected') {
                       console.log(token.value.data.data.status)
-                      if(token.value.data.data.status == 'REJECTED') {
+                      if(token.value.data.data.status == 'ACCEPTED') {
                         //console.log(token.value.data.data.status)
                         if(window.location.pathname != '/rsvp' && sessionStorage.getItem('rsvp') != 'true') window.location = '/rsvp'
                       }
