@@ -42,7 +42,7 @@ class RSVP extends Component {
 					<img draggable="false" src="../../../src/assets/img/card-7.svg"/>
 					<span className={styles.label}>{"create".toUpperCase()}</span>
 	    	</div>
-	    	<div className={[!this.props.rsvpStore.isAttending ? styles['nothanks-active'] : '', styles.rect].join(' ') } onClick={this.props.rsvpStore.noThanks}> NO, THANKS! </div>
+	    	<div className={[!this.props.rsvpStore.isAttending  && this.props.rsvpStore.type == 'CREATE'  && this.props.rsvpStore.type == 'CONTRIBUTE' ? styles['nothanks-active'] : '', styles.rect].join(' ') } onClick={this.props.rsvpStore.noThanks}> NO, THANKS! </div>
 			</div>
 			{ sessionStorage.getItem('hasLightningInterest') == 'true'  ? 
 	   		<div className={styles['lightning']}> Still interested in giving a lightning talk? Sign up <a href='https://goo.gl/forms/Q6fXULc76bGJj9Ha2'> here </a> </div>: null }
