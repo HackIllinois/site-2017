@@ -68,7 +68,7 @@ class RegistrationStore {
                         this.userData.confirmPassword = sessionStorage.getItem('password')
                     }
                     if(token.state !== 'rejected') {
-                      console.log(token.value.data.data.rsvp)
+                      //console.log(token.value.data.data.rsvp)
                       if(token.value.data.data.status == 'ACCEPTED') {
                         if(token.value.data.data.hasLightningInterest) sessionStorage.setItem('hasLightningInterest','true');
                         if(window.location.pathname != '/rsvp') window.location = '/rsvp'

@@ -35,7 +35,7 @@ class RSVPStore {
 
     when(() => token.state !== 'pending',
          () => {
-          if(token.state == 'rejected') console.log('error')
+          if(token.state == 'rejected') //console.log('error')
           if(token.state != 'rejected') {
             sessionStorage.setItem('rsvp', 'true')
             this.responseRecorded = true;
@@ -70,7 +70,7 @@ class RSVPStore {
 
     when(() => token.state !== 'pending',
          () => {
-          if(token.state == 'rejected') console.log('error')
+          if(token.state == 'rejected') //console.log('error')
           if(token.state != 'rejected') {
             sessionStorage.setItem('rsvp', 'true')
             this.responseRecorded = true;
@@ -106,7 +106,7 @@ class RSVPStore {
     
     when(() => token.state !== 'pending',
          () => {
-          if(token.state == 'rejected') console.log('error')
+          if(token.state == 'rejected') //console.log('error')
           if(token.state != 'rejected') {
             sessionStorage.setItem('rsvp', 'true')
             this.responseRecorded = true;
@@ -120,7 +120,7 @@ class RSVPStore {
 
 	constructor() {
 	  //console.log('rsvpStore')
-    if(sessionStorage.getItem('auth')){ 
+    if(sessionStorage.getItem('auth') && window.location.pathname.includes('rsvp')) { 
 
   		this.authorization = sessionStorage.getItem('auth')
 
