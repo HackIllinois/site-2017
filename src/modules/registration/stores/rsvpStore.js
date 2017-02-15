@@ -111,7 +111,7 @@ class RSVPStore {
     when(() => token.state !== 'pending',
          () => {
           if(token.state == 'rejected') {
-            //console.log('error')
+            //console.log('error') 
           }
           if(token.state != 'rejected') {
             sessionStorage.setItem('rsvp', 'true')
@@ -125,9 +125,9 @@ class RSVPStore {
 	}
 
 	constructor() {
-	  console.log('rsvpStore')
+	  //console.log('rsvpStore')
     if(sessionStorage.getItem('auth') && window.location.pathname == '/rsvp') { 
-      console.log('rsvpStore')
+      //console.log('rsvpStore')
   		this.authorization = sessionStorage.getItem('auth')
 
   		const config = {
