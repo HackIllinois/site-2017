@@ -50,7 +50,7 @@ class RSVPStore {
 	acceptEcosystem = () => {
 		
     if(this.acceptedEcosystemId == 0) return;
-    
+
     const req = {
     	"isAttending": true, 
     	"type": "CONTRIBUTE"
@@ -158,7 +158,7 @@ class RSVPStore {
                 this.infoText = "We'd love to see you next year."
                 //this.responseRecorded = true;
                 //sessionStorage.removeItem('auth')
-                console.log(rsvpToken.value.data.data.isAttending)
+                //console.log(rsvpToken.value.data.data.isAttending)
                 this.isAttending = rsvpToken.value.data.data.isAttending
                 this.type = rsvpToken.value.data.data.type
                 this.RVSPd = true;
@@ -175,6 +175,7 @@ class RSVPStore {
               	//save important information information
               	this.hasLightningInterest = token.value.data.data.hasLightningInterest 
               	this.acceptedEcosystemId = token.value.data.data.acceptedEcosystemId || 0
+                if(token.value.data.data.acceptanceType == "CREATE") this.acceptedEcosystemId = 0;
 
               	//console.log(this.acceptedEcosystemId)
               }
