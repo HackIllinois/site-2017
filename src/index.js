@@ -8,6 +8,7 @@ import { Provider } from 'mobx-react'
 import RegistrationStore from './modules/registration/stores'
 import LoginStore from './modules/registration/stores/loginStore'
 import ResetStore from './modules/registration/stores/resetStore'
+import RSVPStore from './modules/registration/stores/rsvpStore'
 
 import App from './modules/app'
 import Landing from './modules/landing'
@@ -23,6 +24,7 @@ import Success from './modules/registration/success'
 
 import Login from './modules/registration/login'
 import Reset from './modules/registration/reset'
+import RSVP from './modules/registration/rsvp'
 
 //PDFs
 const OpenSource = () => {
@@ -49,7 +51,7 @@ const Code = () => {
 const root = document.getElementById("app")
 
 ReactDom.render(
-	<Provider resetStore={ResetStore} loginStore={LoginStore} store={RegistrationStore}>
+	<Provider rsvpStore={RSVPStore} resetStore={ResetStore} loginStore={LoginStore} store={RegistrationStore}>
 		<Router history={browserHistory}>
 			<Route path='/' component={App}>
 				<IndexRoute component={Landing}/>
@@ -69,6 +71,7 @@ ReactDom.render(
 			</Route>
 			<Route path='login' component={Login}/>
 			<Route path='reset' component={Reset}/>
+			<Route path='rsvp' component={RSVP}/>
 			<Route path='projects' component={Projects}/>
 		</Router>
 	</Provider>

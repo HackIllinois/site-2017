@@ -157,7 +157,7 @@ class Input extends Component {
                     placeholder={this.props.id == 'teamMember' ? 'Press enter to add team members' : this.props.placeholder}
                     className={this.getClassName()}
                     onKeyUp={this.props.type == 'add-member' ? this.addCollaborator : null }
-                    disabled={this.props.type == 'member-li' ? 'disabled' : ''} id={this.props.type == 'file' ? 'file' : null }
+                    disabled={this.props.type == 'member-li' ? 'disabled' : this.props.disabled || ''} id={this.props.type == 'file' ? 'file' : null }
                     accept='.pdf' ref='fileUpload' type={this.props.type}
                     onChange={this.onChange}
                     value={this.getValue()} />
