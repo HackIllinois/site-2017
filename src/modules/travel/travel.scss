@@ -16,6 +16,11 @@
   .travel-header {
     text-align: center;
 
+    .travel-header-logo {
+      width: 120px;
+      height: auto;
+    }
+
     .travel-header-title {
       font-weight: bold;
       text-transform: lowercase;
@@ -34,9 +39,16 @@
     width: 50%;
     margin: 0 auto;
     background-color: #F2FAFE;
-    padding: 20px;
+    padding: 20px 30px;
 
     .travel-body-panel {
+      background-color: #E8EFF3;
+      padding: 10px 30px;
+      margin-bottom: 1em;
+
+      .travel-body-panel-header {
+        cursor: pointer;
+      }
 
       .travel-body-panel-title {
         font-weight: bold;
@@ -44,13 +56,105 @@
         font-variant: small-caps;
         letter-spacing: 1px;
         color: black;
+        display: inline;
       }
 
+      .travel-body-caret {
+        height: 1em;
+        float: right;
+        margin-top: 15px;
+      }
+
+      .travel-body-panel-accent-1 {
+        height: 1em;
+        width: 100%;
+        background-color: #F6C960;
+        display: block;
+      }
+
+      .travel-body-panel-accent-2 {
+        height: 1em;
+        width: 100%;
+        background-color: #8A1838;
+        display: block;
+      }
+
+      .travel-body-panel-accent-3 {
+        height: 1em;
+        width: 100%;
+        background-color: #EE3065;
+        display: block;
+      }
+
+      .travel-body-panel-accent-4 {
+        height: 1em;
+        width: 100%;
+        background-color: #296773;
+        display: block;
+      }
+
+      .travel-body-panel-accent-5 {
+        height: 1em;
+        width: 100%;
+        background-color: #3B9BAD;
+        display: block;
+      }
+
+      .travel-body-panel-accent-6 {
+        height: 1em;
+        width: 100%;
+        background-color: #57C8E0;
+        display: block;
+      }
+
+      .travel-body-panel-content {
+        color: black;
+
+        .travel-body-panel-content-title {
+          font-weight: bold;
+          text-transform: lowercase;
+          font-variant: small-caps;
+          letter-spacing: 1px;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+
+        tr {
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        td {
+          border-collapse: collapse;
+          padding-left: 1em;
+
+        }
+
+        tr:nth-child(even) {
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
     }
   }
 
-  img {
-    width: 120px;
-    height: auto;
+  .travel-footer {
+    text-align: center;
+    color: #B8BDE0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    h5 {
+      font-weight: 700;
+
+
+    }
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
 }
