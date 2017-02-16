@@ -104,7 +104,7 @@ class RegistrationStore {
 
         if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login'
             && window.location.pathname != '/' && window.location.pathname != '/projects'
-            && window.location.pathname != '/reset' && !window.location.pathname.includes('registration')) {
+            && window.location.pathname != '/reset' && window.location.pathname != '/travel' && !window.location.pathname.includes('registration')) {
             window.location = '/login'
         }
         if (sessionStorage.getItem('authorization') != null) {
