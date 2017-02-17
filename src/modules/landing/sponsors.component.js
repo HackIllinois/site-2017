@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import styles from './landing.scss'
+import styles from './sponsors.scss'
 
 class Sponsors extends Component {
   render = () =>  {
@@ -40,14 +40,16 @@ class Sponsors extends Component {
             );
       });
 
-
-      return (
-        <div className={styles.sponsorContainer}>
-            <ul className={styles.list}>
-                {sponsorList}
-            </ul>
-        </div>
-      );
+    return (
+        <div>
+            <h4 className={styles.sponsorHeading}>Sponsors</h4>
+            <div className={styles.sponsorContainer}>
+                <ul className={styles.list}>
+                    {sponsorList}
+                </ul>
+            </div>
+        </div> 
+    );
   }
 }
 
