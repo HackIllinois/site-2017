@@ -33,21 +33,68 @@
       font-weight: 700;
       letter-spacing: 0.5px;
     }
+
   }
 
   .travel-body {
     width: 50%;
     margin: 0 auto;
-    background-color: #F2FAFE;
+
     padding: 20px 30px;
 
     .travel-body-panel {
       background-color: #E8EFF3;
-      padding: 10px 30px;
       margin-bottom: 1em;
 
-      .travel-body-panel-header {
+      .travel-body-panel-header-1 {
         cursor: pointer;
+        color: white;
+        background-color: #F6C960;
+        padding: 10px 30px;
+      }
+
+      .travel-body-panel-header-2 {
+        cursor: pointer;
+        color: white;
+        background-color: #8A1838;
+        padding: 10px 30px;
+      }
+
+      .travel-body-panel-header-3 {
+        cursor: pointer;
+        color: white;
+        background-color: #EE3065;
+        padding: 10px 30px;
+      }
+
+      .travel-body-panel-header-4 {
+        cursor: pointer;
+        color: white;
+        background-color: #296773;
+        padding: 10px 30px;
+      }
+
+      .travel-body-panel-header-5 {
+        cursor: pointer;
+        color: white;
+        background-color: #3B9BAD;
+        padding: 10px 30px;
+      }
+
+      .travel-body-panel-header-6 {
+        cursor: pointer;
+        color: white;
+        background-color: #57C8E0;
+        padding: 10px 30px;
+      }
+
+      .travel-body-panel-content {
+        //display: none;
+        padding: 10px 30px;
+
+        .arrow {
+
+        }
       }
 
       .travel-body-panel-title {
@@ -55,7 +102,6 @@
         text-transform: lowercase;
         font-variant: small-caps;
         letter-spacing: 1px;
-        color: black;
         display: inline;
       }
 
@@ -63,48 +109,6 @@
         height: 1em;
         float: right;
         margin-top: 15px;
-      }
-
-      .travel-body-panel-accent-1 {
-        height: 1em;
-        width: 100%;
-        background-color: #F6C960;
-        display: block;
-      }
-
-      .travel-body-panel-accent-2 {
-        height: 1em;
-        width: 100%;
-        background-color: #8A1838;
-        display: block;
-      }
-
-      .travel-body-panel-accent-3 {
-        height: 1em;
-        width: 100%;
-        background-color: #EE3065;
-        display: block;
-      }
-
-      .travel-body-panel-accent-4 {
-        height: 1em;
-        width: 100%;
-        background-color: #296773;
-        display: block;
-      }
-
-      .travel-body-panel-accent-5 {
-        height: 1em;
-        width: 100%;
-        background-color: #3B9BAD;
-        display: block;
-      }
-
-      .travel-body-panel-accent-6 {
-        height: 1em;
-        width: 100%;
-        background-color: #57C8E0;
-        display: block;
       }
 
       .travel-body-panel-content {
