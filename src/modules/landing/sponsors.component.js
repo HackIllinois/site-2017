@@ -13,7 +13,9 @@ class Sponsors extends Component {
           "src/assets/img/home/sponsors/a16z.png",
           "src/assets/img/home/sponsors/akuna.png",
           "src/assets/img/home/sponsors/amadeus.svg",
+          "src/assets/img/home/sponsors/aarp.png",
           "src/assets/img/home/sponsors/att.svg",
+          "src/assets/img/home/sponsors/bmo.jpg",
           "src/assets/img/home/sponsors/bp.svg",
           "src/assets/img/home/sponsors/capitalone.svg",
           "src/assets/img/home/sponsors/citadel.svg",
@@ -23,15 +25,21 @@ class Sponsors extends Component {
           "src/assets/img/home/sponsors/github.png",
           "src/assets/img/home/sponsors/huawei.svg",
           "src/assets/img/home/sponsors/johndeere.svg",
+          "src/assets/img/home/sponsors/llnl.png",
+          "src/assets/img/home/sponsors/mixmax.jpg",
           "src/assets/img/home/sponsors/namecheap.png",
           "src/assets/img/home/sponsors/onenorth.svg",
           "src/assets/img/home/sponsors/qualtrics.svg",
+          "src/assets/img/home/sponsors/quikorder.jpeg",
+          "src/assets/img/home/sponsors/techpoint.jpg",
+          "src/assets/img/home/sponsors/soylent.png",
           "src/assets/img/home/sponsors/statefarm.svg",
           "src/assets/img/home/sponsors/twilio.png",
           "src/assets/img/home/sponsors/viasat.svg",
           "src/assets/img/home/sponsors/united.svg",
           "src/assets/img/home/sponsors/yahoo.svg"
       ];
+
       let sponsorList = sponsorUrls.map((url, key) => {
             let itemStyle = styles.listItem;
             if (url.includes('fulcum')) {
