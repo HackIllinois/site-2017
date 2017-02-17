@@ -1,5 +1,8 @@
 .sponsorHeading {
-    text-transform: uppercase;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    font-weight: 700;
     text-align: center;
 }
 
@@ -14,10 +17,28 @@
 }
 
 .list {
-    padding: 0;
+    padding: 10%;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+}
+
+.topListItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.secondListItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    width: 100%;
+    margin-top: 5%;
 }
 
 .listItem {
@@ -47,10 +68,18 @@
 }
 
 @media all and (min-width: 60em) {
-  .listItem {
-    width: 20%;
-    padding: 2%;
-  }
+    .topListItem {
+        width: 100%;
+    }
+
+    .secondListItem {
+        width: 50%;
+    }
+
+    .listItem {
+        width: 25%;
+        padding: 2%;
+    }
 }
 
 @media all and (max-width: 40em) {

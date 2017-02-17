@@ -36,6 +36,11 @@ function base64ToArrayBuffer(base64) {
 
 class RegistrationStore {
     constructor() {
+        if(sessionStorage.getItem('rsvp')) {
+            this.confirmRSVP = true;
+            //this.status = 'CONFIRM'
+        }
+        //console.log('RegistrationStore')
         if (sessionStorage.getItem('auth') != null) {
             //set flag
             this.loggedIn = true;
@@ -47,18 +52,37 @@ class RegistrationStore {
               }
             };
             const token = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
+            /*
+            const rsvpToken = fromPromise(axios.get('https://api.hackillinois.org/v1/rsvp', config))
+
+            when(() => rsvpToken.state !== 'pending',
+                 () => {
+                    console.log('return')
+                 });*/
+
             when(() => token.state !== 'pending',
-                 () => { 
+                 () => {
                     if(token.state == 'rejected') {
                         this.userData.email = sessionStorage.getItem('email')
                         this.userData.createPassword = sessionStorage.getItem('password')
                         this.userData.confirmPassword = sessionStorage.getItem('password')
                     }
                     if(token.state !== 'rejected') {
+                      //console.log(token.value.data.data.rsvp)
+                      if(token.value.data.data.status == 'ACCEPTED') {
+                        if(token.value.data.data.hasLightningInterest) sessionStorage.setItem('hasLightningInterest','true');
+                        if(window.location.pathname != '/rsvp' && 
+                           window.location.pathname != '/login' &&
+                           window.location.pathname != '/' && 
+                           window.location.pathname != '/projects' &&
+                           window.location.pathname != '/reset' &&
+                           window.location.pathname != '/travel') window.location = '/rsvp'
+                      }
+
                       if(token.value.data.data.resume) {
                         this.resumeOnFile = true;
                         this.isFileSelected = true;
-                      }    
+                      }
                       this.collaborators = token.value.data.data.collaborators.map((c)=>(c.collaborator))
                       //console.log(token.value.data.data.collaborators)
                       this.populateEcosystems(token.value.data.data)
@@ -81,6 +105,12 @@ class RegistrationStore {
                       }
                     }
                  })
+        }
+
+        if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login'
+            && window.location.pathname != '/' && window.location.pathname != '/projects'
+            && window.location.pathname != '/reset' && window.location.pathname != '/travel '&& !window.location.pathname.includes('registration')) {
+            window.location = '/login'
         }
         if (sessionStorage.getItem('authorization') != null) {
             this.previouslyRegistered = true;
@@ -123,7 +153,7 @@ class RegistrationStore {
                 this.project.repo = p.repo
             }
         }
-        
+
 
     }
 
@@ -148,7 +178,7 @@ class RegistrationStore {
             };
             const testToken = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
             when(() => testToken.state !== 'pending',
-                 () => { 
+                 () => {
                     if (testToken.state == 'rejected') {
                         // they don't have an attendee, do a post
                         const submitToken = fromPromise(axios.post('https://api.hackillinois.org/v1/registration/attendee', req, config))
@@ -170,11 +200,11 @@ class RegistrationStore {
                                             else {
                                                 if (ga) {
                                                     ga('send', 'exception', {
-                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error),
                                                         'exFatal': true
                                                     })
                                                 }
-                                                
+
                                             }
                                 });
                         });
@@ -199,7 +229,7 @@ class RegistrationStore {
                                             else {
                                                 if (ga) {
                                                     ga('send', 'exception', {
-                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error),
                                                         'exFatal': true
                                                     })
                                                 }
@@ -234,7 +264,7 @@ class RegistrationStore {
                                 }
                             };
                             const attendeeToken = fromPromise(axios.get('https://api.hackillinois.org/v1/registration/attendee', config))
-                            when(() => attendeeToken.state !== 'pending', 
+                            when(() => attendeeToken.state !== 'pending',
                                 () => {
                                     if (attendeeToken.state !== 'rejected') {
                                         // they have an attendee, do a put
@@ -256,7 +286,7 @@ class RegistrationStore {
                                                             else {
                                                                 if (ga) {
                                                                     ga('send', 'exception', {
-                                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error),
                                                                         'exFatal': true
                                                                     })
                                                                 }
@@ -284,7 +314,7 @@ class RegistrationStore {
                                                             else {
                                                                 if (ga) {
                                                                     ga('send', 'exception', {
-                                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                                        'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error),
                                                                         'exFatal': true
                                                                     })
                                                                 }
@@ -323,7 +353,7 @@ class RegistrationStore {
                                         else {
                                             if (ga) {
                                                 ga('send', 'exception', {
-                                                    'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error), 
+                                                    'exDescription': '/attendee : ' + sessionStorage.getItem('email')  + JSON.stringify(submitToken.value.response.data.error),
                                                     'exFatal': true
                                                 })
                                             }
@@ -371,7 +401,7 @@ class RegistrationStore {
         resume: '',
         teamMember: ''
 	}
-  
+
   @observable ecosystems = {
       javascript: false,
       ios:false,
@@ -395,6 +425,7 @@ class RegistrationStore {
   @observable loggedIn = false;
   @observable resumeOnFile = true;
   @observable teamMember = '';
+
 }
 
 export default new RegistrationStore();

@@ -4,7 +4,8 @@
   "description": "hackillinois website",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --hot"
+    "start": "webpack-dev-server --inline --progress --hot",
+    "deploy": "webpack && netlify deploy"
   },
   "repository": {
     "type": "git",
