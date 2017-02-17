@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import styles from './landing.scss'
 import Button from '../registration/components/button'
+import About from './about.component'
 import Sponsors from './sponsors.component.js'
 
 //regex email validation
@@ -56,6 +57,7 @@ class Landing extends Component {
                 <div className={styles.login} > Already registered? <a href='/login'> Log in </a> </div>
                 </div>
             </div>
+            <About />
             <Sponsors />
         </div>
       );
