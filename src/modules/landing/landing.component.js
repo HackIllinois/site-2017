@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import styles from './landing.scss'
 import Button from '../registration/components/button'
+import About from './about.component'
+import Sponsors from './sponsors.component.js'
 
 //regex email validation
 const validateEmail = (email) => {
@@ -32,29 +34,35 @@ class Landing extends Component {
       this.setState({email: ""})
     });
   }
-  render = () => (
-    <div className={styles.landing}>
-      <div className={styles.hero}>
-        <img className={styles.logo} src="src/assets/img/landing-logo.png"/>
-        <div className={styles.dateLabel}>February 24th - 26th</div>
-        <div className={styles.host}> Co-hosted by <a href="http://fulcrum-gt.com/"> Fulcrum </a> </div>
-        <div className={styles['hat-container']}>
-          <img className={styles['hat-off']} src="src/assets/img/svg/landing-hat-loff.svg"/>
-
+  render = () =>  {
+      return (
+        <div className={styles.landing}>
+            <div className={styles.lanterns}>
+                <div className={styles.lanternUnit}></div>
+                <div className={styles.lanternUnit}></div>
+                <div className={styles.lanternUnit}></div>
+                <div className={styles.lanternUnit}></div>
+                <div className={styles.lanternUnit}></div>
+                <div className={styles.lanternUnit}></div>
+                <div className={styles.lanternUnit}></div>
+            </div>
+            <div className={styles.hero}>
+                <img className={styles.logo} src="src/assets/img/landing-logo.png"/>
+                <div className={styles.dateLabel}>February 24th - 26th</div>
+                <div className={styles.host}>
+                    Co-hosted by <a href="http://fulcrum-gt.com/">Fulcrum</a>
+                </div>
+                <div className={styles.register}>
+                <Button className={styles.mb20} register={true} dest='/registration' label='REGISTER NOW' />
+                <div className={styles.login} > Already registered? <a href='/login'> Log in </a> </div>
+                </div>
+            </div>
+            <About />
+            <Sponsors />
         </div>
-        <div className={styles.register}>
-        <Button register={true} dest='/registration' label='REGISTER NOW' />
-        <div className={styles.login} > Already registered? <a href='/login'> Log in </a> </div>
-        </div>
-      </div>
-    </div>
-  )
+      );
+  }
 }
-
-/*
-<img className={styles['hat-on']} src="src/assets/img/svg/landing-hat-lon.svg"/>
-<img className={styles.beam} src="src/assets/img/svg/landing-beam.svg"/>
-*/
 
 
 export default Landing
