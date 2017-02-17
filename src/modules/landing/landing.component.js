@@ -60,11 +60,6 @@ class Landing extends Component {
       <ul className={styles.list}>
           <li className={styles.listItem}>
               <a className={styles.listItemLink} href="#">
-                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/fulcrum-logo.svg" />
-              </a>
-          </li>
-          <li className={styles.listItem}>
-              <a className={styles.listItemLink} href="#">
                   <img className={styles.listItemImage} src="src/assets/img/home/sponsors/microsoft.svg" />
               </a>
           </li>
@@ -121,6 +116,86 @@ class Landing extends Component {
           <li className={styles.listItem}>
               <a className={styles.listItemLink} href="#">
                   <img className={styles.listItemImage} src="src/assets/img/home/sponsors/qualtrics.svg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/3red.svg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/johndeere.svg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/citadel.svg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/statefarm.svg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/1517.png" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/akuna.png" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/bmo.jpg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/bp.svg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/firebase.png" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/github.png" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/johndeere.svg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/namecheap.png" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/techpoint.png" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/twilio.svg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/viasat.svg" />
+              </a>
+          </li>
+          <li className={styles.listItem}>
+              <a className={styles.listItemLink} href="#">
+                  <img className={styles.listItemImage} src="src/assets/img/home/sponsors/yahoo.svg" />
               </a>
           </li>
       </ul>
