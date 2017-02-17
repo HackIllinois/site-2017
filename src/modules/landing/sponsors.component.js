@@ -30,6 +30,7 @@ class Sponsors extends Component {
           "src/assets/img/home/sponsors/viasat.svg",
           "src/assets/img/home/sponsors/yahoo.svg"
       ];
+      
       let sponsorList = sponsorUrls.map((url, key) => {
             return (
                 <li className={styles.listItem} key={key}>
