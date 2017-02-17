@@ -6,6 +6,9 @@ import styles from './sponsors.scss'
 class Sponsors extends Component {
   render = () =>  {
       let sponsorUrls = [
+          "src/assets/img/home/sponsors/fulcum.svg",
+          "src/assets/img/home/sponsors/microsoft.svg",
+          "src/assets/img/home/sponsors/imo.svg",
           "src/assets/img/home/sponsors/3red.svg",
           "src/assets/img/home/sponsors/a16z.png",
           "src/assets/img/home/sponsors/akuna.png",
@@ -30,8 +33,17 @@ class Sponsors extends Component {
           "src/assets/img/home/sponsors/yahoo.svg"
       ];
       let sponsorList = sponsorUrls.map((url, key) => {
+            let itemStyle = styles.listItem;
+            if (url.includes('fulcum')) {
+                itemStyle = styles.topListItem
+            }
+
+            if (url.includes('microsoft') || url.includes('imo')) {
+                itemStyle = styles.secondListItem;
+            }
+
             return (
-                <li className={styles.listItem} key={key}>
+                <li className={itemStyle} key={key}>
                     <a className={styles.listItemLink} href="#">
                         <img className={styles.listItemImage} src={url} />
                     </a>
@@ -44,25 +56,10 @@ class Sponsors extends Component {
             <h4 className={styles.sponsorHeading}>Sponsors</h4>
             <div className={styles.sponsorContainer}>
                 <ul className={styles.list}>
-                    <li className={[[styles.listItem], [styles.topSponsorListItem]]}>
-                        <a className={styles.listItemLink} href="#">
-                            <img className={styles.listItemImage} src="src/assets/img/home/sponsors/fulcum.svg"/>
-                        </a>
-                    </li>
-                    <li className={styles.listItem}>
-                        <a className={styles.listItemLink} href="#">
-                            <img className={styles.listItemImage} src="src/assets/img/home/sponsors/microsoft.svg"/>
-                        </a>
-                    </li>
-                    <li className={styles.listItem}>
-                        <a className={styles.listItemLink} href="#">
-                            <img className={styles.listItemImage} src="src/assets/img/home/sponsors/imo.svg"/>
-                        </a>
-                    </li>
                     {sponsorList}
                 </ul>
             </div>
-        </div> 
+        </div>
     );
   }
 }

@@ -23,22 +23,31 @@
     flex-wrap: wrap;
 }
 
-.listItem {
-    flex-basis: 1;
+.topListItem {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1em;
     width: 100%;
     margin-top: 5%;
+}
 
-    .topSponsorListItem {
-        // flex-basis: 4;
-    }
+.secondListItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    width: 100%;
+    margin-top: 5%;
+}
 
-    .secondSponsorListItem {
-        // flex-basis: 2;
-    }
+.listItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    width: 100%;
+    margin-top: 5%;
 }
 
 .listItemLink {
@@ -59,10 +68,18 @@
 }
 
 @media all and (min-width: 60em) {
-  .listItem {
-    width: 20%;
-    padding: 2%;
-  }
+    .topListItem {
+        width: 100%;
+    }
+
+    .secondListItem {
+        width: 50%;
+    }
+
+    .listItem {
+        width: 25%;
+        padding: 2%;
+    }
 }
 
 @media all and (max-width: 40em) {
