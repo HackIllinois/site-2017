@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import styles from './landing.scss'
+
 import Button from '../registration/components/button'
 import About from './about.component'
 import Sponsors from './sponsors.component.js'
+import FAQ from './faq.component.js'
 
 //regex email validation
 const validateEmail = (email) => {
@@ -58,6 +60,7 @@ class Landing extends Component {
                 </div>
             </div>
             <About />
+            <FAQ />
             <Sponsors />
         </div>
       );

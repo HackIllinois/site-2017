@@ -40,7 +40,7 @@ class Sponsors extends Component {
           "src/assets/img/home/sponsors/united.svg",
           "src/assets/img/home/sponsors/yahoo.svg"
       ];
-
+    
       let sponsorList = sponsorUrls.map((url, key) => {
             let itemStyle = styles.listItem;
             if (url.includes('fulcum')) {
