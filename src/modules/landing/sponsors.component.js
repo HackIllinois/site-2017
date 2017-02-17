@@ -19,15 +19,14 @@ class Sponsors extends Component {
           "src/assets/img/home/sponsors/firebase.png",
           "src/assets/img/home/sponsors/github.png",
           "src/assets/img/home/sponsors/huawei.svg",
-          "src/assets/img/home/sponsors/imo.svg",
           "src/assets/img/home/sponsors/johndeere.svg",
-          "src/assets/img/home/sponsors/microsoft.svg",
           "src/assets/img/home/sponsors/namecheap.png",
           "src/assets/img/home/sponsors/onenorth.svg",
           "src/assets/img/home/sponsors/qualtrics.svg",
           "src/assets/img/home/sponsors/statefarm.svg",
-          "src/assets/img/home/sponsors/twilio.svg",
+          "src/assets/img/home/sponsors/twilio.png",
           "src/assets/img/home/sponsors/viasat.svg",
+          "src/assets/img/home/sponsors/united.svg",
           "src/assets/img/home/sponsors/yahoo.svg"
       ];
       let sponsorList = sponsorUrls.map((url, key) => {
@@ -45,6 +44,21 @@ class Sponsors extends Component {
             <h4 className={styles.sponsorHeading}>Sponsors</h4>
             <div className={styles.sponsorContainer}>
                 <ul className={styles.list}>
+                    <li className={[[styles.listItem], [styles.topSponsorListItem]]}>
+                        <a className={styles.listItemLink} href="#">
+                            <img className={styles.listItemImage} src="src/assets/img/home/sponsors/fulcum.svg"/>
+                        </a>
+                    </li>
+                    <li className={styles.listItem}>
+                        <a className={styles.listItemLink} href="#">
+                            <img className={styles.listItemImage} src="src/assets/img/home/sponsors/microsoft.svg"/>
+                        </a>
+                    </li>
+                    <li className={styles.listItem}>
+                        <a className={styles.listItemLink} href="#">
+                            <img className={styles.listItemImage} src="src/assets/img/home/sponsors/imo.svg"/>
+                        </a>
+                    </li>
                     {sponsorList}
                 </ul>
             </div>

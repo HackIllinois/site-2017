@@ -1,5 +1,8 @@
 .sponsorHeading {
-    text-transform: uppercase;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    font-weight: 700;
     text-align: center;
 }
 
@@ -14,19 +17,28 @@
 }
 
 .list {
-    padding: 0;
+    padding: 10%;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
 }
 
 .listItem {
+    flex-basis: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1em;
     width: 100%;
     margin-top: 5%;
+
+    .topSponsorListItem {
+        // flex-basis: 4;
+    }
+
+    .secondSponsorListItem {
+        // flex-basis: 2;
+    }
 }
 
 .listItemLink {
