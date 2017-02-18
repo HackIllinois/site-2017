@@ -11,7 +11,7 @@ class About extends Component {
                 <h5>WELCOME TO HACKILLINOIS!</h5>
                 <p>
                     Since its inception in 2014, HackIllinois has pushed the boundaries to create an exceptional
-                    and dynamic hacking culture. Now, it’s time to give back to the community.
+                    and dynamic hackathon culture. Now, it’s time to give back to the community.
                     HackIllinois 2017 is the first open source-focused collegiate hackathon!
                 </p>
                 <h5>OUR EVENT</h5>
@@ -21,7 +21,7 @@ class About extends Component {
                 </p>
                 <ul>
                     <li><b>CONTRIBUTE</b> allows for each group to be mentored while working on existing open source projects, providing a welcoming environment to make their first additions to the community.</li>
-                    <li><b>CREATE</b> encourages students to create a brand new open source project with the intention of building foundation that others can build upon after the event.</li>
+                    <li><b>CREATE</b> encourages students to create a brand new open source project with the intention of building a foundation that others can build upon after the event.</li>
                 </ul>
                 <h5>TEAM</h5>
                 <p>
