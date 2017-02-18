@@ -1,0 +1,54 @@
+.lanterns {
+    width: 100%;
+    height: 173px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+
+    @media only screen and (min-width: 540px) {
+        margin-bottom: 60px;
+    }
+
+    .lanternUnit {
+        width: 100px;
+        height: 200px;
+        background-image: url('../../assets/img/home/lamp.svg');
+        display: inline-block;
+        background-repeat: no-repeat;
+    }
+}
+
+.lanternUnit:nth-of-type(1) {
+  position: relative;
+  top: -42px;
+}
+
+.lanternUnit:nth-of-type(2) {
+  position: relative;
+  top: 0px;
+}
+
+.lanternUnit:nth-of-type(3) {
+  position: relative;
+  top: -62px;
+}
+
+.lanternUnit:nth-of-type(4) {
+  position: relative;
+  top: -16px;
+}
+
+.lanternUnit:nth-of-type(5) {
+  position: relative;
+  top: -42px;
+}
+
+.lanternUnit:nth-of-type(6) {
+  position: relative;
+  top: -58px;
+}
+
+.lanternUnit:nth-of-type(7) {
+  position: relative;
+  top: -14px;
+}
