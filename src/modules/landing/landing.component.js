@@ -12,10 +12,17 @@ import FAQ from './faq.component.js'
 class Landing extends Component {
   render = () =>  {
       return (
-          <div className={styles.container}>
+          <div>
               <div className={styles.landing}>
-                  <Navbar />
-                  <Registration />
+                  <div className={styles.container}>
+                      <Navbar />
+                      <Registration />
+                  </div>
+
+                  <div className={styles.visual} />
+              </div>
+
+              <div className={styles.container}>
                   <About />
                   <FAQ />
                   <Sponsors />

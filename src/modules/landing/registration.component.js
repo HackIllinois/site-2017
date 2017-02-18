@@ -39,7 +39,11 @@ class Registration extends Component {
         return (
             <div className={styles.hero}>
                 <img className={styles.logo} src="src/assets/img/landing-logo.png"/>
-                <div className={styles.dateLabel}>February 24th - 26th</div>
+                <br /><br />
+
+                <h3 className={styles['hero-title']}>Digging Deeper</h3>
+                <h5 className={styles['hero-subtitle']}>February 24th - 26th, 2017</h5>
+
                 <div className={styles.host}>
                     Co-hosted by <a href="http://fulcrum-gt.com/">Fulcrum</a>
                 </div>
