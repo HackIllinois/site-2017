@@ -7,7 +7,6 @@
 }
 
 .aboutContainer {
-    max-width: 960px;
     margin: 0 auto;
     min-height: 400px;
     margin-left: 20px;
@@ -17,4 +16,11 @@
     padding-top: 20px;
     padding: 5%;
     margin-bottom: 5%;
+
+    h5 {
+        font-variant: small-caps;
+        text-transform: lowercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
 }

@@ -18,7 +18,7 @@ body {
 
 .landing {
   width: 100%;
-  max-width: 960px;
+  height: 100vh;
   margin: 0 auto;
 
   .lanterns {
@@ -119,4 +119,27 @@ body {
 .lanternUnit:nth-of-type(7) {
   position: relative;
   top: -14px;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }

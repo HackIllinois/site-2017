@@ -12,13 +12,15 @@ import FAQ from './faq.component.js'
 class Landing extends Component {
   render = () =>  {
       return (
-        <div className={styles.landing}>
-            <Navbar />
-            <Registration />
-            <About />
-            <FAQ />
-            <Sponsors />
-        </div>
+          <div className={styles.container}>
+              <div className={styles.landing}>
+                  <Navbar />
+                  <Registration />
+                  <About />
+                  <FAQ />
+                  <Sponsors />
+              </div>
+          </div>
       );
   }
 }
