@@ -1,0 +1,26 @@
+.aboutHeading {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.aboutContainer {
+    margin: 2em auto;
+    min-height: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #F2FAFE;
+    color: black;
+    padding-top: 20px;
+    padding: 5%;
+    margin-bottom: 5%;
+
+    h5 {
+        font-variant: small-caps;
+        text-transform: lowercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+}

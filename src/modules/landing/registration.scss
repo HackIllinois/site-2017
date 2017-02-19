@@ -1,0 +1,39 @@
+.landing {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Brandon-Regular', 'Avenir', 'Arial', 'Helvetica Neue', sans-serif;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.hero {
+  text-align: center;
+
+  .hero-title, hero-subtitle  {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.mb20 {
+  background-color: #399BAC;
+}
+
+.host {
+  position: relative;
+}
+
+.login {
+  text-align: center;
+  margin: 0;
+}
