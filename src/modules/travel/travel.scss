@@ -1,0 +1,63 @@
+.travel {
+  width: 100%;
+  position: relative;
+  padding-top: 2em;
+
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smooth: always;
+
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+
+  .travel-header {
+    text-align: center;
+
+    .travel-header-logo {
+      width: 120px;
+      height: auto;
+    }
+
+    .travel-header-title {
+      font-weight: bold;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      letter-spacing: 1px;
+    }
+
+    .travel-header-subtitle {
+      color: #B8BDE0;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+  }
+
+  .travel-body {
+    width: 50%;
+    margin: 0 auto;
+
+    padding: 20px 30px;
+  }
+
+  .travel-footer {
+    text-align: center;
+    color: #B8BDE0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    h5 {
+      font-weight: 700;
+
+
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
