@@ -74,25 +74,25 @@ class UIC extends Component {
 
                     <tr>
                         <td>Pickup Address</td>
-                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:00 PM CST</td>
+                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:15 PM CST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address #1</td>
                         <td>Illinois Institute of Technology, McCormic Student Village, 3241 South
-                            Wabash Ave, Chicago, IL 60616 at 7:30 PM CST</td>
+                            Wabash Ave, Chicago, IL 60616 at 7:45 PM CST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address #2</td>
                         <td>University of Chicago, Joseph Regenstein Library, 1100 E 57th St,
-                            Chicago, IL 60637 at 8:00 PM CST</td>
+                            Chicago, IL 60637 at 8:15 PM CST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address #3</td>
                         <td>University of Illinois at Chicago, 851 S. Morgan (m/c 152),
-                            Chicago, IL 60607 at 8:30 PM CST</td>
+                            Chicago, IL 60607 at 8:45 PM CST</td>
                     </tr>
 
                     <tr>

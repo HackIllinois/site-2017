@@ -37,17 +37,17 @@ class Florida extends Component {
 
                     <tr>
                         <td>Pickup Address #1</td>
-                        <td>UF Commuter Lot, 1950 Gale Lemerand Drive, Gainesville, FL 32603 at 2:30 AM CST</td>
+                        <td>UF Commuter Lot, 1950 Gale Lemerand Drive, Gainesville, FL 32603 at 2:30 AM EST (tentative)</td>
                     </tr>
 
                     <tr>
                         <td>Pickup Address #2</td>
-                        <td>Georgia Tech, 266 4th St NW, Atlanta, GA 30332 at 8:30 AM CST</td>
+                        <td>Georgia Tech, 266 4th St NW, Atlanta, GA 30332 at 7:30 AM EST (tentative)</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address</td>
-                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 6:30 PM CST</td>
+                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 4:30 PM CST</td>
                     </tr>
 
                     <tr>
@@ -67,17 +67,17 @@ class Florida extends Component {
 
                     <tr>
                         <td>Pickup Address</td>
-                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 4:00 PM CST</td>
+                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:15 PM CST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address #1</td>
-                        <td>Georgia Tech, 266 4th St NW, Atlanta, GA 30332 at 3:00 AM CST</td>
+                        <td>Georgia Tech, 266 4th St NW, Atlanta, GA 30332 at 3:00 AM EST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address #2</td>
-                        <td>UF Commuter Lot, 1950 Gale Lemerand Drive, Gainesville, FL 32603 at 8:00 AM CST</td>
+                        <td>UF Commuter Lot, 1950 Gale Lemerand Drive, Gainesville, FL 32603 at 8:00 AM EST</td>
                     </tr>
 
                     <tr>

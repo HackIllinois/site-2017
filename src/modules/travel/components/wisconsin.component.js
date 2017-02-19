@@ -20,7 +20,7 @@ class Wisconsin extends Component {
     render = () => (
         <div className={styles['travel-body-panel']}>
             <div onClick={() => this.display(4)} className={styles['travel-body-panel-header-4']}>
-                <h4 className={styles['travel-body-panel-title']}>Wisconsin <span className={styles['arrow']}>&#8644;</span> HackIllinois</h4>
+                <h4 className={styles['travel-body-panel-title']}>University of Wisconsin-Madison <span className={styles['arrow']}>&#8644;</span> HackIllinois</h4>
                 <img className={styles['travel-body-caret']} src="src/assets/img/down-arrow.svg" />
             </div>
 
@@ -64,12 +64,12 @@ class Wisconsin extends Component {
 
                     <tr>
                         <td>Pickup Address</td>
-                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:00 PM CST</td>
+                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:15 PM CST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address</td>
-                        <td>University of Wisconsin, 1210 West Dayton St, Madison, WI 53706 at 9:00 PM CST</td>
+                        <td>University of Wisconsin, 1210 West Dayton St, Madison, WI 53706 at 9:15 PM CST</td>
                     </tr>
 
                     <tr>

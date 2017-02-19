@@ -68,17 +68,17 @@ class Northwestern extends Component {
 
                     <tr>
                         <td>Pickup Address</td>
-                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:00 PM CST</td>
+                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:15 PM CST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address #1</td>
-                        <td>DePaul University, 243 S Wabash Ave, Chicago, IL 60604 at 7:30 PM CST</td>
+                        <td>DePaul University, 243 S Wabash Ave, Chicago, IL 60604 at 7:45 PM CST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address #2</td>
-                        <td>Northwestern University, 2311 Campus Dr, Evanston, IL 60208 at 8:30 PM CST</td>
+                        <td>Northwestern University, 2311 Campus Dr, Evanston, IL 60208 at 8:45 PM CST</td>
                     </tr>
 
                     <tr>

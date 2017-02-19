@@ -21,7 +21,7 @@ class Michigan extends Component {
 
         <div className={styles['travel-body-panel']}>
             <div onClick={() => this.display(3)} className={styles['travel-body-panel-header-3']}>
-                <h4 className={styles['travel-body-panel-title']}>Michigan State <span className={styles['arrow']}>&#8644;</span> UMichigan <span className={styles['arrow']}>&#8644;</span> HackIllinois</h4>
+                <h4 className={styles['travel-body-panel-title']}>UMichigan <span className={styles['arrow']}>&#8644;</span> Michigan State <span className={styles['arrow']}>&#8644;</span> HackIllinois</h4>
                 <img className={styles['travel-body-caret']} src="src/assets/img/down-arrow.svg" />
             </div>
 
@@ -38,17 +38,17 @@ class Michigan extends Component {
 
                     <tr>
                         <td>Pickup Address #1</td>
-                        <td>University of Michigan, MI at 10:30 AM CST</td>
+                        <td>University of Michigan, Rackham Auditorium, 915 East Washington Street, Ann Arbor, MI 48109 at 11:00 AM EST (tentative)</td>
                     </tr>
 
                     <tr>
                         <td>Pickup Address #2</td>
-                        <td>Michigan State, MI at 12:00 PM CST</td>
+                        <td>Michigan State, Spartan Stadium, 570 Red Cedar Rd., East Lansing, MI 48824 at 12:30 PM EST (tentative)</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address</td>
-                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:30 PM CST</td>
+                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:00 PM CST</td>
                     </tr>
 
                     <tr>
@@ -65,22 +65,22 @@ class Michigan extends Component {
 
                     <tr>
                         <td>Pickup Date</td>
-                        <td>February 26, 2017 - 5:00 PM CST</td>
+                        <td>February 26, 2017</td>
                     </tr>
 
                     <tr>
                         <td>Pickup Address</td>
-                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801</td>
+                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:15 PM CST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address #1</td>
-                        <td>Michigan State, MI at 9:30 PM CST</td>
+                        <td>Michigan State, Spartan Stadium, 570 Red Cedar Rd., East Lansing, MI 48824 at 10:45 PM EST</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address #2</td>
-                        <td>University of Michigan, MI at 11:00 PM CST</td>
+                        <td>University of Michigan, Rackham Auditorium, 915 East Washington Street, Ann Arbor, MI 48109 at 12:15 AM EST</td>
                     </tr>
                     
                     <tr>

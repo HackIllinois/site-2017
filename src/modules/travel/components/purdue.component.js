@@ -38,8 +38,8 @@ class Purdue extends Component {
 
                         <tr>
                             <td>Pickup Address</td>
-                            <td>Purdue Univ, Lawson Hall of Computer Science, 305 N University St, West Lafayette, IN
-                                47907 at 3:15 PM CST
+                            <td>Purdue University, Lawson Hall of Computer Science, 305 N University St, West Lafayette, IN
+                                47907 at 4:15 PM EST
                             </td>
                         </tr>
 
@@ -65,13 +65,13 @@ class Purdue extends Component {
 
                         <tr>
                             <td>Pickup Address</td>
-                            <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:00 PM CST</td>
+                            <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:15 PM CST</td>
                         </tr>
 
                         <tr>
                             <td>Destination Address</td>
-                            <td>Purdue Univ, Lawson Hall of Computer Science, 305 N University St, West Lafayette, IN
-                                47907 at 6:30 PM CST.
+                            <td>Purdue University, Lawson Hall of Computer Science, 305 N University St, West Lafayette, IN
+                                47907 at 7:45 PM EST.
                             </td>
                         </tr>
 
