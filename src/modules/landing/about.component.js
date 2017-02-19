@@ -16,11 +16,11 @@ class About extends Component {
                 </p>
                 <h5>OUR EVENT</h5>
                 <p>
-                    HackIllinois is unlike any other hackathon you’ve been to. We focus on collaboration and sustainability rather than competition. For 36 hours, our attendees will innovate, design, and improve the open source community. This year, attendees can choose from two tracks:
+                    HackIllinois is unlike any other hackathon you’ve been to. This year, we are focusing on collaboration and sustainability rather than competition. For 36 hours, our attendees will innovate, design, and improve the open source community. Attendees can choose from two tracks:
                     <br/>
                 </p>
                 <ul>
-                    <li><b>CONTRIBUTE</b> allows for each group to be mentored while working on existing open source projects, providing a welcoming environment to make their first additions to the community.</li>
+                    <li><b>CONTRIBUTE</b> allows for each group to be mentored by core developers while working on existing open source projects, providing a welcoming environment while they make their first additions to the community.</li>
                     <li><b>CREATE</b> encourages students to create a brand new open source project with the intention of building a foundation that others can build upon after the event.</li>
                 </ul>
                 <h5>TEAM</h5>
