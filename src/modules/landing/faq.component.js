@@ -16,8 +16,8 @@ class FAQ extends Component {
             {question: "WHO DO I CONTACT FOR HELP?", answer: "Mentors from leading technology companies will be on-hand to provide support and troubleshoot problems in both the CREATE and CONTRIBUTE tracks. We also encourage all attendees to help each other!"},
             {question: "WHERE DO I SLEEP?", answer: "Sleeping rooms will be furnished with air mattresses and pillows. We want you to be comfortable!"},
             {question: "WILL YOU HAVE HARDWARE?", answer: "We'll have high-level hardware provided by companies. We'll also have basic hardware components like resistors, transistors, and ICs, as well as wood, building materials, and power tools for you to tinker with."},
-            {question: "WHAT ARE THE PRIZES?", answer: "We will release details about prizes soon."},
-            {question: "HOW DOES JUDGING WORK?", answer: "Be on the lookout for more information about judging!"}
+            {question: "WHAT ARE THE PRIZES?", answer: "We will release details about prizes and judging soon."},
+            {question: "WHAT WILL CONTRIBUTORS BE WORKING ON?", answer: "If you RSVPed to the Contribute track, you will be working on one of the projects in the ecosystem you were accepted in: https://hackillinois.org/projects."}
         ];
 
         let listItems = faqs.map( (item) => {
