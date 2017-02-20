@@ -12,7 +12,6 @@
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
 
-
   .travel-header {
     text-align: center;
 
@@ -36,13 +35,6 @@
 
   }
 
-  .travel-body {
-    width: 50%;
-    margin: 0 auto;
-
-    padding: 20px 30px;
-  }
-
   .travel-footer {
     text-align: center;
     color: #B8BDE0;
@@ -60,4 +52,27 @@
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
+}
+
+.travel-body {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .travel-body {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .travel-body {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .travel-body {
+    width: 1170px;
+  }
 }
