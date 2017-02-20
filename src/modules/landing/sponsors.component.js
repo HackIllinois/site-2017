@@ -37,7 +37,8 @@ class Sponsors extends Component {
           {logo: "src/assets/img/home/sponsors/twilio.png", site: "http\://twilio.com/"},
           {logo: "src/assets/img/home/sponsors/viasat.svg", site: "http\://viasat.com/"},
           {logo: "src/assets/img/home/sponsors/united.svg", site: "http\://united.com/"},
-          {logo: "src/assets/img/home/sponsors/yahoo.svg", site: "http\://yahoo.com/"}
+          {logo: "src/assets/img/home/sponsors/yahoo.svg", site: "http\://yahoo.com/"},
+          {logo: "src/assets/img/home/sponsors/bitovi.svg", site: "http\://bitovi.com/"}
       ];
 
       let sponsorList = sponsorUrls.map((obj, key) => {
