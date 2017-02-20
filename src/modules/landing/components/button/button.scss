@@ -1,5 +1,20 @@
 .register {
+	height: 54px;
+	width: 200px;
+	border-radius: 3px;
 	background-color: #E05926;
+	color: #f1f9fd;
+	font: 1.2em 'Gotham-Medium';
+	display: inline-block;
+	margin: 0 auto;
+	text-decoration: none;
+	line-height: 54px;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 20px;
+	cursor: pointer;
 }
 
 .button {
@@ -22,13 +37,22 @@
 }
 
 @media (min-width: 540px) {
+	.register {
+		width: 228px;
+	}
+
 	.button {
 		width: 228px;
 	}
 }
 
 @media (max-width: 540px) {
+	.register {
+		font-size: 14px;
+	}
+
 	.button {
+		margin-top: 5px;
 		font-size: 14px;
 	}
 }

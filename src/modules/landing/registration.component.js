@@ -49,7 +49,7 @@ class Registration extends Component {
                 </div>
                 <div className={styles.register}>
                 <Button id="register-button" register={true} dest='/registration' label='REGISTER NOW' />
-                <Button id="schedule-button" register={true} dest='/schedule' label='VIEW SCHEDULE' />
+                <Button id="schedule-button" register={false} dest='/schedule' label='VIEW SCHEDULE' />
                 <div className={styles.login} > Already registered? <a href='/login'> Log in </a> </div>
                 </div>
             </div>
