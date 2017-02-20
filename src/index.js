@@ -49,6 +49,11 @@ const Code = () => {
 	return null
 }
 
+const Schedule = () => {
+	window.location = 'src/assets/pdf/HackIllinois_schedule.pdf'
+	return null
+}
+
 const root = document.getElementById("app")
 
 ReactDom.render(
@@ -61,6 +66,7 @@ ReactDom.render(
 				<Route path='exhibitor' component={Exhibitor}/>
 				<Route path='hotels' component={Hotels}/>
 				<Route path='code' component={Code}/>
+				<Route path='schedule' component={Schedule}/>
 			</Route>
 			<Route path='registration' component={Registration}>
 				<IndexRoute component={Announcement}/>

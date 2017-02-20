@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import Button from '../registration/components/button'
+import Button from '../landing/components/button'
 
 import styles from './registration.scss'
 
@@ -48,7 +48,8 @@ class Registration extends Component {
                     Co-hosted by <a href="http://fulcrum-gt.com/">Fulcrum</a>
                 </div>
                 <div className={styles.register}>
-                <Button className={styles.mb20} register={true} dest='/registration' label='REGISTER NOW' />
+                <Button id="register-button" register={true} dest='/registration' label='REGISTER NOW' />
+                <Button id="schedule-button" register={true} dest='/schedule' label='VIEW SCHEDULE' />
                 <div className={styles.login} > Already registered? <a href='/login'> Log in </a> </div>
                 </div>
             </div>
