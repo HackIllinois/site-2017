@@ -37,7 +37,7 @@ class Wisconsin extends Component {
 
                     <tr>
                         <td>Pickup Address</td>
-                        <td>University of Wisconsin, 1210 West Dayton St, Madison, WI 53706 at 11:00 AM CST</td>
+                        <td>University of Wisconsin, 1210 West Dayton St, Madison, WI 53706 at 11:45 AM CST</td>
                     </tr>
 
                     <tr>

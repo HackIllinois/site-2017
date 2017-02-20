@@ -38,17 +38,17 @@ class Michigan extends Component {
 
                     <tr>
                         <td>Pickup Address #1</td>
-                        <td>University of Michigan, Rackham Auditorium, 915 East Washington Street, Ann Arbor, MI 48109 at 11:00 AM EST (tentative)</td>
+                        <td>University of Michigan, Rackham Auditorium, 915 East Washington Street, Ann Arbor, MI 48109 at 10:30 AM EST (tentative)</td>
                     </tr>
 
                     <tr>
                         <td>Pickup Address #2</td>
-                        <td>Michigan State, Spartan Stadium, 570 Red Cedar Rd., East Lansing, MI 48824 at 12:30 PM EST (tentative)</td>
+                        <td>Michigan State, Spartan Stadium, 570 Red Cedar Rd., East Lansing, MI 48824 at 12:00 PM EST (tentative)</td>
                     </tr>
 
                     <tr>
                         <td>Destination Address</td>
-                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 5:00 PM CST</td>
+                        <td>Siebel Center for Computer Science, 201 N Goodwin Ave, Urbana, IL 61801 at 4:15 PM CST</td>
                     </tr>
 
                     <tr>
