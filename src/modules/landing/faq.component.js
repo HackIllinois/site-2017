@@ -17,7 +17,6 @@ class FAQ extends Component {
             {question: "WHERE DO I SLEEP?", answer: "Sleeping rooms will be furnished with air mattresses and pillows. We want you to be comfortable!"},
             {question: "WILL YOU HAVE HARDWARE?", answer: "We'll have high-level hardware provided by companies. We'll also have basic hardware components like resistors, transistors, and ICs, as well as wood, building materials, and power tools for you to tinker with."},
             {question: "WHAT ARE THE PRIZES?", answer: "We will release details about prizes and judging soon."},
-            {question: "WHAT WILL CONTRIBUTORS BE WORKING ON?", answer: "If you RSVPed to the Contribute track, you will be working on one of the projects in the ecosystem you were accepted in: https://hackillinois.org/projects."}
         ];
 
         let listItems = faqs.map( (item) => {
@@ -38,12 +37,19 @@ class FAQ extends Component {
                 <div className={styles['faq-content']}>
                     {listItems}
 
+                    <div key='projects_info' className={styles['faq-content-item']}>
+                        <h5 className={styles['faq-content-item-title']}>
+                            WHAT WILL CONTRIBUTORS BE WORKING ON?
+                        </h5>
+                        <h6 className={styles['faq-content-item-subtitle']}>If you RSVPed to the Contribute track, you will be working on one of the projects in the ecosystem you were accepted in: <a href='https://hackillinois.org/projects'>https://hackillinois.org/projects.</a></h6>
+                    </div>
+
                     <div className={styles['faq-content-full-item']}>
                         <h5 className={styles['faq-content-item-title']}>
                             MORE QUESTIONS?
                         </h5>
                         <h6 className={styles['faq-content-item-subtitle']}>
-                            Please don't hesitate to reach out to us at contact@hackillinois.org!
+                            Please don't hesitate to reach out to us at <a href="mailto:contact@hackillinois.org">contact@hackillinois.org</a>!
                         </h6>
                     </div>
                 </div>
