@@ -8,6 +8,7 @@
     color: white;
     background-color: #F6C960;
     padding: 10px 30px;
+    position: relative;
   }
 
   .travel-body-panel-header-2 {
@@ -15,6 +16,7 @@
     color: white;
     background-color: #8A1838;
     padding: 10px 30px;
+    position: relative;
   }
 
   .travel-body-panel-header-3 {
@@ -22,6 +24,7 @@
     color: white;
     background-color: #EE3065;
     padding: 10px 30px;
+    position: relative;
   }
 
   .travel-body-panel-header-4 {
@@ -29,6 +32,7 @@
     color: white;
     background-color: #296773;
     padding: 10px 30px;
+    position: relative;
   }
 
   .travel-body-panel-header-5 {
@@ -36,6 +40,7 @@
     color: white;
     background-color: #3B9BAD;
     padding: 10px 30px;
+    position: relative;
   }
 
   .travel-body-panel-header-6 {
@@ -43,15 +48,12 @@
     color: white;
     background-color: #57C8E0;
     padding: 10px 30px;
+    position: relative;
   }
 
   .travel-body-panel-content {
     //display: none;
     padding: 10px 30px;
-
-    .arrow {
-
-    }
   }
 
   .travel-body-panel-title {
@@ -64,8 +66,9 @@
 
   .travel-body-caret {
     height: 1em;
-    float: right;
     margin-top: 15px;
+    position: absolute;
+    right: 15px;
   }
 
   .travel-body-panel-content {
