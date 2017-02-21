@@ -8,7 +8,6 @@ class FAQ extends Component {
     render = () =>  {
 
         let faqs = [
-            {question: "ARE THERE TRAVEL REIMBURSEMENTS?", answer: "Unfortunately, we will not be able to provide travel reimbursements to student attendees. However, we will have busses going to 11 schools. More information is here: https://hackillinois.org/travel."},
             {question: "WHEN SHOULD I ARRIVE?", answer: "You should arive by 5 PM on Friday. A schedule will be released soon. Departure will be at 5 PM Sunday."},
             {question: "WHAT SHOULD I BRING?", answer: " You should bring a student ID, a change of clothing or two, personal items (toiletries), a laptop & charger, and any required hardware for your project. Essentially, bring anything you would need for a normal weekend. Due to power concerns, please do not bring extra monitors or desktop computers."},
             {question: "DO I NEED A TEAM?", answer: "Absolutely not! Many attendees come without a team and find a group at the event. We will be providing mentor matching and a team formation workshop for you to meet other like-minded individuals."},
@@ -35,6 +34,14 @@ class FAQ extends Component {
                 <h4 className={styles['faq-title']}>Frequently Asked Questions</h4>
 
                 <div className={styles['faq-content']}>
+
+                    <div key='travel_info' className={styles['faq-content-item']}>
+                        <h5 className={styles['faq-content-item-title']}>
+                            ARE THERE TRAVEL REIMBURSEMENTS?
+                        </h5>
+                        <h6 className={styles['faq-content-item-subtitle']}>Unfortunately, we will not be able to provide travel reimbursements to student attendees. However, we will have busses going to 11 schools. More information is here: <a href='https://hackillinois.org/travel'>https://hackillinois.org/travel.</a></h6>
+                    </div>
+
                     {listItems}
 
                     <div key='projects_info' className={styles['faq-content-item']}>
