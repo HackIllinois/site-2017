@@ -59,8 +59,14 @@
 
 .button:hover, .button:hover .arrow-right, .button:hover .arrow-left {
 	color: #f1f9fd;
+	background-color: lighten(#f4845a, 5%);
+}
+
+.register:hover, .button:hover .arrow-right, .button:hover .arrow-left {
+	color: #f1f9fd;
 	background-color: lighten(#399BAD, 5%);
 }
+
 
 .arrow-right {
 	display: inline-block;
