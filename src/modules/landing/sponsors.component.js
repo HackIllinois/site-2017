@@ -20,7 +20,6 @@ class Sponsors extends Component {
           {logo: "src/assets/img/home/sponsors/bp.svg", site: "http\://bp.com/"},
           {logo: "src/assets/img/home/sponsors/capitalone.svg", site: "http\://capitalone.com/"},
           {logo: "src/assets/img/home/sponsors/citadel.svg", site: "http\://citadel.com/"},
-          {logo: "src/assets/img/home/sponsors/cloudera.svg", site: "http\://cloudera.com/"},
           {logo: "src/assets/img/home/sponsors/facebook.svg", site: "http\://facebook.com/"},
           {logo: "src/assets/img/home/sponsors/firebase.png", site: "http\://firebase.google.com/"},
           {logo: "src/assets/img/home/sponsors/google.svg", site: "http\://google.com/"},
