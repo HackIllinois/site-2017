@@ -31,7 +31,7 @@ class Sponsors extends Component {
           {logo: "src/assets/img/home/sponsors/namecheap.png", site: "http\://namecheap.com/"},
           {logo: "src/assets/img/home/sponsors/onenorth.svg", site: "http\://onenorth.com/"},
           {logo: "src/assets/img/home/sponsors/qualtrics.svg", site: "http\://qualtrics.com/"},
-          {logo: "src/assets/img/home/sponsors/quikorder.jpeg", site: "http\://quikorder.com/"},
+          {logo: "src/assets/img/home/sponsors/quikorder.svg", site: "http\://quikorder.com/"},
           {logo: "src/assets/img/home/sponsors/techpoint.jpg", site: "http\://techpoint.org/"},
           {logo: "src/assets/img/home/sponsors/statefarm.svg", site: "http\://statefarm.com/"},
           {logo: "src/assets/img/home/sponsors/twilio.png", site: "http\://twilio.com/"},
