@@ -28,7 +28,7 @@ class Sponsors extends Component {
           {logo: "src/assets/img/home/sponsors/huawei.svg", site: "http\://www.huawei.com/us/"},
           {logo: "src/assets/img/home/sponsors/johndeere.svg", site: "http\://deere.com/"},
           {logo: "src/assets/img/home/sponsors/llnl.png", site: "http\://llnl.gov/"},
-          {logo: "src/assets/img/home/sponsors/namecheap.png", site: "http\://namecheap.com/"},
+          {logo: "src/assets/img/home/sponsors/namecheap.svg", site: "http\://namecheap.com/"},
           {logo: "src/assets/img/home/sponsors/onenorth.svg", site: "http\://onenorth.com/"},
           {logo: "src/assets/img/home/sponsors/qualtrics.svg", site: "http\://qualtrics.com/"},
           {logo: "src/assets/img/home/sponsors/quikorder.svg", site: "http\://quikorder.com/"},
