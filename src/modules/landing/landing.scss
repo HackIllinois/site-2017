@@ -6,6 +6,18 @@ html {
   box-sizing: inherit;
 }
 
+@keyframes move {
+  0%   {
+    left: 0;
+    transform: translate(-100%, -100%);
+  }
+  //25%  {left: 50
+  100%  {
+    left: 100%;
+    transform: translate(0%, -100%);
+  }
+}
+
 body {
   background-color: #122342;
   color: #ffffff;
@@ -14,6 +26,7 @@ body {
   background-attachment: fixed;
   background-position-y: 240px;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 .landing {
@@ -22,9 +35,29 @@ body {
   margin: 0 auto;
   //background-color: rgba(0, 0, 0, 0.3);
   position: relative;
-
   .spacer {
     margin: 2em 0;
+  }
+
+  .miner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    //min-width: 190px;
+    //min-height: 200px;
+    //background-image: url('../../assets/img/svg/guy.svg');
+    //background-repeat: no-repeat;
+
+    animation: move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    width: 10%;
+    min-width: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .visual {
@@ -32,10 +65,14 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 30%;
+
     //background-image: url('../../assets/img/svg/bridge.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    //background-repeat: no-repeat;
+    //background-position: bottom;
+
+    .bridgecontainer {
+      position: relative;
+    }
   }
 
   .lanterns {

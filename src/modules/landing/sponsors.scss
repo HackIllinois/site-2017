@@ -8,7 +8,8 @@
 
 .sponsorContainer {
     margin: 0 auto;
-    background-color: #F2FAFE;
+    //background-color: #F2FAFE;
+    background-image: url("../../assets/img/svg/sponsorsbackground.svg");
     min-height: 400px;
     margin-left: 20px;
     margin-right: 20px;
@@ -29,6 +30,16 @@
     padding: 1em;
     width: 100%;
     margin-top: 5%;
+
+    a {
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 .secondListItem {
@@ -38,6 +49,16 @@
     padding: 1em;
     width: 100%;
     margin-top: 5%;
+
+    a {
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .listItem {
@@ -47,6 +68,16 @@
     padding: 1em;
     width: 100%;
     margin-top: 5%;
+
+    a {
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .listItemLink {
@@ -76,7 +107,7 @@
     }
 
     .listItem {
-        width: 25%;
+        width: 33%;
         padding: 2%;
     }
 }
