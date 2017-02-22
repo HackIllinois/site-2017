@@ -18,8 +18,16 @@ class Landing extends Component {
                       <Navbar />
                       <Registration />
                   </div>
+                  <div className={styles.visual}>
+                      <div className={styles.bridgecontainer}>
+                          
+                          <div className={styles.miner}>
+                              <img src="src/assets/img/svg/guy.svg" />
+                          </div>
 
-                  <div className={styles.visual} />
+                          <img className={styles.bridge} src="src/assets/img/svg/bridge.svg" />
+                      </div>
+                  </div>
               </div>
 
               <div className={styles.container}>
