@@ -1,0 +1,104 @@
+.prizes-body-panel {
+  background-color: #E8EFF3;
+  margin-bottom: 1em;
+
+
+  .prizes-body-panel-header-1 {
+    cursor: pointer;
+    color: white;
+    background-color: #F6C960;
+    padding: 10px 30px;
+    position: relative;
+  }
+
+  .prizes-body-panel-header-2 {
+    cursor: pointer;
+    color: white;
+    background-color: #8A1838;
+    padding: 10px 30px;
+    position: relative;
+  }
+
+  .prizes-body-panel-header-3 {
+    cursor: pointer;
+    color: white;
+    background-color: #EE3065;
+    padding: 10px 30px;
+    position: relative;
+  }
+
+  .prizes-body-panel-header-4 {
+    cursor: pointer;
+    color: white;
+    background-color: #296773;
+    padding: 10px 30px;
+    position: relative;
+  }
+
+  .prizes-body-panel-header-5 {
+    cursor: pointer;
+    color: white;
+    background-color: #3B9BAD;
+    padding: 10px 30px;
+    position: relative;
+  }
+
+  .prizes-body-panel-header-6 {
+    cursor: pointer;
+    color: white;
+    background-color: #57C8E0;
+    padding: 10px 30px;
+    position: relative;
+  }
+
+  .prizes-body-panel-content {
+    //display: none;
+    padding: 10px 30px;
+  }
+
+  .prizes-body-panel-title {
+    font-weight: bold;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    display: inline;
+  }
+
+  .prizes-body-caret {
+    height: 1em;
+    margin-top: 15px;
+    position: absolute;
+    right: 15px;
+  }
+
+  .prizes-body-panel-content {
+    color: black;
+
+    .prizes-body-panel-content-title {
+      font-weight: bold;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      letter-spacing: 1px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    tr {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      border-collapse: collapse;
+      padding-left: 1em;
+
+    }
+
+    tr:nth-child(even) {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
