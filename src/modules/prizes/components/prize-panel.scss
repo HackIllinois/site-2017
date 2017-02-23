@@ -1,0 +1,87 @@
+.prizes-body-panel {
+  background-color: #E8EFF3;
+  margin-bottom: 1em;
+
+
+  .prizes-body-panel-header-1 {
+    cursor: pointer;
+    color: white;
+    padding: 10px 30px;
+    position: relative;
+  }
+
+  #header1 {
+    background-color: #F6C960;
+  }
+
+  #header2 {
+    background-color: #8A1838;
+  }
+
+  #header3 {
+    background-color: #EE3065;
+  }
+
+  #header4 {
+    background-color: #296773;
+  }
+
+  #header5 {
+    background-color: #808DC6;
+  }
+
+  #header6 {
+    background-color: #57C8E0;
+  }
+
+  .prizes-body-panel-content {
+    //display: none;
+    padding: 10px 30px;
+  }
+
+  .prizes-body-panel-title {
+    font-weight: bold;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    display: inline;
+  }
+
+  .prizes-body-caret {
+    height: 1em;
+    margin-top: 15px;
+    position: absolute;
+    right: 15px;
+  }
+
+  .prizes-body-panel-content {
+    color: black;
+
+    .prizes-body-panel-content-title {
+      font-weight: bold;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      letter-spacing: 1px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    tr {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      border-collapse: collapse;
+      padding-left: 1em;
+
+    }
+
+    tr:nth-child(even) {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
