@@ -1,0 +1,78 @@
+.prizes {
+  width: 100%;
+  position: relative;
+  padding-top: 2em;
+
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smooth: always;
+
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  .prizes-header {
+    text-align: center;
+
+    .prizes-header-logo {
+      width: 120px;
+      height: auto;
+    }
+
+    .prizes-header-title {
+      font-weight: bold;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      letter-spacing: 1px;
+    }
+
+    .prizes-header-subtitle {
+      color: #B8BDE0;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+  }
+
+  .prizes-footer {
+    text-align: center;
+    color: #B8BDE0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    h5 {
+      font-weight: 700;
+
+
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.prizes-body {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .prizes-body {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .prizes-body {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .prizes-body {
+    width: 1170px;
+  }
+}
