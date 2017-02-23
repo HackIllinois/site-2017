@@ -15,6 +15,7 @@ import Landing from './modules/landing'
 import Registration from './modules/registration'
 import Projects from './modules/projects'
 import Travel from './modules/travel'
+import Prizes from './modules/prizes'
 
 //registration sub-pages
 import Announcement from './modules/registration/announcement'
@@ -79,6 +80,7 @@ ReactDom.render(
 			<Route path='login' component={Login}/>
 			<Route path='reset' component={Reset}/>
 			<Route path='rsvp' component={RSVP}/>
+			<Route path='prizes' component={Prizes}/>
 			<Route path='travel' component={Travel}/>
 			<Route path='projects' component={Projects}/>
 		</Router>
