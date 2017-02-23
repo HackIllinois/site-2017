@@ -76,6 +76,7 @@ class RegistrationStore {
                            window.location.pathname != '/' && 
                            window.location.pathname != '/projects' &&
                            window.location.pathname != '/reset' &&
+                           window.location.pathname != '/prizes' &&
                            window.location.pathname != '/travel') window.location = '/rsvp'
                       }
 
