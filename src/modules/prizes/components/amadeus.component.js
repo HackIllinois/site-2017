@@ -20,7 +20,7 @@ class Amadeus extends Component {
     render = () => (
 
         <div className={styles['prizes-body-panel']}>
-            <div onClick={this.display} className={styles['prizes-body-panel-header-1']}>
+            <div id={styles.header1} onClick={this.display} className={styles['prizes-body-panel-header-1']}>
                 <h4 className={styles['prizes-body-panel-title']}>Amadeus</h4>
                 <img className={styles['prizes-body-caret']} src="src/assets/img/down-arrow.svg"/>
             </div>
@@ -28,7 +28,11 @@ class Amadeus extends Component {
             { this.state.showData ? <div id="content-1" className={styles['prizes-body-panel-content']}>
                 <br />
                 <h5 className={styles['prizes-body-panel-content-title']}>Prize Name</h5>
-                <h6 className={styles['prizes-body-panel-content-subtitle']}>Prize Description</h6>
+                <h6 className={styles['prizes-body-panel-content-subtitle']}>This category is for open source projects
+                    that seek to shape the future of travel. By making it easier to explore, plan an adventure, or
+                    bring a community together, this project makes it a Small World.
+                    <br/><br/>
+                    Presented by <a href="www.amadeus.com">Amadeus</a>. </h6>
                 <br />
             </div> : null }
         </div>

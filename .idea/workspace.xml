@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea562cf3-9342-49d5-a07b-1b7f825d933e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/1517.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/google.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/imo.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/1517.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/1517.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/google.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/google.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/imo.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/imo.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss" afterPath="$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/prizes.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/prizes.component.js" />
     </list>
     <ignored path="hackillinois-site.iws" />
@@ -38,59 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="capitalone.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js">
+      <file leaf-file-name="google.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/google.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="amadeus.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aarp.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1517.component.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/1517.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="facebook.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -101,8 +52,8 @@
       <file leaf-file-name="firebase.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -110,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fulcrum.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js">
+      <file leaf-file-name="amadeus.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -122,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="google.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/google.component.js">
+      <file leaf-file-name="facebook.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -134,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="makeschool.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js">
+      <file leaf-file-name="johndeere.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -146,11 +97,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="microsoft.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js">
+      <file leaf-file-name="capitalone.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twilio.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1517.component.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/1517.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="imo.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/imo.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aarp.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -186,21 +185,21 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/modules/prizes/prizes.scss" />
         <option value="$PROJECT_DIR$/src/modules/registration/stores/index.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/prizes.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/imo.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/google.component.js" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/imo.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/google.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/1517.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/prizes.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/1517.component.js" />
       </list>
     </option>
   </component>
@@ -591,12 +590,12 @@
       <workItem from="1487546225435" duration="739000" />
       <workItem from="1487733775029" duration="7873000" />
       <workItem from="1487742557747" duration="1217000" />
-      <workItem from="1487874797663" duration="5261000" />
+      <workItem from="1487874797663" duration="8815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60424000" />
+    <option name="totallyTimeSpent" value="63978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -873,7 +872,7 @@
         <state relative-caret-position="374">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -896,11 +895,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss">
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -914,48 +915,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/prizes/prizes.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/imo.component.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -964,68 +943,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/google.component.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/imo.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -1034,8 +963,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/google.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -1044,8 +1043,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/1517.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        <state relative-caret-position="510">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

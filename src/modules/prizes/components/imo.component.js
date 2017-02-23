@@ -20,15 +20,21 @@ class IMO extends Component {
     render = () => (
 
         <div className={styles['prizes-body-panel']}>
-            <div onClick={this.display} className={styles['prizes-body-panel-header-1']}>
+            <div id={styles.header3} onClick={this.display} className={styles['prizes-body-panel-header-1']}>
                 <h4 className={styles['prizes-body-panel-title']}>IMO</h4>
                 <img className={styles['prizes-body-caret']} src="src/assets/img/down-arrow.svg"/>
             </div>
 
             { this.state.showData ? <div id="content-1" className={styles['prizes-body-panel-content']}>
                 <br />
-                <h5 className={styles['prizes-body-panel-content-title']}>Prize Name</h5>
-                <h6 className={styles['prizes-body-panel-content-subtitle']}>Prize Description</h6>
+                <h5 className={styles['prizes-body-panel-content-title']}>Health and Wellness</h5>
+                <h6 className={styles['prizes-body-panel-content-subtitle']}>
+                    Open source projects in this category are focused on improving people's health and lifestyle.
+
+                    Bring some love into the world. &lt;3
+                    <br /><br />
+                    Presented by <a href="https://www.e-imo.com/">IMO</a>.
+                </h6>
                 <br />
             </div> : null }
         </div>

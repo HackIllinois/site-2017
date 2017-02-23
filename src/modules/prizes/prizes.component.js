@@ -22,7 +22,7 @@ class Prizes extends Component {
         <div className={styles['prizes']}>
             <div className={styles['prizes-header']}>
 
-                <img className={styles['prizes-header-logo']} src="src/assets/img/svg/landing-logo.svg" /> <br/><br />
+                <a href="http://hackillinois.org"><img className={styles['prizes-header-logo']} src="src/assets/img/svg/landing-logo.svg" /></a> <br/><br />
                 <h3 className={styles['prizes-header-title']}>Prizes</h3>
                 <h5 className={styles['prizes-header-subtitle']}>The following prizes will be awarded at HackIllinois 2017:</h5>
                 <br />

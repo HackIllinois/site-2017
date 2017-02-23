@@ -20,15 +20,18 @@ class MakeSchool extends Component {
     render = () => (
 
         <div className={styles['prizes-body-panel']}>
-            <div onClick={this.display} className={styles['prizes-body-panel-header-1']}>
+            <div id={styles.header1} onClick={this.display} className={styles['prizes-body-panel-header-1']}>
                 <h4 className={styles['prizes-body-panel-title']}>Make School</h4>
                 <img className={styles['prizes-body-caret']} src="src/assets/img/down-arrow.svg"/>
             </div>
 
             { this.state.showData ? <div id="content-1" className={styles['prizes-body-panel-content']}>
                 <br />
-                <h5 className={styles['prizes-body-panel-content-title']}>Prize Name</h5>
-                <h6 className={styles['prizes-body-panel-content-subtitle']}>Prize Description</h6>
+                <h5 className={styles['prizes-body-panel-content-title']}>Make School Scholarship</h5>
+                <h6 className={styles['prizes-body-panel-content-subtitle']}>This prize will awarded to the team that works on Make School's favorite contribution.
+
+                <br/><br/>
+                Presented by <a href="https://www.makeschool.com/">Make School</a>.</h6>
                 <br />
             </div> : null }
         </div>

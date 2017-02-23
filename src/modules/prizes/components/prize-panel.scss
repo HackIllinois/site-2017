@@ -6,49 +6,32 @@
   .prizes-body-panel-header-1 {
     cursor: pointer;
     color: white;
+    padding: 10px 30px;
+    position: relative;
+  }
+
+  #header1 {
     background-color: #F6C960;
-    padding: 10px 30px;
-    position: relative;
   }
 
-  .prizes-body-panel-header-2 {
-    cursor: pointer;
-    color: white;
+  #header2 {
     background-color: #8A1838;
-    padding: 10px 30px;
-    position: relative;
   }
 
-  .prizes-body-panel-header-3 {
-    cursor: pointer;
-    color: white;
+  #header3 {
     background-color: #EE3065;
-    padding: 10px 30px;
-    position: relative;
   }
 
-  .prizes-body-panel-header-4 {
-    cursor: pointer;
-    color: white;
+  #header4 {
     background-color: #296773;
-    padding: 10px 30px;
-    position: relative;
   }
 
-  .prizes-body-panel-header-5 {
-    cursor: pointer;
-    color: white;
-    background-color: #3B9BAD;
-    padding: 10px 30px;
-    position: relative;
+  #header5 {
+    background-color: #808DC6;
   }
 
-  .prizes-body-panel-header-6 {
-    cursor: pointer;
-    color: white;
+  #header6 {
     background-color: #57C8E0;
-    padding: 10px 30px;
-    position: relative;
   }
 
   .prizes-body-panel-content {
