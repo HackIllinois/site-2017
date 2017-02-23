@@ -15,7 +15,6 @@ class FAQ extends Component {
             {question: "WHO DO I CONTACT FOR HELP?", answer: "Mentors from leading technology companies will be on-hand to provide support and troubleshoot problems in both the CREATE and CONTRIBUTE tracks. We also encourage all attendees to help each other!"},
             {question: "WHERE DO I SLEEP?", answer: "Sleeping rooms will be furnished with air mattresses and pillows. We want you to be comfortable!"},
             {question: "WILL YOU HAVE HARDWARE?", answer: "We'll have high-level hardware provided by companies. We'll also have basic hardware components like resistors, transistors, and ICs, as well as wood, building materials, and power tools for you to tinker with."},
-            {question: "WHAT ARE THE PRIZES?", answer: "We will release details about prizes and judging soon."},
         ];
 
         let listItems = faqs.map( (item) => {
@@ -43,6 +42,13 @@ class FAQ extends Component {
                     </div>
 
                     {listItems}
+
+                    <div key='prize_info' className={styles['faq-content-item']}>
+                        <h5 className={styles['faq-content-item-title']}>
+                            WHAT ARE THE PRIZES?
+                        </h5>
+                        <h6 className={styles['faq-content-item-subtitle']}>You can see all potential prizes and prize criteria here: <a href='https://hackillinois.org/prizes'>https://hackillinois.org/prizes.</a></h6>
+                    </div>
 
                     <div key='projects_info' className={styles['faq-content-item']}>
                         <h5 className={styles['faq-content-item-title']}>
