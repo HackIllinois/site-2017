@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea562cf3-9342-49d5-a07b-1b7f825d933e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/1517.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/1517.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/amadeus.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/capitalone.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/google.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/google.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/imo.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/imo.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/johndeere.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/makeschool.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss" afterPath="$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/components/twilio.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/prizes/prizes.component.js" afterPath="$PROJECT_DIR$/src/modules/prizes/prizes.component.js" />
     </list>
     <ignored path="hackillinois-site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +23,7 @@
     <favorites_list name="hackillinois-site" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="google.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/google.component.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -121,7 +108,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1517.component.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="1517.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/1517.component.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
@@ -133,11 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="imo.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/imo.component.js">
+      <file leaf-file-name="microsoft.component.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+            <state relative-caret-position="595">
+              <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -186,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/modules/prizes/prizes.scss" />
         <option value="$PROJECT_DIR$/src/modules/registration/stores/index.js" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js" />
-        <option value="$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/imo.component.js" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/aarp.component.js" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/google.component.js" />
@@ -200,6 +186,7 @@
         <option value="$PROJECT_DIR$/src/modules/prizes/components/prize-panel.scss" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/firebase.component.js" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/facebook.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js" />
       </list>
     </option>
   </component>
@@ -242,6 +229,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -500,8 +489,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -591,11 +578,12 @@
       <workItem from="1487733775029" duration="7873000" />
       <workItem from="1487742557747" duration="1217000" />
       <workItem from="1487874797663" duration="8815000" />
+      <workItem from="1487889101531" duration="88000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63978000" />
+    <option name="totallyTimeSpent" value="64066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -606,18 +594,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -781,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -812,10 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
           <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-            <element signature="e#174#211#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -823,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,7 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="56" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,9 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,9 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,16 +900,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/fulcrum.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
@@ -1045,6 +1003,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/microsoft.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

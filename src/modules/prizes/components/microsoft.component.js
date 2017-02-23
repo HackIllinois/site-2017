@@ -31,7 +31,9 @@ class Microsoft extends Component {
                 <h6 className={styles['prizes-body-panel-content-subtitle']}>
                     This category is for open source projects that fill a gap in an existing technology or tool.
                     An example of a project in this category is stdx, a library that provides the missing batteries
-                    of Rust. When life serves you puzzles, you’ll create The Missing Piece.<br /><br />
+                    of Rust. When life serves you puzzles, you'll create The Missing Piece.
+                    This prize celebrates open source projects that extend or are built with Microsoft technology.
+                    Some Microsoft technologies include, Azure, HoloLens, and Cognitive Services.<br /><br />
                     Presented by <a href="https://www.microsoft.com/en-us/">Microsoft</a>.
                 </h6>
                 <br />
