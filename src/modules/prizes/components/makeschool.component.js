@@ -21,17 +21,17 @@ class MakeSchool extends Component {
 
         <div className={styles['prizes-body-panel']}>
             <div id={styles.header1} onClick={this.display} className={styles['prizes-body-panel-header-1']}>
-                <h4 className={styles['prizes-body-panel-title']}>Make School</h4>
+                <h4 className={styles['prizes-body-panel-title']}>Make School Scholarship</h4>
                 <img className={styles['prizes-body-caret']} src="src/assets/img/down-arrow.svg"/>
             </div>
 
             { this.state.showData ? <div id="content-1" className={styles['prizes-body-panel-content']}>
                 <br />
-                <h5 className={styles['prizes-body-panel-content-title']}>Make School Scholarship</h5>
-                <h6 className={styles['prizes-body-panel-content-subtitle']}>This prize will awarded to the team that works on Make School's favorite contribution.
+                <h5 className={styles['prizes-body-panel-content-subtitle']}>This prize will awarded to the team that works on Make School's favorite contribution.
 
                 <br/><br/>
-                Presented by <a href="https://www.makeschool.com/">Make School</a>.</h6>
+                </h5>
+                <h4>Presented by <a href="https://www.makeschool.com/">Make School</a>.</h4>
                 <br />
             </div> : null }
         </div>

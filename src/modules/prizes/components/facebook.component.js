@@ -21,14 +21,13 @@ class Facebook extends Component {
 
         <div className={styles['prizes-body-panel']}>
             <div id={styles.header2} onClick={this.display} className={styles['prizes-body-panel-header-1']}>
-                <h4 className={styles['prizes-body-panel-title']}>Facebook</h4>
+                <h4 className={styles['prizes-body-panel-title']}>Facebook's Favorite</h4>
                 <img className={styles['prizes-body-caret']} src="src/assets/img/down-arrow.svg"/>
             </div>
 
             { this.state.showData ? <div id="content-1" className={styles['prizes-body-panel-content']}>
                 <br />
-                <h5 className={styles['prizes-body-panel-content-title']}>Facebook's Favorite</h5>
-                <h6 className={styles['prizes-body-panel-content-subtitle']}>Presented by <a href="https://facebook.com">Facebook</a>.</h6>
+                <h4 className={styles['prizes-body-panel-content-subtitle']}>Presented by <a href="https://facebook.com">Facebook</a>.</h4>
                 <br />
 
             </div> : null }
