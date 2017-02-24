@@ -31,7 +31,7 @@ class AARP extends Component {
                 <h6 className={styles['prizes-body-panel-content-subtitle']}>
                     This category is a prize for projects which help enable caregivers and improve the quality of
                     life for seniors everywhere. An example could include developing an online caregiver marketplace.
-
+                    <a href="https://docs.google.com/document/d/1KJsfMf5cSHaokXdPPCNZ2mc5mbu6yAn1WphHkKlTe0s/edit?usp=sharing">  Prize Full Description here.</a>
                     <br /><br />
                     Presented by <a href="http://www.aarp.org/">AARP</a>.
                 </h6>
