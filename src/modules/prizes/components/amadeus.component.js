@@ -27,7 +27,7 @@ class Amadeus extends Component {
 
             { this.state.showData ? <div id="content-1" className={styles['prizes-body-panel-content']}>
                 <br />
-                <h5 className={styles['prizes-body-panel-content-title']}>Prize Name</h5>
+                <h5 className={styles['prizes-body-panel-content-title']}>Small World</h5>
                 <h6 className={styles['prizes-body-panel-content-subtitle']}>This category is for open source projects
                     that seek to shape the future of travel. By making it easier to explore, plan an adventure, or
                     bring a community together, this project makes it a Small World.
