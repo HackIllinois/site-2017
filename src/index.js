@@ -9,6 +9,7 @@ import RegistrationStore from './modules/registration/stores'
 import LoginStore from './modules/registration/stores/loginStore'
 import ResetStore from './modules/registration/stores/resetStore'
 import RSVPStore from './modules/registration/stores/rsvpStore'
+import DashboardStore from './modules/dashboard/dashboard.store'
 
 import App from './modules/app'
 import Landing from './modules/landing'
@@ -60,7 +61,7 @@ const Schedule = () => {
 const root = document.getElementById("app")
 
 ReactDom.render(
-	<Provider rsvpStore={RSVPStore} resetStore={ResetStore} loginStore={LoginStore} store={RegistrationStore}>
+	<Provider dashboardStore={DashboardStore} rsvpStore={RSVPStore} resetStore={ResetStore} loginStore={LoginStore} store={RegistrationStore}>
 		<Router history={browserHistory}>
 			<Route path='/' component={App}>
 				<IndexRoute component={Landing}/>
