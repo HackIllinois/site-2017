@@ -34,7 +34,7 @@ class Microsoft extends Component {
                     This prize celebrates open source projects that extend or are built with Microsoft technology.
                     Some Microsoft technologies include, Azure, HoloLens, and Cognitive Services.<br /><br />
                 </h5>
-                <h4>Presented by <a href="https://www.microsoft.com/en-us/">Microsoft</a>.</h4>
+                <h5>Presented by <a href="https://www.microsoft.com/en-us/">Microsoft</a>.</h5>
                 
                 <br />
             </div> : null }

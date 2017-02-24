@@ -32,7 +32,7 @@ class Google extends Component {
                     home automation, and more. In an era full of life hacks, this category rewards Everyday Usefulness.
                     <br /><br />
                 </h5>
-                    <h4>Presented by <a href="https://google.com/">Google</a>.</h4>
+                    <h5>Presented by <a href="https://google.com/">Google</a>.</h5>
                 <br />
             </div> : null }
         </div>

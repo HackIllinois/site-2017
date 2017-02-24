@@ -33,7 +33,7 @@ class One517 extends Component {
                     they'd like to bring to market.
 
                 <br/><br/></h5>
-                <h4>Presented by <a href="http://www.1517fund.com/">1517</a>.</h4>
+                <h5>Presented by <a href="http://www.1517fund.com/">1517</a>.</h5>
                 <br />
             </div> : null }
         </div>

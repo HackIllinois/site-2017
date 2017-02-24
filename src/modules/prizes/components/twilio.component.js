@@ -34,7 +34,7 @@ class Twilio extends Component {
 
                     <br/><br/>
                 </h5>
-                    <h4>Presented by <a href="https://www.twilio.com/">Twilio</a>.</h4>
+                    <h5>Presented by <a href="https://www.twilio.com/">Twilio</a>.</h5>
                 <br />
             </div> : null }
         </div>
