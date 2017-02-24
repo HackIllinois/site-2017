@@ -27,7 +27,7 @@ class Facebook extends Component {
 
             { this.state.showData ? <div id="content-1" className={styles['prizes-body-panel-content']}>
                 <br />
-                <h4 className={styles['prizes-body-panel-content-subtitle']}>Presented by <a href="https://facebook.com">Facebook</a>.</h4>
+                <h5 className={styles['prizes-body-panel-content-subtitle']}>Presented by <a href="https://facebook.com">Facebook</a>.</h5>
                 <br />
 
             </div> : null }
