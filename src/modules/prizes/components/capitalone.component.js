@@ -28,8 +28,8 @@ class CapitalOne extends Component {
             { this.state.showData ? <div id="content-1" className={styles['prizes-body-panel-content']}>
                 <br />
                 <h5 className={styles['prizes-body-panel-content-subtitle']}>
-                    This category of prize is for projects which make financial markets easier to access for the common
-                    person.  An example could include a toolkit to visualize market data into easily readable
+                    This category is for projects which make financial markets and information easier to access and understand for the average customer. 
+                    An example could include a toolkit to visualize market data into easily readable
                     information.
                 </h5>
                 <br/><br/>
