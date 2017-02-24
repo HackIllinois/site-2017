@@ -33,7 +33,7 @@ class IMO extends Component {
                     Bring some love into the world. &lt;3
                     <br /><br />
                 </h5>
-                    <h4>Presented by <a href="https://www.e-imo.com/">IMO</a>.</h4>
+                    <h5>Presented by <a href="https://www.e-imo.com/">IMO</a>.</h5>
                 <br />
             </div> : null }
         </div>

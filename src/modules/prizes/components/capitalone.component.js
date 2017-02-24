@@ -33,7 +33,7 @@ class CapitalOne extends Component {
                     information.
                 </h5>
                 <br/><br/>
-                <h4>Presented by <a href="https://www.capitalone.com/">Capital One</a>.</h4>
+                <h5>Presented by <a href="https://www.capitalone.com/">Capital One</a>.</h5>
                 <br />
             </div> : null }
         </div>

@@ -33,7 +33,7 @@ class Firebase extends Component {
                     powered by Firebase.
                     <br /><br />
                 </h5>
-                    <h4>Presented by <a href="https://firebase.google.com/">Firebase</a>.</h4>
+                    <h5>Presented by <a href="https://firebase.google.com/">Firebase</a>.</h5>
                 <br />
             </div> : null }
         </div>

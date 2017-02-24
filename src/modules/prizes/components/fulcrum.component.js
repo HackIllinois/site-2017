@@ -32,7 +32,7 @@ class Fulcrum extends Component {
                     'Best Automation with a Human-Centric Component'.
                     <br /><br />
                 </h5>
-                    <h4>Presented by <a href="http://fulcrum-gt.com/">Fulcrum-GT</a>.</h4>
+                    <h5>Presented by <a href="http://fulcrum-gt.com/">Fulcrum-GT</a>.</h5>
                 <br />
             </div> : null }
         </div>

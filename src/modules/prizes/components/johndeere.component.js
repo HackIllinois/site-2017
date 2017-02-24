@@ -34,7 +34,7 @@ class JohnDeere extends Component {
                     tools for sustainable forestry.
                     <br /><br/>
                 </h5>
-                    <h4>Presented by <a href="https://www.deere.com/en_US/regional_home.page">John Deere</a>.</h4>
+                    <h5>Presented by <a href="https://www.deere.com/en_US/regional_home.page">John Deere</a>.</h5>
                 <br />
             </div> : null }
         </div>
