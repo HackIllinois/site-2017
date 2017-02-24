@@ -1,19 +1,43 @@
-/*
-.dashboard-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../../assets/img/svg/TV_background.svg');
-}
-
-.dashboard {
-    width: 100%;
-    height: 100vw;
-    background-image: url('../../assets/img/svg/TV_background.svg');
-}
-*/
 body {
 	background-image: none;
+}
+
+.event-container {
+	width: 348px;
+	height: 186.5px;
+	background-color: rgb(29,48,94);
+	border-radius: 2.5pt;
+}
+
+.schedule-header {
+	font-family: 'Gotham-Regular';
+	font-size: 10pt;
+	color: rgb(241,249,253);
+	height: 22.5px;
+	background-color: rgb(128,140,197);
+}
+
+.sub-event-header {
+	height: 22.5px;
+	background-color: rgb(78,93,148);
+	font-family: 'Gotham-Medium';
+	font-size: 10pt;
+	color: rgb(241,249,253);
+}
+
+.normal-sponsor {
+	width: 150px;
+	height: 70px;
+}
+
+.fulcrum-sponsor {
+	width: 425px;
+	height: 81px;
+}
+
+
+.sponsors-container {
+	width: 500px;
 }
 
 .dashboard {
