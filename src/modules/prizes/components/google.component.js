@@ -21,18 +21,18 @@ class Google extends Component {
 
         <div className={styles['prizes-body-panel']}>
             <div id={styles.header5} onClick={this.display} className={styles['prizes-body-panel-header-1']}>
-                <h4 className={styles['prizes-body-panel-title']}>Google</h4>
+                <h4 className={styles['prizes-body-panel-title']}>Everyday Usefulness</h4>
                 <img className={styles['prizes-body-caret']} src="src/assets/img/down-arrow.svg"/>
             </div>
 
             { this.state.showData ? <div id="content-1" className={styles['prizes-body-panel-content']}>
                 <br />
-                <h5 className={styles['prizes-body-panel-content-title']}>Everyday Usefulness</h5>
-                <h6 className={styles['prizes-body-panel-content-subtitle']}>
+                <h5 className={styles['prizes-body-panel-content-subtitle']}>
                     Open source projects in this category improve daily life and include projects in health and wellness,
                     home automation, and more. In an era full of life hacks, this category rewards Everyday Usefulness.
                     <br /><br />
-                    Presented by <a href="https://google.com/">Google</a>.</h6>
+                </h5>
+                    <h4>Presented by <a href="https://google.com/">Google</a>.</h4>
                 <br />
             </div> : null }
         </div>
