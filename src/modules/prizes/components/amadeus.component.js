@@ -32,7 +32,7 @@ class Amadeus extends Component {
                     bring a community together, this project makes it a Small World.
                     <br/><br/>
                 </h5>
-                    <h4>Presented by <a href="www.amadeus.com">Amadeus</a>. </h4>
+                    <h4>Presented by <a href="https://amadeus.com">Amadeus</a></h4>
                 <br />
             </div> : null }
         </div>
