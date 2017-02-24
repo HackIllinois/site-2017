@@ -31,7 +31,7 @@ class MakeSchool extends Component {
 
                 <br/><br/>
                 </h5>
-                <h4>Presented by <a href="https://www.makeschool.com/">Make School</a>.</h4>
+                <h5>Presented by <a href="https://www.makeschool.com/">Make School</a>.</h5>
                 <br />
             </div> : null }
         </div>
