@@ -1,3 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.judging {
+  //font-family: 'Montserrat', sans-serif;
+  //font-family: 'Open Sans', sans-serif;
+  font-family: 'Brandon-Regular', sans-serif;
+
+  .judging-header {
+    padding-top: 5em;
+    text-align: center;
+    .judging-header-logo {
+      width: 120px;
+      height: auto;
+    }
+
+  }
+
+
+  .judging-title {
+    font-family: 'Gotham-Medium', sans-serif;
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+    text-align: center;
+  }
+
+  .judging-subtitle {
+    text-align: center;
+    color: #b7bcdf;
+  }
+
+  #time {
+    color: #dd5926;
+  }
+
+  .judging-body-title {
+    font-family: 'Gotham-Medium', sans-serif;
+    text-transform: lowercase;
+    font-variant: small-caps;
+  }
+
+  .judging-types {
+    display: flex;
+    margin: 1em;
+
+    .judging-types-cell {
+      flex-grow: 1;
+      flex-basis: 25%;
+      text-align: center;
+
+      .judging-types-cell-icon {
+        margin: 0 auto;
+        background-color: white;
+        width: 10%;
+        height: 10%;
+        min-width: 50px;
+        min-height: 50px;
+        border-radius: 100%;
+      }
+
+      #type1 {
+        background-color: #57c7df;
+      }
+
+      #type2 {
+        background-color: #f6c860;
+      }
+
+      #type3 {
+        background-color: #f4835a;
+      }
+
+      #type4 {
+        background-color: #f4835a;
+      }
+
+    }
+  }
+
+  .judging-contribute {
+
+    .judging-contribute-cell-container {
+      display: flex;
+
+      .judging-contribute-cell {
+        flex-basis: 33%;
+        flex-grow: 1;
+        flex-shrink: 1;
+
+        .judging-contribute-cell-title {
+          color: #57c7df;
+          font-family: 'Gotham-Medium', sans-serif;
+          font-weight: bold;
+          text-transform: lowercase;
+          font-variant: small-caps;
+        }
+
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      border: none;
+    }
+
+    .contribute-table-title {
+
+    }
+
+    th {
+      border-collapse: collapse;
+      border: none;
+      background: rgba(78, 93, 149, 0.5);
+      padding: 1em;
+
+      font-weight: bold;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      font-family: 'Gotham-Medium', sans-serif;
+
+      h3 {
+      }
+    }
+
+    tr {
+      border-collapse: collapse;
+      border: none;
+      padding: 1em;
+    }
+
+    tr:nth-child(odd) {background: rgba(78, 93, 149, 0.5)}
+
+    tr:nth-child(even) {background: rgba(29, 48, 94, 0)}
+
+
+
+    td {
+      border-collapse: collapse;
+      border: none;
+      padding: 1em;
+    }
+
+    #row1 {
+      color: #57c7df;
+    }
+
+    #row2 {
+      color: #57c7df;
+    }
+
+    #row3 {
+      color: #57c7df;
+    }
+
+    #row4 {
+      color: #57c7df;
+
+
+    }
+  }
+
+  .judging-body-title {
+    margin-top: 2em;
+    font-family: 'Gotham-Medium', sans-serif;
+  }
+
+  .judging-create {
+    margin-bottom: 10em;
+  }
+
+  .judging-footer {
+    text-align: center;
+    color: #B8BDE0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    h5 {
+      font-weight: 700;
+    }
+  }
+
+}
+
+
+
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
