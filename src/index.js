@@ -27,6 +27,7 @@ import Success from './modules/registration/success'
 import Login from './modules/registration/login'
 import Reset from './modules/registration/reset'
 import RSVP from './modules/registration/rsvp'
+import Dashboard from './modules/dashboard'
 
 //PDFs
 const OpenSource = () => {
@@ -83,6 +84,7 @@ ReactDom.render(
 			<Route path='prizes' component={Prizes}/>
 			<Route path='travel' component={Travel}/>
 			<Route path='projects' component={Projects}/>
+			<Route path='dashboard' component={Dashboard}/>
 		</Router>
 	</Provider>
 		, root)
