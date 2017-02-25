@@ -48,7 +48,7 @@ class Registration extends Component {
                     Co-hosted by <a href="http://fulcrum-gt.com/">Fulcrum</a>
                 </div>
                 <div className={styles.register}>
-                <Button id="register-button" register={true} dest='/login' label='LOGIN' />
+                <Button id="register-button" register={true} dest='/dayof' label='DAY OF' />
                 <Button id="schedule-button" register={false} dest='/schedule' label='VIEW SCHEDULE' />
                 </div>
             </div>
