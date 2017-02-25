@@ -15,6 +15,9 @@ body {
 	color: rgb(241,249,253);
 	height: 22.5px;
 	background-color: rgb(128,140,197);
+	border-top-right-radius: 2.5pt;
+	border-top-left-radius: 2.5pt;
+
 }
 
 .sub-event-header {
@@ -23,6 +26,11 @@ body {
 	font-family: 'Gotham-Medium';
 	font-size: 10pt;
 	color: rgb(241,249,253);
+}
+
+.feed {
+	height: 322px;
+	overflow: hidden;
 }
 
 .normal-sponsor {

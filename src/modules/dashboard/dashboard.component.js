@@ -61,9 +61,12 @@ class Sponsors extends Component {
 
 class TwitterTimeline extends Component {
 	render = () => (
-    <div>
+    <div className={styles['event-container']}>
+    	<div className={styles['schedule-header']}> TWITTER FEED </div>
+        <div className={styles['feed']}>
         <a className="twitter-timeline" href="https://twitter.com/HackIllinois">Tweets by HackIllinois</a>
-        <script async src="http://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+     		</div>
+        
     </div>
 	)
 }
