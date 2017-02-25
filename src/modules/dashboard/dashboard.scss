@@ -2,11 +2,31 @@ body {
 	background-image: none;
 }
 
+.col1 {
+	width: 480px;
+	float: left;
+	position: relative;
+	top: 113.5px;
+	left: 80px;
+}
+
+.col2 {
+	position: relative;
+	top: 113.5px;
+	width: 480px;
+	float: right;
+}
+
+.text {
+	padding-left: 5px;
+}
+
 .event-container {
 	width: 348px;
 	height: 186.5px;
 	background-color: rgb(29,48,94);
 	border-radius: 2.5pt;
+	margin: 20px 0;
 }
 
 .schedule-header {
@@ -17,6 +37,7 @@ body {
 	background-color: rgb(128,140,197);
 	border-top-right-radius: 2.5pt;
 	border-top-left-radius: 2.5pt;
+	
 
 }
 
@@ -29,7 +50,7 @@ body {
 }
 
 .feed {
-	height: 322px;
+	height: 200px;
 	overflow: hidden;
 }
 
@@ -56,8 +77,6 @@ body {
 }
 
 .clock-container {
-	position: relative;
-	top: calc(100vh - 60%);
 	height: 200px;
 	width: 500px;
 	display: block; 

@@ -11,10 +11,14 @@ const sponsors3 = ['akunacapital', 'amadeus', 'aarp', 'at_t', 'bitovi', 'bmo', '
 class Dashboard extends Component {
   render = () => (
       <div className={styles['dashboard']}>
-      <Clock />
-      <Events />
-      <Sponsors/>
-      <TwitterTimeline/>
+	      <div className={styles['col1']}>
+		      <Clock />
+		      <Sponsors/>
+	      </div>
+	      <div className={styles['col2']}>
+	      	<Events />
+		      <TwitterTimeline/>
+	      </div>
       </div>
   )
 }
@@ -37,9 +41,9 @@ class Clock extends Component  {
 class Events extends Component {
 	render = () => (
 		<div className={styles['event-container']}>
-			<div className={styles['schedule-header']}> SCHEDULE </div>
-			<div className={styles['sub-event-header']}> Happening Now </div>
-			<div className={styles['sub-event-header']}> Upcoming </div>
+			<div className={styles['schedule-header']}> <span className={styles.text}> SCHEDULE </span> </div>
+			<div className={styles['sub-event-header']}> <span className={styles.text}> Happening Now </span> </div>
+			<div className={styles['sub-event-header']}> <span className={styles.text}> Upcoming </span> </div>
 			<div> </div>
 		</div>
 	)
@@ -62,7 +66,7 @@ class Sponsors extends Component {
 class TwitterTimeline extends Component {
 	render = () => (
     <div className={styles['event-container']}>
-    	<div className={styles['schedule-header']}> TWITTER FEED </div>
+    	<div className={styles['schedule-header']}> <span className={styles.text}> TWITTER FEED </span> </div>
         <div className={styles['feed']}>
         <a className="twitter-timeline" href="https://twitter.com/HackIllinois">Tweets by HackIllinois</a>
      		</div>
