@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea562cf3-9342-49d5-a07b-1b7f825d933e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/landing/registration.component.js" afterPath="$PROJECT_DIR$/src/modules/landing/registration.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/dayof/dayof.scss" afterPath="$PROJECT_DIR$/src/modules/dayof/dayof.scss" />
     </list>
     <ignored path="hackillinois-site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,28 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hackathonhacker.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/hackathonhacker.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="google.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/prizes/components/google.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="34" column="83" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/prizes/index.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -59,7 +37,7 @@
       <file leaf-file-name="prizes.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/prizes/prizes.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
+            <state relative-caret-position="170">
               <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -71,8 +49,28 @@
       <file leaf-file-name="landing.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/landing/landing.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="452">
+              <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dayof.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="519">
+              <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dayof.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -90,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.component.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registration.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/landing/registration.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="681">
-              <caret line="50" column="61" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
+            <state relative-caret-position="273">
+              <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -105,7 +103,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/registration/stores/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
+            <state relative-caret-position="1836">
               <caret line="111" column="167" selection-start-line="111" selection-start-column="167" selection-end-line="111" selection-end-column="167" />
               <folding />
             </state>
@@ -172,7 +170,6 @@
         <option value="$PROJECT_DIR$/src/modules/dayof/index.js" />
         <option value="$PROJECT_DIR$/src/modules/registration/ecosystems/ecosystems.scss" />
         <option value="$PROJECT_DIR$/src/modules/prizes/prizes.scss" />
-        <option value="$PROJECT_DIR$/src/modules/dayof/dayof.scss" />
         <option value="$PROJECT_DIR$/src/modules/maps/index.js" />
         <option value="$PROJECT_DIR$/src/modules/maps/maps.scss" />
         <option value="$PROJECT_DIR$/src/modules/maps/components/map-panel.scss" />
@@ -191,6 +188,7 @@
         <option value="$PROJECT_DIR$/src/modules/prizes/components/longcon.component.js" />
         <option value="$PROJECT_DIR$/src/modules/prizes/components/hackathonhacker.component.js" />
         <option value="$PROJECT_DIR$/src/modules/landing/registration.component.js" />
+        <option value="$PROJECT_DIR$/src/modules/dayof/dayof.scss" />
       </list>
     </option>
   </component>
@@ -233,8 +231,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -583,12 +581,13 @@
       <workItem from="1487956311785" duration="7200000" />
       <workItem from="1487980329549" duration="2289000" />
       <workItem from="1487985803433" duration="1574000" />
-      <workItem from="1487995913908" duration="148000" />
+      <workItem from="1487995913908" duration="175000" />
+      <workItem from="1488046215290" duration="879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87388000" />
+    <option name="totallyTimeSpent" value="88294000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -734,7 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.scss" />
     <entry file="file://$PROJECT_DIR$/src/modules/registration/ecosystems/ecosystems.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1105">
@@ -854,13 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/dayof/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -886,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="93" column="51" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,9 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -942,7 +929,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/prizes/prizes.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="170">
           <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
@@ -950,17 +937,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/landing/landing.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/registration/stores/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
+        <state relative-caret-position="1836">
           <caret line="111" column="167" selection-start-line="111" selection-start-column="167" selection-end-line="111" selection-end-column="167" />
           <folding />
         </state>
@@ -982,6 +961,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/landing/registration.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/landing/landing.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -992,13 +981,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/landing/registration.component.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/landing/landing.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="50" column="61" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="452">
+          <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
