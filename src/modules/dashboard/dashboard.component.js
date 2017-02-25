@@ -12,6 +12,7 @@ class Dashboard extends Component {
   render = () => (
       <div className={styles['dashboard']}>
       <Sponsors/>
+      <TwitterTimeline/>
       </div>
   )
 }
@@ -44,10 +45,19 @@ class Events extends Component {
 
 class Sponsors extends Component {
 	render = () => (
-		<div className={styles['sponsors-container']}> 
+		<div className={styles['sponsors-container']}>
 		{sponsors2.map((s) => (<img className={s == 'fulcrum' ?  styles['fulcrum-sponsor'] : styles['normal-sponsor']} src={'../src/assets/img/svg/sponsors/' + s + '.svg'} />))}
 		</div>
 	)
 
-	
+
+}
+
+class TwitterTimeline extends Component {
+	render = () => (
+    <div>
+        <a className="twitter-timeline" href="https://twitter.com/HackIllinois">Tweets by HackIllinois</a>
+        <script async src="http://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+    </div>
+	)
 }
