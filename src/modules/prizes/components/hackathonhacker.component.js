@@ -20,7 +20,7 @@ class HackathonHacker extends Component {
     render = () => (
 
         <div className={styles['prizes-body-panel']}>
-            <div id={styles.header4} onClick={this.display} className={styles['prizes-body-panel-header-1']}>
+            <div id={styles.header2} onClick={this.display} className={styles['prizes-body-panel-header-1']}>
                 <h4 className={styles['prizes-body-panel-title']}>The Hackathon Hacker</h4>
                 <img className={styles['prizes-body-caret']} src="src/assets/img/down-arrow.svg"/>
             </div>

@@ -15,6 +15,7 @@ import MakeSchool from './components/makeschool.component'
 import Microsoft from './components/microsoft.component'
 import Twilio from './components/twilio.component'
 import HackathonHacker from './components/hackathonhacker.component'
+import LongCon from './components/longcon.component'
 
 import styles from './prizes.scss'
 
@@ -45,6 +46,7 @@ class Prizes extends Component {
                 <One517 />
                 <MakeSchool />
                 <HackathonHacker />
+                <LongCon />
             </div>
             
             <br />
