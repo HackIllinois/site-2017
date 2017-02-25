@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea562cf3-9342-49d5-a07b-1b7f825d933e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/components/dcl.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/components/eceb.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/components/expo.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/components/gym.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/components/map-panel.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/components/siebel.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/components/union.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/maps.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modules/maps/maps.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/registration/stores/index.js" afterPath="$PROJECT_DIR$/src/modules/registration/stores/index.js" />
-    </list>
+    <list default="true" id="ea562cf3-9342-49d5-a07b-1b7f825d933e" name="Default" comment="" />
     <ignored path="hackillinois-site.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -814,12 +800,12 @@
       <workItem from="1487889101531" duration="3442000" />
       <workItem from="1487911684425" duration="8757000" />
       <workItem from="1487956311785" duration="7200000" />
-      <workItem from="1487980329549" duration="2170000" />
+      <workItem from="1487980329549" duration="2289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85547000" />
+    <option name="totallyTimeSpent" value="85666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
