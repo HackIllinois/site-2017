@@ -14,6 +14,7 @@ class Dashboard extends Component {
       <Clock />
       <Events />
       <Sponsors/>
+      <TwitterTimeline/>
       </div>
   )
 }
@@ -55,5 +56,14 @@ class Sponsors extends Component {
 		</div>
 	)
 
-	
+
+}
+
+class TwitterTimeline extends Component {
+	render = () => (
+    <div>
+        <a className="twitter-timeline" href="https://twitter.com/HackIllinois">Tweets by HackIllinois</a>
+        <script async src="http://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+    </div>
+	)
 }
