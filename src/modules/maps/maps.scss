@@ -1,0 +1,77 @@
+.maps {
+  width: 100%;
+  position: relative;
+  padding-top: 2em;
+
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smooth: always;
+
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+
+  .maps-header {
+    text-align: center;
+
+    .maps-header-logo {
+      width: 120px;
+      height: auto;
+    }
+
+    .maps-header-title {
+      font-weight: bold;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      letter-spacing: 1px;
+    }
+
+    .maps-header-subtitle {
+      color: #B8BDE0;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+  }
+
+  .maps-footer {
+    text-align: center;
+    color: #B8BDE0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    h5 {
+      font-weight: 700;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.maps-body {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .maps-body {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .maps-body {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .maps-body {
+    width: 1170px;
+  }
+}
