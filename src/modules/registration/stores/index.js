@@ -109,7 +109,7 @@ class RegistrationStore {
         }
 
         if (sessionStorage.getItem('auth') == null && window.location.pathname != '/login'
-            && window.location.pathname != '/' && window.location.pathname != '/projects' && window.location.pathname != '/maps'
+            && window.location.pathname != '/' && window.location.pathname != '/projects' && window.location.pathname != '/maps' && window.location.pathname != '/dayof'
             && window.location.pathname != '/reset' && window.location.pathname != '/travel' && window.location.pathname != '/judging'
             && window.location.pathname != '/prizes' && !window.location.pathname.includes('registration')
             && window.location.pathname != '/dashboard') {

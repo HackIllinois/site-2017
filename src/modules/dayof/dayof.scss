@@ -1,0 +1,190 @@
+.dayof {
+
+  a, a:hover, a:focus, a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .label {
+    text-transform: uppercase;
+    font-family: 'Gotham-Medium', sans-serif;
+
+  }
+
+  .dayof-header {
+    padding-top: 5em;
+    text-align: center;
+
+
+    .dayof-header-logo {
+      width: 120px;
+      height: auto;
+    }
+
+
+    .dayof-title {
+      font-family: 'Gotham-Medium', sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 0 0;
+      text-align: center;
+    }
+
+  }
+
+
+  @media (min-width: 570px) {
+    .dayof-body {
+      justify-content: space-between;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .dayof-body,
+    .instruction-text {
+      width: 800px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .dayof-body {
+    width: 100%;
+    max-width: 700px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 0 auto;
+
+    .project-card {
+      width: 120px;
+      height: 120px;
+      background-color: pink;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      cursor: pointer;
+      letter-spacing: 0.12em;
+      color: white;
+      font-weight: 400;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+
+
+
+    @media (min-width: 540px) {
+
+      .project-card {
+        height: 185px;
+        width: 185px;
+      }
+    }
+
+    .project-card img {
+      width: 63px;
+      height: 63px;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 540px) {
+      .project-card img {
+        height: 98px;
+        width: 98px;
+      }
+    }
+
+    .project-card .label {
+      font-size: 14px;
+    }
+
+    @media (min-width: 540px) {
+      .project-card .label {
+        font-size: 22px;
+      }
+    }
+  }
+
+  #maps {
+    background-color: #f6c860;
+  }
+
+  #prizes {
+    background-color: #dd5926;
+  }
+
+  #faq {
+    background-color: #296773;
+  }
+
+
+  //#mentorship {
+  //	background-color: #3b9aac;
+  //}
+
+  #mentorship {
+    background-color: #b7bcdf;
+  }
+
+  #travel {
+    background-color: #ed2f65;
+  }
+
+  #schedule {
+    background-color: #57c7df;
+  }
+
+
+  .dayof-footer {
+    text-align: center;
+    color: #3b9aac;
+    display: flex;
+    margin: 1em auto 3em auto;
+    max-width: 200px;
+
+    .footer-cell {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 25%;
+      min-height: 20px;
+      max-height: 25px;
+      text-align: center;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.responsive-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+//@media (min-width: 768px) {
+//  .responsive-container {
+//    width: 750px;
+//  }
+//}
+//@media (min-width: 992px) {
+//  .responsive-container {
+//    width: 970px;
+//  }
+//}
+//@media (min-width: 1200px) {
+//  .responsive-container {
+//    width: 1170px;
+//  }
+//}
