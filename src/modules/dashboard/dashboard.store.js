@@ -4,6 +4,7 @@ import axios from 'axios'
 
 class DashboardStore {
 	@observable date =  new Date();
+	@observable currentSponsors = 0;
 
 	constructor() {
 		this.date = new Date();
@@ -11,10 +12,19 @@ class DashboardStore {
       () => this.tick(),
       1000
     );
+
+    this.sponsorID = setInterval(
+      () => this.cycle(),
+      10000
+    );
 	}
 
 	tick() {
 		this.date = new Date();
+	}
+
+	cycle() {
+		this.currentSponsors = (this.currentSponsors+1)%4;
 	}
 
 

@@ -3,14 +3,16 @@ import {inject, observer} from 'mobx-react'
 
 import styles from './dashboard.scss'
 
-const sponsors1 = ['a16z','yahoo', 'qualtrics', 'viasat', 'united', 'twilio', 'techpoint', 'statefarm', 'quikorder']
-const sponsors2 = ['fulcrum', 'microsoft', '3red', 'imo', '1517', 'cloudera', 'a16z']
-const sponsors3 = ['onenorth', 'namecheap', 'facebook', 'lawrencelivermore', 'johndeere', 'google', 'huawei', 'github', 'firebase']
-const sponsors4 = ['akunacapital', 'amadeus', 'aarp', 'at_t', 'bitovi', 'bmo', 'bp', 'capitalone', 'citadel']
+const sponsors0 = ['a16z','yahoo', 'qualtrics', 'viasat', 'united', 'twilio', 'techpoint', 'statefarm', 'quikorder']
+const sponsors1 = ['fulcrum', 'microsoft', '3red', 'imo', '1517', 'cloudera', 'a16z']
+const sponsors2 = ['onenorth', 'namecheap', 'facebook', 'lawrencelivermore', 'johndeere', 'google', 'huawei', 'github', 'firebase']
+const sponsors3 = ['akunacapital', 'amadeus', 'aarp', 'at_t', 'bitovi', 'bmo', 'bp', 'capitalone', 'citadel']
 
 class Dashboard extends Component {
   render = () => (
       <div className={styles['dashboard']}>
+      <Clock />
+      <Events />
       <Sponsors/>
       </div>
   )
@@ -42,10 +44,14 @@ class Events extends Component {
 	)
 }
 
+@inject('dashboardStore') @observer
 class Sponsors extends Component {
 	render = () => (
 		<div className={styles['sponsors-container']}> 
-		{sponsors2.map((s) => (<img className={s == 'fulcrum' ?  styles['fulcrum-sponsor'] : styles['normal-sponsor']} src={'../src/assets/img/svg/sponsors/' + s + '.svg'} />))}
+		{this.props.dashboardStore.currentSponsors == 0 ? sponsors0.map((s) => (<img key={s} className={s == 'fulcrum' ?  styles['fulcrum-sponsor'] : styles['normal-sponsor']} src={'../src/assets/img/svg/sponsors/' + s + '.svg'}/>)) : null}
+		{this.props.dashboardStore.currentSponsors == 1 ? sponsors1.map((s) => (<img key={s} className={s == 'fulcrum' ?  styles['fulcrum-sponsor'] : styles['normal-sponsor']} src={'../src/assets/img/svg/sponsors/' + s + '.svg'}/>)) : null}
+		{this.props.dashboardStore.currentSponsors == 2 ? sponsors2.map((s) => (<img key={s} className={s == 'fulcrum' ?  styles['fulcrum-sponsor'] : styles['normal-sponsor']} src={'../src/assets/img/svg/sponsors/' + s + '.svg'}/>)) : null}
+		{this.props.dashboardStore.currentSponsors == 3 ? sponsors3.map((s) => (<img key={s} className={s == 'fulcrum' ?  styles['fulcrum-sponsor'] : styles['normal-sponsor']} src={'../src/assets/img/svg/sponsors/' + s + '.svg'}/>)) : null}
 		</div>
 	)
 
