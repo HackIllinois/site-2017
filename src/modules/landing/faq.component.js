@@ -29,7 +29,7 @@ class FAQ extends Component {
         });
 
         return (
-            <div className={styles['faq']}>
+            <div id={styles['faq']} className={styles['faq']}>
                 <h4 className={styles['faq-title']}>Frequently Asked Questions</h4>
 
                 <div className={styles['faq-content']}>

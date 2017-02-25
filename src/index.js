@@ -31,6 +31,7 @@ import RSVP from './modules/registration/rsvp'
 import Dashboard from './modules/dashboard'
 import Judging from './modules/judging'
 import Maps from './modules/maps'
+import DayOf from './modules/dayof'
 
 //PDFs
 const OpenSource = () => {
@@ -90,6 +91,7 @@ ReactDom.render(
 			<Route path='dashboard' component={Dashboard}/>
 			<Route path='judging' component={Judging}/>
 			<Route path='maps' component={Maps}/>
+			<Route path='dayof' component={DayOf}/>
 		</Router>
 	</Provider>
 		, root)
