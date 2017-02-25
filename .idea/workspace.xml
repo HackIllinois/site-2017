@@ -37,7 +37,7 @@
       <file leaf-file-name="prizes.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/prizes/prizes.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="493">
               <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -49,7 +49,7 @@
       <file leaf-file-name="landing.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/landing/landing.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
+            <state relative-caret-position="2414">
               <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
               <folding />
             </state>
@@ -59,8 +59,8 @@
       <file leaf-file-name="dayof.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+            <state relative-caret-position="604">
+              <caret line="157" column="19" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -69,7 +69,7 @@
       <file leaf-file-name="dayof.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
+            <state relative-caret-position="799">
               <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
               <folding />
             </state>
@@ -91,7 +91,7 @@
       <file leaf-file-name="registration.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/landing/registration.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="442">
               <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -583,11 +583,12 @@
       <workItem from="1487985803433" duration="1574000" />
       <workItem from="1487995913908" duration="175000" />
       <workItem from="1488046215290" duration="879000" />
+      <workItem from="1488053564328" duration="167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88294000" />
+    <option name="totallyTimeSpent" value="88461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -929,7 +930,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/prizes/prizes.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="493">
           <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
@@ -963,7 +964,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/landing/registration.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="442">
           <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
@@ -983,7 +984,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/landing/landing.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
+        <state relative-caret-position="2414">
           <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
           <folding />
         </state>
@@ -991,7 +992,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
+        <state relative-caret-position="799">
           <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
           <folding />
         </state>
@@ -999,8 +1000,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/dayof/dayof.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+        <state relative-caret-position="604">
+          <caret line="157" column="19" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
           <folding />
         </state>
       </provider>
